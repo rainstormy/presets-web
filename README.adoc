@@ -1,0 +1,9 @@
+= Presets for Web Projects
+:experimental:
+:source-highlighter: highlight.js
+
+This repository contains predefined tooling configurations for web projects.
+
+== Contributing
+
+Please take a look at link:CONTRIBUTING.adoc[CONTRIBUTING.adoc] for detailed instructions on how to contribute to this project 😀
