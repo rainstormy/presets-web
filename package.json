@@ -1,4 +1,30 @@
 {
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"setup": "yarn run setup.__install-dependencies__ && yarn run setup.__install-git-hooks__",
+		"setup.__install-dependencies__": "yarn install --immutable",
+		"setup.__install-git-hooks__": "simple-git-hooks",
+		"validate": "yarn run validate.format",
+		"validate.format": "yarn run validate.format.__base__ --cache --check --log-level warn",
+		"validate.format.__base__": "prettier ./**/*.{cjs,css,html,js,json,jsx,mjs,ts,tsx,yaml,yml} .vscode",
+		"validate.format.fix": "yarn run validate.format.__base__ --cache --list-different --write",
+		"validate.format.nocache": "yarn run validate.format.__base__ --check --log-level warn"
+	},
+	"simple-git-hooks": {
+		"pre-commit": "yarn run validate"
+	},
+	"devDependencies": {
+		"prettier": "3.0.0",
+		"prettier-plugin-packagejson": "2.4.5",
+		"simple-git-hooks": "2.8.1"
+	},
 	"packageManager": "yarn@3.6.1",
-	"private": true
+	"//": {
+		"devDependencies": {
+			"prettier": "An opinionated code formatter.",
+			"prettier-plugin-packagejson": "A Prettier plugin that sorts properties in the `package.json` file.",
+			"simple-git-hooks": "A tool that creates Git hooks from Yarn script commands."
+		}
+	}
 }
