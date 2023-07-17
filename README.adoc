@@ -2,7 +2,54 @@
 :experimental:
 :source-highlighter: highlight.js
 
-This repository contains predefined tooling configurations for web projects.
+This repository contains predefined, opinionated tooling configurations for web projects.
+
+== https://prettier.io[Prettier]
+
+[[prettier_basic]]
+=== Basic Configuration
+
+. Install the `@rainstormy/preset-prettier-base` package and its peer dependencies:
++
+[source,shell]
+----
+$ npm install --save-dev @rainstormy/preset-prettier-base
+$ npm install --save-dev prettier
+$ npm install --save-dev typescript
+----
+
+. Define a https://prettier.io/docs/en/configuration.html[Prettier configuration file]:
++
+[source,javascript]
+----
+import { base } from "@rainstormy/preset-prettier-base"
+
+export default base()
+----
+
+[[prettier_tailwind_css]]
+=== Configuration for https://tailwindcss.com[Tailwind CSS]
+
+. Follow the instructions in <<prettier_basic>>.
+. Install the `@rainstormy/preset-prettier-tailwind` package:
++
+[source,shell]
+----
+$ npm install --save-dev @rainstormy/preset-prettier-tailwind
+----
+
+. Apply the Tailwind CSS configuration as the last one in the https://prettier.io/docs/en/configuration.html[Prettier configuration file]:
++
+[source,javascript]
+----
+import { base, mergeConfigs } from "@rainstormy/preset-prettier-base"
+import { tailwind } from "@rainstormy/preset-prettier-tailwind"
+
+export default mergeConfigs([
+    base(),
+	tailwind(),
+])
+----
 
 == Contributing
 

@@ -35,6 +35,38 @@
 			"script": "validate.types",
 			"problemMatcher": [],
 			"label": "validate.types"
+		},
+		{
+			"type": "npm",
+			"script": "build.dist",
+			"path": "packages/preset-prettier-base",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "build.dist (preset-prettier-base)"
+		},
+		{
+			"type": "npm",
+			"script": "build.pack",
+			"path": "packages/preset-prettier-base",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "build.pack (preset-prettier-base)"
+		},
+		{
+			"type": "npm",
+			"script": "build.dist",
+			"path": "packages/preset-prettier-tailwind",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "build.dist (preset-prettier-tailwind)"
+		},
+		{
+			"type": "npm",
+			"script": "build.pack",
+			"path": "packages/preset-prettier-tailwind",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "build.pack (preset-prettier-tailwind)"
 		}
 	]
 }

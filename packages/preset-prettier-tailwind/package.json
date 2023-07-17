@@ -1,0 +1,39 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "@rainstormy/preset-prettier-tailwind",
+	"version": "0.0.1-alpha.0",
+	"type": "module",
+	"main": "dist/prettier.config.js",
+	"types": "dist/prettier.config.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build.dist": "vite build",
+		"build.pack": "yarn pack --out %s-%v.tgz"
+	},
+	"dependencies": {
+		"prettier-plugin-tailwindcss": "0.5.3"
+	},
+	"devDependencies": {
+		"prettier": "3.0.2",
+		"typescript": "5.1.6",
+		"vite": "4.4.9",
+		"vite-plugin-dts": "3.5.2"
+	},
+	"peerDependencies": {
+		"prettier": "3.x",
+		"typescript": "5.x"
+	},
+	"//": {
+		"dependencies": {
+			"prettier-plugin-tailwindcss": "A Prettier plugin that sorts Tailwind CSS classes."
+		},
+		"devDependencies": {
+			"prettier": "An opinionated code formatter.",
+			"typescript": "A statically typed programming language that extends the JavaScript syntax.",
+			"vite": "A highly extensible build tool.",
+			"vite-plugin-dts": "A Vite plugin that generates TypeScript declaration files."
+		}
+	}
+}

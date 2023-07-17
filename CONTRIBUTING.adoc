@@ -109,10 +109,12 @@ $ code .
 ** https://marketplace.visualstudio.com/items?itemName=arcanis.vscode-zipfs[ZipFS] (required by the Yarn SDK)
 
 == Tasks
+
 The `scripts` field in `package.json` defines a set of work tasks.
 Corresponding configurations for IntelliJ IDEA and Visual Studio Code are located in `.idea/runConfigurations` and `.vscode/tasks.json`, respectively.
 
 === Validate the Software Quality
+
 [source,shell]
 ----
 $ yarn run validate

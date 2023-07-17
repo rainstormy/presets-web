@@ -1,5 +1,7 @@
-// The use of triple-slash references here saves us from overriding `compilerOptions.types` in `tsconfig.json`.
-// Upon that, we preserve `@types/*` dependencies to be automatically among the global types.
-//
-// Read more:
-// https://www.typescriptlang.org/tsconfig#types
+declare module "prettier-plugin-organize-imports" {
+	export = {} as import("prettier").Plugin
+}
+
+declare module "prettier-plugin-packagejson" {
+	export = {} as import("prettier").Plugin
+}

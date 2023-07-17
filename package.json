@@ -1,13 +1,17 @@
 {
+	"$schema": "https://json.schemastore.org/package.json",
 	"private": true,
 	"type": "module",
+	"workspaces": [
+		"packages/*"
+	],
 	"scripts": {
 		"setup": "yarn run setup.__install-dependencies__ && yarn run setup.__install-git-hooks__",
 		"setup.__install-dependencies__": "yarn install --immutable",
 		"setup.__install-git-hooks__": "simple-git-hooks",
 		"validate": "yarn run concurrently \"yarn:validate.types\" \"yarn:validate.format\" --group --names types,format --prefix-colors #3178c6,#c596c7",
 		"validate.format": "yarn run validate.format.__base__ --cache --check --log-level warn",
-		"validate.format.__base__": "prettier ./**/*.{cjs,css,html,js,json,jsx,mjs,ts,tsx,yaml,yml} .vscode",
+		"validate.format.__base__": "prettier ./**/*.{cjs,css,html,js,json,jsx,mjs,ts,tsx,yaml,yml} .vscode --config ./prettier.config.js",
 		"validate.format.fix": "yarn run validate.format.__base__ --cache --list-different --write",
 		"validate.format.nocache": "yarn run validate.format.__base__ --check --log-level warn",
 		"validate.types": "tsc"
@@ -16,20 +20,18 @@
 		"pre-commit": "yarn run validate"
 	},
 	"devDependencies": {
+		"@rainstormy/preset-prettier-base": "workspace:*",
 		"concurrently": "8.2.0",
-		"prettier": "3.0.0",
-		"prettier-plugin-organize-imports": "3.2.3",
-		"prettier-plugin-packagejson": "2.4.5",
+		"prettier": "3.0.2",
 		"simple-git-hooks": "2.8.1",
 		"typescript": "5.1.6"
 	},
 	"packageManager": "yarn@3.6.1",
 	"//": {
 		"devDependencies": {
+			"@rainstormy/preset-prettier-base": "A predefined Prettier configuration for web projects.",
 			"concurrently": "A tool that executes multiple Yarn script commands in parallel.",
 			"prettier": "An opinionated code formatter.",
-			"prettier-plugin-organize-imports": "A Prettier plugin that sorts import statements and removes unused ones.",
-			"prettier-plugin-packagejson": "A Prettier plugin that sorts properties in the `package.json` file.",
 			"simple-git-hooks": "A tool that creates Git hooks from Yarn script commands.",
 			"typescript": "A statically typed programming language that extends the JavaScript syntax."
 		}

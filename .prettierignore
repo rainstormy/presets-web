@@ -5,3 +5,5 @@
 #
 # Read more:
 # https://prettier.io/docs/en/ignore.html
+
+dist/
