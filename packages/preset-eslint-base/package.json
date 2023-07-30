@@ -1,0 +1,53 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "@rainstormy/preset-eslint-base",
+	"version": "0.0.1-alpha.0",
+	"type": "module",
+	"main": "dist/eslint.config.js",
+	"types": "dist/eslint.config.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build.dist": "vite build",
+		"build.pack": "yarn pack --out %s-%v.tgz"
+	},
+	"dependencies": {
+		"@typescript-eslint/eslint-plugin": "6.7.3",
+		"@typescript-eslint/parser": "6.7.3",
+		"eslint-plugin-eslint-comments": "3.2.0",
+		"eslint-plugin-functional": "6.0.0",
+		"eslint-plugin-redundant-undefined": "1.0.0",
+		"eslint-plugin-unicorn": "48.0.1"
+	},
+	"devDependencies": {
+		"@types/eslint": "8.44.3",
+		"typescript": "5.2.2",
+		"vite": "4.4.9",
+		"vite-plugin-dts": "3.5.3"
+	},
+	"peerDependencies": {
+		"eslint": "8.x",
+		"typescript": "5.x"
+	},
+	"//": {
+		"dependencies": {
+			"@typescript-eslint/eslint-plugin": "An ESLint plugin that covers TypeScript code. It must always match the version of `@typescript-eslint/parser`.",
+			"@typescript-eslint/parser": "An ESLint parser for TypeScript code. It must always match the version of `@typescript-eslint/eslint-plugin`.",
+			"eslint-plugin-eslint-comments": "An ESLint plugin that covers the use of ESLint comments.",
+			"eslint-plugin-functional": "An ESLint plugin that encourages principles from the functional programming paradigm.",
+			"eslint-plugin-redundant-undefined": "An ESLint plugin that covers the redundant use of undefined in optional type declarations.",
+			"eslint-plugin-unicorn": "An ESLint plugin that complements the built-in set of rules."
+		},
+		"devDependencies": {
+			"@types/eslint": "A set of type definitions for ESLint configuration files.",
+			"typescript": "A statically typed programming language that extends the JavaScript syntax.",
+			"vite": "A highly extensible build tool.",
+			"vite-plugin-dts": "A Vite plugin that generates TypeScript declaration files."
+		},
+		"peerDependencies": {
+			"eslint": "A static program analysis tool that uncovers code issues.",
+			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+		}
+	}
+}

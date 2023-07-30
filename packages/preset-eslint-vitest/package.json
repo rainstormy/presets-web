@@ -1,0 +1,43 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "@rainstormy/preset-eslint-vitest",
+	"version": "0.0.1-alpha.0",
+	"type": "module",
+	"main": "dist/eslint.config.js",
+	"types": "dist/eslint.config.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build.dist": "vite build",
+		"build.pack": "yarn pack --out %s-%v.tgz"
+	},
+	"dependencies": {
+		"eslint-plugin-vitest": "0.3.1"
+	},
+	"devDependencies": {
+		"@types/eslint": "8.44.3",
+		"typescript": "5.2.2",
+		"vite": "4.4.9",
+		"vite-plugin-dts": "3.5.3"
+	},
+	"peerDependencies": {
+		"eslint": "8.x",
+		"vitest": "*"
+	},
+	"//": {
+		"dependencies": {
+			"eslint-plugin-vitest": "An ESLint plugin that covers Vitest suites."
+		},
+		"devDependencies": {
+			"@types/eslint": "A set of type definitions for ESLint configuration files.",
+			"typescript": "A statically typed programming language that extends the JavaScript syntax.",
+			"vite": "A highly extensible build tool.",
+			"vite-plugin-dts": "A Vite plugin that generates TypeScript declaration files."
+		},
+		"peerDependencies": {
+			"eslint": "A static program analysis tool that uncovers code issues.",
+			"vitest": "A Vite-based unit testing framework."
+		}
+	}
+}

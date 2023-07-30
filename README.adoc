@@ -4,6 +4,279 @@
 
 This repository contains predefined, opinionated tooling configurations for web projects.
 
+== https://eslint.org[ESLint]
+
+[[eslint_basic]]
+=== Basic Configuration
+
+. Install the `@rainstormy/preset-eslint-base` package and its peer dependencies:
++
+[source,shell]
+----
+$ npm install --save-dev @rainstormy/preset-eslint-base
+$ npm install --save-dev eslint
+$ npm install --save-dev typescript
+----
+
+. Define an https://eslint.org/docs/latest/use/configure[ESLint configuration file]:
++
+[source,javascript]
+----
+// eslint.config.js
+
+import { ambientTypeScriptModules, base } from "@rainstormy/preset-eslint-base"
+
+export default [
+	base({
+		files: ["**/*.+(js|ts)"],
+		tsconfig: "./tsconfig.json",
+	}),
+	ambientTypeScriptModules({
+		files: ["**/*.d.ts"],
+	}),
+]
+----
+
+[TIP]
+.Ignore Patterns
+====
+To exclude certain files and directories from linting, add an extra configuration at the beginning of the array:
+
+[source,javascript]
+----
+// eslint.config.js
+
+export default [
+	{
+		ignores: [
+			"coverage/**",
+			"dist/**",
+		],
+	},
+	// base({ ... }) etc.
+]
+----
+====
+
+[[eslint_preact]]
+=== Configuration for https://preactjs.com[Preact]
+
+. Follow the instructions in <<eslint_basic>>.
+. Install the `@rainstormy/preset-eslint-preact` package:
++
+[source,shell]
+----
+$ npm install --save-dev @rainstormy/preset-eslint-preact
+----
+
+. Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets JSX component files:
++
+[source,javascript]
+----
+// eslint.config.js
+
+import { preact } from "@rainstormy/preset-eslint-preact"
+
+export default [
+	// base({ ... }) etc.
+	preact({
+		files: ["**/*.+(jsx|tsx)"],
+	}),
+]
+----
+
+CAUTION: The Preact preset includes `@rainstormy/preset-eslint-jsx`.
+
+[[eslint_react]]
+=== Configuration for https://react.dev[React]
+
+. Follow the instructions in <<eslint_basic>>.
+. Install the `@rainstormy/preset-eslint-react` package:
++
+[source,shell]
+----
+$ npm install --save-dev @rainstormy/preset-eslint-react
+----
+
+. Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets JSX component files:
++
+[source,javascript]
+----
+// eslint.config.js
+
+import { react } from "@rainstormy/preset-eslint-react"
+
+export default [
+	// base({ ... }) etc.
+	react({
+		files: ["**/*.+(jsx|tsx)"],
+	}),
+]
+----
+
+CAUTION: The React preset includes `@rainstormy/preset-eslint-jsx`.
+
+[[eslint_solid]]
+=== Configuration for https://www.solidjs.com[Solid]
+
+. Follow the instructions in <<eslint_basic>>.
+. Install the `@rainstormy/preset-eslint-solid` package:
++
+[source,shell]
+----
+$ npm install --save-dev @rainstormy/preset-eslint-solid
+----
+
+. Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets JSX component files:
++
+[source,javascript]
+----
+// eslint.config.js
+
+import { solid } from "@rainstormy/preset-eslint-solid"
+
+export default [
+	// base({ ... }) etc.
+	solid({
+		files: ["**/*.+(jsx|tsx)"],
+	}),
+]
+----
+
+CAUTION: The Solid preset includes `@rainstormy/preset-eslint-jsx`.
+
+[[eslint_jsx]]
+=== Configuration for Other JSX Frameworks
+
+The JSX preset is intended to be used as a foundation for other JSX-based frameworks such as https://qwik.builder.io[Qwik].
+
+. Follow the instructions in <<eslint_basic>>.
+. Install the `@rainstormy/preset-eslint-jsx` package:
++
+[source,shell]
+----
+$ npm install --save-dev @rainstormy/preset-eslint-jsx
+----
+
+. Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets JSX component files:
++
+[source,javascript]
+----
+// eslint.config.js
+
+import { jsx } from "@rainstormy/preset-eslint-jsx"
+
+export default [
+	// base({ ... }) etc.
+	jsx({
+		files: ["**/*.+(jsx|tsx)"],
+	}),
+]
+----
+
+. Install other relevant ESLint plugins and configure them accordingly, for example:
++
+[source,javascript]
+----
+// eslint.config.js
+
+import qwikPlugin from "eslint-plugin-qwik"
+
+export default [
+	// jsx({ ... }) etc.
+	{
+		files: ["**/*.+(jsx|tsx)"],
+		plugins: {
+			qwik: qwikPlugin,
+		},
+		rules: {
+			"react/function-component-definition": "off",
+			"react/jsx-key": "off",
+			"react/jsx-no-script-url": "off",
+			"qwik/jsx-img": "error",
+			"qwik/jsx-key": "error",
+			"qwik/jsx-no-script-url": "error",
+			"qwik/loader-location": "error",
+			"qwik/no-react-props": "error",
+			"qwik/prefer-classlist": "error",
+			"qwik/unused-server": "error",
+			"qwik/use-method-usage": "error",
+			"qwik/valid-lexical-scope": "error",
+			// etc.
+		},
+	}
+]
+----
+
+[CAUTION]
+====
+The JSX preset is already included in:
+
+* `@rainstormy/preset-eslint-preact`
+* `@rainstormy/preset-eslint-react`
+* `@rainstormy/preset-eslint-solid`
+====
+
+[[eslint_tailwind]]
+=== Configuration for https://tailwindcss.com[Tailwind CSS]
+
+. Follow the instructions in <<eslint_basic>>.
+. Install the `@rainstormy/preset-eslint-tailwind` package and its peer dependencies:
++
+[source,shell]
+----
+$ npm install --save-dev @rainstormy/preset-eslint-tailwind
+$ npm install --save-dev tailwindcss
+----
+
+. Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets JSX component files:
++
+[source,javascript]
+----
+// eslint.config.js
+
+import { tailwind } from "@rainstormy/preset-eslint-tailwind"
+
+export default [
+	// base({ ... }) etc.
+	tailwind({
+		files: ["**/*.+(jsx|tsx)"],
+	}),
+]
+----
+
+[[eslint_vitest]]
+=== Configuration for https://vitest.dev[Vitest]
+
+. Follow the instructions in <<eslint_basic>>.
+. Install the `@rainstormy/preset-eslint-vitest` package and its peer dependencies:
++
+[source,shell]
+----
+$ npm install --save-dev @rainstormy/preset-eslint-vitest
+$ npm install --save-dev vitest
+----
+
+. Add new configurations to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that target test files:
++
+[source,javascript]
+----
+// eslint.config.js
+
+import { testData } from "@rainstormy/preset-eslint-base"
+import { vitest } from "@rainstormy/preset-eslint-vitest"
+
+export default [
+	// base({ ... }) etc.
+	testData({
+		files: ["**/*.+(spec|test).+(js|jsx|ts|tsx)"],
+	}),
+	vitest({
+		files: ["**/*.+(spec|test).+(js|jsx|ts|tsx)"],
+	}),
+]
+----
+
 == https://prettier.io[Prettier]
 
 [[prettier_basic]]
@@ -22,12 +295,14 @@ $ npm install --save-dev typescript
 +
 [source,javascript]
 ----
+// prettier.config.js
+
 import { base } from "@rainstormy/preset-prettier-base"
 
 export default base()
 ----
 
-[[prettier_tailwind_css]]
+[[prettier_tailwind]]
 === Configuration for https://tailwindcss.com[Tailwind CSS]
 
 . Follow the instructions in <<prettier_basic>>.
@@ -42,6 +317,8 @@ $ npm install --save-dev @rainstormy/preset-prettier-tailwind
 +
 [source,javascript]
 ----
+// prettier.config.js
+
 import { base, mergeConfigs } from "@rainstormy/preset-prettier-base"
 import { tailwind } from "@rainstormy/preset-prettier-tailwind"
 

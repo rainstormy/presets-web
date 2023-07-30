@@ -36,6 +36,10 @@
 			"typescript": "A statically typed programming language that extends the JavaScript syntax.",
 			"vite": "A highly extensible build tool.",
 			"vite-plugin-dts": "A Vite plugin that generates TypeScript declaration files."
+		},
+		"peerDependencies": {
+			"prettier": "An opinionated code formatter.",
+			"typescript": "A statically typed programming language that extends the JavaScript syntax."
 		}
 	}
 }

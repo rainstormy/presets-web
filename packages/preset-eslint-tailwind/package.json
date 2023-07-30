@@ -1,0 +1,43 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "@rainstormy/preset-eslint-tailwind",
+	"version": "0.0.1-alpha.0",
+	"type": "module",
+	"main": "dist/eslint.config.js",
+	"types": "dist/eslint.config.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build.dist": "vite build",
+		"build.pack": "yarn pack --out %s-%v.tgz"
+	},
+	"dependencies": {
+		"eslint-plugin-tailwindcss": "3.13.0"
+	},
+	"devDependencies": {
+		"@types/eslint": "8.44.3",
+		"typescript": "5.2.2",
+		"vite": "4.4.9",
+		"vite-plugin-dts": "3.5.3"
+	},
+	"peerDependencies": {
+		"eslint": "8.x",
+		"tailwindcss": "3.x"
+	},
+	"//": {
+		"dependencies": {
+			"eslint-plugin-tailwindcss": "An ESLint plugin that covers Tailwind class strings in JSX- and React-like components."
+		},
+		"devDependencies": {
+			"@types/eslint": "A set of type definitions for ESLint configuration files.",
+			"typescript": "A statically typed programming language that extends the JavaScript syntax.",
+			"vite": "A highly extensible build tool.",
+			"vite-plugin-dts": "A Vite plugin that generates TypeScript declaration files."
+		},
+		"peerDependencies": {
+			"eslint": "A static program analysis tool that uncovers code issues.",
+			"tailwindcss": "A utility-first CSS framework that minimises the need for traditional stylesheets."
+		}
+	}
+}
