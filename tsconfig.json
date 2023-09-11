@@ -24,6 +24,5 @@
 		"useDefineForClassFields": true,
 		"verbatimModuleSyntax": true
 	},
-	"exclude": [".git", ".idea", ".vscode", ".yarn", "node_modules", ".pnp.*"],
-	"include": ["**/*.ts"]
+	"include": ["./*.d.ts", "./packages/**/*.ts"]
 }

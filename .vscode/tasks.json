@@ -2,6 +2,18 @@
 	"tasks": [
 		{
 			"type": "npm",
+			"script": "build.dist",
+			"problemMatcher": [],
+			"label": "build.dist"
+		},
+		{
+			"type": "npm",
+			"script": "build.pack",
+			"problemMatcher": [],
+			"label": "build.pack"
+		},
+		{
+			"type": "npm",
 			"script": "setup",
 			"problemMatcher": [],
 			"label": "setup"
@@ -38,35 +50,9 @@
 		},
 		{
 			"type": "npm",
-			"script": "build.dist",
-			"path": "packages/preset-prettier-base",
-			"group": "build",
+			"script": "validate.types.nocache",
 			"problemMatcher": [],
-			"label": "build.dist (preset-prettier-base)"
-		},
-		{
-			"type": "npm",
-			"script": "build.pack",
-			"path": "packages/preset-prettier-base",
-			"group": "build",
-			"problemMatcher": [],
-			"label": "build.pack (preset-prettier-base)"
-		},
-		{
-			"type": "npm",
-			"script": "build.dist",
-			"path": "packages/preset-prettier-tailwind",
-			"group": "build",
-			"problemMatcher": [],
-			"label": "build.dist (preset-prettier-tailwind)"
-		},
-		{
-			"type": "npm",
-			"script": "build.pack",
-			"path": "packages/preset-prettier-tailwind",
-			"group": "build",
-			"problemMatcher": [],
-			"label": "build.pack (preset-prettier-tailwind)"
+			"label": "validate.types.nocache"
 		}
 	]
 }

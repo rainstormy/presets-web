@@ -39,10 +39,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@rainstormy/preset-prettier-base", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#workspace:packages/preset-prettier-base"],\
-            ["concurrently", "npm:8.2.0"],\
-            ["prettier", "npm:3.0.2"],\
-            ["simple-git-hooks", "npm:2.8.1"],\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+            ["concurrently", "npm:8.2.1"],\
+            ["prettier", "npm:3.0.3"],\
+            ["simple-git-hooks", "npm:2.9.0"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -320,16 +320,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@microsoft/api-extractor", [\
-        ["npm:7.36.3", {\
-          "packageLocation": "./.yarn/cache/@microsoft-api-extractor-npm-7.36.3-f34bd66ce7-61c9fe70db.zip/node_modules/@microsoft/api-extractor/",\
+        ["npm:7.36.4", {\
+          "packageLocation": "./.yarn/cache/@microsoft-api-extractor-npm-7.36.4-0363453a86-92559325cf.zip/node_modules/@microsoft/api-extractor/",\
           "packageDependencies": [\
-            ["@microsoft/api-extractor", "npm:7.36.3"],\
-            ["@microsoft/api-extractor-model", "npm:7.27.5"],\
+            ["@microsoft/api-extractor", "npm:7.36.4"],\
+            ["@microsoft/api-extractor-model", "npm:7.27.6"],\
             ["@microsoft/tsdoc", "npm:0.14.2"],\
             ["@microsoft/tsdoc-config", "npm:0.16.2"],\
-            ["@rushstack/node-core-library", "virtual:e07ffcf28e4f5faed173552686c5c7136799d9c4e5fdc70ac4b6d44ac84116dbf10565cb2a5674fa37d7063aa70a909694636f515e9868b9bdaa9a073470e36a#npm:3.59.6"],\
-            ["@rushstack/rig-package", "npm:0.4.0"],\
-            ["@rushstack/ts-command-line", "npm:4.15.1"],\
+            ["@rushstack/node-core-library", "virtual:f45b3c548dd0b87aa810be8cce9f0827d01193821bb08b1087278193fff853b1770649da99cb6435297d57431c686e2ad278724d93897fb82e482802e9894372#npm:3.59.7"],\
+            ["@rushstack/rig-package", "npm:0.4.1"],\
+            ["@rushstack/ts-command-line", "npm:4.15.2"],\
             ["colors", "npm:1.2.5"],\
             ["lodash", "npm:4.17.21"],\
             ["resolve", "patch:resolve@npm%3A1.22.3#~builtin<compat/resolve>::version=1.22.3&hash=c3c19d"],\
@@ -341,13 +341,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@microsoft/api-extractor-model", [\
-        ["npm:7.27.5", {\
-          "packageLocation": "./.yarn/cache/@microsoft-api-extractor-model-npm-7.27.5-e07ffcf28e-20a84bf9bb.zip/node_modules/@microsoft/api-extractor-model/",\
+        ["npm:7.27.6", {\
+          "packageLocation": "./.yarn/cache/@microsoft-api-extractor-model-npm-7.27.6-f45b3c548d-7867feaf3a.zip/node_modules/@microsoft/api-extractor-model/",\
           "packageDependencies": [\
-            ["@microsoft/api-extractor-model", "npm:7.27.5"],\
+            ["@microsoft/api-extractor-model", "npm:7.27.6"],\
             ["@microsoft/tsdoc", "npm:0.14.2"],\
             ["@microsoft/tsdoc-config", "npm:0.16.2"],\
-            ["@rushstack/node-core-library", "virtual:e07ffcf28e4f5faed173552686c5c7136799d9c4e5fdc70ac4b6d44ac84116dbf10565cb2a5674fa37d7063aa70a909694636f515e9868b9bdaa9a073470e36a#npm:3.59.6"]\
+            ["@rushstack/node-core-library", "virtual:f45b3c548dd0b87aa810be8cce9f0827d01193821bb08b1087278193fff853b1770649da99cb6435297d57431c686e2ad278724d93897fb82e482802e9894372#npm:3.59.7"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -446,12 +446,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rainstormy/preset-prettier-base", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#workspace:packages/preset-prettier-base"],\
             ["@types/prettier", null],\
             ["@types/typescript", null],\
-            ["prettier", "npm:3.0.2"],\
+            ["prettier", "npm:3.0.3"],\
             ["prettier-plugin-organize-imports", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:3.2.3"],\
             ["prettier-plugin-packagejson", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:2.4.5"],\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["vite", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:4.4.9"],\
-            ["vite-plugin-dts", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:3.5.2"]\
+            ["vite-plugin-dts", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:3.5.3"]\
           ],\
           "packagePeers": [\
             "@types/prettier",\
@@ -465,12 +465,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/preset-prettier-base/",\
           "packageDependencies": [\
             ["@rainstormy/preset-prettier-base", "workspace:packages/preset-prettier-base"],\
-            ["prettier", "npm:3.0.2"],\
+            ["prettier", "npm:3.0.3"],\
             ["prettier-plugin-organize-imports", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:3.2.3"],\
             ["prettier-plugin-packagejson", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:2.4.5"],\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["vite", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:4.4.9"],\
-            ["vite-plugin-dts", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:3.5.2"]\
+            ["vite-plugin-dts", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:3.5.3"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -480,11 +480,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/preset-prettier-tailwind/",\
           "packageDependencies": [\
             ["@rainstormy/preset-prettier-tailwind", "workspace:packages/preset-prettier-tailwind"],\
-            ["prettier", "npm:3.0.2"],\
-            ["prettier-plugin-tailwindcss", "virtual:8bbb9d071908669133a39f10922ec1cc5c8d5317520412c63e72701e0b7e817f499d8343979a685e2ea72ba9ad2cc0b37eb8312b307af9ada87250315555bb8a#npm:0.5.3"],\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"],\
+            ["prettier", "npm:3.0.3"],\
+            ["prettier-plugin-tailwindcss", "virtual:8bbb9d071908669133a39f10922ec1cc5c8d5317520412c63e72701e0b7e817f499d8343979a685e2ea72ba9ad2cc0b37eb8312b307af9ada87250315555bb8a#npm:0.5.4"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["vite", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:4.4.9"],\
-            ["vite-plugin-dts", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:3.5.2"]\
+            ["vite-plugin-dts", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:3.5.3"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -497,10 +497,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:c79989c6777d44ae8fba88674e4784dc28c5507cddfe1cd29311308b7fb83e6ce7ba6852d9a092fb8426aeec297463da5902abfd408c1a27edc3f460f1263535#npm:5.0.2", {\
-          "packageLocation": "./.yarn/__virtual__/@rollup-pluginutils-virtual-0b38c68078/0/cache/@rollup-pluginutils-npm-5.0.2-6aa9d0ddd4-edea15e543.zip/node_modules/@rollup/pluginutils/",\
+        ["virtual:05df77b29cf8eb7df7cdaef3aaaef59ebcd44988aff28d83c71ddeaf12f306bfec0398dc81fddda0097a78c529082ea0e1a44f15d5ccf52f31fbdf660ea1f4ea#npm:5.0.2", {\
+          "packageLocation": "./.yarn/__virtual__/@rollup-pluginutils-virtual-2e797a5744/0/cache/@rollup-pluginutils-npm-5.0.2-6aa9d0ddd4-edea15e543.zip/node_modules/@rollup/pluginutils/",\
           "packageDependencies": [\
-            ["@rollup/pluginutils", "virtual:c79989c6777d44ae8fba88674e4784dc28c5507cddfe1cd29311308b7fb83e6ce7ba6852d9a092fb8426aeec297463da5902abfd408c1a27edc3f460f1263535#npm:5.0.2"],\
+            ["@rollup/pluginutils", "virtual:05df77b29cf8eb7df7cdaef3aaaef59ebcd44988aff28d83c71ddeaf12f306bfec0398dc81fddda0097a78c529082ea0e1a44f15d5ccf52f31fbdf660ea1f4ea#npm:5.0.2"],\
             ["@types/estree", "npm:1.0.1"],\
             ["@types/rollup", null],\
             ["estree-walker", "npm:2.0.2"],\
@@ -515,17 +515,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@rushstack/node-core-library", [\
-        ["npm:3.59.6", {\
-          "packageLocation": "./.yarn/cache/@rushstack-node-core-library-npm-3.59.6-bf2f680876-ca5489d56b.zip/node_modules/@rushstack/node-core-library/",\
+        ["npm:3.59.7", {\
+          "packageLocation": "./.yarn/cache/@rushstack-node-core-library-npm-3.59.7-6de4c8dae0-57819d62fd.zip/node_modules/@rushstack/node-core-library/",\
           "packageDependencies": [\
-            ["@rushstack/node-core-library", "npm:3.59.6"]\
+            ["@rushstack/node-core-library", "npm:3.59.7"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:e07ffcf28e4f5faed173552686c5c7136799d9c4e5fdc70ac4b6d44ac84116dbf10565cb2a5674fa37d7063aa70a909694636f515e9868b9bdaa9a073470e36a#npm:3.59.6", {\
-          "packageLocation": "./.yarn/__virtual__/@rushstack-node-core-library-virtual-bba7d9e971/0/cache/@rushstack-node-core-library-npm-3.59.6-bf2f680876-ca5489d56b.zip/node_modules/@rushstack/node-core-library/",\
+        ["virtual:f45b3c548dd0b87aa810be8cce9f0827d01193821bb08b1087278193fff853b1770649da99cb6435297d57431c686e2ad278724d93897fb82e482802e9894372#npm:3.59.7", {\
+          "packageLocation": "./.yarn/__virtual__/@rushstack-node-core-library-virtual-ffe7e3f991/0/cache/@rushstack-node-core-library-npm-3.59.7-6de4c8dae0-57819d62fd.zip/node_modules/@rushstack/node-core-library/",\
           "packageDependencies": [\
-            ["@rushstack/node-core-library", "virtual:e07ffcf28e4f5faed173552686c5c7136799d9c4e5fdc70ac4b6d44ac84116dbf10565cb2a5674fa37d7063aa70a909694636f515e9868b9bdaa9a073470e36a#npm:3.59.6"],\
+            ["@rushstack/node-core-library", "virtual:f45b3c548dd0b87aa810be8cce9f0827d01193821bb08b1087278193fff853b1770649da99cb6435297d57431c686e2ad278724d93897fb82e482802e9894372#npm:3.59.7"],\
             ["@types/node", null],\
             ["colors", "npm:1.2.5"],\
             ["fs-extra", "npm:7.0.1"],\
@@ -542,10 +542,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@rushstack/rig-package", [\
-        ["npm:0.4.0", {\
-          "packageLocation": "./.yarn/cache/@rushstack-rig-package-npm-0.4.0-add0565a57-376ac9996e.zip/node_modules/@rushstack/rig-package/",\
+        ["npm:0.4.1", {\
+          "packageLocation": "./.yarn/cache/@rushstack-rig-package-npm-0.4.1-9bf1702d8a-68c5ec6c44.zip/node_modules/@rushstack/rig-package/",\
           "packageDependencies": [\
-            ["@rushstack/rig-package", "npm:0.4.0"],\
+            ["@rushstack/rig-package", "npm:0.4.1"],\
             ["resolve", "patch:resolve@npm%3A1.22.3#~builtin<compat/resolve>::version=1.22.3&hash=c3c19d"],\
             ["strip-json-comments", "npm:3.1.1"]\
           ],\
@@ -553,10 +553,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@rushstack/ts-command-line", [\
-        ["npm:4.15.1", {\
-          "packageLocation": "./.yarn/cache/@rushstack-ts-command-line-npm-4.15.1-a7d6b97275-2ea3df8c1b.zip/node_modules/@rushstack/ts-command-line/",\
+        ["npm:4.15.2", {\
+          "packageLocation": "./.yarn/cache/@rushstack-ts-command-line-npm-4.15.2-5b9fe3b6e3-c80dcfc996.zip/node_modules/@rushstack/ts-command-line/",\
           "packageDependencies": [\
-            ["@rushstack/ts-command-line", "npm:4.15.1"],\
+            ["@rushstack/ts-command-line", "npm:4.15.2"],\
             ["@types/argparse", "npm:1.0.38"],\
             ["argparse", "npm:1.0.10"],\
             ["colors", "npm:1.2.5"],\
@@ -654,6 +654,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
+        ["virtual:05df77b29cf8eb7df7cdaef3aaaef59ebcd44988aff28d83c71ddeaf12f306bfec0398dc81fddda0097a78c529082ea0e1a44f15d5ccf52f31fbdf660ea1f4ea#npm:1.8.8", {\
+          "packageLocation": "./.yarn/__virtual__/@vue-language-core-virtual-18d5476dfc/0/cache/@vue-language-core-npm-1.8.8-36dd52b62d-6d5a240d53.zip/node_modules/@vue/language-core/",\
+          "packageDependencies": [\
+            ["@vue/language-core", "virtual:05df77b29cf8eb7df7cdaef3aaaef59ebcd44988aff28d83c71ddeaf12f306bfec0398dc81fddda0097a78c529082ea0e1a44f15d5ccf52f31fbdf660ea1f4ea#npm:1.8.8"],\
+            ["@types/typescript", null],\
+            ["@volar/language-core", "npm:1.10.0"],\
+            ["@volar/source-map", "npm:1.10.0"],\
+            ["@vue/compiler-dom", "npm:3.3.4"],\
+            ["@vue/reactivity", "npm:3.3.4"],\
+            ["@vue/shared", "npm:3.3.4"],\
+            ["minimatch", "npm:9.0.3"],\
+            ["muggle-string", "npm:0.3.1"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
+            ["vue-template-compiler", "npm:2.7.14"]\
+          ],\
+          "packagePeers": [\
+            "@types/typescript",\
+            "typescript"\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["virtual:30067aff559f68e9d99eddfd098df2b37d5ac99866512b4b431c7d11822f1731f3fcddccb1148c8985db26acddb52d488125de9f5edf584d29082377ad173f18#npm:1.8.8", {\
           "packageLocation": "./.yarn/__virtual__/@vue-language-core-virtual-8fa2478d64/0/cache/@vue-language-core-npm-1.8.8-36dd52b62d-6d5a240d53.zip/node_modules/@vue/language-core/",\
           "packageDependencies": [\
@@ -667,27 +688,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["minimatch", "npm:9.0.3"],\
             ["muggle-string", "npm:0.3.1"],\
             ["typescript", null],\
-            ["vue-template-compiler", "npm:2.7.14"]\
-          ],\
-          "packagePeers": [\
-            "@types/typescript",\
-            "typescript"\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["virtual:c79989c6777d44ae8fba88674e4784dc28c5507cddfe1cd29311308b7fb83e6ce7ba6852d9a092fb8426aeec297463da5902abfd408c1a27edc3f460f1263535#npm:1.8.8", {\
-          "packageLocation": "./.yarn/__virtual__/@vue-language-core-virtual-9e591ece22/0/cache/@vue-language-core-npm-1.8.8-36dd52b62d-6d5a240d53.zip/node_modules/@vue/language-core/",\
-          "packageDependencies": [\
-            ["@vue/language-core", "virtual:c79989c6777d44ae8fba88674e4784dc28c5507cddfe1cd29311308b7fb83e6ce7ba6852d9a092fb8426aeec297463da5902abfd408c1a27edc3f460f1263535#npm:1.8.8"],\
-            ["@types/typescript", null],\
-            ["@volar/language-core", "npm:1.10.0"],\
-            ["@volar/source-map", "npm:1.10.0"],\
-            ["@vue/compiler-dom", "npm:3.3.4"],\
-            ["@vue/reactivity", "npm:3.3.4"],\
-            ["@vue/shared", "npm:3.3.4"],\
-            ["minimatch", "npm:9.0.3"],\
-            ["muggle-string", "npm:0.3.1"],\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"],\
             ["vue-template-compiler", "npm:2.7.14"]\
           ],\
           "packagePeers": [\
@@ -1030,10 +1030,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["concurrently", [\
-        ["npm:8.2.0", {\
-          "packageLocation": "./.yarn/cache/concurrently-npm-8.2.0-be774a222e-eafe6a4d9b.zip/node_modules/concurrently/",\
+        ["npm:8.2.1", {\
+          "packageLocation": "./.yarn/cache/concurrently-npm-8.2.1-2922c29e4d-216cb16d5b.zip/node_modules/concurrently/",\
           "packageDependencies": [\
-            ["concurrently", "npm:8.2.0"],\
+            ["concurrently", "npm:8.2.1"],\
             ["chalk", "npm:4.1.2"],\
             ["date-fns", "npm:2.30.0"],\
             ["lodash", "npm:4.17.21"],\
@@ -2387,10 +2387,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["prettier", [\
-        ["npm:3.0.2", {\
-          "packageLocation": "./.yarn/cache/prettier-npm-3.0.2-2cbecb9037-118b59ddb6.zip/node_modules/prettier/",\
+        ["npm:3.0.3", {\
+          "packageLocation": "./.yarn/unplugged/prettier-npm-3.0.3-fced695dae/node_modules/prettier/",\
           "packageDependencies": [\
-            ["prettier", "npm:3.0.2"]\
+            ["prettier", "npm:3.0.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2413,8 +2413,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/volar__vue-typescript", null],\
             ["@volar/vue-language-plugin-pug", null],\
             ["@volar/vue-typescript", null],\
-            ["prettier", "npm:3.0.2"],\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+            ["prettier", "npm:3.0.3"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
           ],\
           "packagePeers": [\
             "@types/prettier",\
@@ -2442,7 +2442,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["prettier-plugin-packagejson", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:2.4.5"],\
             ["@types/prettier", null],\
-            ["prettier", "npm:3.0.2"],\
+            ["prettier", "npm:3.0.3"],\
             ["sort-package-json", "npm:2.5.1"],\
             ["synckit", "npm:0.8.5"]\
           ],\
@@ -2454,17 +2454,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["prettier-plugin-tailwindcss", [\
-        ["npm:0.5.3", {\
-          "packageLocation": "./.yarn/cache/prettier-plugin-tailwindcss-npm-0.5.3-d84701bb25-c20843d973.zip/node_modules/prettier-plugin-tailwindcss/",\
+        ["npm:0.5.4", {\
+          "packageLocation": "./.yarn/cache/prettier-plugin-tailwindcss-npm-0.5.4-79af96199a-b4380e03a9.zip/node_modules/prettier-plugin-tailwindcss/",\
           "packageDependencies": [\
-            ["prettier-plugin-tailwindcss", "npm:0.5.3"]\
+            ["prettier-plugin-tailwindcss", "npm:0.5.4"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:8bbb9d071908669133a39f10922ec1cc5c8d5317520412c63e72701e0b7e817f499d8343979a685e2ea72ba9ad2cc0b37eb8312b307af9ada87250315555bb8a#npm:0.5.3", {\
-          "packageLocation": "./.yarn/__virtual__/prettier-plugin-tailwindcss-virtual-fbd2291370/0/cache/prettier-plugin-tailwindcss-npm-0.5.3-d84701bb25-c20843d973.zip/node_modules/prettier-plugin-tailwindcss/",\
+        ["virtual:8bbb9d071908669133a39f10922ec1cc5c8d5317520412c63e72701e0b7e817f499d8343979a685e2ea72ba9ad2cc0b37eb8312b307af9ada87250315555bb8a#npm:0.5.4", {\
+          "packageLocation": "./.yarn/__virtual__/prettier-plugin-tailwindcss-virtual-093e38e622/0/cache/prettier-plugin-tailwindcss-npm-0.5.4-79af96199a-b4380e03a9.zip/node_modules/prettier-plugin-tailwindcss/",\
           "packageDependencies": [\
-            ["prettier-plugin-tailwindcss", "virtual:8bbb9d071908669133a39f10922ec1cc5c8d5317520412c63e72701e0b7e817f499d8343979a685e2ea72ba9ad2cc0b37eb8312b307af9ada87250315555bb8a#npm:0.5.3"],\
+            ["prettier-plugin-tailwindcss", "virtual:8bbb9d071908669133a39f10922ec1cc5c8d5317520412c63e72701e0b7e817f499d8343979a685e2ea72ba9ad2cc0b37eb8312b307af9ada87250315555bb8a#npm:0.5.4"],\
             ["@ianvs/prettier-plugin-sort-imports", null],\
             ["@prettier/plugin-pug", null],\
             ["@shopify/prettier-plugin-liquid", null],\
@@ -2486,7 +2486,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/shopify__prettier-plugin-liquid", null],\
             ["@types/shufo__prettier-plugin-blade", null],\
             ["@types/trivago__prettier-plugin-sort-imports", null],\
-            ["prettier", "npm:3.0.2"],\
+            ["prettier", "npm:3.0.3"],\
             ["prettier-plugin-astro", null],\
             ["prettier-plugin-css-order", null],\
             ["prettier-plugin-import-sort", null],\
@@ -2659,10 +2659,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["root-workspace-0b6124", "workspace:."],\
             ["@rainstormy/preset-prettier-base", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#workspace:packages/preset-prettier-base"],\
-            ["concurrently", "npm:8.2.0"],\
-            ["prettier", "npm:3.0.2"],\
-            ["simple-git-hooks", "npm:2.8.1"],\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+            ["concurrently", "npm:8.2.1"],\
+            ["prettier", "npm:3.0.3"],\
+            ["simple-git-hooks", "npm:2.9.0"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -2779,10 +2779,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["simple-git-hooks", [\
-        ["npm:2.8.1", {\
-          "packageLocation": "./.yarn/unplugged/simple-git-hooks-npm-2.8.1-284fd0e93b/node_modules/simple-git-hooks/",\
+        ["npm:2.9.0", {\
+          "packageLocation": "./.yarn/unplugged/simple-git-hooks-npm-2.9.0-4354a7c11a/node_modules/simple-git-hooks/",\
           "packageDependencies": [\
-            ["simple-git-hooks", "npm:2.8.1"]\
+            ["simple-git-hooks", "npm:2.9.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3090,10 +3090,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071", {\
-          "packageLocation": "./.yarn/cache/typescript-patch-bd21d74a9d-f53bfe97f7.zip/node_modules/typescript/",\
+        ["patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441", {\
+          "packageLocation": "./.yarn/cache/typescript-patch-2e8dbfb8ab-0f4da2f15e.zip/node_modules/typescript/",\
           "packageDependencies": [\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3213,27 +3213,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["vite-plugin-dts", [\
-        ["npm:3.5.2", {\
-          "packageLocation": "./.yarn/cache/vite-plugin-dts-npm-3.5.2-62b5809e86-528ccb8ea1.zip/node_modules/vite-plugin-dts/",\
+        ["npm:3.5.3", {\
+          "packageLocation": "./.yarn/cache/vite-plugin-dts-npm-3.5.3-31da6dbb47-cb4a997565.zip/node_modules/vite-plugin-dts/",\
           "packageDependencies": [\
-            ["vite-plugin-dts", "npm:3.5.2"]\
+            ["vite-plugin-dts", "npm:3.5.3"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:3.5.2", {\
-          "packageLocation": "./.yarn/__virtual__/vite-plugin-dts-virtual-c79989c677/0/cache/vite-plugin-dts-npm-3.5.2-62b5809e86-528ccb8ea1.zip/node_modules/vite-plugin-dts/",\
+        ["virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:3.5.3", {\
+          "packageLocation": "./.yarn/__virtual__/vite-plugin-dts-virtual-05df77b29c/0/cache/vite-plugin-dts-npm-3.5.3-31da6dbb47-cb4a997565.zip/node_modules/vite-plugin-dts/",\
           "packageDependencies": [\
-            ["vite-plugin-dts", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:3.5.2"],\
-            ["@microsoft/api-extractor", "npm:7.36.3"],\
-            ["@rollup/pluginutils", "virtual:c79989c6777d44ae8fba88674e4784dc28c5507cddfe1cd29311308b7fb83e6ce7ba6852d9a092fb8426aeec297463da5902abfd408c1a27edc3f460f1263535#npm:5.0.2"],\
+            ["vite-plugin-dts", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:3.5.3"],\
+            ["@microsoft/api-extractor", "npm:7.36.4"],\
+            ["@rollup/pluginutils", "virtual:05df77b29cf8eb7df7cdaef3aaaef59ebcd44988aff28d83c71ddeaf12f306bfec0398dc81fddda0097a78c529082ea0e1a44f15d5ccf52f31fbdf660ea1f4ea#npm:5.0.2"],\
             ["@types/typescript", null],\
             ["@types/vite", null],\
-            ["@vue/language-core", "virtual:c79989c6777d44ae8fba88674e4784dc28c5507cddfe1cd29311308b7fb83e6ce7ba6852d9a092fb8426aeec297463da5902abfd408c1a27edc3f460f1263535#npm:1.8.8"],\
+            ["@vue/language-core", "virtual:05df77b29cf8eb7df7cdaef3aaaef59ebcd44988aff28d83c71ddeaf12f306bfec0398dc81fddda0097a78c529082ea0e1a44f15d5ccf52f31fbdf660ea1f4ea#npm:1.8.8"],\
             ["debug", "virtual:ac3d8e680759ce54399273724d44e041d6c9b73454d191d411a8c44bb27e22f02aaf6ed9d3ad0ac1c298eac4833cff369c9c7b84c573016112c4f84be2cd8543#npm:4.3.4"],\
             ["kolorist", "npm:1.8.0"],\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["vite", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:4.4.9"],\
-            ["vue-tsc", "virtual:c79989c6777d44ae8fba88674e4784dc28c5507cddfe1cd29311308b7fb83e6ce7ba6852d9a092fb8426aeec297463da5902abfd408c1a27edc3f460f1263535#npm:1.8.8"]\
+            ["vue-tsc", "virtual:05df77b29cf8eb7df7cdaef3aaaef59ebcd44988aff28d83c71ddeaf12f306bfec0398dc81fddda0097a78c529082ea0e1a44f15d5ccf52f31fbdf660ea1f4ea#npm:1.8.8"]\
           ],\
           "packagePeers": [\
             "@types/typescript",\
@@ -3263,15 +3263,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:c79989c6777d44ae8fba88674e4784dc28c5507cddfe1cd29311308b7fb83e6ce7ba6852d9a092fb8426aeec297463da5902abfd408c1a27edc3f460f1263535#npm:1.8.8", {\
-          "packageLocation": "./.yarn/__virtual__/vue-tsc-virtual-f42275bf9f/0/cache/vue-tsc-npm-1.8.8-491bf2b1bd-e35e4ac139.zip/node_modules/vue-tsc/",\
+        ["virtual:05df77b29cf8eb7df7cdaef3aaaef59ebcd44988aff28d83c71ddeaf12f306bfec0398dc81fddda0097a78c529082ea0e1a44f15d5ccf52f31fbdf660ea1f4ea#npm:1.8.8", {\
+          "packageLocation": "./.yarn/__virtual__/vue-tsc-virtual-655481ebbe/0/cache/vue-tsc-npm-1.8.8-491bf2b1bd-e35e4ac139.zip/node_modules/vue-tsc/",\
           "packageDependencies": [\
-            ["vue-tsc", "virtual:c79989c6777d44ae8fba88674e4784dc28c5507cddfe1cd29311308b7fb83e6ce7ba6852d9a092fb8426aeec297463da5902abfd408c1a27edc3f460f1263535#npm:1.8.8"],\
+            ["vue-tsc", "virtual:05df77b29cf8eb7df7cdaef3aaaef59ebcd44988aff28d83c71ddeaf12f306bfec0398dc81fddda0097a78c529082ea0e1a44f15d5ccf52f31fbdf660ea1f4ea#npm:1.8.8"],\
             ["@types/typescript", null],\
-            ["@vue/language-core", "virtual:c79989c6777d44ae8fba88674e4784dc28c5507cddfe1cd29311308b7fb83e6ce7ba6852d9a092fb8426aeec297463da5902abfd408c1a27edc3f460f1263535#npm:1.8.8"],\
+            ["@vue/language-core", "virtual:05df77b29cf8eb7df7cdaef3aaaef59ebcd44988aff28d83c71ddeaf12f306bfec0398dc81fddda0097a78c529082ea0e1a44f15d5ccf52f31fbdf660ea1f4ea#npm:1.8.8"],\
             ["@vue/typescript", "npm:1.8.8"],\
             ["semver", "npm:7.5.4"],\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
           ],\
           "packagePeers": [\
             "@types/typescript",\

@@ -6,27 +6,27 @@
 		"packages/*"
 	],
 	"scripts": {
-		"setup": "yarn run setup.__install-dependencies__ && yarn run setup.__install-git-hooks__",
-		"setup.__install-dependencies__": "yarn install --immutable",
-		"setup.__install-git-hooks__": "simple-git-hooks",
-		"validate": "yarn run concurrently \"yarn:validate.types\" \"yarn:validate.format\" --group --names types,format --prefix-colors #3178c6,#c596c7",
-		"validate.format": "yarn run validate.format.__base__ --cache --check --log-level warn",
-		"validate.format.__base__": "prettier ./**/*.{cjs,css,html,js,json,jsx,mjs,ts,tsx,yaml,yml} .vscode --config ./prettier.config.js",
-		"validate.format.fix": "yarn run validate.format.__base__ --cache --list-different --write",
-		"validate.format.nocache": "yarn run validate.format.__base__ --check --log-level warn",
-		"validate.types": "tsc"
+		"build.dist": "yarn workspaces foreach --parallel run build.dist",
+		"build.pack": "yarn workspaces foreach --parallel run build.pack",
+		"setup": "yarn install && simple-git-hooks",
+		"validate": "concurrently 'yarn:validate.types' 'yarn:validate.format' --group --names 'types','format' --prefix-colors 'blue.bold','magenta.bold'",
+		"validate.format": "        prettier './.vscode/**/*.json' './packages/*/*.{json,ts}' './*.config.{js,ts}' './*.d.ts' './*.{json,yml}' --log-level warn --cache --check",
+		"validate.format.fix": "    prettier './.vscode/**/*.json' './packages/*/*.{json,ts}' './*.config.{js,ts}' './*.d.ts' './*.{json,yml}' --log-level warn --cache         --list-different --write",
+		"validate.format.nocache": "prettier './.vscode/**/*.json' './packages/*/*.{json,ts}' './*.config.{js,ts}' './*.d.ts' './*.{json,yml}' --log-level warn         --check",
+		"validate.types": "        tsc --incremental --tsBuildInfoFile './node_modules/.cache/typescript/.tsbuildinfo'",
+		"validate.types.nocache": "tsc"
 	},
 	"simple-git-hooks": {
-		"pre-commit": "yarn run validate"
+		"pre-commit": "yarn run concurrently 'yarn:validate.types' 'yarn:validate.format' --group --names 'types','format' --prefix-colors 'blue.bold','magenta.bold'"
 	},
 	"devDependencies": {
 		"@rainstormy/preset-prettier-base": "workspace:*",
-		"concurrently": "8.2.0",
-		"prettier": "3.0.2",
-		"simple-git-hooks": "2.8.1",
-		"typescript": "5.1.6"
+		"concurrently": "8.2.1",
+		"prettier": "3.0.3",
+		"simple-git-hooks": "2.9.0",
+		"typescript": "5.2.2"
 	},
-	"packageManager": "yarn@3.6.1",
+	"packageManager": "yarn@3.6.3",
 	"//": {
 		"devDependencies": {
 			"@rainstormy/preset-prettier-base": "A predefined Prettier configuration for web projects.",
