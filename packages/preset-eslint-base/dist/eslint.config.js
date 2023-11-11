@@ -716,7 +716,7 @@ function base(options) {
       /**
        * @see https://eslint.org/docs/latest/rules/no-object-constructor
        */
-      "no-object-constructor ": "error",
+      "no-object-constructor": "error",
       /**
        * @see https://eslint.org/docs/latest/rules/no-octal
        */
