@@ -22,6 +22,10 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:packages/preset-eslint-jsx"\
     },\
     {\
+      "name": "@rainstormy/preset-eslint-next",\
+      "reference": "workspace:packages/preset-eslint-next"\
+    },\
+    {\
       "name": "@rainstormy/preset-eslint-preact",\
       "reference": "workspace:packages/preset-eslint-preact"\
     },\
@@ -55,6 +59,7 @@ const RAW_RUNTIME_STATE =
   "fallbackExclusionList": [\
     ["@rainstormy/preset-eslint-base", ["virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#workspace:packages/preset-eslint-base", "workspace:packages/preset-eslint-base"]],\
     ["@rainstormy/preset-eslint-jsx", ["virtual:08fa99100b8b05fd6a9fdaa0706c5250c6ad1f53b6f5f0c55a91d95c25c5f045d115b1c533f0cfdee31fb1f6a75f36d309fd593ad41fc370f8d3ba0871c8c348#workspace:packages/preset-eslint-jsx", "workspace:packages/preset-eslint-jsx"]],\
+    ["@rainstormy/preset-eslint-next", ["workspace:packages/preset-eslint-next"]],\
     ["@rainstormy/preset-eslint-preact", ["workspace:packages/preset-eslint-preact"]],\
     ["@rainstormy/preset-eslint-react", ["virtual:08fa99100b8b05fd6a9fdaa0706c5250c6ad1f53b6f5f0c55a91d95c25c5f045d115b1c533f0cfdee31fb1f6a75f36d309fd593ad41fc370f8d3ba0871c8c348#workspace:packages/preset-eslint-react", "workspace:packages/preset-eslint-react"]],\
     ["@rainstormy/preset-eslint-solid", ["workspace:packages/preset-eslint-solid"]],\
@@ -558,6 +563,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@next/eslint-plugin-next", [\
+      ["npm:14.0.3", {\
+        "packageLocation": "./.yarn/cache/@next-eslint-plugin-next-npm-14.0.3-405edabf72-95f99c07d5.zip/node_modules/@next/eslint-plugin-next/",\
+        "packageDependencies": [\
+          ["@next/eslint-plugin-next", "npm:14.0.3"],\
+          ["glob", "npm:7.1.7"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@nodelib/fs.scandir", [\
       ["npm:2.1.5", {\
         "packageLocation": "./.yarn/cache/@nodelib-fs.scandir-npm-2.1.5-89c67370dd-6ab2a9b8a1.zip/node_modules/@nodelib/fs.scandir/",\
@@ -692,6 +707,20 @@ const RAW_RUNTIME_STATE =
           ["@types/eslint", "npm:8.44.7"],\
           ["eslint-plugin-jsx-a11y", "virtual:4b219d554cf67b1a3e41c5027e5eb25982860c34da57783450e2d235562898b154ce75486385a93d903caa382e4f305b43b26ef1925ddd2a48bd23ba04fbbd84#npm:6.8.0"],\
           ["eslint-plugin-react", "virtual:4b219d554cf67b1a3e41c5027e5eb25982860c34da57783450e2d235562898b154ce75486385a93d903caa382e4f305b43b26ef1925ddd2a48bd23ba04fbbd84#npm:7.33.2"],\
+          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
+          ["vite", "virtual:896b4e730dffaf8a48b871b28c4f514b7864f0c1e1c3251840cba3f868ba738bded5328a7ba31737285f88ea5243771403ff3b99d7c5fafd5190d94b860ccde6#npm:4.5.0"],\
+          ["vite-plugin-dts", "virtual:896b4e730dffaf8a48b871b28c4f514b7864f0c1e1c3251840cba3f868ba738bded5328a7ba31737285f88ea5243771403ff3b99d7c5fafd5190d94b860ccde6#npm:3.6.3"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@rainstormy/preset-eslint-next", [\
+      ["workspace:packages/preset-eslint-next", {\
+        "packageLocation": "./packages/preset-eslint-next/",\
+        "packageDependencies": [\
+          ["@rainstormy/preset-eslint-next", "workspace:packages/preset-eslint-next"],\
+          ["@next/eslint-plugin-next", "npm:14.0.3"],\
+          ["@types/eslint", "npm:8.44.7"],\
           ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
           ["vite", "virtual:896b4e730dffaf8a48b871b28c4f514b7864f0c1e1c3251840cba3f868ba738bded5328a7ba31737285f88ea5243771403ff3b99d7c5fafd5190d94b860ccde6#npm:4.5.0"],\
           ["vite-plugin-dts", "virtual:896b4e730dffaf8a48b871b28c4f514b7864f0c1e1c3251840cba3f868ba738bded5328a7ba31737285f88ea5243771403ff3b99d7c5fafd5190d94b860ccde6#npm:3.6.3"]\
@@ -3281,6 +3310,19 @@ const RAW_RUNTIME_STATE =
           ["minimatch", "npm:9.0.3"],\
           ["minipass", "npm:7.0.2"],\
           ["path-scurry", "npm:1.10.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:7.1.7", {\
+        "packageLocation": "./.yarn/cache/glob-npm-7.1.7-5698ad9c48-ff5aab0386.zip/node_modules/glob/",\
+        "packageDependencies": [\
+          ["glob", "npm:7.1.7"],\
+          ["fs.realpath", "npm:1.0.0"],\
+          ["inflight", "npm:1.0.6"],\
+          ["inherits", "npm:2.0.4"],\
+          ["minimatch", "npm:3.1.2"],\
+          ["once", "npm:1.4.0"],\
+          ["path-is-absolute", "npm:1.0.1"]\
         ],\
         "linkType": "HARD"\
       }],\

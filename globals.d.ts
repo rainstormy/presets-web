@@ -6,6 +6,10 @@ const eslintParser: EslintParser = {}
 const eslintPlugin: EslintPlugin = {}
 const prettierPlugin: PrettierPlugin = {}
 
+declare module "@next/eslint-plugin-next" {
+	export = eslintPlugin
+}
+
 declare module "@typescript-eslint/parser" {
 	export = eslintParser
 }

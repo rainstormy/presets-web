@@ -58,6 +58,33 @@ export default [
 ----
 ====
 
+[[eslint_next]]
+=== Configuration for https://nextjs.org/[Next.js]
+
+. Follow the instructions in <<eslint_basic>>.
+. Install the `@rainstormy/preset-eslint-next` package:
++
+[source,shell]
+----
+$ npm install --save-dev @rainstormy/preset-eslint-next
+----
+
+. Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets JSX component files:
++
+[source,javascript]
+----
+// eslint.config.js
+
+import { next } from "@rainstormy/preset-eslint-next"
+
+export default [
+	// base({ ... }) etc.
+	next({
+		files: ["**/*.+(jsx|tsx)"],
+	}),
+]
+----
+
 [[eslint_preact]]
 === Configuration for https://preactjs.com[Preact]
 
