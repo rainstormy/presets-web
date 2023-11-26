@@ -32,7 +32,7 @@
 		"simple-git-hooks": "2.9.0",
 		"typescript": "5.2.2"
 	},
-	"packageManager": "yarn@4.0.1",
+	"packageManager": "yarn@4.0.2",
 	"//": {
 		"scripts": {
 			"validate.fix": "The formatter must run after the linter to resolve potential formatting issues introduced by the linter."
