@@ -264,6 +264,12 @@ function vitest(options) {
        */
       "vitest/require-top-level-describe": "error",
       /**
+       * `functional/no-this-expressions` supersedes this rule.
+       * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/unbound-method.md
+       * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
+       */
+      "vitest/unbound-method": "off",
+      /**
        * Vitest supports async callbacks in `describe()` blocks.
        * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/valid-describe-callback.md
        * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/valid-describe-callback.md

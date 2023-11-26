@@ -1823,6 +1823,10 @@ function base(options) {
        */
       "typescript/no-unsafe-return": "off",
       /**
+       * @see https://typescript-eslint.io/rules/no-unsafe-unary-minus
+       */
+      "typescript/no-unsafe-unary-minus": "error",
+      /**
        * @see https://typescript-eslint.io/rules/no-unused-expressions
        */
       "typescript/no-unused-expressions": "error",
