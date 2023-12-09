@@ -13,8 +13,8 @@
 		"build.pack": "yarn pack --out %s-%v.tgz"
 	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "6.12.0",
-		"@typescript-eslint/parser": "6.12.0",
+		"@typescript-eslint/eslint-plugin": "6.13.2",
+		"@typescript-eslint/parser": "6.13.2",
 		"eslint-import-resolver-typescript": "3.6.1",
 		"eslint-plugin-eslint-comments": "3.2.0",
 		"eslint-plugin-functional": "6.0.0",
@@ -23,10 +23,10 @@
 		"eslint-plugin-unicorn": "49.0.0"
 	},
 	"devDependencies": {
-		"@types/eslint": "8.44.7",
-		"typescript": "5.3.2",
-		"vite": "5.0.2",
-		"vite-plugin-dts": "3.6.3"
+		"@types/eslint": "8.44.8",
+		"typescript": "5.3.3",
+		"vite": "5.0.7",
+		"vite-plugin-dts": "3.6.4"
 	},
 	"peerDependencies": {
 		"eslint": "8.x",
