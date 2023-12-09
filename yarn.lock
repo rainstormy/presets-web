@@ -440,6 +440,7 @@ __metadata:
     eslint-plugin-eslint-comments: "npm:3.2.0"
     eslint-plugin-functional: "npm:6.0.0"
     eslint-plugin-import: "npm:eslint-plugin-i@2.29.0"
+    eslint-plugin-no-barrel-files: "npm:1.1.0"
     eslint-plugin-redundant-undefined: "npm:1.0.0"
     eslint-plugin-unicorn: "npm:49.0.0"
     typescript: "npm:5.3.3"
@@ -875,7 +876,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:6.13.2, @typescript-eslint/utils@npm:^6.13.2, @typescript-eslint/utils@npm:^6.2.0, @typescript-eslint/utils@npm:^6.2.1, @typescript-eslint/utils@npm:^6.4.0":
+"@typescript-eslint/utils@npm:6.13.2, @typescript-eslint/utils@npm:^6.13.2, @typescript-eslint/utils@npm:^6.2.0, @typescript-eslint/utils@npm:^6.2.1, @typescript-eslint/utils@npm:^6.4.0, @typescript-eslint/utils@npm:^6.4.1":
   version: 6.13.2
   resolution: "@typescript-eslint/utils@npm:6.13.2"
   dependencies:
@@ -2076,6 +2077,15 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
   checksum: 7a8e4498531a43d988ce2f12502a3f5ce96eacfec13f956cf927f24bb041b724fb7fc0f0306ea19d143bfc79e138bf25e25acca0822847206ac6bf5ce095e846
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-no-barrel-files@npm:1.1.0":
+  version: 1.1.0
+  resolution: "eslint-plugin-no-barrel-files@npm:1.1.0"
+  dependencies:
+    "@typescript-eslint/utils": "npm:^6.4.1"
+  checksum: f8a71fbe38e7af91a078d235b5c52d9eb06f5c0658af24714a684e3c66b60fe37f34ae984c3f23adb0916fd3271730fa149bc18ff528ec73f8bd4c3cfb55b3a1
   languageName: node
   linkType: hard
 

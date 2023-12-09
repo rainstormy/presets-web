@@ -4,6 +4,7 @@ import "eslint";
 import eslintCommentsPlugin from "eslint-plugin-eslint-comments";
 import functionalPlugin from "eslint-plugin-functional";
 import importPlugin from "eslint-plugin-import";
+import noBarrelFilesPlugin from "eslint-plugin-no-barrel-files";
 import redundantUndefinedPlugin from "eslint-plugin-redundant-undefined";
 import unicornPlugin from "eslint-plugin-unicorn";
 function base(options) {
@@ -20,6 +21,7 @@ function base(options) {
       "eslint-comments": eslintCommentsPlugin,
       functional: functionalPlugin,
       import: importPlugin,
+      "no-barrel-files": noBarrelFilesPlugin,
       "redundant-undefined": redundantUndefinedPlugin,
       typescript: typescriptPlugin,
       unicorn: unicornPlugin
@@ -29,6 +31,7 @@ function base(options) {
      * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules eslint-comments
      * @see https://github.com/eslint-functional/eslint-plugin-functional#supported-rules functional
      * @see https://github.com/import-js/eslint-plugin-import#rules import
+     * @see https://github.com/art0rz/eslint-plugin-no-barrel-files#rules no-barrel-files
      * @see https://github.com/a-tarasyuk/eslint-plugin-redundant-undefined#usage redundant-undefined
      * @see https://typescript-eslint.io/rules typescript
      * @see https://github.com/sindresorhus/eslint-plugin-unicorn#rules unicorn
@@ -1600,6 +1603,10 @@ function base(options) {
        * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/unambiguous.md
        */
       "import/unambiguous": "error",
+      /**
+       * @see https://github.com/art0rz/eslint-plugin-no-barrel-files#rules
+       */
+      "no-barrel-files/no-barrel-files": "error",
       /**
        * @see https://github.com/a-tarasyuk/eslint-plugin-redundant-undefined#usage
        */

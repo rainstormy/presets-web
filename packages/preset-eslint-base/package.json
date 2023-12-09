@@ -19,6 +19,7 @@
 		"eslint-plugin-eslint-comments": "3.2.0",
 		"eslint-plugin-functional": "6.0.0",
 		"eslint-plugin-import": "npm:eslint-plugin-i@2.29.0",
+		"eslint-plugin-no-barrel-files": "1.1.0",
 		"eslint-plugin-redundant-undefined": "1.0.0",
 		"eslint-plugin-unicorn": "49.0.0"
 	},
@@ -40,6 +41,7 @@
 			"eslint-plugin-eslint-comments": "An ESLint plugin that covers the use of ESLint comments.",
 			"eslint-plugin-functional": "An ESLint plugin that encourages principles from the functional programming paradigm.",
 			"eslint-plugin-import": "An ESLint plugin that covers import statements and export declarations.",
+			"eslint-plugin-no-barrel-files": "An ESLint plugin that forbids the use of barrel files.",
 			"eslint-plugin-redundant-undefined": "An ESLint plugin that covers the redundant use of undefined in optional type declarations.",
 			"eslint-plugin-unicorn": "An ESLint plugin that complements the built-in set of rules."
 		},

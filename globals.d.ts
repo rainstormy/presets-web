@@ -34,6 +34,10 @@ declare module "eslint-plugin-jsx-a11y" {
 	export = eslintPlugin
 }
 
+declare module "eslint-plugin-no-barrel-files" {
+	export = eslintPlugin
+}
+
 declare module "eslint-plugin-qwik" {
 	export = eslintPlugin
 }
