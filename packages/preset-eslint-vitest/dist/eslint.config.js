@@ -29,6 +29,16 @@ function vitest(options) {
      */
     rules: {
       /**
+       * It is impractical to limit the size of a unit test file.
+       * @see https://eslint.org/docs/latest/rules/max-lines
+       */
+      "max-lines": "off",
+      /**
+       * It is impractical to limit the size of a unit test case.
+       * @see https://eslint.org/docs/latest/rules/max-lines-per-function
+       */
+      "max-lines-per-function": "off",
+      /**
        * The `each()` function in Vitest uses consecutive whitespace characters in template strings to align test input.
        * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/string-content.md
        */

@@ -2781,6 +2781,16 @@ function testData(options) {
     files: [...options.files],
     rules: {
       /**
+       * Test data may contain a large number of declarations.
+       * @see https://eslint.org/docs/latest/rules/max-lines
+       */
+      "max-lines": "off",
+      /**
+       * Test data may include functions with large objects literals.
+       * @see https://eslint.org/docs/latest/rules/max-lines-per-function
+       */
+      "max-lines-per-function": "off",
+      /**
        * Test data may contain magic numbers.
        * @see https://typescript-eslint.io/rules/no-magic-numbers
        */
