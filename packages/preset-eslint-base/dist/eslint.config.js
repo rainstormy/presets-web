@@ -874,9 +874,10 @@ function base(options) {
        */
       "no-undef-init": "off",
       /**
+       * `no-global-assign` and `no-shadow-restricted-names` supersede this rule.
        * @see https://eslint.org/docs/latest/rules/no-undefined
        */
-      "no-undefined": "error",
+      "no-undefined": "off",
       /**
        * `typescript/naming-convention` supersedes this rule.
        * @see https://eslint.org/docs/latest/rules/no-underscore-dangle
