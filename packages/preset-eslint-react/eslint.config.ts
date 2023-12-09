@@ -1,5 +1,5 @@
 import { jsx } from "@rainstormy/preset-eslint-jsx"
-import type { Linter } from "eslint"
+import { type Linter } from "eslint"
 import reactHooksPlugin from "eslint-plugin-react-hooks"
 
 /* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */

@@ -1,7 +1,9 @@
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
+import "eslint";
 import eslintCommentsPlugin from "eslint-plugin-eslint-comments";
 import functionalPlugin from "eslint-plugin-functional";
+import importPlugin from "eslint-plugin-import";
 import unicornPlugin from "eslint-plugin-unicorn";
 function base(options) {
   return {
@@ -16,6 +18,7 @@ function base(options) {
     plugins: {
       "eslint-comments": eslintCommentsPlugin,
       functional: functionalPlugin,
+      import: importPlugin,
       typescript: typescriptPlugin,
       unicorn: unicornPlugin
     },
@@ -23,6 +26,7 @@ function base(options) {
      * @see https://eslint.org/docs/latest/rules eslint
      * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules eslint-comments
      * @see https://github.com/eslint-functional/eslint-plugin-functional#supported-rules functional
+     * @see https://github.com/import-js/eslint-plugin-import#rules import
      * @see https://typescript-eslint.io/rules typescript
      * @see https://github.com/sindresorhus/eslint-plugin-unicorn#rules unicorn
      */
@@ -1389,6 +1393,211 @@ function base(options) {
        */
       "functional/type-declaration-immutability": "off",
       /**
+       * Inline type modifiers are less verbose than separate type import statements.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/consistent-type-specifier-style.md
+       */
+      "import/consistent-type-specifier-style": ["error", "prefer-inline"],
+      /**
+       * TypeScript supersedes this rule.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/default.md
+       */
+      "import/default": "off",
+      /**
+       * This rule is only useful in webpack projects.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/dynamic-import-chunkname.md
+       */
+      "import/dynamic-import-chunkname": "off",
+      /**
+       * TypeScript supersedes this rule.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/export.md
+       */
+      "import/export": "off",
+      /**
+       * Separation of exported and non-exported declarations hurts coherence, as related declarations cannot necessarily be located next to each other.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/exports-last.md
+       */
+      "import/exports-last": "off",
+      /**
+       * TypeScript supersedes this rule.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/extensions.md
+       */
+      "import/extensions": "off",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/first.md
+       */
+      "import/first": "error",
+      /**
+       * Inline export declarations are less verbose than a separate export declaration.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/group-exports.md
+       */
+      "import/group-exports": "off",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/max-dependencies.md
+       */
+      "import/max-dependencies": "error",
+      /**
+       * TypeScript supersedes this rule.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/named.md
+       */
+      "import/named": "off",
+      /**
+       * TypeScript supersedes this rule.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/namespace.md
+       */
+      "import/namespace": "off",
+      /**
+       * Prettier supersedes this rule.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/newline-after-import.md
+       */
+      "import/newline-after-import": "off",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-absolute-path.md
+       */
+      "import/no-absolute-path": "error",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-amd.md
+       */
+      "import/no-amd": "error",
+      /**
+       * Anonymous default exports are less verbose than extracting intermediate variables for naming. Even with explicitly named variables, IntelliSense may have a hard time renaming it at its import sites.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-anonymous-default-export.md
+       */
+      "import/no-anonymous-default-export": "off",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-commonjs.md
+       */
+      "import/no-commonjs": "error",
+      /**
+       * This rule requires the `import/parsers` setting to be specified, but it is incompatible with flat ESLint configs: https://github.com/import-js/eslint-plugin-import/issues/2556
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-cycle.md
+       */
+      "import/no-cycle": "off",
+      /**
+       * Default exports are sometimes inevitable when interoperating with third-party libraries and frameworks.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-default-export.md
+       */
+      "import/no-default-export": "off",
+      /**
+       * This rule has poor performance.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-deprecated.md
+       */
+      "import/no-deprecated": "off",
+      /**
+       * `prettier-plugin-organize-imports` supersedes this rule.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-duplicates.md
+       */
+      "import/no-duplicates": "off",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-dynamic-require.md
+       */
+      "import/no-dynamic-require": "error",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-empty-named-blocks.md
+       */
+      "import/no-empty-named-blocks": "error",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-extraneous-dependencies.md
+       */
+      "import/no-extraneous-dependencies": "error",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-import-module-exports.md
+       */
+      "import/no-import-module-exports": "error",
+      /**
+       * This rule has not been configured.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-internal-modules.md
+       */
+      "import/no-internal-modules": "off",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-mutable-exports.md
+       */
+      "import/no-mutable-exports": "error",
+      /**
+       * This rule requires the `import/parsers` setting to be specified, but it is incompatible with flat ESLint configs: https://github.com/import-js/eslint-plugin-import/issues/2556
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-named-as-default.md
+       */
+      "import/no-named-as-default": "off",
+      /**
+       * This rule requires the `import/parsers` setting to be specified, but it is incompatible with flat ESLint configs: https://github.com/import-js/eslint-plugin-import/issues/2556
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-named-as-default-member.md
+       */
+      "import/no-named-as-default-member": "off",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-named-default.md
+       */
+      "import/no-named-default": "error",
+      /**
+       * Named exports provide better IntelliSense than default exports and are easier to rename and tree-shake.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-named-export.md
+       */
+      "import/no-named-export": "off",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-namespace.md
+       */
+      "import/no-namespace": "error",
+      /**
+       * Server-side code may use Node.js modules. We count on the bundler to discover issues with client-side code importing Node.js modules.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-nodejs-modules.md
+       */
+      "import/no-nodejs-modules": "off",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-relative-packages.md
+       */
+      "import/no-relative-packages": "error",
+      /**
+       * `import/no-relative-packages` supersedes this rule.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-relative-parent-imports.md
+       */
+      "import/no-relative-parent-imports": "off",
+      /**
+       * This rule has not been configured.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-restricted-paths.md
+       */
+      "import/no-restricted-paths": "off",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-self-import.md
+       */
+      "import/no-self-import": "error",
+      /**
+       * Imports with side effects are sometimes inevitable when interoperating with third-party libraries and APIs.
+       * Examples include CSS imports, client-only/server-only poison pills, polyfills, and extensions to assertion matchers in testing frameworks.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unassigned-import.md
+       */
+      "import/no-unassigned-import": "off",
+      /**
+       * TypeScript supersedes this rule.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unresolved.md
+       */
+      "import/no-unresolved": "off",
+      /**
+       * This rule seems to be broken in some cases.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unused-modules.md
+       */
+      "import/no-unused-modules": "off",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-useless-path-segments.md
+       */
+      "import/no-useless-path-segments": "error",
+      /**
+       * While this rule is mostly useful in webpack projects, it may catch issues with code snippets borrowed from the Internet.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-webpack-loader-syntax.md
+       */
+      "import/no-webpack-loader-syntax": "error",
+      /**
+       * `prettier-plugin-organize-imports` supersedes this rule.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
+       */
+      "import/order": "off",
+      /**
+       * Named exports provide better IntelliSense than default exports and are easier to rename and tree-shake.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/prefer-default-export.md
+       */
+      "import/prefer-default-export": "off",
+      /**
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/unambiguous.md
+       */
+      "import/unambiguous": "error",
+      /**
        * `typescript/unified-signatures` supersedes this rule.
        * @see https://typescript-eslint.io/rules/adjacent-overload-signatures
        */
@@ -1475,9 +1684,15 @@ function base(options) {
        */
       "typescript/consistent-type-exports": "error",
       /**
+       * Inline type modifiers are less verbose than separate type import statements.
        * @see https://typescript-eslint.io/rules/consistent-type-imports
        */
-      "typescript/consistent-type-imports": "error",
+      "typescript/consistent-type-imports": [
+        "error",
+        {
+          fixStyle: "inline-type-imports"
+        }
+      ],
       /**
        * @see https://typescript-eslint.io/rules/default-param-last
        */
@@ -2534,6 +2749,11 @@ function ambientTypeScriptModules(options) {
   return {
     files: [...options.files],
     rules: {
+      /**
+       * Ambient modules may consist solely of ambient type declarations without using any import statements or export declarations.
+       * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/unambiguous.md
+       */
+      "import/unambiguous": "off",
       /**
        * Only dynamic imports will work in ambient modules.
        * @see https://typescript-eslint.io/rules/consistent-type-imports

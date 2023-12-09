@@ -1,3 +1,4 @@
+import "prettier";
 import organizeImportsPlugin from "prettier-plugin-organize-imports";
 import packageJsonPlugin from "prettier-plugin-packagejson";
 function base() {

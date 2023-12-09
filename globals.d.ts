@@ -26,6 +26,10 @@ declare module "eslint-plugin-functional" {
 	export = eslintPlugin
 }
 
+declare module "eslint-plugin-import" {
+	export = eslintPlugin
+}
+
 declare module "eslint-plugin-jsx-a11y" {
 	export = eslintPlugin
 }

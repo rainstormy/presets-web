@@ -1,5 +1,6 @@
 import { jsx } from "@rainstormy/preset-eslint-jsx";
 import { react } from "@rainstormy/preset-eslint-react";
+import "eslint";
 function preact(options) {
   var _a;
   const reactPreset = react(options);

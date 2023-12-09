@@ -1,3 +1,4 @@
+import "prettier";
 import { options, parsers, printers } from "prettier-plugin-tailwindcss";
 function tailwind() {
   return {

@@ -1,4 +1,4 @@
-import type { Config } from "prettier"
+import { type Config } from "prettier"
 import { options, parsers, printers } from "prettier-plugin-tailwindcss"
 
 export function tailwind(): Config {

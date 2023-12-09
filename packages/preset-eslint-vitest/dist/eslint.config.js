@@ -1,3 +1,4 @@
+import "eslint";
 import vitestPlugin from "eslint-plugin-vitest";
 function vitest(options) {
   return {

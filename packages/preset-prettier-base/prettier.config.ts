@@ -1,4 +1,4 @@
-import type { Config } from "prettier"
+import { type Config } from "prettier"
 import organizeImportsPlugin from "prettier-plugin-organize-imports"
 import packageJsonPlugin from "prettier-plugin-packagejson"
 

@@ -1,4 +1,5 @@
 import { jsx } from "@rainstormy/preset-eslint-jsx";
+import "eslint";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 function react(options) {
   const jsxPreset = jsx(options);

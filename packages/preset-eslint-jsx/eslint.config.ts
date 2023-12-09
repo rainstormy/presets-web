@@ -1,4 +1,4 @@
-import type { Linter } from "eslint"
+import { type Linter } from "eslint"
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y"
 import reactPlugin from "eslint-plugin-react"
 

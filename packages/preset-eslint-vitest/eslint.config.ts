@@ -1,4 +1,4 @@
-import type { Linter } from "eslint"
+import { type Linter } from "eslint"
 import vitestPlugin from "eslint-plugin-vitest"
 
 /* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */

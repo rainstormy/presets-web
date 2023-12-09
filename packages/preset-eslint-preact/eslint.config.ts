@@ -1,6 +1,6 @@
 import { jsx } from "@rainstormy/preset-eslint-jsx"
 import { react } from "@rainstormy/preset-eslint-react"
-import type { Linter } from "eslint"
+import { type Linter } from "eslint"
 
 export function preact(options: {
 	readonly files: ReadonlyArray<string>

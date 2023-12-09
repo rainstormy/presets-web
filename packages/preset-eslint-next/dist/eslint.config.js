@@ -1,4 +1,5 @@
 import nextPlugin from "@next/eslint-plugin-next";
+import "eslint";
 function next(options) {
   return {
     files: [...options.files],

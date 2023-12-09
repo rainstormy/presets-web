@@ -16,6 +16,7 @@ export default defineConfig(() => ({
 				"eslint",
 				"eslint-plugin-eslint-comments",
 				"eslint-plugin-functional",
+				"eslint-plugin-import",
 				"eslint-plugin-unicorn",
 			],
 		},

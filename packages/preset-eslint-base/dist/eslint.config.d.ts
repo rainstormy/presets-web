@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import { type Linter } from "eslint";
 export declare function base(options: {
     readonly files: ReadonlyArray<string>;
     readonly tsconfig?: ReadonlyArray<string> | string;

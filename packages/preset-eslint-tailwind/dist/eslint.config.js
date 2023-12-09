@@ -1,3 +1,4 @@
+import "eslint";
 import tailwindPlugin from "eslint-plugin-tailwindcss";
 function tailwind(options) {
   return {
