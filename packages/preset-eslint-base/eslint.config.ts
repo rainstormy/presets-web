@@ -4,6 +4,7 @@ import { type Linter } from "eslint"
 import eslintCommentsPlugin from "eslint-plugin-eslint-comments"
 import functionalPlugin from "eslint-plugin-functional"
 import importPlugin from "eslint-plugin-import"
+import redundantUndefinedPlugin from "eslint-plugin-redundant-undefined"
 import unicornPlugin from "eslint-plugin-unicorn"
 
 /* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */
@@ -24,6 +25,7 @@ export function base(options: {
 			"eslint-comments": eslintCommentsPlugin,
 			functional: functionalPlugin,
 			import: importPlugin,
+			"redundant-undefined": redundantUndefinedPlugin,
 			typescript: typescriptPlugin,
 			unicorn: unicornPlugin,
 		},
@@ -32,6 +34,7 @@ export function base(options: {
 		 * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules eslint-comments
 		 * @see https://github.com/eslint-functional/eslint-plugin-functional#supported-rules functional
 		 * @see https://github.com/import-js/eslint-plugin-import#rules import
+		 * @see https://github.com/a-tarasyuk/eslint-plugin-redundant-undefined#usage redundant-undefined
 		 * @see https://typescript-eslint.io/rules typescript
 		 * @see https://github.com/sindresorhus/eslint-plugin-unicorn#rules unicorn
 		 */
@@ -1939,6 +1942,11 @@ export function base(options: {
 			 * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/unambiguous.md
 			 */
 			"import/unambiguous": "error",
+
+			/**
+			 * @see https://github.com/a-tarasyuk/eslint-plugin-redundant-undefined#usage
+			 */
+			"redundant-undefined/redundant-undefined": "error",
 
 			/**
 			 * `typescript/unified-signatures` supersedes this rule.

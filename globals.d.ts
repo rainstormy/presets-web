@@ -46,6 +46,10 @@ declare module "eslint-plugin-react-hooks" {
 	export = eslintPlugin
 }
 
+declare module "eslint-plugin-redundant-undefined" {
+	export = eslintPlugin
+}
+
 declare module "eslint-plugin-solid" {
 	export = eslintPlugin
 }
