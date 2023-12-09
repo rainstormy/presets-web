@@ -29,6 +29,11 @@ function vitest(options) {
      */
     rules: {
       /**
+       * Unit tests must be as simple as possible.
+       * @see https://eslint.org/docs/latest/rules/complexity
+       */
+      complexity: ["error", { max: 2 }],
+      /**
        * It is impractical to limit the size of a unit test file.
        * @see https://eslint.org/docs/latest/rules/max-lines
        */
@@ -80,12 +85,12 @@ function vitest(options) {
       "vitest/no-commented-out-tests": "error",
       /**
        * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-conditional-expect.md
-       * @see @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/no-conditional-expect.md
+       * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/no-conditional-expect.md
        */
       "vitest/no-conditional-expect": "error",
       /**
        * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-conditional-in-test.md
-       * @see @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/no-conditional-in-test.md
+       * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/no-conditional-in-test.md
        */
       "vitest/no-conditional-in-test": "error",
       /**
