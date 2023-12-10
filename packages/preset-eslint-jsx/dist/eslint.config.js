@@ -14,6 +14,11 @@ function jsx(options) {
      */
     rules: {
       /**
+       * Components may have render props and event handler props.
+       * @see https://github.com/eslint-functional/eslint-plugin-functional/blob/main/docs/rules/no-mixed-types.md
+       */
+      "functional/no-mixed-types": "off",
+      /**
        * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/alt-text.md
        */
       "jsx-a11y/alt-text": "error",
