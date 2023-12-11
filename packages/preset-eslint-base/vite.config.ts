@@ -11,6 +11,7 @@ export default defineConfig(() => ({
 		minify: false,
 		rollupOptions: {
 			external: [
+				"@limegrass/eslint-plugin-import-alias",
 				"@typescript-eslint/eslint-plugin",
 				"@typescript-eslint/parser",
 				"eslint",

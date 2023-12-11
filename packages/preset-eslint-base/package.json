@@ -13,6 +13,7 @@
 		"build.pack": "yarn pack --out %s-%v.tgz"
 	},
 	"dependencies": {
+		"@limegrass/eslint-plugin-import-alias": "1.1.0",
 		"@typescript-eslint/eslint-plugin": "6.13.2",
 		"@typescript-eslint/parser": "6.13.2",
 		"eslint-import-resolver-typescript": "3.6.1",
@@ -35,6 +36,7 @@
 	},
 	"//": {
 		"dependencies": {
+			"@limegrass/eslint-plugin-import-alias": "An ESLint plugin that encourages the use of path aliases in import statements.",
 			"@typescript-eslint/eslint-plugin": "An ESLint plugin that covers TypeScript code. It must always match the version of `@typescript-eslint/parser`.",
 			"@typescript-eslint/parser": "An ESLint parser for TypeScript code. It must always match the version of `@typescript-eslint/eslint-plugin`.",
 			"eslint-import-resolver-typescript": "An ESLint plugin that adds TypeScript and path alias support to `eslint-plugin-import`.",

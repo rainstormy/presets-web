@@ -1,3 +1,4 @@
+import importAliasPlugin from "@limegrass/eslint-plugin-import-alias"
 import typescriptPlugin from "@typescript-eslint/eslint-plugin"
 import typescriptParser from "@typescript-eslint/parser"
 import { type Linter } from "eslint"
@@ -26,6 +27,7 @@ export function base(options: {
 			"eslint-comments": eslintCommentsPlugin,
 			functional: functionalPlugin,
 			import: importPlugin,
+			"import-alias": importAliasPlugin,
 			"no-barrel-files": noBarrelFilesPlugin,
 			"redundant-undefined": redundantUndefinedPlugin,
 			typescript: typescriptPlugin,
@@ -36,6 +38,7 @@ export function base(options: {
 		 * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules eslint-comments
 		 * @see https://github.com/eslint-functional/eslint-plugin-functional#supported-rules functional
 		 * @see https://github.com/import-js/eslint-plugin-import#rules import
+		 * @see https://github.com/Limegrass/eslint-plugin-import-alias#configuration import-alias
 		 * @see https://github.com/art0rz/eslint-plugin-no-barrel-files#rules no-barrel-files
 		 * @see https://github.com/a-tarasyuk/eslint-plugin-redundant-undefined#usage redundant-undefined
 		 * @see https://typescript-eslint.io/rules typescript
@@ -1946,6 +1949,11 @@ export function base(options: {
 			 * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/unambiguous.md
 			 */
 			"import/unambiguous": "error",
+
+			/**
+			 * @see https://github.com/Limegrass/eslint-plugin-import-alias/blob/main/docs/rules/import-alias.md
+			 */
+			"import-alias/import-alias": "error",
 
 			/**
 			 * @see https://github.com/art0rz/eslint-plugin-no-barrel-files#rules

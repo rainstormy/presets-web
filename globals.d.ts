@@ -6,6 +6,10 @@ const eslintParser: EslintParser = {}
 const eslintPlugin: EslintPlugin = {}
 const prettierPlugin: PrettierPlugin = {}
 
+declare module "@limegrass/eslint-plugin-import-alias" {
+	export = eslintPlugin
+}
+
 declare module "@next/eslint-plugin-next" {
 	export = eslintPlugin
 }
