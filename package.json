@@ -27,8 +27,8 @@
 		"@rainstormy/preset-eslint-base": "workspace:*",
 		"@rainstormy/preset-prettier-base": "workspace:*",
 		"concurrently": "8.2.2",
-		"eslint": "8.55.0",
-		"prettier": "3.1.0",
+		"eslint": "8.56.0",
+		"prettier": "3.1.1",
 		"simple-git-hooks": "2.9.0",
 		"typescript": "5.3.3"
 	},

@@ -2525,6 +2525,11 @@ export function base(options: {
 			"typescript/no-useless-empty-export": "error",
 
 			/**
+			 * @see https://typescript-eslint.io/rules/no-useless-template-literals
+			 */
+			"typescript/no-useless-template-literals": "error",
+
+			/**
 			 * @see https://typescript-eslint.io/rules/no-var-requires
 			 */
 			"typescript/no-var-requires": "error",

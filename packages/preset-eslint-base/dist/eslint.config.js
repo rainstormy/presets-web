@@ -1,10 +1,10 @@
+import importAliasPlugin from "@limegrass/eslint-plugin-import-alias";
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
 import "eslint";
 import eslintCommentsPlugin from "eslint-plugin-eslint-comments";
 import functionalPlugin from "eslint-plugin-functional";
 import importPlugin from "eslint-plugin-import";
-import importAliasPlugin from "@limegrass/eslint-plugin-import-alias";
 import noBarrelFilesPlugin from "eslint-plugin-no-barrel-files";
 import redundantUndefinedPlugin from "eslint-plugin-redundant-undefined";
 import unicornPlugin from "eslint-plugin-unicorn";
@@ -2088,6 +2088,10 @@ function base(options) {
        * @see https://typescript-eslint.io/rules/no-useless-empty-export
        */
       "typescript/no-useless-empty-export": "error",
+      /**
+       * @see https://typescript-eslint.io/rules/no-useless-template-literals
+       */
+      "typescript/no-useless-template-literals": "error",
       /**
        * @see https://typescript-eslint.io/rules/no-var-requires
        */

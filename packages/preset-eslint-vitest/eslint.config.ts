@@ -153,6 +153,11 @@ export function vitest(options: {
 			"vitest/no-identical-title": "error",
 
 			/**
+			 * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-import-node-test.md
+			 */
+			"vitest/no-import-node-test": "error",
+
+			/**
 			 * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-interpolation-in-snapshots.md
 			 * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/no-interpolation-in-snapshots.md
 			 */
@@ -202,6 +207,11 @@ export function vitest(options: {
 			"vitest/no-test-return-statement": "error",
 
 			/**
+			 * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-called-exactly-once-with.md
+			 */
+			"vitest/prefer-called-exactly-once-with": "error",
+
+			/**
 			 * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-called-with.md
 			 * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-called-with.md
 			 */
@@ -224,6 +234,17 @@ export function vitest(options: {
 			 * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-equality-matcher.md
 			 */
 			"vitest/prefer-equality-matcher": "error",
+
+			/**
+			 * `vitest/expect-expect` supersedes this rule in synchronous tests.
+			 * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-expect-assertions.md
+			 */
+			"vitest/prefer-expect-assertions": [
+				"error",
+				{
+					onlyFunctionsWithAsyncKeyword: true,
+				},
+			],
 
 			/**
 			 * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-expect-resolves.md
@@ -320,6 +341,11 @@ export function vitest(options: {
 			 * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/require-hook.md
 			 */
 			"vitest/require-hook": "off",
+
+			/**
+			 * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/require-local-test-context-for-concurrent-snapshots.md
+			 */
+			"vitest/require-local-test-context-for-concurrent-snapshots": "error",
 
 			/**
 			 * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/require-to-throw-message.md
