@@ -9,8 +9,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build.dist": "vite build",
-		"build.pack": "yarn pack --out %s-%v.tgz"
+		"build": "vite build"
 	},
 	"dependencies": {
 		"prettier-plugin-tailwindcss": "0.5.9"

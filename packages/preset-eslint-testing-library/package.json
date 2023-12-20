@@ -9,8 +9,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build.dist": "vite build",
-		"build.pack": "yarn pack --out %s-%v.tgz"
+		"build": "vite build"
 	},
 	"dependencies": {
 		"eslint-plugin-testing-library": "6.2.0"
