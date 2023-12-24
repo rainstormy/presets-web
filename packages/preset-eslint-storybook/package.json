@@ -1,0 +1,41 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "@rainstormy/preset-eslint-storybook",
+	"version": "0.0.1-alpha.0",
+	"type": "module",
+	"main": "dist/eslint.config.js",
+	"types": "dist/eslint.config.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build.dist": "vite build",
+		"build.pack": "yarn pack --out %s-%v.tgz"
+	},
+	"dependencies": {
+		"eslint-plugin-storybook": "0.6.15"
+	},
+	"devDependencies": {
+		"@types/eslint": "8.44.9",
+		"typescript": "5.3.3",
+		"vite": "5.0.10",
+		"vite-plugin-dts": "3.6.4"
+	},
+	"peerDependencies": {
+		"eslint": "8.x"
+	},
+	"//": {
+		"dependencies": {
+			"eslint-plugin-storybook": "An ESLint plugin that covers Storybook and stories in the Component Story Format (CSF)."
+		},
+		"devDependencies": {
+			"@types/eslint": "A set of type definitions for ESLint configuration files.",
+			"typescript": "A statically typed programming language that extends the JavaScript syntax.",
+			"vite": "A highly extensible build tool.",
+			"vite-plugin-dts": "A Vite plugin that generates TypeScript declaration files."
+		},
+		"peerDependencies": {
+			"eslint": "A static program analysis tool that uncovers code issues."
+		}
+	}
+}

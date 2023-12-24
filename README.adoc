@@ -244,6 +244,36 @@ The JSX preset is already included in:
 * `@rainstormy/preset-eslint-solid`
 ====
 
+[[eslint_storybook]]
+=== Configuration for https://storybook.js.org[Storybook]
+
+. Follow the instructions in one of the JSX presets, e.g. <<eslint_react>>.
+. Install the `@rainstormy/preset-eslint-storybook` package:
++
+[source,shell]
+----
+$ npm install --save-dev @rainstormy/preset-eslint-storybook
+----
+
+. Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets stories and Storybook configuration files:
++
+[source,javascript]
+----
+// eslint.config.js
+
+import { storybook } from "@rainstormy/preset-eslint-storybook"
+
+export default [
+	// base({ ... }) etc.
+	storybook({
+		files: [
+			".storybook/**/*.+(js|jsx|ts|tsx)",
+			"**/*.stories.+(js|jsx|ts|tsx)"
+		],
+	}),
+]
+----
+
 [[eslint_tailwind]]
 === Configuration for https://tailwindcss.com[Tailwind CSS]
 
