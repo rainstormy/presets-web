@@ -70,6 +70,10 @@ declare module "eslint-plugin-tailwindcss" {
 	export = eslintPlugin
 }
 
+declare module "eslint-plugin-testing-library" {
+	export = eslintPlugin
+}
+
 declare module "eslint-plugin-unicorn" {
 	export = eslintPlugin
 }

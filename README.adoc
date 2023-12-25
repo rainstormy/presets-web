@@ -302,6 +302,33 @@ export default [
 ]
 ----
 
+[[eslint_testing_library]]
+=== Configuration for https://testing-library.com[Testing Library]
+
+. Follow the instructions in <<eslint_basic>>.
+. Install the `@rainstormy/preset-eslint-testing-library` package:
++
+[source,shell]
+----
+$ npm install --save-dev @rainstormy/preset-eslint-testing-library
+----
+
+. Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets component test files:
++
+[source,javascript]
+----
+// eslint.config.js
+
+import { testingLibrary } from "@rainstormy/preset-eslint-testing-library"
+
+export default [
+	// base({ ... }) etc.
+	testingLibrary({
+		files: ["**/*.+(spec|test).+(jsx|tsx)"],
+	}),
+]
+----
+
 [[eslint_vitest]]
 === Configuration for https://vitest.dev[Vitest]
 

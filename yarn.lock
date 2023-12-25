@@ -571,6 +571,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@rainstormy/preset-eslint-testing-library@workspace:packages/preset-eslint-testing-library":
+  version: 0.0.0-use.local
+  resolution: "@rainstormy/preset-eslint-testing-library@workspace:packages/preset-eslint-testing-library"
+  dependencies:
+    "@types/eslint": "npm:8.44.9"
+    eslint-plugin-testing-library: "npm:6.2.0"
+    typescript: "npm:5.3.3"
+    vite: "npm:5.0.10"
+    vite-plugin-dts: "npm:3.6.4"
+  peerDependencies:
+    eslint: 8.x
+  languageName: unknown
+  linkType: soft
+
 "@rainstormy/preset-eslint-vitest@workspace:packages/preset-eslint-vitest":
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-eslint-vitest@workspace:packages/preset-eslint-vitest"
@@ -799,14 +813,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/json-schema@npm:*, @types/json-schema@npm:^7.0.12":
-  version: 7.0.12
-  resolution: "@types/json-schema@npm:7.0.12"
-  checksum: 7a72ba9cb7d2b45d7bb032e063c9eeb1ce4102d62551761e84c91f99f8273ba5aaffd34be835869456ec7c40761b4389009d9e777c0020a7227ca0f5e3238e94
-  languageName: node
-  linkType: hard
-
-"@types/json-schema@npm:^7.0.9":
+"@types/json-schema@npm:*, @types/json-schema@npm:^7.0.12, @types/json-schema@npm:^7.0.9":
   version: 7.0.15
   resolution: "@types/json-schema@npm:7.0.15"
   checksum: 1a3c3e06236e4c4aab89499c428d585527ce50c24fe8259e8b3926d3df4cfbbbcf306cfc73ddfb66cbafc973116efd15967020b0f738f63e09e64c7d260519e7
@@ -827,17 +834,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/semver@npm:^7.3.12":
+"@types/semver@npm:^7.3.12, @types/semver@npm:^7.5.0":
   version: 7.5.6
   resolution: "@types/semver@npm:7.5.6"
   checksum: e77282b17f74354e17e771c0035cccb54b94cc53d0433fa7e9ba9d23fd5d7edcd14b6c8b7327d58bbd89e83b1c5eda71dfe408e06b929007e2b89586e9b63459
-  languageName: node
-  linkType: hard
-
-"@types/semver@npm:^7.5.0":
-  version: 7.5.1
-  resolution: "@types/semver@npm:7.5.1"
-  checksum: 8e19822a2f6282785f4787b3640a205161a65f85de3d2159c5077002adb6e90b2f80bb7c8324ffdb9643061763e1672747f04b0ef3e9ac4179de0dce20ad641d
   languageName: node
   linkType: hard
 
@@ -988,7 +988,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:^5.45.0":
+"@typescript-eslint/utils@npm:^5.45.0, @typescript-eslint/utils@npm:^5.58.0":
   version: 5.62.0
   resolution: "@typescript-eslint/utils@npm:5.62.0"
   dependencies:
@@ -2297,6 +2297,17 @@ __metadata:
   peerDependencies:
     tailwindcss: ^3.3.2
   checksum: d33621f1a4633036da21f96264e4f52dd8b4bb5038eeec5b23517cf11318b959f962b15a22b09274cdc2617397f040793397d61dfe819f728aa8621490ae85be
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-testing-library@npm:6.2.0":
+  version: 6.2.0
+  resolution: "eslint-plugin-testing-library@npm:6.2.0"
+  dependencies:
+    "@typescript-eslint/utils": "npm:^5.58.0"
+  peerDependencies:
+    eslint: ^7.5.0 || ^8.0.0
+  checksum: c523e668066fc1f68765e72c65565cb006489e7e8460efa1a4dbaf75f31d197a858a49fc7c9a43e26ffb37c0c611359ec585ab29976ff2b0276cd85cebb2890a
   languageName: node
   linkType: hard
 
