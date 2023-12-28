@@ -37,6 +37,10 @@
 !.yarn/versions/
 node_modules/
 
+# Build artifacts.
+packages/*/dist/
+packages/*/README.md
+
 # Operating system artifacts.
 *~
 .DS_Store

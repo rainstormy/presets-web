@@ -7,7 +7,7 @@
 		"packages/*"
 	],
 	"scripts": {
-		"build": "yarn workspaces foreach --all --parallel run build",
+		"release.prepare": "updraft --files CHANGELOG.adoc packages/*/package.json --release-version",
 		"setup": "yarn install && simple-git-hooks",
 		"validate": "concurrently 'yarn:validate.types' 'yarn:validate.format' 'yarn:validate.lint' --group --names 'types','format','lint' --prefix-colors 'blue.bold','magenta.bold','cyan.bold'",
 		"validate.fix": "yarn run validate.lint.fix && yarn run validate.format.fix",
@@ -26,6 +26,7 @@
 	"devDependencies": {
 		"@rainstormy/preset-eslint-base": "workspace:*",
 		"@rainstormy/preset-prettier-base": "workspace:*",
+		"@rainstormy/updraft": "1.0.0",
 		"concurrently": "8.2.2",
 		"eslint": "8.56.0",
 		"prettier": "3.1.1",
@@ -38,13 +39,14 @@
 			"validate.fix": "The formatter must run after the linter to resolve potential formatting issues introduced by the linter."
 		},
 		"devDependencies": {
-			"@rainstormy/preset-eslint-base": "A predefined ESLint configuration for web projects.",
-			"@rainstormy/preset-prettier-base": "A predefined Prettier configuration for web projects.",
-			"concurrently": "A tool that executes multiple Yarn script commands in parallel.",
-			"eslint": "A static program analysis tool that uncovers code issues.",
-			"prettier": "An opinionated code formatter.",
-			"simple-git-hooks": "A tool that creates Git hooks from Yarn script commands.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"@rainstormy/preset-eslint-base": "This preset provides a predefined, opinionated ESLint configuration for TypeScript projects.",
+			"@rainstormy/preset-prettier-base": "This preset provides a predefined, opinionated Prettier configuration for TypeScript projects.",
+			"@rainstormy/updraft": "Updraft is a release automation tool.",
+			"concurrently": "This tool executes multiple package scripts in parallel.",
+			"eslint": "ESLint uses static program analysis to uncover code issues.",
+			"prettier": "Prettier is an opinionated code formatter.",
+			"simple-git-hooks": "This tool lets the package.json file define Git hooks.",
+			"typescript": "TypeScript is a statically typed programming language on top of JavaScript."
 		}
 	}
 }

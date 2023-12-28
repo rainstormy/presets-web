@@ -2,12 +2,6 @@
 	"tasks": [
 		{
 			"type": "npm",
-			"script": "build",
-			"problemMatcher": [],
-			"label": "build"
-		},
-		{
-			"type": "npm",
 			"script": "setup",
 			"problemMatcher": [],
 			"label": "setup"

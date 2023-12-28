@@ -452,6 +452,7 @@ __metadata:
     "@types/eslint": "npm:8.44.9"
     "@typescript-eslint/eslint-plugin": "npm:6.15.0"
     "@typescript-eslint/parser": "npm:6.15.0"
+    downdoc: "npm:1.0.2-stable"
     eslint-import-resolver-typescript: "npm:3.6.1"
     eslint-plugin-eslint-comments: "npm:3.2.0"
     eslint-plugin-functional: "npm:6.0.0"
@@ -473,6 +474,7 @@ __metadata:
   resolution: "@rainstormy/preset-eslint-jsx@workspace:packages/preset-eslint-jsx"
   dependencies:
     "@types/eslint": "npm:8.44.9"
+    downdoc: "npm:1.0.2-stable"
     eslint-plugin-jsx-a11y: "npm:6.8.0"
     eslint-plugin-react: "npm:7.33.2"
     typescript: "npm:5.3.3"
@@ -489,6 +491,7 @@ __metadata:
   dependencies:
     "@next/eslint-plugin-next": "npm:14.0.4"
     "@types/eslint": "npm:8.44.9"
+    downdoc: "npm:1.0.2-stable"
     typescript: "npm:5.3.3"
     vite: "npm:5.0.10"
     vite-plugin-dts: "npm:3.6.4"
@@ -504,6 +507,7 @@ __metadata:
     "@rainstormy/preset-eslint-jsx": "workspace:*"
     "@rainstormy/preset-eslint-react": "workspace:*"
     "@types/eslint": "npm:8.44.9"
+    downdoc: "npm:1.0.2-stable"
     typescript: "npm:5.3.3"
     vite: "npm:5.0.10"
     vite-plugin-dts: "npm:3.6.4"
@@ -518,6 +522,7 @@ __metadata:
   dependencies:
     "@rainstormy/preset-eslint-jsx": "workspace:*"
     "@types/eslint": "npm:8.44.9"
+    downdoc: "npm:1.0.2-stable"
     eslint-plugin-react-hooks: "npm:4.6.0"
     typescript: "npm:5.3.3"
     vite: "npm:5.0.10"
@@ -533,6 +538,7 @@ __metadata:
   dependencies:
     "@rainstormy/preset-eslint-jsx": "workspace:*"
     "@types/eslint": "npm:8.44.9"
+    downdoc: "npm:1.0.2-stable"
     eslint-plugin-solid: "npm:0.13.0"
     typescript: "npm:5.3.3"
     vite: "npm:5.0.10"
@@ -547,6 +553,7 @@ __metadata:
   resolution: "@rainstormy/preset-eslint-storybook@workspace:packages/preset-eslint-storybook"
   dependencies:
     "@types/eslint": "npm:8.44.9"
+    downdoc: "npm:1.0.2-stable"
     eslint-plugin-storybook: "npm:0.6.15"
     typescript: "npm:5.3.3"
     vite: "npm:5.0.10"
@@ -561,6 +568,7 @@ __metadata:
   resolution: "@rainstormy/preset-eslint-tailwind@workspace:packages/preset-eslint-tailwind"
   dependencies:
     "@types/eslint": "npm:8.44.9"
+    downdoc: "npm:1.0.2-stable"
     eslint-plugin-tailwindcss: "npm:3.13.0"
     typescript: "npm:5.3.3"
     vite: "npm:5.0.10"
@@ -576,6 +584,7 @@ __metadata:
   resolution: "@rainstormy/preset-eslint-testing-library@workspace:packages/preset-eslint-testing-library"
   dependencies:
     "@types/eslint": "npm:8.44.9"
+    downdoc: "npm:1.0.2-stable"
     eslint-plugin-testing-library: "npm:6.2.0"
     typescript: "npm:5.3.3"
     vite: "npm:5.0.10"
@@ -590,6 +599,7 @@ __metadata:
   resolution: "@rainstormy/preset-eslint-vitest@workspace:packages/preset-eslint-vitest"
   dependencies:
     "@types/eslint": "npm:8.44.9"
+    downdoc: "npm:1.0.2-stable"
     eslint-plugin-vitest: "npm:0.3.18"
     typescript: "npm:5.3.3"
     vite: "npm:5.0.10"
@@ -604,6 +614,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-prettier-base@workspace:packages/preset-prettier-base"
   dependencies:
+    downdoc: "npm:1.0.2-stable"
     prettier: "npm:3.1.1"
     prettier-plugin-organize-imports: "npm:3.2.4"
     prettier-plugin-packagejson: "npm:2.4.7"
@@ -620,6 +631,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-prettier-tailwind@workspace:packages/preset-prettier-tailwind"
   dependencies:
+    downdoc: "npm:1.0.2-stable"
     prettier: "npm:3.1.1"
     prettier-plugin-tailwindcss: "npm:0.5.9"
     typescript: "npm:5.3.3"
@@ -630,6 +642,18 @@ __metadata:
     typescript: 5.x
   languageName: unknown
   linkType: soft
+
+"@rainstormy/updraft@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@rainstormy/updraft@npm:1.0.0"
+  dependencies:
+    fast-glob: "npm:3.3.2"
+    tslib: "npm:2.6.2"
+  bin:
+    updraft: src/entry.cli.js
+  checksum: 0a1559da4961c82f58386f644d0af4b1f5fa5f8188d3061603338c27ef135a91fc18b0de9d82b55f2bd209493755655752755aa9f9603e7fb186d5818406ea0e
+  languageName: node
+  linkType: hard
 
 "@rollup/pluginutils@npm:^5.0.5":
   version: 5.0.5
@@ -1824,6 +1848,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"downdoc@npm:1.0.2-stable":
+  version: 1.0.2-stable
+  resolution: "downdoc@npm:1.0.2-stable"
+  bin:
+    downdoc: bin/downdoc
+  checksum: 11e0522d1abe1dbdce77d34f3dcc159c5023bfaec5057a837a8d264829abd0dcdbee3330954858f69948122edfcc0da05e1950775739ba5910d4787c234b3260
+  languageName: node
+  linkType: hard
+
 "eastasianwidth@npm:^0.2.0":
   version: 0.2.0
   resolution: "eastasianwidth@npm:0.2.0"
@@ -2532,7 +2565,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.5, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0, fast-glob@npm:^3.3.1":
+"fast-glob@npm:3.3.2, fast-glob@npm:^3.2.5, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0, fast-glob@npm:^3.3.1":
   version: 3.3.2
   resolution: "fast-glob@npm:3.3.2"
   dependencies:
@@ -4812,6 +4845,7 @@ __metadata:
   dependencies:
     "@rainstormy/preset-eslint-base": "workspace:*"
     "@rainstormy/preset-prettier-base": "workspace:*"
+    "@rainstormy/updraft": "npm:1.0.0"
     concurrently: "npm:8.2.2"
     eslint: "npm:8.56.0"
     prettier: "npm:3.1.1"
@@ -5408,17 +5442,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:2.6.2, tslib@npm:^2.1.0, tslib@npm:^2.6.0, tslib@npm:^2.6.2":
+  version: 2.6.2
+  resolution: "tslib@npm:2.6.2"
+  checksum: e03a8a4271152c8b26604ed45535954c0a45296e32445b4b87f8a5abdb2421f40b59b4ca437c4346af0f28179780d604094eb64546bee2019d903d01c6c19bdb
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^1.8.1":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: 69ae09c49eea644bc5ebe1bca4fa4cc2c82b7b3e02f43b84bd891504edf66dbc6b2ec0eef31a957042de2269139e4acff911e6d186a258fb14069cd7f6febce2
-  languageName: node
-  linkType: hard
-
-"tslib@npm:^2.1.0, tslib@npm:^2.6.0, tslib@npm:^2.6.2":
-  version: 2.6.2
-  resolution: "tslib@npm:2.6.2"
-  checksum: e03a8a4271152c8b26604ed45535954c0a45296e32445b4b87f8a5abdb2421f40b59b4ca437c4346af0f28179780d604094eb64546bee2019d903d01c6c19bdb
   languageName: node
   linkType: hard
 

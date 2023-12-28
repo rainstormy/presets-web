@@ -10,13 +10,15 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "vite build"
+		"build": "vite build",
+		"release.markdown-readme": "downdoc README.adoc"
 	},
 	"dependencies": {
 		"eslint-plugin-storybook": "0.6.15"
 	},
 	"devDependencies": {
 		"@types/eslint": "8.44.9",
+		"downdoc": "1.0.2-stable",
 		"typescript": "5.3.3",
 		"vite": "5.0.10",
 		"vite-plugin-dts": "3.6.4"
@@ -30,6 +32,7 @@
 		},
 		"devDependencies": {
 			"@types/eslint": "A set of type definitions for ESLint configuration files.",
+			"downdoc": "Downdoc converts AsciiDoc documents to Markdown to improve compatibility with npm.",
 			"typescript": "A statically typed programming language that extends the JavaScript syntax.",
 			"vite": "A highly extensible build tool.",
 			"vite-plugin-dts": "A Vite plugin that generates TypeScript declaration files."
