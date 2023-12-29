@@ -8,7 +8,7 @@ import importPlugin from "eslint-plugin-import";
 import noBarrelFilesPlugin from "eslint-plugin-no-barrel-files";
 import redundantUndefinedPlugin from "eslint-plugin-redundant-undefined";
 import unicornPlugin from "eslint-plugin-unicorn";
-function base(options) {
+function eslintBase(options) {
   return {
     files: [...options.files],
     languageOptions: {
@@ -2771,7 +2771,7 @@ function base(options) {
     }
   };
 }
-function ambientTypeScriptModules(options) {
+function eslintAmbientTypeScriptModules(options) {
   return {
     files: [...options.files],
     rules: {
@@ -2788,7 +2788,7 @@ function ambientTypeScriptModules(options) {
     }
   };
 }
-function testData(options) {
+function eslintTestData(options) {
   return {
     files: [...options.files],
     rules: {
@@ -2816,7 +2816,7 @@ function testData(options) {
   };
 }
 export {
-  ambientTypeScriptModules,
-  base,
-  testData
+  eslintAmbientTypeScriptModules,
+  eslintBase,
+  eslintTestData
 };

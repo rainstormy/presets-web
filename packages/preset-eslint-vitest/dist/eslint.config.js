@@ -1,6 +1,6 @@
 import "eslint";
 import vitestPlugin from "eslint-plugin-vitest";
-function vitest(options) {
+function eslintVitest(options) {
   return {
     files: [...options.files],
     languageOptions: {
@@ -327,5 +327,5 @@ function vitest(options) {
   };
 }
 export {
-  vitest
+  eslintVitest
 };

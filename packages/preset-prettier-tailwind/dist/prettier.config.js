@@ -1,6 +1,6 @@
 import "prettier";
 import { options, parsers, printers } from "prettier-plugin-tailwindcss";
-function tailwind() {
+function prettierTailwind() {
   return {
     plugins: [
       /**
@@ -11,5 +11,5 @@ function tailwind() {
   };
 }
 export {
-  tailwind
+  prettierTailwind
 };

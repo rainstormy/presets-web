@@ -1,4 +1,4 @@
 import { type Linter } from "eslint";
-export declare function storybook(options: {
+export declare function eslintStorybook(options: {
     readonly files: ReadonlyArray<string>;
 }): Linter.FlatConfig;

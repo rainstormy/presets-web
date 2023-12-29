@@ -2,7 +2,7 @@ import { type Linter } from "eslint"
 import tailwindPlugin from "eslint-plugin-tailwindcss"
 
 /* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */
-export function tailwind(options: {
+export function eslintTailwind(options: {
 	readonly files: ReadonlyArray<string>
 }): Linter.FlatConfig {
 	return {

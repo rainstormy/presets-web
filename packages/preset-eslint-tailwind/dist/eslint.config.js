@@ -1,6 +1,6 @@
 import "eslint";
 import tailwindPlugin from "eslint-plugin-tailwindcss";
-function tailwind(options) {
+function eslintTailwind(options) {
   return {
     files: [...options.files],
     plugins: {
@@ -47,5 +47,5 @@ function tailwind(options) {
   };
 }
 export {
-  tailwind
+  eslintTailwind
 };

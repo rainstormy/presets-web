@@ -24,14 +24,17 @@ $ npm install --save-dev typescript
 ----
 // eslint.config.js
 
-import { ambientTypeScriptModules, base } from "@rainstormy/preset-eslint-base"
+import {
+	eslintAmbientTypeScriptModules,
+	eslintBase
+} from "@rainstormy/preset-eslint-base"
 
 export default [
-	base({
+	eslintBase({
 		files: ["**/*.+(js|ts)"],
 		tsconfig: "./tsconfig.json",
 	}),
-	ambientTypeScriptModules({
+	eslintAmbientTypeScriptModules({
 		files: ["**/*.d.ts"],
 	}),
 ]
@@ -53,7 +56,8 @@ export default [
 			"dist/**",
 		],
 	},
-	// base({ ... }) etc.
+	// eslintBase({ ... }),
+	// etc.
 ]
 ----
 ====
@@ -75,11 +79,12 @@ $ npm install --save-dev @rainstormy/preset-eslint-next
 ----
 // eslint.config.js
 
-import { next } from "@rainstormy/preset-eslint-next"
+import { eslintNext } from "@rainstormy/preset-eslint-next"
 
 export default [
-	// base({ ... }) etc.
-	next({
+	// eslintBase({ ... }),
+	// etc.
+	eslintNext({
 		files: ["**/*.+(jsx|tsx)"],
 	}),
 ]
@@ -102,11 +107,12 @@ $ npm install --save-dev @rainstormy/preset-eslint-preact
 ----
 // eslint.config.js
 
-import { preact } from "@rainstormy/preset-eslint-preact"
+import { eslintPreact } from "@rainstormy/preset-eslint-preact"
 
 export default [
-	// base({ ... }) etc.
-	preact({
+	// eslintBase({ ... }),
+	// etc.
+	eslintPreact({
 		files: ["**/*.+(jsx|tsx)"],
 	}),
 ]
@@ -131,11 +137,12 @@ $ npm install --save-dev @rainstormy/preset-eslint-react
 ----
 // eslint.config.js
 
-import { react } from "@rainstormy/preset-eslint-react"
+import { eslintReact } from "@rainstormy/preset-eslint-react"
 
 export default [
-	// base({ ... }) etc.
-	react({
+	// eslintBase({ ... }),
+	// etc.
+	eslintReact({
 		files: ["**/*.+(jsx|tsx)"],
 	}),
 ]
@@ -160,11 +167,12 @@ $ npm install --save-dev @rainstormy/preset-eslint-solid
 ----
 // eslint.config.js
 
-import { solid } from "@rainstormy/preset-eslint-solid"
+import { eslintSolid } from "@rainstormy/preset-eslint-solid"
 
 export default [
-	// base({ ... }) etc.
-	solid({
+	// eslintBase({ ... }),
+	// etc.
+	eslintSolid({
 		files: ["**/*.+(jsx|tsx)"],
 	}),
 ]
@@ -191,11 +199,12 @@ $ npm install --save-dev @rainstormy/preset-eslint-jsx
 ----
 // eslint.config.js
 
-import { jsx } from "@rainstormy/preset-eslint-jsx"
+import { eslintJsx } from "@rainstormy/preset-eslint-jsx"
 
 export default [
-	// base({ ... }) etc.
-	jsx({
+	// eslintBase({ ... }),
+	// etc.
+	eslintJsx({
 		files: ["**/*.+(jsx|tsx)"],
 	}),
 ]
@@ -210,7 +219,9 @@ export default [
 import qwikPlugin from "eslint-plugin-qwik"
 
 export default [
-	// jsx({ ... }) etc.
+	// eslintBase({ ... }),
+	// eslintJsx({ ... }),
+	// etc.
 	{
 		files: ["**/*.+(jsx|tsx)"],
 		plugins: {
@@ -261,11 +272,12 @@ $ npm install --save-dev @rainstormy/preset-eslint-storybook
 ----
 // eslint.config.js
 
-import { storybook } from "@rainstormy/preset-eslint-storybook"
+import { eslintStorybook } from "@rainstormy/preset-eslint-storybook"
 
 export default [
-	// base({ ... }) etc.
-	storybook({
+	// eslintBase({ ... }),
+	// etc.
+	eslintStorybook({
 		files: [
 			".storybook/**/*.+(js|jsx|ts|tsx)",
 			"**/*.stories.+(js|jsx|ts|tsx)"
@@ -292,11 +304,12 @@ $ npm install --save-dev tailwindcss
 ----
 // eslint.config.js
 
-import { tailwind } from "@rainstormy/preset-eslint-tailwind"
+import { eslintTailwind } from "@rainstormy/preset-eslint-tailwind"
 
 export default [
-	// base({ ... }) etc.
-	tailwind({
+	// eslintBase({ ... }),
+	// etc.
+	eslintTailwind({
 		files: ["**/*.+(jsx|tsx)"],
 	}),
 ]
@@ -319,11 +332,12 @@ $ npm install --save-dev @rainstormy/preset-eslint-testing-library
 ----
 // eslint.config.js
 
-import { testingLibrary } from "@rainstormy/preset-eslint-testing-library"
+import { eslintTestingLibrary } from "@rainstormy/preset-eslint-testing-library"
 
 export default [
-	// base({ ... }) etc.
-	testingLibrary({
+	// eslintBase({ ... }),
+	// etc.
+	eslintTestingLibrary({
 		files: ["**/*.+(spec|test).+(jsx|tsx)"],
 	}),
 ]
@@ -347,15 +361,16 @@ $ npm install --save-dev vitest
 ----
 // eslint.config.js
 
-import { testData } from "@rainstormy/preset-eslint-base"
-import { vitest } from "@rainstormy/preset-eslint-vitest"
+import { eslintTestData } from "@rainstormy/preset-eslint-base"
+import { eslintVitest } from "@rainstormy/preset-eslint-vitest"
 
 export default [
-	// base({ ... }) etc.
-	testData({
+	// eslintBase({ ... }),
+	// etc.
+	eslintTestData({
 		files: ["**/*.+(spec|test).+(js|jsx|ts|tsx)"],
 	}),
-	vitest({
+	eslintVitest({
 		files: ["**/*.+(spec|test).+(js|jsx|ts|tsx)"],
 	}),
 ]
@@ -381,9 +396,9 @@ $ npm install --save-dev typescript
 ----
 // prettier.config.js
 
-import { base } from "@rainstormy/preset-prettier-base"
+import { prettierBase } from "@rainstormy/preset-prettier-base"
 
-export default base()
+export default prettierBase()
 ----
 
 [[prettier_tailwind]]
@@ -403,12 +418,12 @@ $ npm install --save-dev @rainstormy/preset-prettier-tailwind
 ----
 // prettier.config.js
 
-import { base, mergeConfigs } from "@rainstormy/preset-prettier-base"
-import { tailwind } from "@rainstormy/preset-prettier-tailwind"
+import { prettierBase, prettierMergeConfigs } from "@rainstormy/preset-prettier-base"
+import { prettierTailwind } from "@rainstormy/preset-prettier-tailwind"
 
-export default mergeConfigs([
-    base(),
-	tailwind(),
+export default prettierMergeConfigs([
+    prettierBase(),
+	prettierTailwind(),
 ])
 ----
 

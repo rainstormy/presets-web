@@ -1,6 +1,6 @@
-import testingLibraryPlugin from "eslint-plugin-testing-library";
 import "eslint";
-function testingLibrary(options) {
+import testingLibraryPlugin from "eslint-plugin-testing-library";
+function eslintTestingLibrary(options) {
   return {
     files: [...options.files],
     plugins: {
@@ -123,5 +123,5 @@ function testingLibrary(options) {
   };
 }
 export {
-  testingLibrary
+  eslintTestingLibrary
 };

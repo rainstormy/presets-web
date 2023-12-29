@@ -1,3 +1,3 @@
-import { base } from "@rainstormy/preset-prettier-base"
+import { prettierBase } from "@rainstormy/preset-prettier-base"
 
-export default base()
+export default prettierBase()

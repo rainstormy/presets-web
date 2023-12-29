@@ -1,12 +1,12 @@
-import { jsx } from "@rainstormy/preset-eslint-jsx"
+import { eslintJsx } from "@rainstormy/preset-eslint-jsx"
 import { type Linter } from "eslint"
 import solidPlugin from "eslint-plugin-solid"
 
 /* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */
-export function solid(options: {
+export function eslintSolid(options: {
 	readonly files: ReadonlyArray<string>
 }): Linter.FlatConfig {
-	const jsxPreset = jsx(options)
+	const jsxPreset = eslintJsx(options)
 
 	return {
 		...jsxPreset,

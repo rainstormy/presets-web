@@ -2,7 +2,7 @@ import { type Config } from "prettier"
 import organizeImportsPlugin from "prettier-plugin-organize-imports"
 import packageJsonPlugin from "prettier-plugin-packagejson"
 
-export function base(): Config {
+export function prettierBase(): Config {
 	return {
 		plugins: [
 			/**
@@ -23,7 +23,7 @@ export function base(): Config {
 	}
 }
 
-export function mergeConfigs(configs: ReadonlyArray<Config>): Config {
+export function prettierMergeConfigs(configs: ReadonlyArray<Config>): Config {
 	if (!Array.isArray(configs)) {
 		throw new TypeError(
 			"'mergeConfigs' expects an array of Prettier configuration objects",

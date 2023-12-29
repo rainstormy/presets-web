@@ -1,12 +1,12 @@
-import { jsx } from "@rainstormy/preset-eslint-jsx"
+import { eslintJsx } from "@rainstormy/preset-eslint-jsx"
 import { type Linter } from "eslint"
 import reactHooksPlugin from "eslint-plugin-react-hooks"
 
 /* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */
-export function react(options: {
+export function eslintReact(options: {
 	readonly files: ReadonlyArray<string>
 }): Linter.FlatConfig {
-	const jsxPreset = jsx(options)
+	const jsxPreset = eslintJsx(options)
 
 	return {
 		...jsxPreset,

@@ -1,6 +1,6 @@
 import nextPlugin from "@next/eslint-plugin-next";
 import "eslint";
-function next(options) {
+function eslintNext(options) {
   return {
     files: [...options.files],
     plugins: {
@@ -98,5 +98,5 @@ function next(options) {
   };
 }
 export {
-  next
+  eslintNext
 };

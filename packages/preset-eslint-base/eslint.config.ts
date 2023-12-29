@@ -10,7 +10,7 @@ import redundantUndefinedPlugin from "eslint-plugin-redundant-undefined"
 import unicornPlugin from "eslint-plugin-unicorn"
 
 /* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */
-export function base(options: {
+export function eslintBase(options: {
 	readonly files: ReadonlyArray<string>
 	readonly tsconfig?: ReadonlyArray<string> | string
 }): Linter.FlatConfig {
@@ -3357,7 +3357,7 @@ export function base(options: {
 	}
 }
 
-export function ambientTypeScriptModules(options: {
+export function eslintAmbientTypeScriptModules(options: {
 	readonly files: ReadonlyArray<string>
 }): Linter.FlatConfig {
 	return {
@@ -3378,7 +3378,7 @@ export function ambientTypeScriptModules(options: {
 	}
 }
 
-export function testData(options: {
+export function eslintTestData(options: {
 	readonly files: ReadonlyArray<string>
 }): Linter.FlatConfig {
 	return {

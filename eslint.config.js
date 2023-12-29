@@ -1,14 +1,17 @@
-import { ambientTypeScriptModules, base } from "@rainstormy/preset-eslint-base"
+import {
+	eslintAmbientTypeScriptModules,
+	eslintBase,
+} from "@rainstormy/preset-eslint-base"
 
 export default [
 	{
 		ignores: ["**/dist/*"],
 	},
-	base({
+	eslintBase({
 		files: ["**/*.+(js|ts)"],
 		tsconfig: "./tsconfig.json",
 	}),
-	ambientTypeScriptModules({
+	eslintAmbientTypeScriptModules({
 		files: ["**/*.d.ts"],
 	}),
 ]

@@ -1,10 +1,10 @@
-import { jsx } from "@rainstormy/preset-eslint-jsx";
-import { react } from "@rainstormy/preset-eslint-react";
+import { eslintJsx } from "@rainstormy/preset-eslint-jsx";
+import { eslintReact } from "@rainstormy/preset-eslint-react";
 import "eslint";
-function preact(options) {
+function eslintPreact(options) {
   var _a;
-  const reactPreset = react(options);
-  const jsxPreset = jsx(options);
+  const reactPreset = eslintReact(options);
+  const jsxPreset = eslintJsx(options);
   return {
     ...reactPreset,
     rules: {
@@ -25,5 +25,5 @@ function preact(options) {
   };
 }
 export {
-  preact
+  eslintPreact
 };

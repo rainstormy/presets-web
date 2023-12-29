@@ -1,12 +1,12 @@
-import { jsx } from "@rainstormy/preset-eslint-jsx"
-import { react } from "@rainstormy/preset-eslint-react"
+import { eslintJsx } from "@rainstormy/preset-eslint-jsx"
+import { eslintReact } from "@rainstormy/preset-eslint-react"
 import { type Linter } from "eslint"
 
-export function preact(options: {
+export function eslintPreact(options: {
 	readonly files: ReadonlyArray<string>
 }): Linter.FlatConfig {
-	const reactPreset = react(options)
-	const jsxPreset = jsx(options)
+	const reactPreset = eslintReact(options)
+	const jsxPreset = eslintJsx(options)
 
 	return {
 		...reactPreset,

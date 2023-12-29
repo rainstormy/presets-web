@@ -2,7 +2,7 @@ import nextPlugin from "@next/eslint-plugin-next"
 import { type Linter } from "eslint"
 
 /* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */
-export function next(options: {
+export function eslintNext(options: {
 	readonly files: ReadonlyArray<string>
 }): Linter.FlatConfig {
 	return {

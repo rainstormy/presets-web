@@ -1,3 +1,3 @@
 import { type Config } from "prettier";
-export declare function base(): Config;
-export declare function mergeConfigs(configs: ReadonlyArray<Config>): Config;
+export declare function prettierBase(): Config;
+export declare function prettierMergeConfigs(configs: ReadonlyArray<Config>): Config;

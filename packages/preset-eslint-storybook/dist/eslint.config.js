@@ -1,6 +1,6 @@
-import storybookPlugin from "eslint-plugin-storybook";
 import "eslint";
-function storybook(options) {
+import storybookPlugin from "eslint-plugin-storybook";
+function eslintStorybook(options) {
   return {
     files: [...options.files],
     plugins: {
@@ -11,11 +11,10 @@ function storybook(options) {
      */
     rules: {
       /**
-       * @see https://nextjs.org/docs/messages/google-font-display
+       * The `render` function in stories uses prop spreading to provide args to components.
+       * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
        */
-      "next/google-font-display": "error",
       "react/jsx-props-no-spreading": "off",
-      // This rule would have prevented conventional use of the `render` function with args as props.
       /**
        * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/await-interactions.md
        */
@@ -72,5 +71,5 @@ function storybook(options) {
   };
 }
 export {
-  storybook
+  eslintStorybook
 };

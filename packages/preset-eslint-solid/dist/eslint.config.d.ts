@@ -1,4 +1,4 @@
 import { type Linter } from "eslint";
-export declare function solid(options: {
+export declare function eslintSolid(options: {
     readonly files: ReadonlyArray<string>;
 }): Linter.FlatConfig;

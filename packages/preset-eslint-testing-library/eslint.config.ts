@@ -2,7 +2,7 @@ import { type Linter } from "eslint"
 import testingLibraryPlugin from "eslint-plugin-testing-library"
 
 /* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */
-export function testingLibrary(options: {
+export function eslintTestingLibrary(options: {
 	readonly files: ReadonlyArray<string>
 }): Linter.FlatConfig {
 	return {

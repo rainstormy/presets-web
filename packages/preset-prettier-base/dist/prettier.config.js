@@ -1,7 +1,7 @@
 import "prettier";
 import organizeImportsPlugin from "prettier-plugin-organize-imports";
 import packageJsonPlugin from "prettier-plugin-packagejson";
-function base() {
+function prettierBase() {
   return {
     plugins: [
       /**
@@ -19,7 +19,7 @@ function base() {
     semi: false
   };
 }
-function mergeConfigs(configs) {
+function prettierMergeConfigs(configs) {
   if (!Array.isArray(configs)) {
     throw new TypeError(
       "'mergeConfigs' expects an array of Prettier configuration objects"
@@ -35,6 +35,6 @@ function mergeConfigs(configs) {
   );
 }
 export {
-  base,
-  mergeConfigs
+  prettierBase,
+  prettierMergeConfigs
 };

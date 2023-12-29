@@ -1,7 +1,7 @@
 import "eslint";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
 import reactPlugin from "eslint-plugin-react";
-function jsx(options) {
+function eslintJsx(options) {
   return {
     files: [...options.files],
     plugins: {
@@ -435,5 +435,5 @@ function jsx(options) {
   };
 }
 export {
-  jsx
+  eslintJsx
 };

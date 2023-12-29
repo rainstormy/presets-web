@@ -1,8 +1,8 @@
-import { jsx } from "@rainstormy/preset-eslint-jsx";
+import { eslintJsx } from "@rainstormy/preset-eslint-jsx";
 import "eslint";
 import solidPlugin from "eslint-plugin-solid";
-function solid(options) {
-  const jsxPreset = jsx(options);
+function eslintSolid(options) {
+  const jsxPreset = eslintJsx(options);
   return {
     ...jsxPreset,
     plugins: {
@@ -135,5 +135,5 @@ function solid(options) {
   };
 }
 export {
-  solid
+  eslintSolid
 };

@@ -1,11 +1,11 @@
 import { type Linter } from "eslint";
-export declare function base(options: {
+export declare function eslintBase(options: {
     readonly files: ReadonlyArray<string>;
     readonly tsconfig?: ReadonlyArray<string> | string;
 }): Linter.FlatConfig;
-export declare function ambientTypeScriptModules(options: {
+export declare function eslintAmbientTypeScriptModules(options: {
     readonly files: ReadonlyArray<string>;
 }): Linter.FlatConfig;
-export declare function testData(options: {
+export declare function eslintTestData(options: {
     readonly files: ReadonlyArray<string>;
 }): Linter.FlatConfig;
