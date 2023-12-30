@@ -13,9 +13,9 @@ This repository contains predefined, opinionated tooling configurations for web 
 +
 [source,shell]
 ----
-$ npm install --save-dev @rainstormy/preset-eslint-base
-$ npm install --save-dev eslint
-$ npm install --save-dev typescript
+npm install --save-dev @rainstormy/preset-eslint-base
+npm install --save-dev eslint
+npm install --save-dev typescript
 ----
 
 . Define an https://eslint.org/docs/latest/use/configure[ESLint configuration file]:
@@ -70,7 +70,7 @@ export default [
 +
 [source,shell]
 ----
-$ npm install --save-dev @rainstormy/preset-eslint-next
+npm install --save-dev @rainstormy/preset-eslint-next
 ----
 
 . Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets JSX component files:
@@ -98,7 +98,7 @@ export default [
 +
 [source,shell]
 ----
-$ npm install --save-dev @rainstormy/preset-eslint-preact
+npm install --save-dev @rainstormy/preset-eslint-preact
 ----
 
 . Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets JSX component files:
@@ -128,7 +128,7 @@ CAUTION: The Preact preset includes `@rainstormy/preset-eslint-jsx`.
 +
 [source,shell]
 ----
-$ npm install --save-dev @rainstormy/preset-eslint-react
+npm install --save-dev @rainstormy/preset-eslint-react
 ----
 
 . Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets JSX component files:
@@ -158,7 +158,7 @@ CAUTION: The React preset includes `@rainstormy/preset-eslint-jsx`.
 +
 [source,shell]
 ----
-$ npm install --save-dev @rainstormy/preset-eslint-solid
+npm install --save-dev @rainstormy/preset-eslint-solid
 ----
 
 . Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets JSX component files:
@@ -190,7 +190,7 @@ The JSX preset is intended to be used as a foundation for other JSX-based framew
 +
 [source,shell]
 ----
-$ npm install --save-dev @rainstormy/preset-eslint-jsx
+npm install --save-dev @rainstormy/preset-eslint-jsx
 ----
 
 . Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets JSX component files:
@@ -263,7 +263,7 @@ The JSX preset is already included in:
 +
 [source,shell]
 ----
-$ npm install --save-dev @rainstormy/preset-eslint-storybook
+npm install --save-dev @rainstormy/preset-eslint-storybook
 ----
 
 . Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets stories and Storybook configuration files:
@@ -294,8 +294,8 @@ export default [
 +
 [source,shell]
 ----
-$ npm install --save-dev @rainstormy/preset-eslint-tailwind
-$ npm install --save-dev tailwindcss
+npm install --save-dev @rainstormy/preset-eslint-tailwind
+npm install --save-dev tailwindcss
 ----
 
 . Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets JSX component files:
@@ -323,7 +323,7 @@ export default [
 +
 [source,shell]
 ----
-$ npm install --save-dev @rainstormy/preset-eslint-testing-library
+npm install --save-dev @rainstormy/preset-eslint-testing-library
 ----
 
 . Add a new configuration to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that targets component test files:
@@ -351,8 +351,8 @@ export default [
 +
 [source,shell]
 ----
-$ npm install --save-dev @rainstormy/preset-eslint-vitest
-$ npm install --save-dev vitest
+npm install --save-dev @rainstormy/preset-eslint-vitest
+npm install --save-dev vitest
 ----
 
 . Add new configurations to the https://eslint.org/docs/latest/use/configure[ESLint configuration file] that target test files:
@@ -385,9 +385,9 @@ export default [
 +
 [source,shell]
 ----
-$ npm install --save-dev @rainstormy/preset-prettier-base
-$ npm install --save-dev prettier
-$ npm install --save-dev typescript
+npm install --save-dev @rainstormy/preset-prettier-base
+npm install --save-dev prettier
+npm install --save-dev typescript
 ----
 
 . Define a https://prettier.io/docs/en/configuration.html[Prettier configuration file]:
@@ -409,7 +409,7 @@ export default prettierBase()
 +
 [source,shell]
 ----
-$ npm install --save-dev @rainstormy/preset-prettier-tailwind
+npm install --save-dev @rainstormy/preset-prettier-tailwind
 ----
 
 . Apply the Tailwind CSS configuration as the last one in the https://prettier.io/docs/en/configuration.html[Prettier configuration file]:
