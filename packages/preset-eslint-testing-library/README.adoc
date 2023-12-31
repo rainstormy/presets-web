@@ -1,0 +1,59 @@
+= Testing Library Preset for ESLint
+:experimental:
+:source-highlighter: highlight.js
+
+This package provides a predefined, opinionated https://eslint.org[ESLint] configuration suitable for any web project with https://testing-library.com[Testing Library] tests.
+
+== Installation
+Install the `@rainstormy/preset-eslint-testing-library` package and its peer dependencies:
+
+[source,shell]
+----
+npm install --save-dev @rainstormy/preset-eslint-testing-library eslint
+----
+
+[source,shell]
+----
+pnpm install --save-dev @rainstormy/preset-eslint-testing-library eslint
+----
+
+[source,shell]
+----
+yarn add --dev @rainstormy/preset-eslint-testing-library eslint
+----
+
+This preset configures a subset of rules from the following plugin, which is installed along with the preset package:
+
+* https://github.com/testing-library/eslint-plugin-testing-library#supported-rules[eslint-plugin-testing-library] (with rule names prefixed by `testing-library/`)
+
+== Usage
+Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] to target component test files in TypeScript.
+For example:
+
+[source,javascript]
+----
+// eslint.config.js
+
+import {
+	eslintAmbientTypeScriptModules,
+	eslintBase,
+	eslintTestData,
+} from "@rainstormy/preset-eslint-base"
+import { eslintTestingLibrary } from "@rainstormy/preset-eslint-testing-library"
+
+export default [
+	eslintBase({
+		files: ["**/*.+(js|ts|tsx)"],
+		tsconfig: "./tsconfig.json",
+	}),
+	eslintTestingLibrary({ files: ["**/*.test.tsx"] }),
+
+	// `eslintAmbientTypeScriptModules` and `eslintTestData` must follow `eslintBase` to take effect.
+	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
+	eslintTestData({ files: ["**/*.test.tsx"] }),
+]
+----
+
+== Complementary Presets
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-storybook[@rainstormy/preset-eslint-storybook]
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-vitest[@rainstormy/preset-eslint-vitest]

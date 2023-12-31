@@ -1,0 +1,52 @@
+= Tailwind CSS Preset for Prettier
+:experimental:
+:source-highlighter: highlight.js
+
+This package provides a predefined, opinionated https://prettier.io[Prettier] configuration suitable for any web project with https://tailwindcss.com[Tailwind CSS] classes.
+
+== Installation
+Install the `@rainstormy/preset-prettier-tailwind` package and its peer dependencies:
+
+[source,shell]
+----
+npm install --save-dev @rainstormy/preset-prettier-tailwind prettier
+----
+
+[source,shell]
+----
+pnpm install --save-dev @rainstormy/preset-prettier-tailwind prettier
+----
+
+[source,shell]
+----
+yarn add --dev @rainstormy/preset-prettier-tailwind prettier
+----
+
+This preset includes the following plugin, which is installed along with the preset package:
+
+* https://github.com/tailwindlabs/prettier-plugin-tailwindcss[prettier-plugin-tailwindcss]
+
+== Usage
+Create or extend a https://prettier.io/docs/en/configuration.html[Prettier configuration file].
+For example:
+
+[source,javascript]
+----
+// prettier.config.js
+
+import {
+	prettierBase,
+	prettierMergeConfigs,
+} from "@rainstormy/preset-prettier-base"
+import { prettierTailwind } from "@rainstormy/preset-prettier-tailwind"
+
+export default prettierMergeConfigs([
+    prettierBase(),
+
+	// `prettierTailwind` must follow `prettierBase` to take effect.
+	prettierTailwind(),
+])
+----
+
+== Complementary Presets
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-tailwind[@rainstormy/preset-eslint-tailwind]

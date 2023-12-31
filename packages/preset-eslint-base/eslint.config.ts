@@ -36,7 +36,7 @@ export function eslintBase(options: {
 		/**
 		 * @see https://eslint.org/docs/latest/rules eslint
 		 * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules eslint-comments
-		 * @see https://github.com/eslint-functional/eslint-plugin-functional#supported-rules functional
+		 * @see https://github.com/eslint-functional/eslint-plugin-functional#rules functional
 		 * @see https://github.com/import-js/eslint-plugin-import#rules import
 		 * @see https://github.com/Limegrass/eslint-plugin-import-alias#configuration import-alias
 		 * @see https://github.com/art0rz/eslint-plugin-no-barrel-files#rules no-barrel-files

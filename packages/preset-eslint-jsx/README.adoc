@@ -1,0 +1,118 @@
+= Generic JSX Preset for ESLint
+:experimental:
+:source-highlighter: highlight.js
+
+This package provides a predefined, opinionated https://eslint.org[ESLint] configuration intended to be used as a foundation for any web project that uses the JSX syntax for components such as https://qwik.builder.io[Qwik].
+
+[CAUTION]
+====
+The JSX preset is already included in the following presets:
+
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-preact[@rainstormy/preset-eslint-preact]
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-react[@rainstormy/preset-eslint-react]
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-solid[@rainstormy/preset-eslint-solid]
+====
+
+== Installation
+Install the `@rainstormy/preset-eslint-jsx` package and its peer dependencies:
+
+[source,shell]
+----
+npm install --save-dev @rainstormy/preset-eslint-jsx eslint
+----
+
+[source,shell]
+----
+pnpm install --save-dev @rainstormy/preset-eslint-jsx eslint
+----
+
+[source,shell]
+----
+yarn add --dev @rainstormy/preset-eslint-jsx eslint
+----
+
+This preset configures a subset of rules from the following plugins, which are installed along with the preset package:
+
+* https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules[eslint-plugin-jsx-a11y] (with rule names prefixed by `jsx-a11y/`)
+* https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules[eslint-plugin-react] (only for generic JSX rules, with rule names prefixed by `react/`)
+
+== Usage
+Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] to target JSX component files in TypeScript.
+For example:
+
+[source,javascript]
+----
+// eslint.config.js
+
+import {
+	eslintAmbientTypeScriptModules,
+	eslintBase
+} from "@rainstormy/preset-eslint-base"
+import { eslintJsx } from "@rainstormy/preset-eslint-jsx"
+
+export default [
+	eslintBase({
+		files: ["**/*.+(js|ts|tsx)"],
+		tsconfig: "./tsconfig.json",
+	}),
+
+	// `eslintAmbientTypeScriptModules` and `eslintJsx` must follow `eslintBase` to take effect.
+	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
+	eslintJsx({ files: ["**/*.tsx"] }),
+]
+----
+
+[TIP]
+.Configure Additional Framework-Specific Rules
+====
+You can install other relevant ESLint plugins and configure their rules accordingly.
+For example:
+
+[source,javascript]
+----
+// eslint.config.js
+
+import {
+	eslintAmbientTypeScriptModules,
+	eslintBase
+} from "@rainstormy/preset-eslint-base"
+import { eslintJsx } from "@rainstormy/preset-eslint-jsx"
+import qwikPlugin from "eslint-plugin-qwik"
+
+export default [
+	eslintBase({
+		files: ["**/*.+(js|ts|tsx)"],
+		tsconfig: "./tsconfig.json",
+	}),
+
+	// `eslintAmbientTypeScriptModules`, `eslintJsx`, and custom configurations must follow `eslintBase` to take effect.
+	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
+	eslintJsx({ files: ["**/*.tsx"] }),
+	{
+		files: ["**/*.tsx"],
+		plugins: {
+			qwik: qwikPlugin,
+		},
+		rules: {
+			"react/function-component-definition": "off",
+			"react/jsx-key": "off",
+			"react/jsx-no-script-url": "off",
+			"qwik/jsx-img": "error",
+			"qwik/jsx-key": "error",
+			"qwik/jsx-no-script-url": "error",
+			"qwik/loader-location": "error",
+			"qwik/no-react-props": "error",
+			"qwik/prefer-classlist": "error",
+			"qwik/unused-server": "error",
+			"qwik/use-method-usage": "error",
+			"qwik/valid-lexical-scope": "error",
+		},
+	},
+]
+----
+====
+
+== Complementary Presets
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-storybook[@rainstormy/preset-eslint-storybook]
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-tailwind[@rainstormy/preset-eslint-tailwind]
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-testing-library[@rainstormy/preset-eslint-testing-library]

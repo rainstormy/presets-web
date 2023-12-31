@@ -4,14 +4,11 @@ import {
 } from "@rainstormy/preset-eslint-base"
 
 export default [
-	{
-		ignores: ["**/dist/*"],
-	},
 	eslintBase({
 		files: ["**/*.+(js|ts)"],
 		tsconfig: "./tsconfig.json",
 	}),
-	eslintAmbientTypeScriptModules({
-		files: ["**/*.d.ts"],
-	}),
+
+	// `eslintAmbientTypeScriptModules` must follow `eslintBase` to take effect.
+	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
 ]

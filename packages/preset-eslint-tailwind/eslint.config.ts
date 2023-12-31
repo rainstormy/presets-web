@@ -11,7 +11,7 @@ export function eslintTailwind(options: {
 			tailwind: tailwindPlugin,
 		},
 		/**
-		 * @see https://github.com/francoismassart/eslint-plugin-tailwindcss#supported-rules tailwindcss
+		 * @see https://github.com/francoismassart/eslint-plugin-tailwindcss#supported-rules tailwind
 		 */
 		rules: {
 			/**

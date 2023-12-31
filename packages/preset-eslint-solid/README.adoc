@@ -1,0 +1,60 @@
+= Solid Preset for ESLint
+:experimental:
+:source-highlighter: highlight.js
+
+This package provides a predefined, opinionated https://eslint.org[ESLint] configuration suitable for any web project with https://www.solidjs.com[Solid] components.
+
+== Installation
+Install the `@rainstormy/preset-eslint-solid` package and its peer dependencies:
+
+[source,shell]
+----
+npm install --save-dev @rainstormy/preset-eslint-solid eslint
+----
+
+[source,shell]
+----
+pnpm install --save-dev @rainstormy/preset-eslint-solid eslint
+----
+
+[source,shell]
+----
+yarn add --dev @rainstormy/preset-eslint-solid eslint
+----
+
+This preset configures a subset of rules from the following plugins, which are installed along with the preset package:
+
+* https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules[eslint-plugin-jsx-a11y] (with rule names prefixed by `jsx-a11y/`)
+* https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules[eslint-plugin-react] (only for generic JSX rules, with rule names prefixed by `react/`)
+* https://github.com/solidjs-community/eslint-plugin-solid#rules[eslint-plugin-solid] (with rule names prefixed by `solid/`)
+
+== Usage
+Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] to target JSX component files in TypeScript.
+For example:
+
+[source,javascript]
+----
+// eslint.config.js
+
+import {
+	eslintAmbientTypeScriptModules,
+	eslintBase,
+} from "@rainstormy/preset-eslint-base"
+import { eslintSolid } from "@rainstormy/preset-eslint-solid"
+
+export default [
+	eslintBase({
+		files: ["**/*.+(js|ts|tsx)"],
+		tsconfig: "./tsconfig.json",
+	}),
+
+	// `eslintAmbientTypeScriptModules` and `eslintSolid` must follow `eslintBase` to take effect.
+	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
+	eslintSolid({ files: ["**/*.tsx"] }),
+]
+----
+
+== Complementary Presets
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-storybook[@rainstormy/preset-eslint-storybook]
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-tailwind[@rainstormy/preset-eslint-tailwind]
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-testing-library[@rainstormy/preset-eslint-testing-library]
