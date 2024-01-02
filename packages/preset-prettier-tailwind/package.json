@@ -3,8 +3,8 @@
 	"name": "@rainstormy/preset-prettier-tailwind",
 	"version": "0.0.1-alpha.0",
 	"type": "module",
-	"main": "dist/prettier.config.js",
-	"types": "dist/prettier.config.d.ts",
+	"main": "dist/preset-prettier-tailwind.js",
+	"types": "dist/preset-prettier-tailwind.d.ts",
 	"files": [
 		"dist"
 	],

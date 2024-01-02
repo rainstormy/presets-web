@@ -5,7 +5,7 @@ export default defineConfig(() => ({
 	build: {
 		emptyOutDir: true,
 		lib: {
-			entry: { "prettier.config": "./prettier.config.ts" },
+			entry: { "preset-prettier-base": "./preset-prettier-base.ts" },
 			formats: ["es" as const],
 		},
 		minify: false,
@@ -19,7 +19,7 @@ export default defineConfig(() => ({
 	},
 	plugins: [
 		dtsPlugin({
-			include: ["prettier.config.ts"],
+			include: ["preset-prettier-base.ts"],
 		}),
 	],
 }))

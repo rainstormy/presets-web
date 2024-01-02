@@ -15,6 +15,8 @@ export function eslintSolid(options: {
 			solid: solidPlugin,
 		},
 		/**
+		 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules jsx-a11y
+		 * @see https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules react
 		 * @see https://github.com/solidjs-community/eslint-plugin-solid#rules solid
 		 */
 		rules: {

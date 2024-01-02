@@ -3,8 +3,8 @@
 	"name": "@rainstormy/preset-eslint-testing-library",
 	"version": "0.0.1-alpha.0",
 	"type": "module",
-	"main": "dist/eslint.config.js",
-	"types": "dist/eslint.config.d.ts",
+	"main": "dist/preset-eslint-testing-library.js",
+	"types": "dist/preset-eslint-testing-library.d.ts",
 	"files": [
 		"dist"
 	],

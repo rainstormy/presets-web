@@ -53,18 +53,29 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # https://github.com/actions/checkout/releases/tag/v4.1.1 (pinned to the commit SHA)
+      - name: Restore the build artifacts
+        id: cache-build-artifacts
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # https://github.com/actions/cache/releases/tag/v3.3.2 (pinned to the commit SHA)
+        with:
+          path: ./packages/**/dist/
+          key: ${{ runner.os }}-build-artifacts-${{ hashFiles('packages/**/*.ts', 'packages/**/package.json', 'yarn.lock') }}
       - name: Install Yarn and third-party dependencies
+        if: steps.cache-build-artifacts.outputs.cache-hit != 'true'
         uses: ./.github/actions/yarn-zero-install-cache
-      - name: Run the validation task
-        run: yarn run build
+      - name: Revalidate the build artifacts
+        if: steps.cache-build-artifacts.outputs.cache-hit != 'true'
+        run: yarn workspaces foreach --all run build
 
   validate-format:
+    needs: validate-build # The Prettier configuration in this project uses the Prettier presets; hence, to operate, it requires the build artifacts.
     name: Has well-formatted code (Prettier)
     runs-on: ubuntu-22.04
     timeout-minutes: 1
     steps:
       - name: Check out the repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # https://github.com/actions/checkout/releases/tag/v4.1.1 (pinned to the commit SHA)
+      - name: Restore the build artifacts
+        uses: ./.github/actions/build-artifacts
       - name: Install Yarn and third-party dependencies
         uses: ./.github/actions/yarn-zero-install-cache
       - name: Restore the Prettier cache
@@ -77,12 +88,15 @@ jobs:
         run: yarn run validate.format
 
   validate-lint:
+    needs: validate-build # The ESLint configuration in this project uses the ESLint presets; hence, to operate, it requires the build artifacts.
     name: Has clean code (ESLint)
     runs-on: ubuntu-22.04
-    timeout-minutes: 2
+    timeout-minutes: 1
     steps:
       - name: Check out the repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # https://github.com/actions/checkout/releases/tag/v4.1.1 (pinned to the commit SHA)
+      - name: Restore the build artifacts
+        uses: ./.github/actions/build-artifacts
       - name: Install Yarn and third-party dependencies
         uses: ./.github/actions/yarn-zero-install-cache
       - name: Restore the ESLint cache
@@ -95,12 +109,15 @@ jobs:
         run: yarn run validate.lint
 
   validate-types:
+    needs: validate-build # Some packages depend on the build artifacts of other packages.
     name: Is type-safe (TypeScript)
     runs-on: ubuntu-22.04
     timeout-minutes: 1
     steps:
       - name: Check out the repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # https://github.com/actions/checkout/releases/tag/v4.1.1 (pinned to the commit SHA)
+      - name: Restore the build artifacts
+        uses: ./.github/actions/build-artifacts
       - name: Install Yarn and third-party dependencies
         uses: ./.github/actions/yarn-zero-install-cache
       - name: Restore the TypeScript cache

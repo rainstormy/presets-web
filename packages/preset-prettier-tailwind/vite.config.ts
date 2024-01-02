@@ -5,7 +5,7 @@ export default defineConfig(() => ({
 	build: {
 		emptyOutDir: true,
 		lib: {
-			entry: { "prettier.config": "./prettier.config.ts" },
+			entry: { "preset-prettier-tailwind": "./preset-prettier-tailwind.ts" },
 			formats: ["es" as const],
 		},
 		minify: false,
@@ -15,7 +15,7 @@ export default defineConfig(() => ({
 	},
 	plugins: [
 		dtsPlugin({
-			include: ["prettier.config.ts"],
+			include: ["preset-prettier-tailwind.ts"],
 		}),
 	],
 }))

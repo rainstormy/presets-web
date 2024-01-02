@@ -3,8 +3,8 @@
 	"name": "@rainstormy/preset-eslint-storybook",
 	"version": "0.0.1-alpha.0",
 	"type": "module",
-	"main": "dist/eslint.config.js",
-	"types": "dist/eslint.config.d.ts",
+	"main": "dist/preset-eslint-storybook.js",
+	"types": "dist/preset-eslint-storybook.d.ts",
 	"files": [
 		"dist"
 	],

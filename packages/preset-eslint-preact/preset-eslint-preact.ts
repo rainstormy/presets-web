@@ -10,6 +10,11 @@ export function eslintPreact(options: {
 
 	return {
 		...reactPreset,
+		/**
+		 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules jsx-a11y
+		 * @see https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules react
+		 * @see https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks#custom-configuration react-hooks
+		 */
 		rules: {
 			...reactPreset.rules,
 

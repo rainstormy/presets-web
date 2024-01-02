@@ -5,7 +5,7 @@ export default defineConfig(() => ({
 	build: {
 		emptyOutDir: true,
 		lib: {
-			entry: { "eslint.config": "./eslint.config.ts" },
+			entry: { "preset-eslint-base": "./preset-eslint-base.ts" },
 			formats: ["es" as const],
 		},
 		minify: false,
@@ -26,7 +26,7 @@ export default defineConfig(() => ({
 	},
 	plugins: [
 		dtsPlugin({
-			include: ["eslint.config.ts"],
+			include: ["preset-eslint-base.ts"],
 		}),
 	],
 }))

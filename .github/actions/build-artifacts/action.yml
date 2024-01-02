@@ -1,0 +1,13 @@
+name: Build artifacts
+description: Restores the build artifacts from the workflow cache.
+author: Steffen Diswal
+
+runs:
+  using: composite
+  steps:
+    - name: Restore the build artifacts
+      uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84 # https://github.com/actions/cache/releases/tag/v3.3.2 (pinned to the commit SHA)
+      with:
+        fail-on-cache-miss: true
+        path: ./packages/**/dist/
+        key: ${{ runner.os }}-build-artifacts-${{ hashFiles('packages/**/*.ts', 'packages/**/package.json', 'yarn.lock') }}
