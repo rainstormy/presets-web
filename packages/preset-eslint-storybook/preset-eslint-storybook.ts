@@ -15,6 +15,18 @@ export function eslintStorybook(options: {
 		 */
 		rules: {
 			/**
+			 * Stories must be as simple as possible.
+			 * @see https://eslint.org/docs/latest/rules/complexity
+			 */
+			complexity: ["error", { max: 2 }],
+
+			/**
+			 * It is impractical to limit the size of a story file.
+			 * @see https://eslint.org/docs/latest/rules/max-lines
+			 */
+			"max-lines": "off",
+
+			/**
 			 * The `render` function in stories uses prop spreading to provide args to components.
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
 			 */
