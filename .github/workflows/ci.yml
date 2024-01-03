@@ -21,7 +21,7 @@ on:
 # Cancel all previous runs of this workflow that are still in progress on the same branch.
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency
 concurrency:
-  group: ci-${{ github.ref }}
+  group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 # Minimise the permission scope of the default GitHub access token in this workflow.
