@@ -1,7 +1,7 @@
 {
 	"$schema": "https://json.schemastore.org/package.json",
 	"name": "@rainstormy/preset-eslint-vitest",
-	"version": "0.0.1-alpha.0",
+	"version": "1.0.0-alpha.1",
 	"license": "MIT",
 	"type": "module",
 	"main": "dist/preset-eslint-vitest.js",
