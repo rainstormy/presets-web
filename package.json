@@ -1,7 +1,13 @@
 {
 	"$schema": "https://json.schemastore.org/package.json",
 	"private": true,
+	"bugs": "https://github.com/rainstormy/presets-web/issues",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rainstormy/presets-web.git"
+	},
 	"license": "MIT",
+	"author": "Steffen Diswal",
 	"type": "module",
 	"workspaces": [
 		"packages/*"
@@ -34,6 +40,9 @@
 		"typescript": "5.3.3"
 	},
 	"packageManager": "yarn@4.0.2",
+	"engines": {
+		"node": ">=20.0.0"
+	},
 	"//": {
 		"scripts": {
 			"validate.fix": "The formatter must run after the linter to resolve potential formatting issues introduced by the linter."

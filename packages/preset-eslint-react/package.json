@@ -2,7 +2,19 @@
 	"$schema": "https://json.schemastore.org/package.json",
 	"name": "@rainstormy/preset-eslint-react",
 	"version": "1.0.0-alpha.1",
+	"description": "A predefined, opinionated ESLint configuration suitable for any web project with React components.",
+	"keywords": [
+		"eslint",
+		"eslint-config"
+	],
+	"bugs": "https://github.com/rainstormy/presets-web/issues",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rainstormy/presets-web.git",
+		"directory": "packages/preset-eslint-react"
+	},
 	"license": "MIT",
+	"author": "Steffen Diswal",
 	"type": "module",
 	"main": "dist/preset-eslint-react.js",
 	"types": "dist/preset-eslint-react.d.ts",
