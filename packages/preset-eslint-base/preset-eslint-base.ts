@@ -2332,12 +2332,13 @@ export function eslintBase(options: {
 			 * -1 is commonly returned by functions in the JavaScript standard library.
 			 * 0 is commonly used for checking array lengths.
 			 * 1 is commonly used for incrementing and decrementing.
+			 * 2 is commonly used for doubling and halving and for checking if a number is even or odd.
 			 * @see https://typescript-eslint.io/rules/no-magic-numbers
 			 */
 			"typescript/no-magic-numbers": [
 				"error",
 				{
-					ignore: [-1, 0, 1],
+					ignore: [-1, 0, 1, 2],
 					ignoreNumericLiteralTypes: true,
 					ignoreTypeIndexes: true,
 				},
