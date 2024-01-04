@@ -136,3 +136,4 @@ eslint "./src/**/*.{ts,tsx}" "./*.config.{js,ts}" "./*.d.ts"
 
 == Complementary Presets
 * https://github.com/rainstormy/presets-web/tree/main/packages/preset-prettier-base[@rainstormy/preset-prettier-base]
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-typescript[@rainstormy/preset-typescript]

@@ -42,3 +42,4 @@ export default prettierBase()
 
 == Complementary Presets
 * https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-base[@rainstormy/preset-eslint-base]
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-typescript[@rainstormy/preset-typescript]
