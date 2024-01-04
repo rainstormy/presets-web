@@ -34,13 +34,11 @@ In addition to the https://eslint.org/docs/latest/rules[built-in rules of ESLint
 * https://github.com/sindresorhus/eslint-plugin-unicorn#rules[eslint-plugin-unicorn] (with rule names prefixed by `unicorn/`)
 
 == Usage
-Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] to target TypeScript files (and optionally also JavaScript files, e.g. configuration files).
+Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] (`eslint.config.js`) to target TypeScript files (and optionally also JavaScript files, e.g. configuration files).
 For example:
 
 [source,javascript]
 ----
-// eslint.config.js
-
 import {
 	eslintAmbientTypeScriptModules,
 	eslintBase
@@ -65,8 +63,6 @@ For example:
 
 [source,javascript]
 ----
-// eslint.config.js
-
 import {
 	eslintAmbientTypeScriptModules,
 	eslintBase
@@ -101,8 +97,6 @@ For example:
 
 [source,javascript]
 ----
-// eslint.config.js
-
 import {
 	eslintAmbientTypeScriptModules,
 	eslintBase

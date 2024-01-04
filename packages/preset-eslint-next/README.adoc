@@ -27,13 +27,11 @@ This preset configures a subset of rules from the following plugin, which is ins
 * https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-plugin[@next/eslint-plugin-next] (with rule names prefixed by `next/`)
 
 == Usage
-Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] to target JSX component files in TypeScript.
+Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] (`eslint.config.js`) to target JSX component files in TypeScript.
 For example:
 
 [source,javascript]
 ----
-// eslint.config.js
-
 import {
 	eslintAmbientTypeScriptModules,
 	eslintBase
