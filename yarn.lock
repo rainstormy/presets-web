@@ -643,6 +643,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@rainstormy/preset-typescript@workspace:packages/preset-typescript":
+  version: 0.0.0-use.local
+  resolution: "@rainstormy/preset-typescript@workspace:packages/preset-typescript"
+  dependencies:
+    downdoc: "npm:1.0.2-stable"
+  peerDependencies:
+    typescript: 5.x
+  languageName: unknown
+  linkType: soft
+
 "@rainstormy/updraft@npm:1.0.0":
   version: 1.0.0
   resolution: "@rainstormy/updraft@npm:1.0.0"

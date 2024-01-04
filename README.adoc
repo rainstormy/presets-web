@@ -2,7 +2,7 @@
 :experimental:
 :source-highlighter: highlight.js
 
-This repository contains predefined, opinionated tooling configurations for web projects.
+This repository contains predefined, opinionated tooling configurations for projects that use modern web technologies.
 
 == ESLint Presets
 Use https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-base[@rainstormy/preset-eslint-base] as a starting point.

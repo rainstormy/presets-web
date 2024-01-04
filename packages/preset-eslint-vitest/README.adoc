@@ -27,13 +27,11 @@ This preset configures a subset of rules from the following plugin, which is ins
 * https://github.com/veritem/eslint-plugin-vitest#rules[eslint-plugin-vitest] (with rule names prefixed by `vitest/`)
 
 == Usage
-Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] to target test files in TypeScript.
+Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] (`eslint.config.js`) to target test files in TypeScript.
 For example:
 
 [source,javascript]
 ----
-// eslint.config.js
-
 import {
 	eslintAmbientTypeScriptModules,
 	eslintBase,

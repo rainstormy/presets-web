@@ -29,13 +29,11 @@ This preset configures a subset of rules from the following plugins, which are i
 * https://github.com/solidjs-community/eslint-plugin-solid#rules[eslint-plugin-solid] (with rule names prefixed by `solid/`)
 
 == Usage
-Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] to target JSX component files in TypeScript.
+Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] (`eslint.config.js`) to target JSX component files in TypeScript.
 For example:
 
 [source,javascript]
 ----
-// eslint.config.js
-
 import {
 	eslintAmbientTypeScriptModules,
 	eslintBase,

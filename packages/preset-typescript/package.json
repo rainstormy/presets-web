@@ -1,0 +1,36 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "@rainstormy/preset-typescript",
+	"version": "1.0.0-alpha.1",
+	"description": "A predefined, opinionated TypeScript configuration suitable for any TypeScript project.",
+	"keywords": [
+		"tsconfig",
+		"typescript"
+	],
+	"bugs": "https://github.com/rainstormy/presets-web/issues",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rainstormy/presets-web.git",
+		"directory": "packages/preset-typescript"
+	},
+	"license": "MIT",
+	"author": "Steffen Diswal",
+	"type": "module",
+	"scripts": {
+		"release.markdown-readme": "downdoc README.adoc"
+	},
+	"devDependencies": {
+		"downdoc": "1.0.2-stable"
+	},
+	"peerDependencies": {
+		"typescript": "5.x"
+	},
+	"//": {
+		"devDependencies": {
+			"downdoc": "Downdoc converts AsciiDoc documents to Markdown to improve compatibility with npm."
+		},
+		"peerDependencies": {
+			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+		}
+	}
+}

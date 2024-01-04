@@ -27,13 +27,11 @@ This preset configures a subset of rules from the following plugin, which is ins
 * https://github.com/testing-library/eslint-plugin-testing-library#supported-rules[eslint-plugin-testing-library] (with rule names prefixed by `testing-library/`)
 
 == Usage
-Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] to target component test files in TypeScript.
+Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] (`eslint.config.js`) to target component test files in TypeScript.
 For example:
 
 [source,javascript]
 ----
-// eslint.config.js
-
 import {
 	eslintAmbientTypeScriptModules,
 	eslintBase,

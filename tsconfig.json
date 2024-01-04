@@ -1,28 +1,9 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "./packages/preset-typescript/node-es2023",
 	"compilerOptions": {
-		"allowJs": false,
 		"baseUrl": "./",
-		"checkJs": false,
-		"esModuleInterop": true,
-		"exactOptionalPropertyTypes": false,
-		"forceConsistentCasingInFileNames": true,
-		"importHelpers": true,
-		"isolatedModules": true,
-		"lib": ["ES2022"],
-		"module": "ES2022",
-		"moduleResolution": "Node",
-		"noEmit": true,
-		"noImplicitReturns": true,
-		"paths": {},
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
-		"sourceMap": true,
-		"strict": true,
-		"target": "ES2022",
-		"types": [],
-		"useDefineForClassFields": true,
-		"verbatimModuleSyntax": true
+		"paths": {}
 	},
 	"include": ["./packages/**/*.ts", "./*.config.js", "./*.d.ts"]
 }

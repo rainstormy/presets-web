@@ -60,6 +60,10 @@ const RAW_RUNTIME_STATE =
     {\
       "name": "@rainstormy/preset-prettier-tailwind",\
       "reference": "workspace:packages/preset-prettier-tailwind"\
+    },\
+    {\
+      "name": "@rainstormy/preset-typescript",\
+      "reference": "workspace:packages/preset-typescript"\
     }\
   ],\
   "enableTopLevelFallback": true,\
@@ -77,6 +81,7 @@ const RAW_RUNTIME_STATE =
     ["@rainstormy/preset-eslint-vitest", ["workspace:packages/preset-eslint-vitest"]],\
     ["@rainstormy/preset-prettier-base", ["virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#workspace:packages/preset-prettier-base", "workspace:packages/preset-prettier-base"]],\
     ["@rainstormy/preset-prettier-tailwind", ["workspace:packages/preset-prettier-tailwind"]],\
+    ["@rainstormy/preset-typescript", ["workspace:packages/preset-typescript"]],\
     ["root-workspace-0b6124", ["workspace:."]]\
   ],\
   "fallbackPool": [\
@@ -993,6 +998,16 @@ const RAW_RUNTIME_STATE =
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
           ["vite", "virtual:896b4e730dffaf8a48b871b28c4f514b7864f0c1e1c3251840cba3f868ba738bded5328a7ba31737285f88ea5243771403ff3b99d7c5fafd5190d94b860ccde6#npm:5.0.10"],\
           ["vite-plugin-dts", "virtual:896b4e730dffaf8a48b871b28c4f514b7864f0c1e1c3251840cba3f868ba738bded5328a7ba31737285f88ea5243771403ff3b99d7c5fafd5190d94b860ccde6#npm:3.6.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@rainstormy/preset-typescript", [\
+      ["workspace:packages/preset-typescript", {\
+        "packageLocation": "./packages/preset-typescript/",\
+        "packageDependencies": [\
+          ["@rainstormy/preset-typescript", "workspace:packages/preset-typescript"],\
+          ["downdoc", "npm:1.0.2-stable"]\
         ],\
         "linkType": "SOFT"\
       }]\
