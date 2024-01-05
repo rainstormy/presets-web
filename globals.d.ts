@@ -82,6 +82,10 @@ declare module "eslint-plugin-vitest" {
 	export = eslintPlugin
 }
 
+declare module "prettier-plugin-css-order" {
+	export = prettierPlugin
+}
+
 declare module "prettier-plugin-organize-imports" {
 	export = prettierPlugin
 }

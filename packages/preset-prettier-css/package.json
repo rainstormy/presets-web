@@ -1,0 +1,58 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "@rainstormy/preset-prettier-css",
+	"version": "1.0.0-alpha.1",
+	"description": "A predefined, opinionated Prettier configuration suitable for any web project with CSS declarations.",
+	"keywords": [
+		"prettier",
+		"prettier-config"
+	],
+	"bugs": "https://github.com/rainstormy/presets-web/issues",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rainstormy/presets-web.git",
+		"directory": "packages/preset-prettier-css"
+	},
+	"license": "MIT",
+	"author": "Steffen Diswal",
+	"type": "module",
+	"main": "dist/preset-prettier-css.js",
+	"types": "dist/preset-prettier-css.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "vite build",
+		"release.markdown-readme": "downdoc README.adoc"
+	},
+	"dependencies": {
+		"prettier-plugin-css-order": "2.0.1"
+	},
+	"devDependencies": {
+		"downdoc": "1.0.2-stable",
+		"prettier": "3.1.1",
+		"typescript": "5.3.3",
+		"vite": "5.0.10",
+		"vite-plugin-dts": "3.6.4"
+	},
+	"peerDependencies": {
+		"prettier": "3.x",
+		"typescript": "5.x"
+	},
+	"//": {
+		"dependencies": {
+			"prettier-plugin-css-order": "A Prettier plugin that sorts CSS properties."
+		},
+		"devDependencies": {
+			"downdoc": "Downdoc converts AsciiDoc documents to Markdown to improve compatibility with npm.",
+			"prettier": "An opinionated code formatter.",
+			"typescript": "A statically typed programming language that extends the JavaScript syntax.",
+			"vite": "A highly extensible build tool.",
+			"vite-plugin-dts": "A Vite plugin that generates TypeScript declaration files."
+		},
+		"peerDependencies": {
+			"prettier": "An opinionated code formatter.",
+			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+		}
+	}
+}

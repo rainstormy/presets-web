@@ -26,7 +26,11 @@ Use https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-b
 Use https://github.com/rainstormy/presets-web/tree/main/packages/preset-prettier-base[@rainstormy/preset-prettier-base] as a starting point.
 
 === Styling
+* *CSS:* https://github.com/rainstormy/presets-web/tree/main/packages/preset-prettier-css[@rainstormy/preset-prettier-css]
 * *Tailwind CSS:* https://github.com/rainstormy/presets-web/tree/main/packages/preset-prettier-tailwind[@rainstormy/preset-prettier-tailwind]
+
+== TypeScript Presets
+See https://github.com/rainstormy/presets-web/tree/main/packages/preset-typescript[@rainstormy/preset-typescript] for all available configurations.
 
 == Contributing
 Contributions to this project are welcome!
