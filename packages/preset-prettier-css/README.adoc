@@ -1,0 +1,48 @@
+= CSS Preset for Prettier
+:experimental:
+:source-highlighter: highlight.js
+
+This package provides a predefined, opinionated https://prettier.io[Prettier] configuration suitable for any web project with CSS declarations.
+
+== Installation
+Install the `@rainstormy/preset-prettier-css` package and its peer dependencies:
+
+[source,shell]
+----
+npm install --save-dev @rainstormy/preset-prettier-css postcss prettier
+----
+
+[source,shell]
+----
+pnpm install --save-dev @rainstormy/preset-prettier-css postcss prettier
+----
+
+[source,shell]
+----
+yarn add --dev @rainstormy/preset-prettier-css postcss prettier
+----
+
+This preset includes the following plugin, which is installed along with the preset package:
+
+* https://github.com/Siilwyn/prettier-plugin-css-order[prettier-plugin-css-order]
+
+== Usage
+Create or extend a https://prettier.io/docs/en/configuration.html[Prettier configuration file] (`prettier.config.js`).
+For example:
+
+[source,javascript]
+----
+import {
+	prettierBase,
+	prettierMergeConfigs,
+} from "@rainstormy/preset-prettier-base"
+import { prettierCss } from "@rainstormy/preset-prettier-css"
+
+export default prettierMergeConfigs([
+    prettierBase(),
+	prettierCss(),
+])
+----
+
+== Complementary Presets
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-prettier-tailwind[@rainstormy/preset-prettier-tailwind]

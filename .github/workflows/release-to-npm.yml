@@ -50,6 +50,7 @@ jobs:
           - preset-eslint-testing-library
           - preset-eslint-vitest
           - preset-prettier-base
+          - preset-prettier-css
           - preset-prettier-tailwind
           - preset-typescript
     name: Release / Publish npm packages / ${{ matrix.package-name }}

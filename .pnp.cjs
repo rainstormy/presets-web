@@ -58,6 +58,10 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:packages/preset-prettier-base"\
     },\
     {\
+      "name": "@rainstormy/preset-prettier-css",\
+      "reference": "workspace:packages/preset-prettier-css"\
+    },\
+    {\
       "name": "@rainstormy/preset-prettier-tailwind",\
       "reference": "workspace:packages/preset-prettier-tailwind"\
     },\
@@ -80,6 +84,7 @@ const RAW_RUNTIME_STATE =
     ["@rainstormy/preset-eslint-testing-library", ["workspace:packages/preset-eslint-testing-library"]],\
     ["@rainstormy/preset-eslint-vitest", ["workspace:packages/preset-eslint-vitest"]],\
     ["@rainstormy/preset-prettier-base", ["virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#workspace:packages/preset-prettier-base", "workspace:packages/preset-prettier-base"]],\
+    ["@rainstormy/preset-prettier-css", ["workspace:packages/preset-prettier-css"]],\
     ["@rainstormy/preset-prettier-tailwind", ["workspace:packages/preset-prettier-tailwind"]],\
     ["@rainstormy/preset-typescript", ["workspace:packages/preset-typescript"]],\
     ["root-workspace-0b6124", ["workspace:."]]\
@@ -980,6 +985,21 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.1.1"],\
           ["prettier-plugin-organize-imports", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:3.2.4"],\
           ["prettier-plugin-packagejson", "virtual:3deb8a5f99f09d1f5d1e58d827228dfc12533d55f98438697415b72e0c1e90400bf7a3889501c4083ef2838771108bcc1ffe31005547eb4edae47c333558b8c4#npm:2.4.7"],\
+          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
+          ["vite", "virtual:896b4e730dffaf8a48b871b28c4f514b7864f0c1e1c3251840cba3f868ba738bded5328a7ba31737285f88ea5243771403ff3b99d7c5fafd5190d94b860ccde6#npm:5.0.10"],\
+          ["vite-plugin-dts", "virtual:896b4e730dffaf8a48b871b28c4f514b7864f0c1e1c3251840cba3f868ba738bded5328a7ba31737285f88ea5243771403ff3b99d7c5fafd5190d94b860ccde6#npm:3.6.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@rainstormy/preset-prettier-css", [\
+      ["workspace:packages/preset-prettier-css", {\
+        "packageLocation": "./packages/preset-prettier-css/",\
+        "packageDependencies": [\
+          ["@rainstormy/preset-prettier-css", "workspace:packages/preset-prettier-css"],\
+          ["downdoc", "npm:1.0.2-stable"],\
+          ["prettier", "npm:3.1.1"],\
+          ["prettier-plugin-css-order", "virtual:d89008f224cd715ea32c201ca1e93241f9049255779b45304de168778b7c2f716ceecb171cfe6c5dea0d1c3bcda48eb2f1ec0b5b0d481d8a1cf1128a71b455bc#npm:2.0.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
           ["vite", "virtual:896b4e730dffaf8a48b871b28c4f514b7864f0c1e1c3251840cba3f868ba738bded5328a7ba31737285f88ea5243771403ff3b99d7c5fafd5190d94b860ccde6#npm:5.0.10"],\
           ["vite-plugin-dts", "virtual:896b4e730dffaf8a48b871b28c4f514b7864f0c1e1c3251840cba3f868ba738bded5328a7ba31737285f88ea5243771403ff3b99d7c5fafd5190d94b860ccde6#npm:3.6.4"]\
@@ -2412,6 +2432,28 @@ const RAW_RUNTIME_STATE =
           ["path-key", "npm:3.1.1"],\
           ["shebang-command", "npm:2.0.0"],\
           ["which", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["css-declaration-sorter", [\
+      ["npm:7.1.1", {\
+        "packageLocation": "./.yarn/cache/css-declaration-sorter-npm-7.1.1-b28d34697f-bea446e441.zip/node_modules/css-declaration-sorter/",\
+        "packageDependencies": [\
+          ["css-declaration-sorter", "npm:7.1.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:85481f50d8dfd4bc1f7f02530802629f63bf48fe8ef98102c62929de61c34e48d2eb2cf38ffd61ea91c3e50ce602c6c1dc8f831431875aeaf7df7264cf4cd4db#npm:7.1.1", {\
+        "packageLocation": "./.yarn/__virtual__/css-declaration-sorter-virtual-710e804419/0/cache/css-declaration-sorter-npm-7.1.1-b28d34697f-bea446e441.zip/node_modules/css-declaration-sorter/",\
+        "packageDependencies": [\
+          ["css-declaration-sorter", "virtual:85481f50d8dfd4bc1f7f02530802629f63bf48fe8ef98102c62929de61c34e48d2eb2cf38ffd61ea91c3e50ce602c6c1dc8f831431875aeaf7df7264cf4cd4db#npm:7.1.1"],\
+          ["@types/postcss", null],\
+          ["postcss", null]\
+        ],\
+        "packagePeers": [\
+          "@types/postcss",\
+          "postcss"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5880,6 +5922,50 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["postcss-less", [\
+      ["npm:6.0.0", {\
+        "packageLocation": "./.yarn/cache/postcss-less-npm-6.0.0-4aa4c2f75b-09869ba66e.zip/node_modules/postcss-less/",\
+        "packageDependencies": [\
+          ["postcss-less", "npm:6.0.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:85481f50d8dfd4bc1f7f02530802629f63bf48fe8ef98102c62929de61c34e48d2eb2cf38ffd61ea91c3e50ce602c6c1dc8f831431875aeaf7df7264cf4cd4db#npm:6.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/postcss-less-virtual-7939dcb58b/0/cache/postcss-less-npm-6.0.0-4aa4c2f75b-09869ba66e.zip/node_modules/postcss-less/",\
+        "packageDependencies": [\
+          ["postcss-less", "virtual:85481f50d8dfd4bc1f7f02530802629f63bf48fe8ef98102c62929de61c34e48d2eb2cf38ffd61ea91c3e50ce602c6c1dc8f831431875aeaf7df7264cf4cd4db#npm:6.0.0"],\
+          ["@types/postcss", null],\
+          ["postcss", null]\
+        ],\
+        "packagePeers": [\
+          "@types/postcss",\
+          "postcss"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["postcss-scss", [\
+      ["npm:4.0.9", {\
+        "packageLocation": "./.yarn/cache/postcss-scss-npm-4.0.9-b492c55307-f917ecfd4b.zip/node_modules/postcss-scss/",\
+        "packageDependencies": [\
+          ["postcss-scss", "npm:4.0.9"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:85481f50d8dfd4bc1f7f02530802629f63bf48fe8ef98102c62929de61c34e48d2eb2cf38ffd61ea91c3e50ce602c6c1dc8f831431875aeaf7df7264cf4cd4db#npm:4.0.9", {\
+        "packageLocation": "./.yarn/__virtual__/postcss-scss-virtual-726afd3010/0/cache/postcss-scss-npm-4.0.9-b492c55307-f917ecfd4b.zip/node_modules/postcss-scss/",\
+        "packageDependencies": [\
+          ["postcss-scss", "virtual:85481f50d8dfd4bc1f7f02530802629f63bf48fe8ef98102c62929de61c34e48d2eb2cf38ffd61ea91c3e50ce602c6c1dc8f831431875aeaf7df7264cf4cd4db#npm:4.0.9"],\
+          ["@types/postcss", null],\
+          ["postcss", null]\
+        ],\
+        "packagePeers": [\
+          "@types/postcss",\
+          "postcss"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["prelude-ls", [\
       ["npm:1.2.1", {\
         "packageLocation": "./.yarn/cache/prelude-ls-npm-1.2.1-3e4d272a55-b00d617431.zip/node_modules/prelude-ls/",\
@@ -5894,6 +5980,31 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/unplugged/prettier-npm-3.1.1-072c31ec21/node_modules/prettier/",\
         "packageDependencies": [\
           ["prettier", "npm:3.1.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["prettier-plugin-css-order", [\
+      ["npm:2.0.1", {\
+        "packageLocation": "./.yarn/cache/prettier-plugin-css-order-npm-2.0.1-03b68b4499-b28fc9665f.zip/node_modules/prettier-plugin-css-order/",\
+        "packageDependencies": [\
+          ["prettier-plugin-css-order", "npm:2.0.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:d89008f224cd715ea32c201ca1e93241f9049255779b45304de168778b7c2f716ceecb171cfe6c5dea0d1c3bcda48eb2f1ec0b5b0d481d8a1cf1128a71b455bc#npm:2.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/prettier-plugin-css-order-virtual-85481f50d8/0/cache/prettier-plugin-css-order-npm-2.0.1-03b68b4499-b28fc9665f.zip/node_modules/prettier-plugin-css-order/",\
+        "packageDependencies": [\
+          ["prettier-plugin-css-order", "virtual:d89008f224cd715ea32c201ca1e93241f9049255779b45304de168778b7c2f716ceecb171cfe6c5dea0d1c3bcda48eb2f1ec0b5b0d481d8a1cf1128a71b455bc#npm:2.0.1"],\
+          ["@types/prettier", null],\
+          ["css-declaration-sorter", "virtual:85481f50d8dfd4bc1f7f02530802629f63bf48fe8ef98102c62929de61c34e48d2eb2cf38ffd61ea91c3e50ce602c6c1dc8f831431875aeaf7df7264cf4cd4db#npm:7.1.1"],\
+          ["postcss-less", "virtual:85481f50d8dfd4bc1f7f02530802629f63bf48fe8ef98102c62929de61c34e48d2eb2cf38ffd61ea91c3e50ce602c6c1dc8f831431875aeaf7df7264cf4cd4db#npm:6.0.0"],\
+          ["postcss-scss", "virtual:85481f50d8dfd4bc1f7f02530802629f63bf48fe8ef98102c62929de61c34e48d2eb2cf38ffd61ea91c3e50ce602c6c1dc8f831431875aeaf7df7264cf4cd4db#npm:4.0.9"],\
+          ["prettier", "npm:3.1.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/prettier",\
+          "prettier"\
         ],\
         "linkType": "HARD"\
       }]\

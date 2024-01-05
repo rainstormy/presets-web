@@ -36,15 +36,18 @@ import {
 	prettierBase,
 	prettierMergeConfigs,
 } from "@rainstormy/preset-prettier-base"
+import { prettierCss } from "@rainstormy/preset-prettier-css"
 import { prettierTailwind } from "@rainstormy/preset-prettier-tailwind"
 
 export default prettierMergeConfigs([
     prettierBase(),
+    prettierCss(),
 
-	// `prettierTailwind` must follow `prettierBase` to take effect.
+	// `prettierTailwind` must be applied last.
 	prettierTailwind(),
 ])
 ----
 
 == Complementary Presets
 * https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-tailwind[@rainstormy/preset-eslint-tailwind]
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-prettier-css[@rainstormy/preset-prettier-css]

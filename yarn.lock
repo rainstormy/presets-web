@@ -627,6 +627,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@rainstormy/preset-prettier-css@workspace:packages/preset-prettier-css":
+  version: 0.0.0-use.local
+  resolution: "@rainstormy/preset-prettier-css@workspace:packages/preset-prettier-css"
+  dependencies:
+    downdoc: "npm:1.0.2-stable"
+    prettier: "npm:3.1.1"
+    prettier-plugin-css-order: "npm:2.0.1"
+    typescript: "npm:5.3.3"
+    vite: "npm:5.0.10"
+    vite-plugin-dts: "npm:3.6.4"
+  peerDependencies:
+    prettier: 3.x
+    typescript: 5.x
+  languageName: unknown
+  linkType: soft
+
 "@rainstormy/preset-prettier-tailwind@workspace:packages/preset-prettier-tailwind":
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-prettier-tailwind@workspace:packages/preset-prettier-tailwind"
@@ -1684,6 +1700,15 @@ __metadata:
     shebang-command: "npm:^2.0.0"
     which: "npm:^2.0.1"
   checksum: 5738c312387081c98d69c98e105b6327b069197f864a60593245d64c8089c8a0a744e16349281210d56835bb9274130d825a78b2ad6853ca13cfbeffc0c31750
+  languageName: node
+  linkType: hard
+
+"css-declaration-sorter@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "css-declaration-sorter@npm:7.1.1"
+  peerDependencies:
+    postcss: ^8.0.9
+  checksum: bea446e441bafde21c3c7b3f7639559311da12eea140db7ee3c61e4f41df455b7b098df107f99bc0cca32a5020841cc94bf8a2d5efb1b383e51f9de478c4816e
   languageName: node
   linkType: hard
 
@@ -4436,6 +4461,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-less@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "postcss-less@npm:6.0.0"
+  peerDependencies:
+    postcss: ^8.3.5
+  checksum: 09869ba66e1340f03d6ffd34cba2721f48d1c4a71314af5b10d8a3cc4f78c15f22da809442bf5e50d04eff2a96389d6a0fdb9f0c20a191945aacfb1747fd47ca
+  languageName: node
+  linkType: hard
+
+"postcss-scss@npm:^4.0.3":
+  version: 4.0.9
+  resolution: "postcss-scss@npm:4.0.9"
+  peerDependencies:
+    postcss: ^8.4.29
+  checksum: f917ecfd4b9113a6648e966a41f027ff7e14238393914978d44596e227a50f084667dc8818742348dc7d8b20130b30d4259aca1d4db86754a9c141202ae03714
+  languageName: node
+  linkType: hard
+
 "postcss@npm:^8.4.32, postcss@npm:^8.4.4":
   version: 8.4.32
   resolution: "postcss@npm:8.4.32"
@@ -4451,6 +4494,19 @@ __metadata:
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
   checksum: b00d617431e7886c520a6f498a2e14c75ec58f6d93ba48c3b639cf241b54232d90daa05d83a9e9b9fef6baa63cb7e1e4602c2372fea5bc169668401eb127d0cd
+  languageName: node
+  linkType: hard
+
+"prettier-plugin-css-order@npm:2.0.1":
+  version: 2.0.1
+  resolution: "prettier-plugin-css-order@npm:2.0.1"
+  dependencies:
+    css-declaration-sorter: "npm:^7.1.1"
+    postcss-less: "npm:^6.0.0"
+    postcss-scss: "npm:^4.0.3"
+  peerDependencies:
+    prettier: 3.x
+  checksum: b28fc9665fa0143fe91d417b352d9477e4fb0159aa23af64056c19868f6292f26671107ce2e5d259935d437bbb11848762015596823e5e7b02144151b2f27e4e
   languageName: node
   linkType: hard
 
