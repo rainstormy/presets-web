@@ -1,6 +1,9 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
-	"extends": "./packages/preset-typescript/node-es2023",
+	"extends": [
+		"./packages/preset-typescript/check",
+		"./packages/preset-typescript/target-node-es2023"
+	],
 	"compilerOptions": {
 		"baseUrl": "./",
 		"paths": {}

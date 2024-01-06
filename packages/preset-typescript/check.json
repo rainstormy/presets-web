@@ -2,6 +2,7 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
 		"allowJs": false,
+		"baseUrl": "./",
 		"checkJs": false,
 		"esModuleInterop": true,
 		"exactOptionalPropertyTypes": false,
@@ -9,6 +10,7 @@
 		"importHelpers": true,
 		"isolatedModules": true,
 		"noEmit": true,
+		"noEmitOnError": true,
 		"noImplicitReturns": true,
 		"resolveJsonModule": true,
 		"skipLibCheck": true,

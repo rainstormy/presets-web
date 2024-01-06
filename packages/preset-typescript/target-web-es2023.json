@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
-	"extends": "./base",
 	"compilerOptions": {
 		"lib": ["DOM", "DOM.Iterable", "ES2023", "WebWorker"],
 		"module": "ESNext",
