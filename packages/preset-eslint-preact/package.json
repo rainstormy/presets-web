@@ -21,16 +21,12 @@
 	"files": [
 		"dist"
 	],
-	"scripts": {
-		"release.markdown-readme": "downdoc README.adoc"
-	},
 	"dependencies": {
 		"@rainstormy/preset-eslint-jsx": "workspace:*",
 		"@rainstormy/preset-eslint-react": "workspace:*"
 	},
 	"devDependencies": {
 		"@types/eslint": "8.44.9",
-		"downdoc": "1.0.2-stable",
 		"typescript": "5.3.3"
 	},
 	"peerDependencies": {
@@ -43,7 +39,6 @@
 		},
 		"devDependencies": {
 			"@types/eslint": "A set of type definitions for ESLint configuration files.",
-			"downdoc": "Downdoc converts AsciiDoc documents to Markdown to improve compatibility with npm.",
 			"typescript": "A statically typed programming language that extends the JavaScript syntax."
 		},
 		"peerDependencies": {

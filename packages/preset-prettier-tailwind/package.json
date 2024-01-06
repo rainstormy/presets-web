@@ -21,14 +21,10 @@
 	"files": [
 		"dist"
 	],
-	"scripts": {
-		"release.markdown-readme": "downdoc README.adoc"
-	},
 	"dependencies": {
 		"prettier-plugin-tailwindcss": "0.5.9"
 	},
 	"devDependencies": {
-		"downdoc": "1.0.2-stable",
 		"prettier": "3.1.1",
 		"typescript": "5.3.3"
 	},
@@ -41,7 +37,6 @@
 			"prettier-plugin-tailwindcss": "A Prettier plugin that sorts Tailwind CSS classes."
 		},
 		"devDependencies": {
-			"downdoc": "Downdoc converts AsciiDoc documents to Markdown to improve compatibility with npm.",
 			"prettier": "An opinionated code formatter.",
 			"typescript": "A statically typed programming language that extends the JavaScript syntax."
 		},

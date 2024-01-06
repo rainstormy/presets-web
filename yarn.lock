@@ -189,7 +189,6 @@ __metadata:
     "@types/eslint": "npm:8.44.9"
     "@typescript-eslint/eslint-plugin": "npm:6.15.0"
     "@typescript-eslint/parser": "npm:6.15.0"
-    downdoc: "npm:1.0.2-stable"
     eslint-import-resolver-typescript: "npm:3.6.1"
     eslint-plugin-eslint-comments: "npm:3.2.0"
     eslint-plugin-functional: "npm:6.0.0"
@@ -209,7 +208,6 @@ __metadata:
   resolution: "@rainstormy/preset-eslint-jsx@workspace:packages/preset-eslint-jsx"
   dependencies:
     "@types/eslint": "npm:8.44.9"
-    downdoc: "npm:1.0.2-stable"
     eslint-plugin-jsx-a11y: "npm:6.8.0"
     eslint-plugin-react: "npm:7.33.2"
     typescript: "npm:5.3.3"
@@ -224,7 +222,6 @@ __metadata:
   dependencies:
     "@next/eslint-plugin-next": "npm:14.0.4"
     "@types/eslint": "npm:8.44.9"
-    downdoc: "npm:1.0.2-stable"
     typescript: "npm:5.3.3"
   peerDependencies:
     eslint: 8.x
@@ -238,7 +235,6 @@ __metadata:
     "@rainstormy/preset-eslint-jsx": "workspace:*"
     "@rainstormy/preset-eslint-react": "workspace:*"
     "@types/eslint": "npm:8.44.9"
-    downdoc: "npm:1.0.2-stable"
     typescript: "npm:5.3.3"
   peerDependencies:
     eslint: 8.x
@@ -251,7 +247,6 @@ __metadata:
   dependencies:
     "@rainstormy/preset-eslint-jsx": "workspace:*"
     "@types/eslint": "npm:8.44.9"
-    downdoc: "npm:1.0.2-stable"
     eslint-plugin-react-hooks: "npm:4.6.0"
     typescript: "npm:5.3.3"
   peerDependencies:
@@ -265,7 +260,6 @@ __metadata:
   dependencies:
     "@rainstormy/preset-eslint-jsx": "workspace:*"
     "@types/eslint": "npm:8.44.9"
-    downdoc: "npm:1.0.2-stable"
     eslint-plugin-solid: "npm:0.13.0"
     typescript: "npm:5.3.3"
   peerDependencies:
@@ -278,7 +272,6 @@ __metadata:
   resolution: "@rainstormy/preset-eslint-storybook@workspace:packages/preset-eslint-storybook"
   dependencies:
     "@types/eslint": "npm:8.44.9"
-    downdoc: "npm:1.0.2-stable"
     eslint-plugin-storybook: "npm:0.6.15"
     typescript: "npm:5.3.3"
   peerDependencies:
@@ -291,7 +284,6 @@ __metadata:
   resolution: "@rainstormy/preset-eslint-tailwind@workspace:packages/preset-eslint-tailwind"
   dependencies:
     "@types/eslint": "npm:8.44.9"
-    downdoc: "npm:1.0.2-stable"
     eslint-plugin-tailwindcss: "npm:3.13.0"
     typescript: "npm:5.3.3"
   peerDependencies:
@@ -305,7 +297,6 @@ __metadata:
   resolution: "@rainstormy/preset-eslint-testing-library@workspace:packages/preset-eslint-testing-library"
   dependencies:
     "@types/eslint": "npm:8.44.9"
-    downdoc: "npm:1.0.2-stable"
     eslint-plugin-testing-library: "npm:6.2.0"
     typescript: "npm:5.3.3"
   peerDependencies:
@@ -318,7 +309,6 @@ __metadata:
   resolution: "@rainstormy/preset-eslint-vitest@workspace:packages/preset-eslint-vitest"
   dependencies:
     "@types/eslint": "npm:8.44.9"
-    downdoc: "npm:1.0.2-stable"
     eslint-plugin-vitest: "npm:0.3.18"
     typescript: "npm:5.3.3"
   peerDependencies:
@@ -331,7 +321,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-prettier-base@workspace:packages/preset-prettier-base"
   dependencies:
-    downdoc: "npm:1.0.2-stable"
     prettier: "npm:3.1.1"
     prettier-plugin-organize-imports: "npm:3.2.4"
     prettier-plugin-packagejson: "npm:2.4.7"
@@ -346,7 +335,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-prettier-css@workspace:packages/preset-prettier-css"
   dependencies:
-    downdoc: "npm:1.0.2-stable"
     prettier: "npm:3.1.1"
     prettier-plugin-css-order: "npm:2.0.1"
     typescript: "npm:5.3.3"
@@ -360,7 +348,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-prettier-tailwind@workspace:packages/preset-prettier-tailwind"
   dependencies:
-    downdoc: "npm:1.0.2-stable"
     prettier: "npm:3.1.1"
     prettier-plugin-tailwindcss: "npm:0.5.9"
     typescript: "npm:5.3.3"
@@ -373,8 +360,6 @@ __metadata:
 "@rainstormy/preset-typescript@workspace:packages/preset-typescript":
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-typescript@workspace:packages/preset-typescript"
-  dependencies:
-    downdoc: "npm:1.0.2-stable"
   peerDependencies:
     typescript: 5.x
   languageName: unknown
@@ -3545,6 +3530,7 @@ __metadata:
     "@rainstormy/preset-prettier-base": "workspace:*"
     "@rainstormy/updraft": "npm:1.0.0"
     concurrently: "npm:8.2.2"
+    downdoc: "npm:1.0.2-stable"
     eslint: "npm:8.56.0"
     prettier: "npm:3.1.1"
     simple-git-hooks: "npm:2.9.0"
