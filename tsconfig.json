@@ -5,8 +5,22 @@
 		"./packages/preset-typescript/target-node-es2023"
 	],
 	"compilerOptions": {
-		"baseUrl": "./",
-		"paths": {}
+		"incremental": true,
+		"tsBuildInfoFile": "./node_modules/.cache/typescript/.tsbuildinfo"
 	},
-	"include": ["./packages/**/*.ts", "./*.config.js", "./*.d.ts"]
+	"references": [
+		{ "path": "./packages/preset-eslint-base" },
+		{ "path": "./packages/preset-eslint-jsx" },
+		{ "path": "./packages/preset-eslint-next" },
+		{ "path": "./packages/preset-eslint-preact" },
+		{ "path": "./packages/preset-eslint-react" },
+		{ "path": "./packages/preset-eslint-solid" },
+		{ "path": "./packages/preset-eslint-storybook" },
+		{ "path": "./packages/preset-eslint-tailwind" },
+		{ "path": "./packages/preset-eslint-testing-library" },
+		{ "path": "./packages/preset-eslint-vitest" },
+		{ "path": "./packages/preset-prettier-base" },
+		{ "path": "./packages/preset-prettier-css" },
+		{ "path": "./packages/preset-prettier-tailwind" }
+	]
 }

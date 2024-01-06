@@ -2,6 +2,12 @@
 	"tasks": [
 		{
 			"type": "npm",
+			"script": "build",
+			"problemMatcher": [],
+			"label": "build"
+		},
+		{
+			"type": "npm",
 			"script": "setup",
 			"problemMatcher": [],
 			"label": "setup"
@@ -47,18 +53,6 @@
 			"script": "validate.lint.nocache",
 			"problemMatcher": [],
 			"label": "validate.lint.nocache"
-		},
-		{
-			"type": "npm",
-			"script": "validate.types",
-			"problemMatcher": [],
-			"label": "validate.types"
-		},
-		{
-			"type": "npm",
-			"script": "validate.types.nocache",
-			"problemMatcher": [],
-			"label": "validate.types.nocache"
 		}
 	]
 }
