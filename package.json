@@ -18,11 +18,11 @@
 		"setup": "yarn install && simple-git-hooks",
 		"validate": "yarn run build && concurrently 'yarn:validate.format' 'yarn:validate.lint' --group --names 'format','lint' --prefix-colors 'magenta.bold','cyan.bold'",
 		"validate.fix": "yarn run validate.lint.fix && yarn run validate.format.fix",
-		"validate.format": "        prettier './.github/**/*.yml' './.vscode/**/*.json' './packages/*/*.{json,ts}' './*.config.js' './*.{json,yml}' --log-level warn --cache --check",
-		"validate.format.fix": "    prettier './.github/**/*.yml' './.vscode/**/*.json' './packages/*/*.{json,ts}' './*.config.js' './*.{json,yml}' --log-level warn --cache         --list-different --write",
-		"validate.format.nocache": "prettier './.github/**/*.yml' './.vscode/**/*.json' './packages/*/*.{json,ts}' './*.config.js' './*.{json,yml}' --log-level warn         --check",
-		"validate.lint": "        eslint './packages/*/*.ts' './*.config.js' --max-warnings 0 --cache --cache-location './node_modules/.cache/eslint/'",
-		"validate.lint.fix": "    eslint './packages/*/*.ts' './*.config.js' --max-warnings 0 --cache --cache-location './node_modules/.cache/eslint/' --fix",
+		"validate.format": "        prettier './.github/**/*.yml' './.vscode/**/*.json' './packages/*/*.{json,ts}' './*.config.js' './*.{json,yml}' --log-level warn --check --cache --cache-location './.cache/prettier/.prettier-cache'",
+		"validate.format.fix": "    prettier './.github/**/*.yml' './.vscode/**/*.json' './packages/*/*.{json,ts}' './*.config.js' './*.{json,yml}' --log-level warn         --cache --cache-location './.cache/prettier/.prettier-cache' --list-different --write",
+		"validate.format.nocache": "prettier './.github/**/*.yml' './.vscode/**/*.json' './packages/*/*.{json,ts}' './*.config.js' './*.{json,yml}' --log-level warn --check",
+		"validate.lint": "        eslint './packages/*/*.ts' './*.config.js' --max-warnings 0 --cache --cache-location './.cache/eslint/'",
+		"validate.lint.fix": "    eslint './packages/*/*.ts' './*.config.js' --max-warnings 0 --cache --cache-location './.cache/eslint/' --fix",
 		"validate.lint.nocache": "eslint './packages/*/*.ts' './*.config.js' --max-warnings 0"
 	},
 	"simple-git-hooks": {

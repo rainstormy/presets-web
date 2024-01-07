@@ -63,7 +63,7 @@ jobs:
         if: steps.cache-build-artifacts.outputs.cache-hit != 'true'
         uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # https://github.com/actions/cache/releases/tag/v3.3.2 (pinned to the commit SHA)
         with:
-          path: ./node_modules/.cache/typescript/
+          path: ./.cache/typescript/
           key: ${{ runner.os }}-typescript-${{ hashFiles('packages/*/tsconfig.json', 'tsconfig.json', 'yarn.lock') }}
           # We omit `restore-keys` to prevent cache restoration when the TypeScript configuration or any third-party dependencies have changed.
       - name: Install Yarn and third-party dependencies
@@ -86,7 +86,7 @@ jobs:
       - name: Restore the Prettier cache
         uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # https://github.com/actions/cache/releases/tag/v3.3.2 (pinned to the commit SHA)
         with:
-          path: ./node_modules/.cache/prettier/
+          path: ./.cache/prettier/
           key: ${{ runner.os }}-prettier-${{ hashFiles('prettier.config.js', 'yarn.lock') }}
           # We omit `restore-keys` to prevent cache restoration when the Prettier configuration or any third-party dependencies have changed.
       - name: Install Yarn and third-party dependencies
@@ -107,7 +107,7 @@ jobs:
       - name: Restore the ESLint cache
         uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # https://github.com/actions/cache/releases/tag/v3.3.2 (pinned to the commit SHA)
         with:
-          path: ./node_modules/.cache/eslint/
+          path: ./.cache/eslint/
           key: ${{ runner.os }}-eslint-${{ hashFiles('eslint.config.js', 'yarn.lock') }}
           # We omit `restore-keys` to prevent cache restoration when the ESLint configuration or any third-party dependencies have changed.
       - name: Install Yarn and third-party dependencies

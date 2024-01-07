@@ -7,7 +7,9 @@
 	],
 	"compilerOptions": {
 		"composite": true,
-		"outDir": "./dist"
+		"incremental": true,
+		"outDir": "./dist",
+		"tsBuildInfoFile": "../../.cache/typescript/preset-eslint-preact.tsbuildinfo"
 	},
 	"include": ["*.ts"],
 	"references": [

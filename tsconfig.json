@@ -4,10 +4,6 @@
 		"./packages/preset-typescript/check",
 		"./packages/preset-typescript/target-node-es2023"
 	],
-	"compilerOptions": {
-		"incremental": true,
-		"tsBuildInfoFile": "./node_modules/.cache/typescript/.tsbuildinfo"
-	},
 	"references": [
 		{ "path": "./packages/preset-eslint-base" },
 		{ "path": "./packages/preset-eslint-jsx" },
