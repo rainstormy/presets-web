@@ -5,10 +5,16 @@ import {
 
 export default [
 	eslintBase({
-		files: ["**/*.+(js|ts)"],
-		tsconfig: "./tsconfig.json",
+		files: ["packages/*/*.ts", "*/*.config.js"],
+		tsconfig: ["./packages/*/tsconfig.json", "./tsconfig.json"],
 	}),
+	{
+		files: ["packages/*/*.ts"],
+		rules: {
+			"import-alias/import-alias": "off",
+		},
+	},
 
 	// `eslintAmbientTypeScriptModules` must follow `eslintBase` to take effect.
-	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
+	eslintAmbientTypeScriptModules({ files: ["packages/*/*.d.ts"] }),
 ]

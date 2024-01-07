@@ -21,20 +21,13 @@
 	"files": [
 		"dist"
 	],
-	"scripts": {
-		"build": "vite build",
-		"release.markdown-readme": "downdoc README.adoc"
-	},
 	"dependencies": {
 		"prettier-plugin-organize-imports": "3.2.4",
 		"prettier-plugin-packagejson": "2.4.7"
 	},
 	"devDependencies": {
-		"downdoc": "1.0.2-stable",
 		"prettier": "3.1.1",
-		"typescript": "5.3.3",
-		"vite": "5.0.10",
-		"vite-plugin-dts": "3.6.4"
+		"typescript": "5.3.3"
 	},
 	"peerDependencies": {
 		"prettier": "3.x",
@@ -46,11 +39,8 @@
 			"prettier-plugin-packagejson": "A Prettier plugin that sorts properties in the `package.json` file."
 		},
 		"devDependencies": {
-			"downdoc": "Downdoc converts AsciiDoc documents to Markdown to improve compatibility with npm.",
 			"prettier": "An opinionated code formatter.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax.",
-			"vite": "A highly extensible build tool.",
-			"vite-plugin-dts": "A Vite plugin that generates TypeScript declaration files."
+			"typescript": "A statically typed programming language that extends the JavaScript syntax."
 		},
 		"peerDependencies": {
 			"prettier": "An opinionated code formatter.",

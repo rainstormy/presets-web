@@ -68,21 +68,20 @@ jobs:
       - name: Convert README.adoc to Markdown
         # npm has better compatibility for Markdown documents than AsciiDoc documents.
         run: |
-          cd packages/${{ matrix.package-name }}
-          yarn run release.markdown-readme
-          rm README.adoc
+          yarn run downdoc ./packages/${{ matrix.package-name }}/README.adoc
+          rm ./packages/${{ matrix.package-name }}/README.adoc
       - name: Delete unnecessary fields in package.json
         run: |
-          cd packages/${{ matrix.package-name }}
+          cd ./packages/${{ matrix.package-name }}
           npm pkg delete "scripts" "//"
       - name: Generate package tarball
         # `yarn pack` lets Yarn resolve `workspace:` dependencies before publishing.
         run: |
-          cd packages/${{ matrix.package-name }}
+          cd ./packages/${{ matrix.package-name }}
           yarn pack --out ${{ matrix.package-name }}.tgz
       - name: Publish the package to npm
         run: |
-          cd packages/${{ matrix.package-name }}
+          cd ./packages/${{ matrix.package-name }}
           npm publish ${{ matrix.package-name }}.tgz --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.BOT_NIMBUS_NPM_TOKEN }}

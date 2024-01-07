@@ -23,33 +23,55 @@ yarn add --dev @rainstormy/preset-typescript typescript
 ----
 
 == Usage
-Create or extend a https://www.typescriptlang.org/tsconfig[TypeScript configuration file] (`tsconfig.json`).
+Create a https://www.typescriptlang.org/tsconfig[TypeScript configuration file] (`tsconfig.json`) and extend the following configurations to enable type-checking and optionally also generation of `js` and `d.ts` files:
+
+* `@rainstormy/preset-typescript/check`
+* `@rainstormy/preset-typescript/generate` (to generate `js` and `d.ts` files)
+* `@rainstormy/preset-typescript/generate-types` (to generate `d.ts` files only)
+* `@rainstormy/preset-typescript/target-node-es2023` (for Node.js projects)
+* `@rainstormy/preset-typescript/target-web-es2023` (for web browser projects)
+
 For example:
 
 [source,json]
 ----
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
-	"extends": "@rainstormy/preset-typescript/node-es2023",
-	"compilerOptions": {
-		"baseUrl": "./",
-		"paths": {}
-	},
-	"include": [
-		"./src/**/*.ts",
-		"./*.config.js",
-		"./*.config.ts",
-		"./*.d.ts"
-	],
-	"exclude": ["node_modules"]
+	"extends": [
+		"@rainstormy/preset-typescript/check",
+		"@rainstormy/preset-typescript/target-web-es2023"
+	]
 }
 ----
 
-For the `extends` field, the available configurations are:
+[TIP]
+.Override Settings
+====
+To override the settings configured by this preset, specify the desired options after the `extends` field to take precedence over the preset.
+For example:
 
-* `@rainstormy/preset-typescript/base`
-* `@rainstormy/preset-typescript/node-es2023` (for Node.js applications)
-* `@rainstormy/preset-typescript/web-es2023` (for web browser applications)
+[source,json]
+----
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": [
+		"@rainstormy/preset-typescript/check",
+		"@rainstormy/preset-typescript/generate",
+		"@rainstormy/preset-typescript/target-node-es2023"
+	],
+	"compilerOptions": {
+		"incremental": true,
+		"noEmitOnError": false,
+		"outDir": "dist",
+		"sourceMap": true
+	},
+	"include": [
+		"./src/**/*.ts",
+		"./*.config.ts"
+	]
+}
+----
+====
 
 == Complementary Presets
 * https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-base[@rainstormy/preset-eslint-base]
