@@ -40,10 +40,7 @@ import {
 import { eslintVitest } from "@rainstormy/preset-eslint-vitest"
 
 export default [
-	eslintBase({
-		files: ["**/*.+(js|ts|tsx)"],
-		tsconfig: "./tsconfig.json",
-	}),
+	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
 
 	// `eslintAmbientTypeScriptModules`, `eslintTestData`, and `eslintVitest` must follow `eslintBase` to take effect.
 	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),

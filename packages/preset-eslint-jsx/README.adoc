@@ -49,10 +49,7 @@ import {
 import { eslintJsx } from "@rainstormy/preset-eslint-jsx"
 
 export default [
-	eslintBase({
-		files: ["**/*.+(js|ts|tsx)"],
-		tsconfig: "./tsconfig.json",
-	}),
+	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
 
 	// `eslintAmbientTypeScriptModules` and `eslintJsx` must follow `eslintBase` to take effect.
 	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
@@ -76,10 +73,7 @@ import { eslintJsx } from "@rainstormy/preset-eslint-jsx"
 import qwikPlugin from "eslint-plugin-qwik"
 
 export default [
-	eslintBase({
-		files: ["**/*.+(js|ts|tsx)"],
-		tsconfig: "./tsconfig.json",
-	}),
+	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
 
 	// `eslintAmbientTypeScriptModules`, `eslintJsx`, and custom configurations must follow `eslintBase` to take effect.
 	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),

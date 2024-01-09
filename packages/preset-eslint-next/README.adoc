@@ -40,10 +40,7 @@ import { eslintNext } from "@rainstormy/preset-eslint-next"
 import { eslintReact } from "@rainstormy/preset-eslint-react"
 
 export default [
-	eslintBase({
-		files: ["**/*.+(js|ts|tsx)"],
-		tsconfig: "./tsconfig.json",
-	}),
+	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
 
 	// `eslintAmbientTypeScriptModules` and `eslintReact` must follow `eslintBase` to take effect.
 	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),

@@ -40,10 +40,7 @@ import {
 import { eslintTestingLibrary } from "@rainstormy/preset-eslint-testing-library"
 
 export default [
-	eslintBase({
-		files: ["**/*.+(js|ts|tsx)"],
-		tsconfig: "./tsconfig.json",
-	}),
+	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
 	eslintTestingLibrary({ files: ["**/*.test.tsx"] }),
 
 	// `eslintAmbientTypeScriptModules` and `eslintTestData` must follow `eslintBase` to take effect.

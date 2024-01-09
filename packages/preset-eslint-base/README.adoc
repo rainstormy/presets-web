@@ -45,10 +45,7 @@ import {
 } from "@rainstormy/preset-eslint-base"
 
 export default [
-	eslintBase({
-		files: ["**/*.+(js|ts|tsx)"],
-		tsconfig: "./tsconfig.json",
-	}),
+	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
 
 	// `eslintAmbientTypeScriptModules` must follow `eslintBase` to take effect.
 	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
@@ -69,10 +66,7 @@ import {
 } from "@rainstormy/preset-eslint-base"
 
 export default [
-	eslintBase({
-		files: ["**/*.+(js|ts|tsx)"],
-		tsconfig: "./tsconfig.json",
-	}),
+	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
 
 	// `eslintAmbientTypeScriptModules` and custom configurations must follow `eslintBase` to take effect.
 	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
@@ -85,6 +79,32 @@ export default [
 			"unicorn/prefer-at": "error",
 		},
 	},
+]
+----
+====
+
+[TIP]
+.Custom `tsconfig.json` Location
+====
+By default, this preset assumes that the TypeScript configuration file is `./tsconfig.json`.
+Use the `tsconfig` option to specify a different file or set of files.
+For example:
+
+[source,javascript]
+----
+import {
+	eslintAmbientTypeScriptModules,
+	eslintBase
+} from "@rainstormy/preset-eslint-base"
+
+export default [
+	eslintBase({
+		files: ["**/*.+(js|ts|tsx)"],
+		tsconfig: ["./configs/tsconfig.eslint.json"],
+	}),
+
+	// `eslintAmbientTypeScriptModules` must follow `eslintBase` to take effect.
+	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
 ]
 ----
 ====
@@ -104,15 +124,9 @@ import {
 
 export default [
 	{
-		ignores: [
-			"coverage/**",
-			"dist/**",
-		],
+		ignores: ["coverage/**", "dist/**"],
 	},
-	eslintBase({
-		files: ["**/*.+(js|ts|tsx)"],
-		tsconfig: "./tsconfig.json",
-	}),
+	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
 
 	// `eslintAmbientTypeScriptModules` must follow `eslintBase` to take effect.
 	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
