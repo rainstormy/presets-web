@@ -22,7 +22,7 @@
 		"dist"
 	],
 	"dependencies": {
-		"prettier-plugin-tailwindcss": "0.5.9"
+		"prettier-plugin-tailwindcss": "0.5.11"
 	},
 	"devDependencies": {
 		"prettier": "3.1.1",

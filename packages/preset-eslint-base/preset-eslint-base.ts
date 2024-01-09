@@ -2983,6 +2983,11 @@ export function eslintBase(options: {
 			"unicorn/no-unnecessary-await": "off",
 
 			/**
+			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unnecessary-polyfills.md
+			 */
+			"unicorn/no-unnecessary-polyfills": "error",
+
+			/**
 			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unreadable-array-destructuring.md
 			 */
 			"unicorn/no-unreadable-array-destructuring": "error",
