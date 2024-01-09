@@ -28,8 +28,11 @@ concurrency:
 permissions:
   contents: read # Allows the workflow to call the reusable `ci` workflow.
 
+run-name: ${{ inputs.version }}
+
 jobs:
   validate-software-quality:
+    name: Validate software quality
     uses: ./.github/workflows/ci.yml
 
   create-pull-request:
