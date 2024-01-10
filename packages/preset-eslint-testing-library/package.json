@@ -1,7 +1,7 @@
 {
 	"$schema": "https://json.schemastore.org/package.json",
 	"name": "@rainstormy/preset-eslint-testing-library",
-	"version": "1.0.0-alpha.2",
+	"version": "1.0.0-alpha.3",
 	"description": "A predefined, opinionated ESLint configuration suitable for any web project with Testing Library tests.",
 	"keywords": [
 		"eslint",
