@@ -74,15 +74,13 @@ jobs:
       - name: Delete unnecessary fields in package.json
         run: |
           cd ./packages/${{ matrix.package-name }}
-          npm pkg delete "scripts" "//"
+          npm pkg delete "//"
       - name: Generate a package tarball
         # `yarn pack` resolves dependencies with Yarn-specific protocols such as `workspace:` before publishing.
         run: |
           cd ./packages/${{ matrix.package-name }}
           yarn pack --out ${{ matrix.package-name }}.tgz
       - name: Publish the package to npm
-        run: |
-          cd ./packages/${{ matrix.package-name }}
-          npm publish ${{ matrix.package-name }}.tgz --provenance --access public
+        run: npm publish ./packages/${{ matrix.package-name }}/${{ matrix.package-name }}.tgz --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.BOT_NIMBUS_NPM_TOKEN }}
