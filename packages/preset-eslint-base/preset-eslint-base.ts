@@ -3346,9 +3346,10 @@ export function eslintBase(options: {
 			"unicorn/switch-case-braces": "error",
 
 			/**
+			 * Indent by tabs, as done by `@rainstormy/preset-prettier-base`.
 			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md
 			 */
-			"unicorn/template-indent": "error",
+			"unicorn/template-indent": ["error", { indent: "\t" }],
 
 			/**
 			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/text-encoding-identifier-case.md
