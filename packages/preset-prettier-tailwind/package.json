@@ -10,7 +10,7 @@
 	"bugs": "https://github.com/rainstormy/presets-web/issues",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/rainstormy/presets-web.git",
+		"url": "git+https://github.com/rainstormy/presets-web.git",
 		"directory": "packages/preset-prettier-tailwind"
 	},
 	"license": "MIT",
@@ -21,8 +21,9 @@
 	"files": [
 		"dist"
 	],
+	"scripts": {},
 	"dependencies": {
-		"prettier-plugin-tailwindcss": "0.5.9"
+		"prettier-plugin-tailwindcss": "0.5.11"
 	},
 	"devDependencies": {
 		"prettier": "3.1.1",

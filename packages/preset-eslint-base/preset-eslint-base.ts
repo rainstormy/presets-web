@@ -12,14 +12,14 @@ import unicornPlugin from "eslint-plugin-unicorn"
 /* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */
 export function eslintBase(options: {
 	readonly files: ReadonlyArray<string>
-	readonly tsconfig?: ReadonlyArray<string> | string
+	readonly tsconfig?: ReadonlyArray<string>
 }): Linter.FlatConfig {
 	return {
 		files: [...options.files],
 		languageOptions: {
 			parser: typescriptParser,
 			parserOptions: {
-				project: options.tsconfig ?? true,
+				project: options.tsconfig ?? "./tsconfig.json",
 				sourceType: "module",
 			},
 		},
@@ -2983,6 +2983,11 @@ export function eslintBase(options: {
 			"unicorn/no-unnecessary-await": "off",
 
 			/**
+			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unnecessary-polyfills.md
+			 */
+			"unicorn/no-unnecessary-polyfills": "error",
+
+			/**
 			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unreadable-array-destructuring.md
 			 */
 			"unicorn/no-unreadable-array-destructuring": "error",
@@ -3341,9 +3346,10 @@ export function eslintBase(options: {
 			"unicorn/switch-case-braces": "error",
 
 			/**
+			 * Indent by tabs, as done by `@rainstormy/preset-prettier-base`.
 			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md
 			 */
-			"unicorn/template-indent": "error",
+			"unicorn/template-indent": ["error", { indent: "\t" }],
 
 			/**
 			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/text-encoding-identifier-case.md

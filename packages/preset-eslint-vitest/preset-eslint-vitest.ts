@@ -207,11 +207,6 @@ export function eslintVitest(options: {
 			"vitest/no-test-return-statement": "error",
 
 			/**
-			 * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-called-exactly-once-with.md
-			 */
-			"vitest/prefer-called-exactly-once-with": "error",
-
-			/**
 			 * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-called-with.md
 			 * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-called-with.md
 			 */

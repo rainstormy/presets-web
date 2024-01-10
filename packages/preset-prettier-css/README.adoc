@@ -39,7 +39,7 @@ import {
 import { prettierCss } from "@rainstormy/preset-prettier-css"
 
 export default prettierMergeConfigs([
-    prettierBase(),
+	prettierBase(),
 	prettierCss(),
 ])
 ----

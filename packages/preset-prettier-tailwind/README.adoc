@@ -40,8 +40,8 @@ import { prettierCss } from "@rainstormy/preset-prettier-css"
 import { prettierTailwind } from "@rainstormy/preset-prettier-tailwind"
 
 export default prettierMergeConfigs([
-    prettierBase(),
-    prettierCss(),
+	prettierBase(),
+	prettierCss(),
 
 	// `prettierTailwind` must be applied last.
 	prettierTailwind(),

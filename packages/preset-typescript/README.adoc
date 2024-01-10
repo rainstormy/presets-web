@@ -60,15 +60,13 @@ For example:
 		"@rainstormy/preset-typescript/target-node-es2023"
 	],
 	"compilerOptions": {
+		"baseUrl": "./",
 		"incremental": true,
 		"noEmitOnError": false,
 		"outDir": "dist",
 		"sourceMap": true
 	},
-	"include": [
-		"./src/**/*.ts",
-		"./*.config.ts"
-	]
+	"include": ["./src/**/*.ts", "./*.config.js", "./*.config.ts"]
 }
 ----
 ====

@@ -41,10 +41,7 @@ import { eslintReact } from "@rainstormy/preset-eslint-react"
 import { eslintStorybook } from "@rainstormy/preset-eslint-storybook"
 
 export default [
-	eslintBase({
-		files: ["**/*.+(js|ts|tsx)"],
-		tsconfig: "./tsconfig.json",
-	}),
+	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
 
 	// `eslintAmbientTypeScriptModules`, `eslintReact`, and `eslintTestData` must follow `eslintBase` to take effect.
 	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),

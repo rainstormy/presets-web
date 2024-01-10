@@ -10,7 +10,7 @@
 	"bugs": "https://github.com/rainstormy/presets-web/issues",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/rainstormy/presets-web.git",
+		"url": "git+https://github.com/rainstormy/presets-web.git",
 		"directory": "packages/preset-eslint-vitest"
 	},
 	"license": "MIT",
@@ -21,11 +21,12 @@
 	"files": [
 		"dist"
 	],
+	"scripts": {},
 	"dependencies": {
-		"eslint-plugin-vitest": "0.3.18"
+		"eslint-plugin-vitest": "0.3.20"
 	},
 	"devDependencies": {
-		"@types/eslint": "8.44.9",
+		"@types/eslint": "8.56.1",
 		"typescript": "5.3.3"
 	},
 	"peerDependencies": {

@@ -41,10 +41,7 @@ import {
 import { eslintPreact } from "@rainstormy/preset-eslint-preact"
 
 export default [
-	eslintBase({
-		files: ["**/*.+(js|ts|tsx)"],
-		tsconfig: "./tsconfig.json",
-	}),
+	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
 
 	// `eslintAmbientTypeScriptModules` and `eslintPreact` must follow `eslintBase` to take effect.
 	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),

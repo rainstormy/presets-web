@@ -30,11 +30,12 @@ permissions:
 
 jobs:
   validate-software-quality:
+    name: Validate software quality
     uses: ./.github/workflows/ci.yml
 
   create-github-release:
     needs: validate-software-quality
-    name: Release / Create GitHub release
+    name: Create GitHub release
     runs-on: ubuntu-22.04
     timeout-minutes: 1
     steps:

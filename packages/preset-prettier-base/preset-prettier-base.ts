@@ -20,6 +20,14 @@ export function prettierBase(): Config {
 		 * We prefer to take advantage of Automatic Semicolon Insertion (ASI), which is always present in JavaScript.
 		 */
 		semi: false,
+
+		/**
+		 * Indent by tabs to:
+		 * - Gain accessibility by making the indentation width customisable per developer.
+		 * - Reduce the number of required keystrokes.
+		 * - Reduce the file sizes.
+		 */
+		useTabs: true,
 	}
 }
 

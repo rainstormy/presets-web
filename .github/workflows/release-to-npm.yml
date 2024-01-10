@@ -27,10 +27,11 @@ concurrency:
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#permissions
 permissions:
   contents: read # Allows the workflow to check out the repository and to call the reusable `ci` workflow.
-  id-token: write # Allows the workflow to publish npm packages with provenance.
+  id-token: write # Allows the workflow to publish the npm packages with provenance.
 
 jobs:
   validate-software-quality:
+    name: Validate software quality
     uses: ./.github/workflows/ci.yml
 
   publish-npm-packages:
@@ -53,7 +54,7 @@ jobs:
           - preset-prettier-css
           - preset-prettier-tailwind
           - preset-typescript
-    name: Release / Publish npm packages / ${{ matrix.package-name }}
+    name: Publish '@rainstormy/${{ matrix.package-name }}' to npm
     runs-on: ubuntu-22.04
     timeout-minutes: 1
     steps:
@@ -73,15 +74,13 @@ jobs:
       - name: Delete unnecessary fields in package.json
         run: |
           cd ./packages/${{ matrix.package-name }}
-          npm pkg delete "scripts" "//"
-      - name: Generate package tarball
-        # `yarn pack` lets Yarn resolve `workspace:` dependencies before publishing.
+          npm pkg delete "//"
+      - name: Generate a package tarball
+        # `yarn pack` resolves dependencies with Yarn-specific protocols such as `workspace:` before publishing.
         run: |
           cd ./packages/${{ matrix.package-name }}
           yarn pack --out ${{ matrix.package-name }}.tgz
       - name: Publish the package to npm
-        run: |
-          cd ./packages/${{ matrix.package-name }}
-          npm publish ${{ matrix.package-name }}.tgz --provenance --access public
+        run: npm publish ./packages/${{ matrix.package-name }}/${{ matrix.package-name }}.tgz --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.BOT_NIMBUS_NPM_TOKEN }}

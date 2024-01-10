@@ -21,6 +21,9 @@ on:
 # Cancel all previous runs of this workflow that are still in progress on the same branch.
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency
 concurrency:
+  # For `workflow_call` events, `github.workflow` is the caller workflow instead of this workflow.
+  # The `ci-` prefix here prevents collisions with other jobs in the caller workflow.
+  # https://docs.github.com/en/actions/using-workflows/reusing-workflows
   group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 

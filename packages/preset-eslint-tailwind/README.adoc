@@ -39,10 +39,7 @@ import {
 import { eslintTailwind } from "@rainstormy/preset-eslint-tailwind"
 
 export default [
-	eslintBase({
-		files: ["**/*.+(js|ts|tsx)"],
-		tsconfig: "./tsconfig.json",
-	}),
+	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
 	eslintTailwind({ files: ["**/*.tsx"] }),
 
 	// `eslintAmbientTypeScriptModules` must follow `eslintBase` to take effect.
