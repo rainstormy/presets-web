@@ -1714,7 +1714,7 @@ export function eslintBase(options: {
 			"import/default": "off",
 
 			/**
-			 * This rule is only useful in webpack projects.
+			 * This rule does not work in non-webpack projects.
 			 * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/dynamic-import-chunkname.md
 			 */
 			"import/dynamic-import-chunkname": "off",
@@ -1749,9 +1749,10 @@ export function eslintBase(options: {
 			"import/group-exports": "off",
 
 			/**
+			 * A composition root or a large union type may need to import many dependencies, as it would be impractical to split it into smaller parts created solely for the purpose of bringing down the number of dependencies.
 			 * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/max-dependencies.md
 			 */
-			"import/max-dependencies": "error",
+			"import/max-dependencies": "off",
 
 			/**
 			 * TypeScript supersedes this rule.
