@@ -21,7 +21,6 @@
 	"files": [
 		"dist"
 	],
-	"scripts": {},
 	"dependencies": {
 		"eslint-plugin-storybook": "0.6.15"
 	},

@@ -16,7 +16,6 @@
 	"license": "MIT",
 	"author": "Steffen Diswal",
 	"type": "module",
-	"scripts": {},
 	"peerDependencies": {
 		"typescript": "5.x"
 	},

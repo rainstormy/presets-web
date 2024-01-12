@@ -21,7 +21,6 @@
 	"files": [
 		"dist"
 	],
-	"scripts": {},
 	"dependencies": {
 		"eslint-plugin-testing-library": "6.2.0"
 	},

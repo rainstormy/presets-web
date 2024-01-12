@@ -21,7 +21,6 @@
 	"files": [
 		"dist"
 	],
-	"scripts": {},
 	"dependencies": {
 		"eslint-plugin-tailwindcss": "3.13.1"
 	},

@@ -21,7 +21,6 @@
 	"files": [
 		"dist"
 	],
-	"scripts": {},
 	"dependencies": {
 		"@rainstormy/preset-eslint-jsx": "workspace:*",
 		"@rainstormy/preset-eslint-react": "workspace:*"

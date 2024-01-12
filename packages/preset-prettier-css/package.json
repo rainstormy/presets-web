@@ -21,7 +21,6 @@
 	"files": [
 		"dist"
 	],
-	"scripts": {},
 	"dependencies": {
 		"prettier-plugin-css-order": "2.0.1"
 	},

@@ -21,7 +21,6 @@
 	"files": [
 		"dist"
 	],
-	"scripts": {},
 	"dependencies": {
 		"@rainstormy/preset-eslint-jsx": "workspace:*",
 		"eslint-plugin-react-hooks": "4.6.0"

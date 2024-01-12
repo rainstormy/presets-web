@@ -21,7 +21,6 @@
 	"files": [
 		"dist"
 	],
-	"scripts": {},
 	"dependencies": {
 		"prettier-plugin-tailwindcss": "0.5.11"
 	},

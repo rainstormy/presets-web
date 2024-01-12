@@ -21,7 +21,6 @@
 	"files": [
 		"dist"
 	],
-	"scripts": {},
 	"dependencies": {
 		"@rainstormy/preset-eslint-jsx": "workspace:*",
 		"eslint-plugin-solid": "0.13.1"

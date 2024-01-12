@@ -21,7 +21,6 @@
 	"files": [
 		"dist"
 	],
-	"scripts": {},
 	"dependencies": {
 		"@next/eslint-plugin-next": "14.0.4"
 	},
