@@ -2,7 +2,6 @@ import { type Linter } from "eslint"
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y"
 import reactPlugin from "eslint-plugin-react"
 
-/* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */
 export function eslintJsx(options: {
 	readonly files: ReadonlyArray<string>
 }): Linter.FlatConfig {
@@ -517,5 +516,3 @@ export function eslintJsx(options: {
 		},
 	}
 }
-
-/* eslint-enable max-lines,max-lines-per-function */

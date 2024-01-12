@@ -2,7 +2,6 @@ import { eslintJsx } from "@rainstormy/preset-eslint-jsx"
 import { type Linter } from "eslint"
 import solidPlugin from "eslint-plugin-solid"
 
-/* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */
 export function eslintSolid(options: {
 	readonly files: ReadonlyArray<string>
 }): Linter.FlatConfig {
@@ -168,5 +167,3 @@ export function eslintSolid(options: {
 		},
 	}
 }
-
-/* eslint-enable max-lines,max-lines-per-function */

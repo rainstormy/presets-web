@@ -1,7 +1,6 @@
 import { type Linter } from "eslint"
 import storybookPlugin from "eslint-plugin-storybook"
 
-/* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */
 export function eslintStorybook(options: {
 	readonly files: ReadonlyArray<string>
 }): Linter.FlatConfig {
@@ -99,5 +98,3 @@ export function eslintStorybook(options: {
 		},
 	}
 }
-
-/* eslint-enable max-lines,max-lines-per-function */

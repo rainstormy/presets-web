@@ -9,7 +9,6 @@ import noBarrelFilesPlugin from "eslint-plugin-no-barrel-files"
 import redundantUndefinedPlugin from "eslint-plugin-redundant-undefined"
 import unicornPlugin from "eslint-plugin-unicorn"
 
-/* eslint-disable max-lines,max-lines-per-function -- It would be impractical to split the configuration across multiple files and functions. */
 export function eslintBase(options: {
 	readonly files: ReadonlyArray<string>
 	readonly tsconfig?: ReadonlyArray<string>
@@ -3418,5 +3417,3 @@ export function eslintTestData(options: {
 		},
 	}
 }
-
-/* eslint-enable max-lines,max-lines-per-function */
