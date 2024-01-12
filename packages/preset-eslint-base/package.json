@@ -31,7 +31,8 @@
 		"eslint-plugin-import": "npm:eslint-plugin-i@2.29.1",
 		"eslint-plugin-no-barrel-files": "1.1.0",
 		"eslint-plugin-redundant-undefined": "1.0.0",
-		"eslint-plugin-unicorn": "50.0.1"
+		"eslint-plugin-unicorn": "50.0.1",
+		"tsconfig-paths": "3.15.0"
 	},
 	"devDependencies": {
 		"@types/eslint": "8.56.1",
@@ -52,7 +53,8 @@
 			"eslint-plugin-import": "An ESLint plugin that covers import statements and export declarations.",
 			"eslint-plugin-no-barrel-files": "An ESLint plugin that forbids the use of barrel files.",
 			"eslint-plugin-redundant-undefined": "An ESLint plugin that covers the redundant use of undefined in optional type declarations.",
-			"eslint-plugin-unicorn": "An ESLint plugin that complements the built-in set of rules."
+			"eslint-plugin-unicorn": "An ESLint plugin that complements the built-in set of rules.",
+			"tsconfig-paths": "This utility is a dependency of `eslint-plugin-import` and `@limegrass/eslint-plugin-import-alias`. This particular version restores compatibility with TypeScript 5."
 		},
 		"devDependencies": {
 			"@types/eslint": "A set of type definitions for ESLint configuration files.",

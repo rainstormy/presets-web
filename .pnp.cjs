@@ -104,6 +104,7 @@ const RAW_RUNTIME_STATE =
           ["eslint", "npm:8.56.0"],\
           ["prettier", "npm:3.1.1"],\
           ["simple-git-hooks", "npm:2.9.0"],\
+          ["tsconfig-paths", "npm:3.15.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "linkType": "SOFT"\
@@ -309,7 +310,7 @@ const RAW_RUNTIME_STATE =
           ["fs-extra", "npm:10.1.0"],\
           ["micromatch", "npm:4.0.5"],\
           ["slash", "npm:3.0.0"],\
-          ["tsconfig-paths", "npm:3.14.2"]\
+          ["tsconfig-paths", "npm:3.15.0"]\
         ],\
         "packagePeers": [\
           "@types/eslint",\
@@ -327,7 +328,7 @@ const RAW_RUNTIME_STATE =
           ["fs-extra", "npm:10.1.0"],\
           ["micromatch", "npm:4.0.5"],\
           ["slash", "npm:3.0.0"],\
-          ["tsconfig-paths", "npm:3.14.2"]\
+          ["tsconfig-paths", "npm:3.15.0"]\
         ],\
         "packagePeers": [\
           "@types/eslint",\
@@ -407,6 +408,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-no-barrel-files", "npm:1.1.0"],\
           ["eslint-plugin-redundant-undefined", "virtual:896b4e730dffaf8a48b871b28c4f514b7864f0c1e1c3251840cba3f868ba738bded5328a7ba31737285f88ea5243771403ff3b99d7c5fafd5190d94b860ccde6#npm:1.0.0"],\
           ["eslint-plugin-unicorn", "virtual:896b4e730dffaf8a48b871b28c4f514b7864f0c1e1c3251840cba3f868ba738bded5328a7ba31737285f88ea5243771403ff3b99d7c5fafd5190d94b860ccde6#npm:50.0.1"],\
+          ["tsconfig-paths", "npm:3.15.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "packagePeers": [\
@@ -434,6 +436,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-no-barrel-files", "npm:1.1.0"],\
           ["eslint-plugin-redundant-undefined", "virtual:d0376345004053284c1b111135cd7d46bfd81276e79a0b6438fedbc00a2e70e39272e941a4cfdda30450abb8c6eec5ac4960755b983fdcf8aa537cef6a2b2b46#npm:1.0.0"],\
           ["eslint-plugin-unicorn", "virtual:d0376345004053284c1b111135cd7d46bfd81276e79a0b6438fedbc00a2e70e39272e941a4cfdda30450abb8c6eec5ac4960755b983fdcf8aa537cef6a2b2b46#npm:50.0.1"],\
+          ["tsconfig-paths", "npm:3.15.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "linkType": "SOFT"\
@@ -4738,6 +4741,7 @@ const RAW_RUNTIME_STATE =
           ["eslint", "npm:8.56.0"],\
           ["prettier", "npm:3.1.1"],\
           ["simple-git-hooks", "npm:2.9.0"],\
+          ["tsconfig-paths", "npm:3.15.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "linkType": "SOFT"\
@@ -5213,10 +5217,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["tsconfig-paths", [\
-      ["npm:3.14.2", {\
-        "packageLocation": "./.yarn/cache/tsconfig-paths-npm-3.14.2-90ce75420d-fdc92bb7b1.zip/node_modules/tsconfig-paths/",\
+      ["npm:3.15.0", {\
+        "packageLocation": "./.yarn/cache/tsconfig-paths-npm-3.15.0-ff68930e0e-5b4f301a2b.zip/node_modules/tsconfig-paths/",\
         "packageDependencies": [\
-          ["tsconfig-paths", "npm:3.14.2"],\
+          ["tsconfig-paths", "npm:3.15.0"],\
           ["@types/json5", "npm:0.0.29"],\
           ["json5", "npm:1.0.2"],\
           ["minimist", "npm:1.2.8"],\

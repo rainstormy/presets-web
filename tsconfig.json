@@ -4,6 +4,9 @@
 		"./packages/preset-typescript/check",
 		"./packages/preset-typescript/target-node-es2023"
 	],
+	"compilerOptions": {
+		"baseUrl": "./"
+	},
 	"references": [
 		{ "path": "./packages/preset-eslint-base" },
 		{ "path": "./packages/preset-eslint-jsx" },
@@ -18,5 +21,6 @@
 		{ "path": "./packages/preset-prettier-base" },
 		{ "path": "./packages/preset-prettier-css" },
 		{ "path": "./packages/preset-prettier-tailwind" }
-	]
+	],
+	"include": ["./packages/*/*.ts", "./*.config.js"]
 }
