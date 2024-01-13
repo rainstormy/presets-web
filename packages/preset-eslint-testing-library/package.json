@@ -16,16 +16,16 @@
 	"license": "MIT",
 	"author": "Steffen Diswal",
 	"type": "module",
-	"main": "dist/preset-eslint-testing-library.js",
-	"types": "dist/preset-eslint-testing-library.d.ts",
+	"main": "dist/EslintPresetTestingLibrary.js",
+	"types": "dist/EslintPresetTestingLibrary.d.ts",
 	"files": [
 		"dist"
 	],
 	"dependencies": {
+		"@rainstormy/preset-eslint-base": "workspace:*",
 		"eslint-plugin-testing-library": "6.2.0"
 	},
 	"devDependencies": {
-		"@types/eslint": "8.56.1",
 		"typescript": "5.3.3"
 	},
 	"peerDependencies": {
@@ -33,14 +33,14 @@
 	},
 	"//": {
 		"dependencies": {
-			"eslint-plugin-testing-library": "An ESLint plugin that covers Testing Library features in component tests."
+			"@rainstormy/preset-eslint-base": "This ESLint preset ships with type definitions for ESLint presets and their configurable options.",
+			"eslint-plugin-testing-library": "This ESLint plugin covers Testing Library features in component tests."
 		},
 		"devDependencies": {
-			"@types/eslint": "A set of type definitions for ESLint configuration files.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"typescript": "TypeScript is a statically typed programming language on top of JavaScript."
 		},
 		"peerDependencies": {
-			"eslint": "A static program analysis tool that uncovers code issues."
+			"eslint": "ESLint is a peer dependency of `@rainstormy/preset-eslint-base`."
 		}
 	}
 }

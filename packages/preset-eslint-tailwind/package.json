@@ -16,16 +16,16 @@
 	"license": "MIT",
 	"author": "Steffen Diswal",
 	"type": "module",
-	"main": "dist/preset-eslint-tailwind.js",
-	"types": "dist/preset-eslint-tailwind.d.ts",
+	"main": "dist/EslintPresetTailwind.js",
+	"types": "dist/EslintPresetTailwind.d.ts",
 	"files": [
 		"dist"
 	],
 	"dependencies": {
+		"@rainstormy/preset-eslint-base": "workspace:*",
 		"eslint-plugin-tailwindcss": "3.13.1"
 	},
 	"devDependencies": {
-		"@types/eslint": "8.56.1",
 		"typescript": "5.3.3"
 	},
 	"peerDependencies": {
@@ -34,15 +34,15 @@
 	},
 	"//": {
 		"dependencies": {
-			"eslint-plugin-tailwindcss": "An ESLint plugin that covers Tailwind class strings in JSX- and React-like components."
+			"@rainstormy/preset-eslint-base": "This ESLint preset ships with type definitions for ESLint presets and their configurable options.",
+			"eslint-plugin-tailwindcss": "This ESLint plugin covers Tailwind class strings in JSX components."
 		},
 		"devDependencies": {
-			"@types/eslint": "A set of type definitions for ESLint configuration files.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"typescript": "TypeScript is a statically typed programming language on top of JavaScript."
 		},
 		"peerDependencies": {
-			"eslint": "A static program analysis tool that uncovers code issues.",
-			"tailwindcss": "A utility-first CSS framework that minimises the need for traditional stylesheets."
+			"eslint": "ESLint is a peer dependency of `@rainstormy/preset-eslint-base`.",
+			"tailwindcss": "Tailwind CSS is a peer dependency of `eslint-plugin-tailwindcss`."
 		}
 	}
 }

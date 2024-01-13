@@ -16,8 +16,8 @@
 	"license": "MIT",
 	"author": "Steffen Diswal",
 	"type": "module",
-	"main": "dist/preset-eslint-base.js",
-	"types": "dist/preset-eslint-base.d.ts",
+	"main": "dist/EslintPresets.js",
+	"types": "dist/EslintPresets.d.ts",
 	"files": [
 		"dist"
 	],
@@ -44,25 +44,25 @@
 	},
 	"//": {
 		"dependencies": {
-			"@limegrass/eslint-plugin-import-alias": "An ESLint plugin that encourages the use of path aliases in import statements.",
-			"@typescript-eslint/eslint-plugin": "An ESLint plugin that covers TypeScript code. It must always match the version of `@typescript-eslint/parser`.",
-			"@typescript-eslint/parser": "An ESLint parser for TypeScript code. It must always match the version of `@typescript-eslint/eslint-plugin`.",
-			"eslint-import-resolver-typescript": "An ESLint plugin that adds TypeScript and path alias support to `eslint-plugin-import`.",
-			"eslint-plugin-eslint-comments": "An ESLint plugin that covers the use of ESLint comments.",
-			"eslint-plugin-functional": "An ESLint plugin that encourages principles from the functional programming paradigm.",
-			"eslint-plugin-import": "An ESLint plugin that covers import statements and export declarations.",
-			"eslint-plugin-no-barrel-files": "An ESLint plugin that forbids the use of barrel files.",
-			"eslint-plugin-redundant-undefined": "An ESLint plugin that covers the redundant use of undefined in optional type declarations.",
-			"eslint-plugin-unicorn": "An ESLint plugin that complements the built-in set of rules.",
+			"@limegrass/eslint-plugin-import-alias": "This ESLint plugin encourages the use of path aliases in import statements.",
+			"@typescript-eslint/eslint-plugin": "This ESLint plugin covers TypeScript code. It must always match the version of `@typescript-eslint/parser`.",
+			"@typescript-eslint/parser": "This ESLint parser enables TypeScript support. It must always match the version of `@typescript-eslint/eslint-plugin`.",
+			"eslint-import-resolver-typescript": "This utility enables TypeScript and path alias support in `eslint-plugin-import`.",
+			"eslint-plugin-eslint-comments": "This ESLint plugin covers the use of ESLint comments.",
+			"eslint-plugin-functional": "This ESLint plugin encourages principles from the functional programming paradigm.",
+			"eslint-plugin-import": "This ESLint plugin covers import statements and export declarations. We use the `eslint-plugin-i` variant.",
+			"eslint-plugin-no-barrel-files": "This ESLint plugin forbids the use of barrel files.",
+			"eslint-plugin-redundant-undefined": "This ESLint plugin covers the redundant use of undefined in optional type declarations.",
+			"eslint-plugin-unicorn": "This ESLint plugin complements the built-in set of rules.",
 			"tsconfig-paths": "This utility is a dependency of `eslint-plugin-import` and `@limegrass/eslint-plugin-import-alias`. This particular version restores compatibility with TypeScript 5."
 		},
 		"devDependencies": {
-			"@types/eslint": "A set of type definitions for ESLint configuration files.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"@types/eslint": "This package provides type definitions for ESLint configurations.",
+			"typescript": "TypeScript is a statically typed programming language on top of JavaScript."
 		},
 		"peerDependencies": {
-			"eslint": "A static program analysis tool that uncovers code issues.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"eslint": "The preset is made for ESLint. When declared as a peer dependency, the package manager will remind the user to install it.",
+			"typescript": "TypeScript is a peer dependency of `@typescript-eslint/eslint-plugin`, as type-aware linting rules have been enabled."
 		}
 	}
 }

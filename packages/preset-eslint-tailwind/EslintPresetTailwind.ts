@@ -1,17 +1,47 @@
-import { type Linter } from "eslint"
+import {
+	assertOptions,
+	assertOptionsTargetFilePatterns,
+	eslintPresetIdentifier,
+	type EslintPreset,
+	type EslintPresetOptionsTargetFilePatterns,
+} from "@rainstormy/preset-eslint-base/dist/EslintPresetUtilities.js"
 import tailwindPlugin from "eslint-plugin-tailwindcss"
 
-export function eslintTailwind(options: {
-	readonly files: ReadonlyArray<string>
-}): Linter.FlatConfig {
+/**
+ * A predefined, opinionated ESLint configuration for JSX components with Tailwind CSS classes.
+ *
+ * ```javascript
+ * eslintPresetTailwind()
+ * ```
+ *
+ * is equivalent to
+ *
+ * ```javascript
+ * eslintPresetTailwind({
+ *     targetFilePatterns: ["**\/*.@(jsx|tsx)"],
+ * })
+ * ```
+ *
+ * @see https://github.com/francoismassart/eslint-plugin-tailwindcss#supported-rules tailwind/*
+ */
+export function eslintPresetTailwind(
+	options?: EslintPresetOptionsTargetFilePatterns,
+): EslintPreset
+export function eslintPresetTailwind(options: unknown): EslintPreset {
+	const eslintPresetName = "eslintPresetTailwind"
+	const checkedOptions = options ?? {}
+
+	assertOptions(checkedOptions, eslintPresetName)
+	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
+
+	const { targetFilePatterns = ["**/*.@(jsx|tsx)"] } = checkedOptions
+
 	return {
-		files: [...options.files],
+		[eslintPresetIdentifier]: eslintPresetName,
+		files: targetFilePatterns,
 		plugins: {
 			tailwind: tailwindPlugin,
 		},
-		/**
-		 * @see https://github.com/francoismassart/eslint-plugin-tailwindcss#supported-rules tailwind
-		 */
 		rules: {
 			/**
 			 * Prettier supersedes this rule.

@@ -1,30 +1,58 @@
-import { type Linter } from "eslint"
+import {
+	assertOptions,
+	assertOptionsTargetFilePatterns,
+	eslintPresetIdentifier,
+	eslintPresetOrdinal,
+	type EslintPreset,
+	type EslintPresetOptionsTargetFilePatterns,
+} from "@rainstormy/preset-eslint-base/dist/EslintPresetUtilities.js"
 import storybookPlugin from "eslint-plugin-storybook"
 
-export function eslintStorybook(options: {
-	readonly files: ReadonlyArray<string>
-}): Linter.FlatConfig {
+/**
+ * A predefined, opinionated ESLint configuration for files with Storybook stories in Component Story Format 3 (CSF3).
+ *
+ * ```javascript
+ * eslintPresetStorybook()
+ * ```
+ *
+ * is equivalent to
+ *
+ * ```javascript
+ * eslintPresetStorybook({
+ *     targetFilePatterns: [
+ *         ".storybook/**\/*.@(js|jsx|ts|tsx)",
+ *         "**\/*.stories.@(js|jsx|ts|tsx)",
+ *     ],
+ * })
+ * ```
+ *
+ * @see https://github.com/storybookjs/eslint-plugin-storybook storybook/*
+ */
+export function eslintPresetStorybook(
+	options?: EslintPresetOptionsTargetFilePatterns,
+): EslintPreset
+export function eslintPresetStorybook(options: unknown): EslintPreset {
+	const eslintPresetName = "eslintPresetStorybook"
+	const checkedOptions = options ?? {}
+
+	assertOptions(checkedOptions, eslintPresetName)
+	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
+
+	const {
+		targetFilePatterns = [
+			".storybook/**/*.@(js|jsx|ts|tsx)",
+			"**/*.stories.@(js|jsx|ts|tsx)",
+		],
+	} = checkedOptions
+
 	return {
-		files: [...options.files],
+		[eslintPresetIdentifier]: eslintPresetName,
+		[eslintPresetOrdinal]: 1, // This preset must be applied after `eslintPresetJsx` (or any of its extensions) to override rules correctly.
+		files: targetFilePatterns,
 		plugins: {
 			storybook: storybookPlugin,
 		},
-		/**
-		 * @see https://github.com/storybookjs/eslint-plugin-storybook storybook
-		 */
 		rules: {
-			/**
-			 * Stories must be as simple as possible.
-			 * @see https://eslint.org/docs/latest/rules/complexity
-			 */
-			complexity: ["error", { max: 2 }],
-
-			/**
-			 * It is impractical to limit the size of a story file.
-			 * @see https://eslint.org/docs/latest/rules/max-lines
-			 */
-			"max-lines": "off",
-
 			/**
 			 * The `render` function in stories uses prop spreading to provide args to components.
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md

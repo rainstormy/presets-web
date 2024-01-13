@@ -1,23 +1,51 @@
-import { eslintJsx } from "@rainstormy/preset-eslint-jsx"
-import { type Linter } from "eslint"
+import {
+	assertOptions,
+	assertOptionsTargetFilePatterns,
+	eslintPresetIdentifier,
+	type EslintPreset,
+	type EslintPresetOptionsTargetFilePatterns,
+} from "@rainstormy/preset-eslint-base/dist/EslintPresetUtilities.js"
+import { eslintPresetJsx } from "@rainstormy/preset-eslint-jsx"
 import solidPlugin from "eslint-plugin-solid"
 
-export function eslintSolid(options: {
-	readonly files: ReadonlyArray<string>
-}): Linter.FlatConfig {
-	const jsxPreset = eslintJsx(options)
+/**
+ * A predefined, opinionated ESLint configuration for Solid components.
+ *
+ * ```javascript
+ * eslintPresetSolid()
+ * ```
+ *
+ * is equivalent to
+ *
+ * ```javascript
+ * eslintPresetSolid({
+ *     targetFilePatterns: ["**\/*.@(jsx|tsx)"],
+ * })
+ * ```
+ *
+ * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules jsx-a11y/*
+ * @see https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules react/*
+ * @see https://github.com/solidjs-community/eslint-plugin-solid#rules solid/*
+ */
+export function eslintPresetSolid(
+	options?: EslintPresetOptionsTargetFilePatterns,
+): EslintPreset
+export function eslintPresetSolid(options: unknown): EslintPreset {
+	const eslintPresetName = "eslintPresetSolid"
+	const checkedOptions = options ?? {}
+
+	assertOptions(checkedOptions, eslintPresetName)
+	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
+
+	const jsxPreset = eslintPresetJsx(checkedOptions)
 
 	return {
 		...jsxPreset,
+		[eslintPresetIdentifier]: eslintPresetName,
 		plugins: {
 			...jsxPreset.plugins,
 			solid: solidPlugin,
 		},
-		/**
-		 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules jsx-a11y
-		 * @see https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules react
-		 * @see https://github.com/solidjs-community/eslint-plugin-solid#rules solid
-		 */
 		rules: {
 			...jsxPreset.rules,
 

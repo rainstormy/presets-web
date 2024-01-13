@@ -11,5 +11,6 @@
 		"outDir": "./dist",
 		"tsBuildInfoFile": "../../.cache/typescript/preset-eslint-next.tsbuildinfo"
 	},
-	"include": ["*.ts"]
+	"include": ["*.ts"],
+	"references": [{ "path": "../preset-eslint-react" }]
 }

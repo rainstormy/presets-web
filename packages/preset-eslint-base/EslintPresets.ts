@@ -1,24 +1,113 @@
 import importAliasPlugin from "@limegrass/eslint-plugin-import-alias"
 import typescriptPlugin from "@typescript-eslint/eslint-plugin"
 import typescriptParser from "@typescript-eslint/parser"
-import { type Linter } from "eslint"
 import eslintCommentsPlugin from "eslint-plugin-eslint-comments"
 import functionalPlugin from "eslint-plugin-functional"
 import importPlugin from "eslint-plugin-import"
 import noBarrelFilesPlugin from "eslint-plugin-no-barrel-files"
 import redundantUndefinedPlugin from "eslint-plugin-redundant-undefined"
 import unicornPlugin from "eslint-plugin-unicorn"
+import {
+	assertOptions,
+	assertOptionsAdditionalPresets,
+	assertOptionsTargetFilePatterns,
+	assertOptionsTsConfigFiles,
+	eslintPresetIdentifier,
+	eslintPresetOrdinal,
+	type EslintConfig,
+	type EslintPreset,
+	type EslintPresetOptionsAdditionalPresets,
+	type EslintPresetOptionsTargetFilePatterns,
+	type EslintPresetOptionsTsConfigFiles,
+} from "./EslintPresetUtilities.js"
 
-export function eslintBase(options: {
-	readonly files: ReadonlyArray<string>
-	readonly tsconfig?: ReadonlyArray<string>
-}): Linter.FlatConfig {
+/**
+ * Constructs a predefined, opinionated flat ESLint configuration from the given presets.
+ *
+ * ```javascript
+ * eslintPresets()
+ * ```
+ *
+ * is equivalent to
+ *
+ * ```javascript
+ * eslintPresets({
+ *     targetFilePatterns: ["**\/*.@(js|jsx|ts|tsx)"],
+ *     tsconfigFiles: "closest-to-each-source-file",
+ *     additionalPresets: [],
+ * })
+ * ```
+ *
+ * @see https://eslint.org/docs/latest/rules eslint/*
+ * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules eslint-comments/*
+ * @see https://github.com/eslint-functional/eslint-plugin-functional#rules functional/*
+ * @see https://github.com/import-js/eslint-plugin-import#rules import/*
+ * @see https://github.com/Limegrass/eslint-plugin-import-alias#configuration import-alias/*
+ * @see https://github.com/art0rz/eslint-plugin-no-barrel-files#rules no-barrel-files/*
+ * @see https://github.com/a-tarasyuk/eslint-plugin-redundant-undefined#usage redundant-undefined/*
+ * @see https://typescript-eslint.io/rules typescript/*
+ * @see https://github.com/sindresorhus/eslint-plugin-unicorn#rules unicorn/*
+ */
+export function eslintPresets(
+	options?: EslintPresetOptionsAdditionalPresets &
+		EslintPresetOptionsTargetFilePatterns &
+		EslintPresetOptionsTsConfigFiles,
+): ReadonlyArray<EslintConfig>
+export function eslintPresets(options: unknown): ReadonlyArray<EslintConfig> {
+	const eslintPresetName = "eslintPresets"
+	const checkedOptions = options ?? {}
+
+	assertOptions(checkedOptions, eslintPresetName)
+	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
+	assertOptionsTsConfigFiles(checkedOptions, eslintPresetName)
+	assertOptionsAdditionalPresets(checkedOptions, eslintPresetName)
+
+	const {
+		additionalPresets = [],
+		targetFilePatterns,
+		tsconfigFiles,
+	} = checkedOptions
+
+	const additionalConfigs = additionalPresets
+		.toSorted(
+			(
+				{ [eslintPresetOrdinal]: first = 0 },
+				{ [eslintPresetOrdinal]: second = 0 },
+			) => first - second,
+		)
+		.map((preset) => {
+			const {
+				[eslintPresetIdentifier]: ignoredIdentifier,
+				[eslintPresetOrdinal]: ignoredOrdinal,
+				...config
+			} = preset
+			return config
+		})
+
+	return [
+		standardEslintConfig({ targetFilePatterns, tsconfigFiles }),
+		...additionalConfigs,
+	]
+}
+
+function standardEslintConfig(checkedOptions: {
+	readonly targetFilePatterns?: ReadonlyArray<string>
+	readonly tsconfigFiles?: ReadonlyArray<string> | "closest-to-each-source-file"
+}): EslintConfig {
+	const {
+		targetFilePatterns = ["**/*.@(js|jsx|ts|tsx)"],
+		tsconfigFiles = "closest-to-each-source-file",
+	} = checkedOptions
+
 	return {
-		files: [...options.files],
+		files: targetFilePatterns,
 		languageOptions: {
 			parser: typescriptParser,
 			parserOptions: {
-				project: options.tsconfig ?? "./tsconfig.json",
+				project:
+					tsconfigFiles !== "closest-to-each-source-file"
+						? tsconfigFiles
+						: true,
 				sourceType: "module",
 			},
 		},
@@ -32,17 +121,6 @@ export function eslintBase(options: {
 			typescript: typescriptPlugin,
 			unicorn: unicornPlugin,
 		},
-		/**
-		 * @see https://eslint.org/docs/latest/rules eslint
-		 * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules eslint-comments
-		 * @see https://github.com/eslint-functional/eslint-plugin-functional#rules functional
-		 * @see https://github.com/import-js/eslint-plugin-import#rules import
-		 * @see https://github.com/Limegrass/eslint-plugin-import-alias#configuration import-alias
-		 * @see https://github.com/art0rz/eslint-plugin-no-barrel-files#rules no-barrel-files
-		 * @see https://github.com/a-tarasyuk/eslint-plugin-redundant-undefined#usage redundant-undefined
-		 * @see https://typescript-eslint.io/rules typescript
-		 * @see https://github.com/sindresorhus/eslint-plugin-unicorn#rules unicorn
-		 */
 		rules: {
 			/**
 			 * @see https://eslint.org/docs/latest/rules/accessor-pairs
@@ -115,7 +193,7 @@ export function eslintBase(options: {
 			camelcase: "off",
 
 			/**
-			 * Inline comments in lowercase may specify units of measurement, e.g. `60 \* seconds *\`.
+			 * Inline comments in lowercase may specify units of measurement, e.g. `60 /* seconds *\/`.
 			 * This rule is also likely to discover code that has been commented out.
 			 * @see https://eslint.org/docs/latest/rules/capitalized-comments
 			 */
@@ -3367,11 +3445,42 @@ export function eslintBase(options: {
 	}
 }
 
-export function eslintAmbientTypeScriptModules(options: {
-	readonly files: ReadonlyArray<string>
-}): Linter.FlatConfig {
+/**
+ * A predefined, opinionated ESLint configuration for ambient TypeScript modules (i.e. type declaration files).
+ *
+ * ```javascript
+ * eslintPresetAmbientTypeScriptModules()
+ * ```
+ *
+ * is equivalent to
+ *
+ * ```javascript
+ * eslintPresetAmbientTypeScriptModules({
+ *     targetFilePatterns: ["**\/*.d.ts"],
+ * })
+ * ```
+ */
+export function eslintPresetAmbientTypeScriptModules(
+	options?: EslintPresetOptionsTargetFilePatterns,
+): EslintPreset
+export function eslintPresetAmbientTypeScriptModules(
+	options: unknown,
+): EslintPreset {
+	const eslintPresetName = "eslintPresetAmbientTypeScriptModules"
+	const checkedOptions = options ?? {}
+
+	assertOptions(checkedOptions, eslintPresetName)
+	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
+
+	const { targetFilePatterns = ["**/*.d.ts"] } = checkedOptions
+
 	return {
-		files: [...options.files],
+		[eslintPresetIdentifier]: eslintPresetName,
+		files: targetFilePatterns,
+		plugins: {
+			import: importPlugin,
+			typescript: typescriptPlugin,
+		},
 		rules: {
 			/**
 			 * Ambient modules may consist solely of ambient type declarations without using any import statements or export declarations.
@@ -3388,12 +3497,53 @@ export function eslintAmbientTypeScriptModules(options: {
 	}
 }
 
-export function eslintTestData(options: {
-	readonly files: ReadonlyArray<string>
-}): Linter.FlatConfig {
+/**
+ * A predefined, opinionated ESLint configuration for files that may contain some kind of hardcoded test data.
+ *
+ * ```javascript
+ * eslintPresetTestData()
+ * ```
+ *
+ * is equivalent to
+ *
+ * ```javascript
+ * eslintPresetTestData({
+ *     targetFilePatterns: [
+ *         "**\/*.@(spec|specs|stories|test|testdata|tests).@(js|jsx|ts|tsx)",
+ *     ],
+ * })
+ * ```
+ */
+export function eslintPresetTestData(
+	options?: EslintPresetOptionsTargetFilePatterns,
+): EslintPreset
+export function eslintPresetTestData(options: unknown): EslintPreset {
+	const eslintPresetName = "eslintPresetTestData"
+	const checkedOptions = options ?? {}
+
+	assertOptions(checkedOptions, eslintPresetName)
+	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
+
+	const {
+		targetFilePatterns = [
+			"**/*.@(spec|specs|stories|test|testdata|tests).@(js|jsx|ts|tsx)",
+		],
+	} = checkedOptions
+
 	return {
-		files: [...options.files],
+		[eslintPresetIdentifier]: eslintPresetName,
+		files: targetFilePatterns,
+		plugins: {
+			typescript: typescriptPlugin,
+			unicorn: unicornPlugin,
+		},
 		rules: {
+			/**
+			 * Test data must be as simple as possible.
+			 * @see https://eslint.org/docs/latest/rules/complexity
+			 */
+			complexity: ["error", { max: 2 }],
+
 			/**
 			 * Test data may contain a large number of declarations.
 			 * @see https://eslint.org/docs/latest/rules/max-lines

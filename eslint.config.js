@@ -1,15 +1,14 @@
 import {
-	eslintAmbientTypeScriptModules,
-	eslintBase,
+	eslintPresetAmbientTypeScriptModules,
+	eslintPresets,
 } from "@rainstormy/preset-eslint-base"
 
 export default [
-	eslintBase({
-		files: ["packages/*/*.ts", "*.config.js"],
-		tsconfig: ["./packages/*/tsconfig.json", "./tsconfig.json"],
+	...eslintPresets({
+		additionalPresets: [eslintPresetAmbientTypeScriptModules()],
 	}),
 	{
-		files: ["packages/*/*.ts"],
+		files: ["**/*.ts"],
 		rules: {
 			/**
 			 * It would be impractical to split a configuration across multiple files.
@@ -22,9 +21,12 @@ export default [
 			 * @see https://eslint.org/docs/latest/rules/max-lines-per-function
 			 */
 			"max-lines-per-function": "off",
+
+			/**
+			 * We want TypeScript to infer the const type of the ESLint preset functions, which contain large well-defined rule objects.
+			 * @see https://typescript-eslint.io/rules/explicit-function-return-type
+			 */
+			"typescript/explicit-function-return-type": "off",
 		},
 	},
-
-	// `eslintAmbientTypeScriptModules` must follow `eslintBase` to take effect.
-	eslintAmbientTypeScriptModules({ files: ["packages/*/*.d.ts"] }),
 ]

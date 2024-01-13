@@ -1,17 +1,48 @@
-import { type Linter } from "eslint"
+import {
+	assertOptions,
+	assertOptionsTargetFilePatterns,
+	eslintPresetIdentifier,
+	type EslintPreset,
+	type EslintPresetOptionsTargetFilePatterns,
+} from "@rainstormy/preset-eslint-base/dist/EslintPresetUtilities.js"
 import testingLibraryPlugin from "eslint-plugin-testing-library"
 
-export function eslintTestingLibrary(options: {
-	readonly files: ReadonlyArray<string>
-}): Linter.FlatConfig {
+/**
+ * A predefined, opinionated ESLint configuration for files with Testing Library assertions and utilities.
+ *
+ * ```javascript
+ * eslintPresetTestingLibrary()
+ * ```
+ *
+ * is equivalent to
+ *
+ * ```javascript
+ * eslintPresetTestingLibrary({
+ *     targetFilePatterns: ["**\/*.@(spec|specs|test|tests).@(jsx|tsx)"],
+ * })
+ * ```
+ *
+ * @see https://github.com/testing-library/eslint-plugin-testing-library#supported-rules testing-library/*
+ */
+export function eslintPresetTestingLibrary(
+	options?: EslintPresetOptionsTargetFilePatterns,
+): EslintPreset
+export function eslintPresetTestingLibrary(options: unknown): EslintPreset {
+	const eslintPresetName = "eslintPresetTestingLibrary"
+	const checkedOptions = options ?? {}
+
+	assertOptions(checkedOptions, eslintPresetName)
+	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
+
+	const { targetFilePatterns = ["**/*.@(spec|specs|test|tests).@(jsx|tsx)"] } =
+		checkedOptions
+
 	return {
-		files: [...options.files],
+		[eslintPresetIdentifier]: eslintPresetName,
+		files: targetFilePatterns,
 		plugins: {
 			"testing-library": testingLibraryPlugin,
 		},
-		/**
-		 * @see https://github.com/testing-library/eslint-plugin-testing-library#supported-rules testing-library
-		 */
 		rules: {
 			/**
 			 * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/await-async-events.md

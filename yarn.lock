@@ -201,7 +201,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-eslint-jsx@workspace:packages/preset-eslint-jsx"
   dependencies:
-    "@types/eslint": "npm:8.56.1"
+    "@rainstormy/preset-eslint-base": "workspace:*"
     eslint-plugin-jsx-a11y: "npm:6.8.0"
     eslint-plugin-react: "npm:7.33.2"
     typescript: "npm:5.3.3"
@@ -215,7 +215,8 @@ __metadata:
   resolution: "@rainstormy/preset-eslint-next@workspace:packages/preset-eslint-next"
   dependencies:
     "@next/eslint-plugin-next": "npm:14.0.4"
-    "@types/eslint": "npm:8.56.1"
+    "@rainstormy/preset-eslint-base": "workspace:*"
+    "@rainstormy/preset-eslint-react": "workspace:*"
     typescript: "npm:5.3.3"
   peerDependencies:
     eslint: 8.x
@@ -226,9 +227,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-eslint-preact@workspace:packages/preset-eslint-preact"
   dependencies:
+    "@rainstormy/preset-eslint-base": "workspace:*"
     "@rainstormy/preset-eslint-jsx": "workspace:*"
     "@rainstormy/preset-eslint-react": "workspace:*"
-    "@types/eslint": "npm:8.56.1"
     typescript: "npm:5.3.3"
   peerDependencies:
     eslint: 8.x
@@ -239,8 +240,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-eslint-react@workspace:packages/preset-eslint-react"
   dependencies:
+    "@rainstormy/preset-eslint-base": "workspace:*"
     "@rainstormy/preset-eslint-jsx": "workspace:*"
-    "@types/eslint": "npm:8.56.1"
     eslint-plugin-react-hooks: "npm:4.6.0"
     typescript: "npm:5.3.3"
   peerDependencies:
@@ -252,8 +253,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-eslint-solid@workspace:packages/preset-eslint-solid"
   dependencies:
+    "@rainstormy/preset-eslint-base": "workspace:*"
     "@rainstormy/preset-eslint-jsx": "workspace:*"
-    "@types/eslint": "npm:8.56.1"
     eslint-plugin-solid: "npm:0.13.1"
     typescript: "npm:5.3.3"
   peerDependencies:
@@ -265,7 +266,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-eslint-storybook@workspace:packages/preset-eslint-storybook"
   dependencies:
-    "@types/eslint": "npm:8.56.1"
+    "@rainstormy/preset-eslint-base": "workspace:*"
     eslint-plugin-storybook: "npm:0.6.15"
     typescript: "npm:5.3.3"
   peerDependencies:
@@ -277,7 +278,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-eslint-tailwind@workspace:packages/preset-eslint-tailwind"
   dependencies:
-    "@types/eslint": "npm:8.56.1"
+    "@rainstormy/preset-eslint-base": "workspace:*"
     eslint-plugin-tailwindcss: "npm:3.13.1"
     typescript: "npm:5.3.3"
   peerDependencies:
@@ -290,7 +291,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-eslint-testing-library@workspace:packages/preset-eslint-testing-library"
   dependencies:
-    "@types/eslint": "npm:8.56.1"
+    "@rainstormy/preset-eslint-base": "workspace:*"
     eslint-plugin-testing-library: "npm:6.2.0"
     typescript: "npm:5.3.3"
   peerDependencies:
@@ -302,7 +303,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-eslint-vitest@workspace:packages/preset-eslint-vitest"
   dependencies:
-    "@types/eslint": "npm:8.56.1"
+    "@rainstormy/preset-eslint-base": "workspace:*"
     eslint-plugin-vitest: "npm:0.3.20"
     typescript: "npm:5.3.3"
   peerDependencies:
@@ -3355,7 +3356,6 @@ __metadata:
     eslint: "npm:8.56.0"
     prettier: "npm:3.1.1"
     simple-git-hooks: "npm:2.9.0"
-    tsconfig-paths: "npm:3.15.0"
     typescript: "npm:5.3.3"
   languageName: unknown
   linkType: soft

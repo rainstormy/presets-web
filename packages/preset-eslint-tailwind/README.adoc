@@ -2,50 +2,46 @@
 :experimental:
 :source-highlighter: highlight.js
 
-This package provides a predefined, opinionated https://eslint.org[ESLint] configuration suitable for any web project with https://tailwindcss.com[Tailwind CSS] classes.
+This package provides a predefined, opinionated https://eslint.org[ESLint] configuration suitable for any https://www.typescriptlang.org[TypeScript]-based web project with https://tailwindcss.com[Tailwind CSS] classes.
+
+This preset configures a subset of rules from the following plugin, which is installed along with the preset package:
+
+* https://github.com/francoismassart/eslint-plugin-tailwindcss#supported-rules[eslint-plugin-tailwindcss] (with rule names prefixed by `tailwind/`)
 
 == Installation
 Install the `@rainstormy/preset-eslint-tailwind` package and its peer dependencies:
 
 [source,shell]
 ----
-npm install --save-dev @rainstormy/preset-eslint-tailwind eslint tailwindcss
+npm install --save-dev @rainstormy/preset-eslint-tailwind @rainstormy/preset-eslint-base eslint typescript tailwindcss
 ----
 
 [source,shell]
 ----
-pnpm install --save-dev @rainstormy/preset-eslint-tailwind eslint tailwindcss
+pnpm install --save-dev @rainstormy/preset-eslint-tailwind @rainstormy/preset-eslint-base eslint typescript tailwindcss
 ----
 
 [source,shell]
 ----
-yarn add --dev @rainstormy/preset-eslint-tailwind eslint tailwindcss
+yarn add --dev @rainstormy/preset-eslint-tailwind @rainstormy/preset-eslint-base eslint typescript tailwindcss
 ----
-
-This preset configures a subset of rules from the following plugin, which is installed along with the preset package:
-
-* https://github.com/francoismassart/eslint-plugin-tailwindcss#supported-rules[eslint-plugin-tailwindcss] (with rule names prefixed by `tailwind/`)
 
 == Usage
-Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] (`eslint.config.js`) to target JSX component files in TypeScript.
-For example:
+Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] (`eslint.config.js`) and apply the `eslintPresetTailwind` preset.
+
+For example (with the default options in comments):
 
 [source,javascript]
 ----
-import {
-	eslintAmbientTypeScriptModules,
-	eslintBase,
-} from "@rainstormy/preset-eslint-base"
-import { eslintTailwind } from "@rainstormy/preset-eslint-tailwind"
+import { eslintPresets } from "@rainstormy/preset-eslint-base"
+import { eslintPresetTailwind } from "@rainstormy/preset-eslint-tailwind"
 
-export default [
-	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
-	eslintTailwind({ files: ["**/*.tsx"] }),
-
-	// `eslintAmbientTypeScriptModules` must follow `eslintBase` to take effect.
-	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
-]
+export default eslintPresets({
+	additionalPresets: [
+		// ...other presets...
+		eslintPresetTailwind({
+			// targetFilePatterns: ["**/*.@(jsx|tsx)"],
+		}),
+	],
+})
 ----
-
-== Complementary Presets
-* https://github.com/rainstormy/presets-web/tree/main/packages/preset-prettier-tailwind[@rainstormy/preset-prettier-tailwind]

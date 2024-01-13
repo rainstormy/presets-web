@@ -2,54 +2,80 @@
 :experimental:
 :source-highlighter: highlight.js
 
-This package provides a predefined, opinionated https://eslint.org[ESLint] configuration suitable for any https://nextjs.org[Next.js] project.
+This package provides a predefined, opinionated https://eslint.org[ESLint] configuration suitable for any https://nextjs.org[Next.js] app.
+
+This preset configures a subset of rules from the following plugin, which is installed along with the preset package:
+
+* https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-plugin[@next/eslint-plugin-next] (with rule names prefixed by `next/`)
+
+Additionally, it includes the following presets:
+
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-jsx[@rainstormy/preset-eslint-jsx]
+* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-react[@rainstormy/preset-eslint-react]
 
 == Installation
 Install the `@rainstormy/preset-eslint-next` package and its peer dependencies:
 
 [source,shell]
 ----
-npm install --save-dev @rainstormy/preset-eslint-next eslint
+npm install --save-dev @rainstormy/preset-eslint-next @rainstormy/preset-eslint-base eslint typescript
 ----
 
 [source,shell]
 ----
-pnpm install --save-dev @rainstormy/preset-eslint-next eslint
+pnpm install --save-dev @rainstormy/preset-eslint-next @rainstormy/preset-eslint-base eslint typescript
 ----
 
 [source,shell]
 ----
-yarn add --dev @rainstormy/preset-eslint-next eslint
+yarn add --dev @rainstormy/preset-eslint-next @rainstormy/preset-eslint-base eslint typescript
 ----
-
-This preset configures a subset of rules from the following plugin, which is installed along with the preset package:
-
-* https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-plugin[@next/eslint-plugin-next] (with rule names prefixed by `next/`)
 
 == Usage
-Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] (`eslint.config.js`) to target JSX component files in TypeScript.
-For example:
+Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] (`eslint.config.js`) and apply the `eslintPresetNext` preset.
+
+For example (with the default options in comments):
+
+[source,javascript]
+----
+import { eslintPresets } from "@rainstormy/preset-eslint-base"
+import { eslintPresetNext } from "@rainstormy/preset-eslint-next"
+
+export default eslintPresets({
+	additionalPresets: [
+		// ...other presets...
+		eslintPresetNext({
+			// targetFilePatterns: ["**/*.@(jsx|tsx)"],
+		}),
+	],
+})
+----
+
+=== In Combination with Storybook, Tailwind CSS, and Testing Library
+For example (with the default options applied):
 
 [source,javascript]
 ----
 import {
-	eslintAmbientTypeScriptModules,
-	eslintBase
+	eslintPresetAmbientTypeScriptModules,
+	eslintPresetTestData,
+	eslintPresets,
 } from "@rainstormy/preset-eslint-base"
-import { eslintNext } from "@rainstormy/preset-eslint-next"
-import { eslintReact } from "@rainstormy/preset-eslint-react"
+import { eslintPresetNext } from "@rainstormy/preset-eslint-next"
+import { eslintPresetStorybook } from "@rainstormy/preset-eslint-storybook"
+import { eslintPresetTailwind } from "@rainstormy/preset-eslint-tailwind"
+import { eslintPresetTestingLibrary } from "@rainstormy/preset-eslint-testing-library"
+import { eslintPresetVitest } from "@rainstormy/preset-eslint-vitest"
 
-export default [
-	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
-
-	// `eslintAmbientTypeScriptModules` and `eslintReact` must follow `eslintBase` to take effect.
-	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
-	eslintReact({ files: ["**/*.tsx"] }),
-
-	// `eslintNext` must follow `eslintReact` to take effect.
-	eslintNext({ files: ["**/*.tsx"] }),
-]
+export default eslintPresets({
+	additionalPresets: [
+		eslintPresetAmbientTypeScriptModules(),
+		eslintPresetNext(),
+		eslintPresetStorybook(),
+		eslintPresetTailwind(),
+		eslintPresetTestData(),
+		eslintPresetTestingLibrary(),
+		eslintPresetVitest(),
+	],
+})
 ----
-
-== Complementary Presets
-* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-react[@rainstormy/preset-eslint-react]

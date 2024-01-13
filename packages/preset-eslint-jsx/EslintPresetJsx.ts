@@ -1,20 +1,57 @@
-import { type Linter } from "eslint"
+import {
+	assertOptions,
+	assertOptionsTargetFilePatterns,
+	eslintPresetIdentifier,
+	eslintPresetOrdinal,
+	type EslintPreset,
+	type EslintPresetOptionsTargetFilePatterns,
+} from "@rainstormy/preset-eslint-base/dist/EslintPresetUtilities.js"
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y"
 import reactPlugin from "eslint-plugin-react"
 
-export function eslintJsx(options: {
-	readonly files: ReadonlyArray<string>
-}): Linter.FlatConfig {
+/**
+ * A predefined, opinionated ESLint configuration for JSX components in general.
+ *
+ * - For a Next.js app, use [`@rainstormy/preset-eslint-next`](https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-next) instead.
+ * - For Preact components, use [`@rainstormy/preset-eslint-preact`](https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-preact) instead.
+ * - For React components, use [`@rainstormy/preset-eslint-react`](https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-react) instead.
+ * - For Solid components, use [`@rainstormy/preset-eslint-solid`](https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-solid) instead.
+ *
+ * ```javascript
+ * eslintPresetJsx()
+ * ```
+ *
+ * is equivalent to
+ *
+ * ```javascript
+ * eslintPresetJsx({
+ *     targetFilePatterns: ["**\/*.@(jsx|tsx)"],
+ * })
+ * ```
+ *
+ * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules jsx-a11y/*
+ * @see https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules react/*
+ */
+export function eslintPresetJsx(
+	options?: EslintPresetOptionsTargetFilePatterns,
+): EslintPreset
+export function eslintPresetJsx(options: unknown): EslintPreset {
+	const eslintPresetName = "eslintPresetJsx"
+	const checkedOptions = options ?? {}
+
+	assertOptions(checkedOptions, eslintPresetName)
+	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
+
+	const { targetFilePatterns = ["**/*.@(jsx|tsx)"] } = checkedOptions
+
 	return {
-		files: [...options.files],
+		[eslintPresetIdentifier]: eslintPresetName,
+		[eslintPresetOrdinal]: 0, // This preset must be applied before `eslintPresetStorybook` to let the latter override rules correctly.
+		files: targetFilePatterns,
 		plugins: {
 			"jsx-a11y": jsxA11yPlugin,
 			react: reactPlugin,
 		},
-		/**
-		 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules jsx-a11y
-		 * @see https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules react
-		 */
 		rules: {
 			/**
 			 * Components may have render props and event handler props.
@@ -451,11 +488,11 @@ export function eslintJsx(options: {
 				"error",
 				{
 					ignore: [
-						// Ignore HTML attributes.
+						// HTML attributes.
 						"class",
 						"for",
 
-						// Ignore SVG attributes.
+						// SVG attributes.
 						"alignment-baseline",
 						"baseline-shift",
 						"clip-path",

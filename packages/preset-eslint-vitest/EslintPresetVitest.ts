@@ -1,11 +1,46 @@
-import { type Linter } from "eslint"
+import {
+	assertOptions,
+	assertOptionsTargetFilePatterns,
+	eslintPresetIdentifier,
+	type EslintPreset,
+	type EslintPresetOptionsTargetFilePatterns,
+} from "@rainstormy/preset-eslint-base/dist/EslintPresetUtilities.js"
 import vitestPlugin from "eslint-plugin-vitest"
 
-export function eslintVitest(options: {
-	readonly files: ReadonlyArray<string>
-}): Linter.FlatConfig {
+/**
+ * A predefined, opinionated ESLint configuration for files with Vitest test suites.
+ *
+ * ```javascript
+ * eslintPresetVitest()
+ * ```
+ *
+ * is equivalent to
+ *
+ * ```javascript
+ * eslintPresetVitest({
+ *     targetFilePatterns: ["**\/*.@(spec|specs|test|tests).@(js|jsx|ts|tsx)"],
+ * })
+ * ```
+ *
+ * @see https://github.com/veritem/eslint-plugin-vitest#rules vitest/*
+ */
+export function eslintPresetVitest(
+	options?: EslintPresetOptionsTargetFilePatterns,
+): EslintPreset
+export function eslintPresetVitest(options: unknown): EslintPreset {
+	const eslintPresetName = "eslintPresetVitest"
+	const checkedOptions = options ?? {}
+
+	assertOptions(checkedOptions, eslintPresetName)
+	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
+
+	const {
+		targetFilePatterns = ["**/*.@(spec|specs|test|tests).@(js|jsx|ts|tsx)"],
+	} = checkedOptions
+
 	return {
-		files: [...options.files],
+		[eslintPresetIdentifier]: eslintPresetName,
+		files: targetFilePatterns,
 		languageOptions: {
 			globals: {
 				afterAll: true,
@@ -27,28 +62,7 @@ export function eslintVitest(options: {
 		plugins: {
 			vitest: vitestPlugin,
 		},
-		/**
-		 * @see https://github.com/veritem/eslint-plugin-vitest#rules vitest
-		 */
 		rules: {
-			/**
-			 * Unit tests must be as simple as possible.
-			 * @see https://eslint.org/docs/latest/rules/complexity
-			 */
-			complexity: ["error", { max: 2 }],
-
-			/**
-			 * It is impractical to limit the size of a unit test file.
-			 * @see https://eslint.org/docs/latest/rules/max-lines
-			 */
-			"max-lines": "off",
-
-			/**
-			 * It is impractical to limit the size of a unit test case.
-			 * @see https://eslint.org/docs/latest/rules/max-lines-per-function
-			 */
-			"max-lines-per-function": "off",
-
 			/**
 			 * The `each()` function in Vitest uses consecutive whitespace characters in template strings to align test input.
 			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/string-content.md

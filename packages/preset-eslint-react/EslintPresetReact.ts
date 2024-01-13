@@ -1,23 +1,51 @@
-import { eslintJsx } from "@rainstormy/preset-eslint-jsx"
-import { type Linter } from "eslint"
+import {
+	assertOptions,
+	assertOptionsTargetFilePatterns,
+	eslintPresetIdentifier,
+	type EslintPreset,
+	type EslintPresetOptionsTargetFilePatterns,
+} from "@rainstormy/preset-eslint-base/dist/EslintPresetUtilities.js"
+import { eslintPresetJsx } from "@rainstormy/preset-eslint-jsx"
 import reactHooksPlugin from "eslint-plugin-react-hooks"
 
-export function eslintReact(options: {
-	readonly files: ReadonlyArray<string>
-}): Linter.FlatConfig {
-	const jsxPreset = eslintJsx(options)
+/**
+ * A predefined, opinionated ESLint configuration for React components.
+ *
+ * ```javascript
+ * eslintPresetReact()
+ * ```
+ *
+ * is equivalent to
+ *
+ * ```javascript
+ * eslintPresetReact({
+ *     targetFilePatterns: ["**\/*.@(jsx|tsx)"],
+ * })
+ * ```
+ *
+ * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules jsx-a11y/*
+ * @see https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules react/*
+ * @see https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks#custom-configuration react-hooks/*
+ */
+export function eslintPresetReact(
+	options?: EslintPresetOptionsTargetFilePatterns,
+): EslintPreset
+export function eslintPresetReact(options: unknown): EslintPreset {
+	const eslintPresetName = "eslintPresetReact"
+	const checkedOptions = options ?? {}
+
+	assertOptions(checkedOptions, eslintPresetName)
+	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
+
+	const jsxPreset = eslintPresetJsx(checkedOptions)
 
 	return {
 		...jsxPreset,
+		[eslintPresetIdentifier]: eslintPresetName,
 		plugins: {
 			...jsxPreset.plugins,
 			"react-hooks": reactHooksPlugin,
 		},
-		/**
-		 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules jsx-a11y
-		 * @see https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules react
-		 * @see https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks#custom-configuration react-hooks
-		 */
 		rules: {
 			...jsxPreset.rules,
 

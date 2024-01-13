@@ -16,17 +16,17 @@
 	"license": "MIT",
 	"author": "Steffen Diswal",
 	"type": "module",
-	"main": "dist/preset-eslint-preact.js",
-	"types": "dist/preset-eslint-preact.d.ts",
+	"main": "dist/EslintPresetPreact.js",
+	"types": "dist/EslintPresetPreact.d.ts",
 	"files": [
 		"dist"
 	],
 	"dependencies": {
+		"@rainstormy/preset-eslint-base": "workspace:*",
 		"@rainstormy/preset-eslint-jsx": "workspace:*",
 		"@rainstormy/preset-eslint-react": "workspace:*"
 	},
 	"devDependencies": {
-		"@types/eslint": "8.56.1",
 		"typescript": "5.3.3"
 	},
 	"peerDependencies": {
@@ -34,15 +34,15 @@
 	},
 	"//": {
 		"dependencies": {
-			"@rainstormy/preset-eslint-jsx": "An inheritable ESLint configuration for JSX- and React-like components.",
-			"@rainstormy/preset-eslint-react": "An inheritable ESLint configuration for React-like components."
+			"@rainstormy/preset-eslint-base": "This ESLint preset ships with type definitions for ESLint presets and their configurable options.",
+			"@rainstormy/preset-eslint-jsx": "This ESLint preset configures linting rules for JSX components such as Preact components.",
+			"@rainstormy/preset-eslint-react": "This ESLint preset configures linting rules for React-like components such as Preact components."
 		},
 		"devDependencies": {
-			"@types/eslint": "A set of type definitions for ESLint configuration files.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"typescript": "TypeScript is a statically typed programming language on top of JavaScript."
 		},
 		"peerDependencies": {
-			"eslint": "A static program analysis tool that uncovers code issues."
+			"eslint": "ESLint is a peer dependency of `@rainstormy/preset-eslint-base`."
 		}
 	}
 }

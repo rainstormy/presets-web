@@ -16,16 +16,16 @@
 	"license": "MIT",
 	"author": "Steffen Diswal",
 	"type": "module",
-	"main": "dist/preset-eslint-vitest.js",
-	"types": "dist/preset-eslint-vitest.d.ts",
+	"main": "dist/EslintPresetVitest.js",
+	"types": "dist/EslintPresetVitest.d.ts",
 	"files": [
 		"dist"
 	],
 	"dependencies": {
+		"@rainstormy/preset-eslint-base": "workspace:*",
 		"eslint-plugin-vitest": "0.3.20"
 	},
 	"devDependencies": {
-		"@types/eslint": "8.56.1",
 		"typescript": "5.3.3"
 	},
 	"peerDependencies": {
@@ -34,15 +34,15 @@
 	},
 	"//": {
 		"dependencies": {
-			"eslint-plugin-vitest": "An ESLint plugin that covers Vitest suites."
+			"@rainstormy/preset-eslint-base": "This ESLint preset ships with type definitions for ESLint presets and their configurable options.",
+			"eslint-plugin-vitest": "This ESLint plugin covers Vitest suites."
 		},
 		"devDependencies": {
-			"@types/eslint": "A set of type definitions for ESLint configuration files.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"typescript": "TypeScript is a statically typed programming language on top of JavaScript."
 		},
 		"peerDependencies": {
-			"eslint": "A static program analysis tool that uncovers code issues.",
-			"vitest": "A Vite-based unit testing framework."
+			"eslint": "ESLint is a peer dependency of `@rainstormy/preset-eslint-base`.",
+			"vitest": "Vitest is a peer dependency of `eslint-plugin-vitest`."
 		}
 	}
 }

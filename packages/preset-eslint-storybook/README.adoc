@@ -2,58 +2,57 @@
 :experimental:
 :source-highlighter: highlight.js
 
-This package provides a predefined, opinionated https://eslint.org[ESLint] configuration suitable for any web project with https://storybook.js.org[Storybook] stories.
+This package provides a predefined, opinionated https://eslint.org[ESLint] configuration suitable for any https://www.typescriptlang.org[TypeScript]-based web project with https://storybook.js.org[Storybook] stories.
+
+This preset configures a subset of rules from the following plugin, which is installed along with the preset package:
+
+* https://github.com/storybookjs/eslint-plugin-storybook[eslint-plugin-storybook] (with rule names prefixed by `storybook/`)
 
 == Installation
 Install the `@rainstormy/preset-eslint-storybook` package and its peer dependencies:
 
 [source,shell]
 ----
-npm install --save-dev @rainstormy/preset-eslint-storybook eslint
+npm install --save-dev @rainstormy/preset-eslint-storybook @rainstormy/preset-eslint-base eslint typescript
 ----
 
 [source,shell]
 ----
-pnpm install --save-dev @rainstormy/preset-eslint-storybook eslint
+pnpm install --save-dev @rainstormy/preset-eslint-storybook @rainstormy/preset-eslint-base eslint typescript
 ----
 
 [source,shell]
 ----
-yarn add --dev @rainstormy/preset-eslint-storybook eslint
+yarn add --dev @rainstormy/preset-eslint-storybook @rainstormy/preset-eslint-base eslint typescript
 ----
-
-This preset configures a subset of rules from the following plugin, which is installed along with the preset package:
-
-* https://github.com/storybookjs/eslint-plugin-storybook[eslint-plugin-storybook] (with rule names prefixed by `storybook/`)
 
 == Usage
-Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] (`eslint.config.js`) to target Storybook configuration files and story files in TypeScript.
-For example:
+Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] (`eslint.config.js`) and apply the `eslintPresetStorybook` and `eslintPresetTestData` presets.
+
+For example (with the default options in comments):
 
 [source,javascript]
 ----
 import {
-	eslintAmbientTypeScriptModules,
-	eslintBase,
-	eslintTestData,
+	eslintPresetTestData,
+	eslintPresets,
 } from "@rainstormy/preset-eslint-base"
-import { eslintReact } from "@rainstormy/preset-eslint-react"
-import { eslintStorybook } from "@rainstormy/preset-eslint-storybook"
+import { eslintPresetStorybook } from "@rainstormy/preset-eslint-storybook"
 
-export default [
-	eslintBase({ files: ["**/*.+(js|ts|tsx)"] }),
-
-	// `eslintAmbientTypeScriptModules`, `eslintReact`, and `eslintTestData` must follow `eslintBase` to take effect.
-	eslintAmbientTypeScriptModules({ files: ["**/*.d.ts"] }),
-	eslintReact({ files: ["**/*.tsx"] }),
-	eslintTestData({ files: ["**/*.stories.+(ts|tsx)"] }),
-
-	// `eslintStorybook` must follow a JSX preset such as `eslintReact` to take effect.
-	eslintStorybook({
-		files: [".storybook/**/*.+(ts|tsx)", "**/*.stories.+(ts|tsx)"],
-	}),
-]
+export default eslintPresets({
+	additionalPresets: [
+		// ...other presets...
+		eslintPresetStorybook({
+			// targetFilePatterns: [
+			//     ".storybook/**/*.@(js|jsx|ts|tsx)",
+			//     "**/*.stories.@(js|jsx|ts|tsx)",
+			// ],
+		}),
+		eslintPresetTestData({
+			// targetFilePatterns: [
+			//     "**/*.@(spec|specs|stories|test|testdata|tests).@(js|jsx|ts|tsx)",
+			// ],
+		}),
+	],
+})
 ----
-
-== Complementary Presets
-* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-testing-library[@rainstormy/preset-eslint-testing-library]

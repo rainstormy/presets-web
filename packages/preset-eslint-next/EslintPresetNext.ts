@@ -1,18 +1,51 @@
 import nextPlugin from "@next/eslint-plugin-next"
-import { type Linter } from "eslint"
+import {
+	assertOptions,
+	assertOptionsTargetFilePatterns,
+	eslintPresetIdentifier,
+	type EslintPreset,
+	type EslintPresetOptionsTargetFilePatterns,
+} from "@rainstormy/preset-eslint-base/dist/EslintPresetUtilities.js"
+import { eslintPresetReact } from "@rainstormy/preset-eslint-react"
 
-export function eslintNext(options: {
-	readonly files: ReadonlyArray<string>
-}): Linter.FlatConfig {
+/**
+ * A predefined, opinionated ESLint configuration for React components in a Next.js app.
+ *
+ * ```javascript
+ * eslintPresetNext()
+ * ```
+ *
+ * is equivalent to
+ *
+ * ```javascript
+ * eslintPresetNext({
+ *     targetFilePatterns: ["**\/*.@(jsx|tsx)"],
+ * })
+ * ```
+ *
+ * @see https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-plugin next/*
+ */
+export function eslintPresetNext(
+	options?: EslintPresetOptionsTargetFilePatterns,
+): EslintPreset
+export function eslintPresetNext(options: unknown): EslintPreset {
+	const eslintPresetName = "eslintPresetNext"
+	const checkedOptions = options ?? {}
+
+	assertOptions(checkedOptions, eslintPresetName)
+	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
+
+	const reactPreset = eslintPresetReact(checkedOptions)
+
 	return {
-		files: [...options.files],
+		...reactPreset,
+		[eslintPresetIdentifier]: eslintPresetName,
 		plugins: {
 			next: nextPlugin,
 		},
-		/**
-		 * @see https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-plugin next
-		 */
 		rules: {
+			...reactPreset.rules,
+
 			/**
 			 * @see https://nextjs.org/docs/messages/google-font-display
 			 */
