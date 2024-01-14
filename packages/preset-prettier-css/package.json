@@ -16,33 +16,31 @@
 	"license": "MIT",
 	"author": "Steffen Diswal",
 	"type": "module",
-	"main": "dist/preset-prettier-css.js",
-	"types": "dist/preset-prettier-css.d.ts",
+	"main": "dist/PrettierPresetCss.js",
+	"types": "dist/PrettierPresetCss.d.ts",
 	"files": [
 		"dist"
 	],
 	"dependencies": {
+		"@rainstormy/preset-prettier-base": "workspace:*",
 		"prettier-plugin-css-order": "2.0.1"
 	},
 	"devDependencies": {
-		"prettier": "3.1.1",
 		"typescript": "5.3.3"
 	},
 	"peerDependencies": {
-		"prettier": "3.x",
-		"typescript": "5.x"
+		"prettier": "3.x"
 	},
 	"//": {
 		"dependencies": {
-			"prettier-plugin-css-order": "A Prettier plugin that sorts CSS properties."
+			"@rainstormy/preset-prettier-base": "This package provides type definitions for Prettier presets.",
+			"prettier-plugin-css-order": "This Prettier plugin sorts CSS properties."
 		},
 		"devDependencies": {
-			"prettier": "An opinionated code formatter.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"typescript": "TypeScript is a statically typed programming language on top of JavaScript."
 		},
 		"peerDependencies": {
-			"prettier": "An opinionated code formatter.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"prettier": "Prettier is a peer dependency of `@rainstormy/preset-prettier-base`."
 		}
 	}
 }

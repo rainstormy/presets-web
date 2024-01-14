@@ -16,8 +16,8 @@
 	"license": "MIT",
 	"author": "Steffen Diswal",
 	"type": "module",
-	"main": "dist/preset-prettier-base.js",
-	"types": "dist/preset-prettier-base.d.ts",
+	"main": "dist/PrettierPresets.js",
+	"types": "dist/PrettierPresets.d.ts",
 	"files": [
 		"dist"
 	],
@@ -35,16 +35,16 @@
 	},
 	"//": {
 		"dependencies": {
-			"prettier-plugin-organize-imports": "A Prettier plugin that sorts import statements and removes unused ones.",
-			"prettier-plugin-packagejson": "A Prettier plugin that sorts properties in the `package.json` file."
+			"prettier-plugin-organize-imports": "This Prettier plugin sorts import statements and removes unused ones.",
+			"prettier-plugin-packagejson": "This Prettier plugin sorts properties in the `package.json` file."
 		},
 		"devDependencies": {
-			"prettier": "An opinionated code formatter.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"prettier": "Prettier ships with type definitions for its configuration objects.",
+			"typescript": "TypeScript is a statically typed programming language on top of JavaScript."
 		},
 		"peerDependencies": {
-			"prettier": "An opinionated code formatter.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"prettier": "The preset is made for Prettier. When declared as a peer dependency, the package manager will remind the user to install it.",
+			"typescript": "TypeScript is a peer dependency of `prettier-plugin-organize-imports`."
 		}
 	}
 }

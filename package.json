@@ -55,7 +55,7 @@
 			"downdoc": "Downdoc converts AsciiDoc documents to Markdown to improve compatibility with npm.",
 			"eslint": "ESLint uses static program analysis to uncover code issues.",
 			"prettier": "Prettier is an opinionated code formatter.",
-			"simple-git-hooks": "This tool lets the package.json file define Git hooks.",
+			"simple-git-hooks": "This tool lets the `package.json` file define Git hooks.",
 			"typescript": "TypeScript is a statically typed programming language on top of JavaScript."
 		}
 	}

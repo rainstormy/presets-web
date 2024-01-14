@@ -655,7 +655,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./packages/preset-prettier-css/",\
         "packageDependencies": [\
           ["@rainstormy/preset-prettier-css", "workspace:packages/preset-prettier-css"],\
-          ["prettier", "npm:3.1.1"],\
+          ["@rainstormy/preset-prettier-base", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#workspace:packages/preset-prettier-base"],\
           ["prettier-plugin-css-order", "virtual:d89008f224cd715ea32c201ca1e93241f9049255779b45304de168778b7c2f716ceecb171cfe6c5dea0d1c3bcda48eb2f1ec0b5b0d481d8a1cf1128a71b455bc#npm:2.0.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
@@ -667,7 +667,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./packages/preset-prettier-tailwind/",\
         "packageDependencies": [\
           ["@rainstormy/preset-prettier-tailwind", "workspace:packages/preset-prettier-tailwind"],\
-          ["prettier", "npm:3.1.1"],\
+          ["@rainstormy/preset-prettier-base", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#workspace:packages/preset-prettier-base"],\
           ["prettier-plugin-tailwindcss", "virtual:8bbb9d071908669133a39f10922ec1cc5c8d5317520412c63e72701e0b7e817f499d8343979a685e2ea72ba9ad2cc0b37eb8312b307af9ada87250315555bb8a#npm:0.5.11"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
@@ -4419,7 +4419,7 @@ const RAW_RUNTIME_STATE =
           ["css-declaration-sorter", "virtual:85481f50d8dfd4bc1f7f02530802629f63bf48fe8ef98102c62929de61c34e48d2eb2cf38ffd61ea91c3e50ce602c6c1dc8f831431875aeaf7df7264cf4cd4db#npm:7.1.1"],\
           ["postcss-less", "virtual:85481f50d8dfd4bc1f7f02530802629f63bf48fe8ef98102c62929de61c34e48d2eb2cf38ffd61ea91c3e50ce602c6c1dc8f831431875aeaf7df7264cf4cd4db#npm:6.0.0"],\
           ["postcss-scss", "virtual:85481f50d8dfd4bc1f7f02530802629f63bf48fe8ef98102c62929de61c34e48d2eb2cf38ffd61ea91c3e50ce602c6c1dc8f831431875aeaf7df7264cf4cd4db#npm:4.0.9"],\
-          ["prettier", "npm:3.1.1"]\
+          ["prettier", null]\
         ],\
         "packagePeers": [\
           "@types/prettier",\
@@ -4517,7 +4517,7 @@ const RAW_RUNTIME_STATE =
           ["@types/prettier__plugin-pug", null],\
           ["@types/shopify__prettier-plugin-liquid", null],\
           ["@types/trivago__prettier-plugin-sort-imports", null],\
-          ["prettier", "npm:3.1.1"],\
+          ["prettier", null],\
           ["prettier-plugin-astro", null],\
           ["prettier-plugin-css-order", null],\
           ["prettier-plugin-import-sort", null],\

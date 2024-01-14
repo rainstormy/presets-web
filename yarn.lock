@@ -330,12 +330,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-prettier-css@workspace:packages/preset-prettier-css"
   dependencies:
-    prettier: "npm:3.1.1"
+    "@rainstormy/preset-prettier-base": "workspace:*"
     prettier-plugin-css-order: "npm:2.0.1"
     typescript: "npm:5.3.3"
   peerDependencies:
     prettier: 3.x
-    typescript: 5.x
   languageName: unknown
   linkType: soft
 
@@ -343,12 +342,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rainstormy/preset-prettier-tailwind@workspace:packages/preset-prettier-tailwind"
   dependencies:
-    prettier: "npm:3.1.1"
+    "@rainstormy/preset-prettier-base": "workspace:*"
     prettier-plugin-tailwindcss: "npm:0.5.11"
     typescript: "npm:5.3.3"
   peerDependencies:
     prettier: 3.x
-    typescript: 5.x
   languageName: unknown
   linkType: soft
 

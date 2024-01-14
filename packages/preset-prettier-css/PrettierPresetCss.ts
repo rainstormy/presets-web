@@ -1,7 +1,10 @@
-import { type Config } from "prettier"
+import {
+	prettierPresetIdentifier,
+	type PrettierPreset,
+} from "@rainstormy/preset-prettier-base/dist/PrettierPresetUtilities.js"
 import cssOrderPlugin from "prettier-plugin-css-order"
 
-type PrettierPluginCssOrderConfig = {
+type PrettierPresetCss = PrettierPreset & {
 	readonly cssDeclarationSorterOrder?:
 		| "alphabetical"
 		| "concentric-css"
@@ -9,8 +12,12 @@ type PrettierPluginCssOrderConfig = {
 	readonly cssDeclarationSorterKeepOverrides?: boolean // eslint-disable-line typescript/naming-convention -- The plugin expects this name.
 }
 
-export function prettierCss(): Config & PrettierPluginCssOrderConfig {
+/**
+ * A predefined, opinionated Prettier configuration for CSS declarations.
+ */
+export function prettierPresetCss(): PrettierPresetCss {
 	return {
+		[prettierPresetIdentifier]: "prettierPresetCss",
 		plugins: [
 			/**
 			 * @see https://github.com/Siilwyn/prettier-plugin-css-order

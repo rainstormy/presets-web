@@ -23,7 +23,7 @@ yarn add --dev @rainstormy/preset-typescript typescript
 ----
 
 == Usage
-Create a https://www.typescriptlang.org/tsconfig[TypeScript configuration file] (`tsconfig.json`) and extend the following configurations to enable type-checking and optionally also generation of `js` and `d.ts` files:
+Create a https://www.typescriptlang.org/tsconfig[TypeScript configuration file] (`tsconfig.json`) and make it extend the following configurations to enable type-checking and optionally also generation of `js` and `d.ts` files:
 
 * `@rainstormy/preset-typescript/check`
 * `@rainstormy/preset-typescript/generate` (to generate `js` and `d.ts` files)
@@ -44,10 +44,9 @@ For example:
 }
 ----
 
-[TIP]
-.Override Settings
-====
-To override the settings configured by this preset, specify the desired options after the `extends` field to take precedence over the preset.
+=== Override Settings
+To override the settings configured by this preset, simply specify the desired options.
+
 For example:
 
 [source,json]
@@ -69,8 +68,3 @@ For example:
 	"include": ["./src/**/*.ts", "./*.config.js", "./*.config.ts"]
 }
 ----
-====
-
-== Complementary Presets
-* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-base[@rainstormy/preset-eslint-base]
-* https://github.com/rainstormy/presets-web/tree/main/packages/preset-prettier-base[@rainstormy/preset-prettier-base]

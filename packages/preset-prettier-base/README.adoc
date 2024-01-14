@@ -4,6 +4,11 @@
 
 This package provides a predefined, opinionated https://prettier.io[Prettier] configuration suitable for any https://www.typescriptlang.org[TypeScript] project.
 
+This preset includes the following plugins, which are installed along with the preset package:
+
+* https://github.com/simonhaenisch/prettier-plugin-organize-imports[prettier-plugin-organize-imports]
+* https://github.com/matzkoh/prettier-plugin-packagejson[prettier-plugin-packagejson]
+
 == Installation
 Install the `@rainstormy/preset-prettier-base` package and its peer dependencies:
 
@@ -22,22 +27,16 @@ pnpm install --save-dev @rainstormy/preset-prettier-base prettier typescript
 yarn add --dev @rainstormy/preset-prettier-base prettier typescript
 ----
 
-This preset includes the following plugins, which are installed along with the preset package:
-
-* https://github.com/simonhaenisch/prettier-plugin-organize-imports[prettier-plugin-organize-imports]
-* https://github.com/matzkoh/prettier-plugin-packagejson[prettier-plugin-packagejson]
-
 == Usage
-Create or extend a https://prettier.io/docs/en/configuration.html[Prettier configuration file] (`prettier.config.js`).
-For example:
+Create or extend a https://prettier.io/docs/en/configuration.html[Prettier configuration file] (`prettier.config.js`) and export the result of `prettierPresets` as the configuration object.
+
+For example (with the default options in comments):
 
 [source,javascript]
 ----
-import { prettierBase } from "@rainstormy/preset-prettier-base"
+import { prettierPresets } from "@rainstormy/preset-prettier-base"
 
-export default prettierBase()
+export default prettierPresets({
+	// additionalPresets: [],
+})
 ----
-
-== Complementary Presets
-* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-base[@rainstormy/preset-eslint-base]
-* https://github.com/rainstormy/presets-web/tree/main/packages/preset-typescript[@rainstormy/preset-typescript]

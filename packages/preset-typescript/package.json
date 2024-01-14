@@ -21,7 +21,7 @@
 	},
 	"//": {
 		"peerDependencies": {
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"typescript": "The preset is made for TypeScript. When declared as a peer dependency, the package manager will remind the user to install it."
 		}
 	}
 }

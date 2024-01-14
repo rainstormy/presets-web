@@ -16,33 +16,31 @@
 	"license": "MIT",
 	"author": "Steffen Diswal",
 	"type": "module",
-	"main": "dist/preset-prettier-tailwind.js",
-	"types": "dist/preset-prettier-tailwind.d.ts",
+	"main": "dist/PrettierPresetTailwind.js",
+	"types": "dist/PrettierPresetTailwind.d.ts",
 	"files": [
 		"dist"
 	],
 	"dependencies": {
+		"@rainstormy/preset-prettier-base": "workspace:*",
 		"prettier-plugin-tailwindcss": "0.5.11"
 	},
 	"devDependencies": {
-		"prettier": "3.1.1",
 		"typescript": "5.3.3"
 	},
 	"peerDependencies": {
-		"prettier": "3.x",
-		"typescript": "5.x"
+		"prettier": "3.x"
 	},
 	"//": {
 		"dependencies": {
-			"prettier-plugin-tailwindcss": "A Prettier plugin that sorts Tailwind CSS classes."
+			"@rainstormy/preset-prettier-base": "This package provides type definitions for Prettier presets.",
+			"prettier-plugin-tailwindcss": "This Prettier plugin sorts Tailwind CSS classes."
 		},
 		"devDependencies": {
-			"prettier": "An opinionated code formatter.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"typescript": "TypeScript is a statically typed programming language on top of JavaScript."
 		},
 		"peerDependencies": {
-			"prettier": "An opinionated code formatter.",
-			"typescript": "A statically typed programming language that extends the JavaScript syntax."
+			"prettier": "Prettier is a peer dependency of `@rainstormy/preset-prettier-base`."
 		}
 	}
 }
