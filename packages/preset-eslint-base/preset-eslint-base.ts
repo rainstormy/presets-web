@@ -2503,7 +2503,10 @@ export function eslintBase(options: {
 			/**
 			 * @see https://typescript-eslint.io/rules/no-unused-vars
 			 */
-			"typescript/no-unused-vars": "error",
+			"typescript/no-unused-vars": [
+				"error",
+				{ varsIgnorePattern: "[iI]gnored" },
+			],
 
 			/**
 			 * Function declarations and type declarations are hoisted, allowing us to use the Stepdown Rule by Uncle Bob (https://dzone.com/articles/the-stepdown-rule).
