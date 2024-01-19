@@ -280,12 +280,13 @@ export function eslintJsx(options: {
 			"react/jsx-equals-spacing": "off",
 
 			/**
-			 * Recognises `tsx` files in addition to `jsx` files.
+			 * Files without JSX syntax should not have the `jsx`/`tsx` extension, as we would always expect these files to contain components.
+			 * Consequently, we may configure tools such as ESLint and Tailwind CSS to process them differently.
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
 			 */
 			"react/jsx-filename-extension": [
 				"error",
-				{ extensions: [".jsx", ".tsx"] },
+				{ allow: "as-needed", extensions: [".jsx", ".tsx"] },
 			],
 
 			/**
