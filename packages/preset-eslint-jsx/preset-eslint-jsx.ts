@@ -341,9 +341,11 @@ export function eslintJsx(options: {
 			"react/jsx-newline": "off",
 
 			/**
+			 * Wrapping every event handler in `useCallback` is a sign of premature optimisation.
+			 * It leads to less readable code in every case, and `useCallback` causes some allocation overhead that cannot be justified in most cases.
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
 			 */
-			"react/jsx-no-bind": "error",
+			"react/jsx-no-bind": "off",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-comment-textnodes.md
