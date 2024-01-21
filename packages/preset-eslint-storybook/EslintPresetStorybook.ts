@@ -19,10 +19,7 @@ import storybookPlugin from "eslint-plugin-storybook"
  *
  * ```javascript
  * eslintPresetStorybook({
- *     targetFilePatterns: [
- *         ".storybook/**\/*.@(js|jsx|ts|tsx)",
- *         "**\/*.stories.@(js|jsx|ts|tsx)",
- *     ],
+ *     targetFilePatterns: ["**\/*.stories.@(js|jsx|ts|tsx)"],
  * })
  * ```
  *
@@ -38,12 +35,8 @@ export function eslintPresetStorybook(options: unknown): EslintPreset {
 	assertOptions(checkedOptions, eslintPresetName)
 	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
 
-	const {
-		targetFilePatterns = [
-			".storybook/**/*.@(js|jsx|ts|tsx)",
-			"**/*.stories.@(js|jsx|ts|tsx)",
-		],
-	} = checkedOptions
+	const { targetFilePatterns = ["**/*.stories.@(js|jsx|ts|tsx)"] } =
+		checkedOptions
 
 	return {
 		[eslintPresetIdentifier]: eslintPresetName,
@@ -100,11 +93,6 @@ export function eslintPresetStorybook(options: unknown): EslintPreset {
 			"storybook/no-title-property-in-meta": "error",
 
 			/**
-			 * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-uninstalled-addons.md
-			 */
-			"storybook/no-uninstalled-addons": "error",
-
-			/**
 			 * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/prefer-pascal-case.md
 			 */
 			"storybook/prefer-pascal-case": "error",
@@ -123,6 +111,53 @@ export function eslintPresetStorybook(options: unknown): EslintPreset {
 			 * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md
 			 */
 			"storybook/use-storybook-testing-library": "error",
+		},
+	}
+}
+
+/**
+ * A predefined, opinionated ESLint configuration for Storybook configuration files.
+ *
+ * ```javascript
+ * eslintPresetStorybookConfiguration()
+ * ```
+ *
+ * is equivalent to
+ *
+ * ```javascript
+ * eslintPresetStorybookConfiguration({
+ *     targetFilePatterns: [".storybook/**\/*.@(js|jsx|ts|tsx)"],
+ * })
+ * ```
+ *
+ * @see https://github.com/storybookjs/eslint-plugin-storybook storybook/*
+ */
+export function eslintPresetStorybookConfiguration(
+	options?: EslintPresetOptionsTargetFilePatterns,
+): EslintPreset
+export function eslintPresetStorybookConfiguration(
+	options: unknown,
+): EslintPreset {
+	const eslintPresetName = "eslintPresetStorybookConfiguration"
+	const checkedOptions = options ?? {}
+
+	assertOptions(checkedOptions, eslintPresetName)
+	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
+
+	const { targetFilePatterns = [".storybook/**/*.@(js|jsx|ts|tsx)"] } =
+		checkedOptions
+
+	return {
+		[eslintPresetIdentifier]: eslintPresetName,
+		files: targetFilePatterns,
+		plugins: {
+			storybook: storybookPlugin,
+		},
+		rules: {
+			/**
+			 * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-uninstalled-addons.md
+			 */
+			"storybook/no-uninstalled-addons": "error",
 		},
 	}
 }

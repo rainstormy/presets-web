@@ -27,7 +27,7 @@ yarn add --dev @rainstormy/preset-eslint-storybook @rainstormy/preset-eslint-bas
 ----
 
 == Usage
-Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] (`eslint.config.js`) and apply the `eslintPresetStorybook` and `eslintPresetTestData` presets.
+Create or extend a https://eslint.org/docs/latest/use/configure/configuration-files-new[flat ESLint configuration file] (`eslint.config.js`) and apply the `eslintPresetStorybook`, `eslintPresetStorybookConfiguration`, and `eslintPresetTestData` presets.
 
 For example (with the default options in comments):
 
@@ -37,16 +37,19 @@ import {
 	eslintPresetTestData,
 	eslintPresets,
 } from "@rainstormy/preset-eslint-base"
-import { eslintPresetStorybook } from "@rainstormy/preset-eslint-storybook"
+import {
+	eslintPresetStorybook,
+	eslintPresetStorybookConfiguration,
+} from "@rainstormy/preset-eslint-storybook"
 
 export default eslintPresets({
 	additionalPresets: [
 		// ...other presets...
 		eslintPresetStorybook({
-			// targetFilePatterns: [
-			//     ".storybook/**/*.@(js|jsx|ts|tsx)",
-			//     "**/*.stories.@(js|jsx|ts|tsx)",
-			// ],
+			// targetFilePatterns: ["**/*.stories.@(js|jsx|ts|tsx)"],
+		}),
+		eslintPresetStorybookConfiguration({
+			// targetFilePatterns: [".storybook/**/*.@(js|jsx|ts|tsx)"],
 		}),
 		eslintPresetTestData({
 			// targetFilePatterns: [
