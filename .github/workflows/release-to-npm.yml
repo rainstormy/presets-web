@@ -40,20 +40,20 @@ jobs:
       fail-fast: true
       matrix:
         package-name:
-          - preset-eslint-base
-          - preset-eslint-jsx
-          - preset-eslint-next
-          - preset-eslint-preact
-          - preset-eslint-react
-          - preset-eslint-solid
-          - preset-eslint-storybook
-          - preset-eslint-tailwind
-          - preset-eslint-testing-library
-          - preset-eslint-vitest
-          - preset-prettier-base
-          - preset-prettier-css
-          - preset-prettier-tailwind
-          - preset-typescript
+          - presets-eslint
+          - presets-eslint-jsx
+          - presets-eslint-next
+          - presets-eslint-preact
+          - presets-eslint-react
+          - presets-eslint-solid
+          - presets-eslint-storybook
+          - presets-eslint-tailwind
+          - presets-eslint-testing-library
+          - presets-eslint-vitest
+          - presets-prettier
+          - presets-prettier-css
+          - presets-prettier-tailwind
+          - presets-typescript
     name: Publish '@rainstormy/${{ matrix.package-name }}' to npm
     runs-on: ubuntu-22.04
     timeout-minutes: 1

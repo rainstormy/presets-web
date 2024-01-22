@@ -1,3 +1,3 @@
-import { prettierPresets } from "@rainstormy/preset-prettier-base"
+import { prettierPresets } from "@rainstormy/presets-prettier"
 
 export default prettierPresets()

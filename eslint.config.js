@@ -1,7 +1,7 @@
 import {
 	eslintPresetAmbientTypeScriptModules,
 	eslintPresets,
-} from "@rainstormy/preset-eslint-base"
+} from "@rainstormy/presets-eslint"
 
 export default [
 	...eslintPresets({

@@ -5,32 +5,32 @@
 This repository contains predefined, opinionated tooling configurations for projects that use modern web technologies.
 
 == ESLint Presets
-Use https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-base[@rainstormy/preset-eslint-base] as a starting point.
+Use https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint[@rainstormy/presets-eslint] as a starting point.
 
 === User Interface Frameworks
-* *Next.js:* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-next[@rainstormy/preset-eslint-next]
-* *Preact:* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-preact[@rainstormy/preset-eslint-preact]
-* *React:* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-react[@rainstormy/preset-eslint-react]
-* *Solid:* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-solid[@rainstormy/preset-eslint-solid]
-* *Other JSX-based frameworks:* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-jsx[@rainstormy/preset-eslint-jsx]
+* *Next.js:* https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-next[@rainstormy/presets-eslint-next]
+* *Preact:* https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-preact[@rainstormy/presets-eslint-preact]
+* *React:* https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-react[@rainstormy/presets-eslint-react]
+* *Solid:* https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-solid[@rainstormy/presets-eslint-solid]
+* *Other JSX-based frameworks:* https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-jsx[@rainstormy/presets-eslint-jsx]
 
 === Styling
-* *Tailwind CSS:* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-tailwind[@rainstormy/preset-eslint-tailwind]
+* *Tailwind CSS:* https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-tailwind[@rainstormy/presets-eslint-tailwind]
 
 === Testing
-* *Storybook:* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-storybook[@rainstormy/preset-eslint-storybook]
-* *Testing Library:* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-testing-library[@rainstormy/preset-eslint-testing-library]
-* *Vitest:* https://github.com/rainstormy/presets-web/tree/main/packages/preset-eslint-vitest[@rainstormy/preset-eslint-vitest]
+* *Storybook:* https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-storybook[@rainstormy/presets-eslint-storybook]
+* *Testing Library:* https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-testing-library[@rainstormy/presets-eslint-testing-library]
+* *Vitest:* https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-vitest[@rainstormy/presets-eslint-vitest]
 
 == Prettier Presets
-Use https://github.com/rainstormy/presets-web/tree/main/packages/preset-prettier-base[@rainstormy/preset-prettier-base] as a starting point.
+Use https://github.com/rainstormy/presets-web/tree/main/packages/presets-prettier[@rainstormy/presets-prettier] as a starting point.
 
 === Styling
-* *CSS:* https://github.com/rainstormy/presets-web/tree/main/packages/preset-prettier-css[@rainstormy/preset-prettier-css]
-* *Tailwind CSS:* https://github.com/rainstormy/presets-web/tree/main/packages/preset-prettier-tailwind[@rainstormy/preset-prettier-tailwind]
+* *CSS:* https://github.com/rainstormy/presets-web/tree/main/packages/presets-prettier-css[@rainstormy/presets-prettier-css]
+* *Tailwind CSS:* https://github.com/rainstormy/presets-web/tree/main/packages/presets-prettier-tailwind[@rainstormy/presets-prettier-tailwind]
 
 == TypeScript Presets
-See https://github.com/rainstormy/presets-web/tree/main/packages/preset-typescript[@rainstormy/preset-typescript] for all available configurations.
+See https://github.com/rainstormy/presets-web/tree/main/packages/presets-typescript[@rainstormy/presets-typescript] for all available configurations.
 
 == Contributing
 Contributions to this project are welcome!
