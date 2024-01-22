@@ -3,14 +3,14 @@
 	"extends": [
 		"../presets-typescript/check",
 		"../presets-typescript/generate",
-		"../presets-typescript/target-node-es2023"
+		"../presets-typescript/target-node-es2023",
 	],
 	"compilerOptions": {
 		"composite": true,
 		"incremental": true,
 		"outDir": "./dist",
-		"tsBuildInfoFile": "../../.cache/typescript/presets-eslint-solid.tsbuildinfo"
+		"tsBuildInfoFile": "../../.cache/typescript/presets-eslint-solid.tsbuildinfo",
 	},
 	"include": ["*.ts"],
-	"references": [{ "path": "../presets-eslint-jsx" }]
+	"references": [{ "path": "../presets-eslint-jsx" }],
 }

@@ -1,3 +1,4 @@
+import { eslintPresetJsx } from "@rainstormy/presets-eslint-jsx"
 import {
 	assertOptions,
 	assertOptionsTargetFilePatterns,
@@ -5,7 +6,6 @@ import {
 	type EslintPreset,
 	type EslintPresetOptionsTargetFilePatterns,
 } from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
-import { eslintPresetJsx } from "@rainstormy/presets-eslint-jsx"
 import solidPlugin from "eslint-plugin-solid"
 
 /**

@@ -2,10 +2,10 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": [
 		"./packages/presets-typescript/check",
-		"./packages/presets-typescript/target-node-es2023"
+		"./packages/presets-typescript/target-node-es2023",
 	],
 	"compilerOptions": {
-		"baseUrl": "./"
+		"baseUrl": "./",
 	},
 	"references": [
 		{ "path": "./packages/presets-eslint" },
@@ -20,7 +20,7 @@
 		{ "path": "./packages/presets-eslint-vitest" },
 		{ "path": "./packages/presets-prettier" },
 		{ "path": "./packages/presets-prettier-css" },
-		{ "path": "./packages/presets-prettier-tailwind" }
+		{ "path": "./packages/presets-prettier-tailwind" },
 	],
-	"include": ["./packages/*/*.ts", "./*.config.js"]
+	"include": ["./packages/*/*.ts", "./*.config.js"],
 }

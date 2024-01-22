@@ -1,3 +1,5 @@
+import { eslintPresetJsx } from "@rainstormy/presets-eslint-jsx"
+import { eslintPresetReact } from "@rainstormy/presets-eslint-react"
 import {
 	assertOptions,
 	assertOptionsTargetFilePatterns,
@@ -5,8 +7,6 @@ import {
 	type EslintPreset,
 	type EslintPresetOptionsTargetFilePatterns,
 } from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
-import { eslintPresetJsx } from "@rainstormy/presets-eslint-jsx"
-import { eslintPresetReact } from "@rainstormy/presets-eslint-react"
 
 /**
  * A predefined, opinionated ESLint configuration for Preact components.

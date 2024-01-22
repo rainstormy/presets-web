@@ -22,7 +22,7 @@
 		"dist"
 	],
 	"dependencies": {
-		"@next/eslint-plugin-next": "14.0.4",
+		"@next/eslint-plugin-next": "14.1.0",
 		"@rainstormy/presets-eslint": "workspace:*",
 		"@rainstormy/presets-eslint-react": "workspace:*"
 	},

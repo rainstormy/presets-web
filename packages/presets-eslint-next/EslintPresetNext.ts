@@ -1,4 +1,5 @@
 import nextPlugin from "@next/eslint-plugin-next"
+import { eslintPresetReact } from "@rainstormy/presets-eslint-react"
 import {
 	assertOptions,
 	assertOptionsTargetFilePatterns,
@@ -6,7 +7,6 @@ import {
 	type EslintPreset,
 	type EslintPresetOptionsTargetFilePatterns,
 } from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
-import { eslintPresetReact } from "@rainstormy/presets-eslint-react"
 
 /**
  * A predefined, opinionated ESLint configuration for React components in a Next.js app.
