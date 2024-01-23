@@ -4,8 +4,7 @@
 
 # IntelliJ IDEA.
 .idea/*
-!.idea/jsLinters/*
-!.idea/runConfigurations/*
+!.idea/runConfigurations/
 !.idea/*.iml
 !.idea/externalDependencies.xml
 !.idea/jsonSchemas.xml
@@ -29,16 +28,16 @@
 
 # Dependency management.
 .yarn/*
-!.yarn/cache/*
-!.yarn/patches/*
-!.yarn/plugins/*
-!.yarn/releases/*
-!.yarn/sdks/*
-!.yarn/versions/*
+!.yarn/cache/
+!.yarn/patches/
+!.yarn/plugins/
+!.yarn/releases/
+!.yarn/sdks/
+!.yarn/versions/
 
 # Build artifacts.
-.cache/*
-packages/*/dist/*
+.cache/
+packages/*/dist/
 packages/*/README.md
 
 # Operating system artifacts.
