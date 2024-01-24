@@ -179,9 +179,12 @@ export function eslintPresetReact(options: unknown): EslintPreset {
 			"react/no-is-mounted": "off",
 
 			/**
+			 * A strict limitation of one component per file may lead to a larger number of files, causing directories to be less readable.
+			 * Having to separate components into multiple files may also cause some undesirable lack of encapsulation.
+			 * `max-lines` supersedes this rule to keep the size of component files under control.
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md
 			 */
-			"react/no-multi-comp": "error",
+			"react/no-multi-comp": "off",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-namespace.md

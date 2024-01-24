@@ -54,6 +54,14 @@ export function eslintPresetJsx(options: unknown): EslintPreset {
 		},
 		rules: {
 			/**
+			 * JSX components require more lines of code than plain JavaScript functions.
+			 * We would also want to avoid hasty abstractions of components due to this rule.
+			 * `max-lines` supersedes this rule to keep the size of component files under control.
+			 * @see https://eslint.org/docs/latest/rules/max-lines-per-function
+			 */
+			"max-lines-per-function": "off",
+
+			/**
 			 * Components may have render props and event handler props.
 			 * @see https://github.com/eslint-functional/eslint-plugin-functional/blob/main/docs/rules/no-mixed-types.md
 			 */
