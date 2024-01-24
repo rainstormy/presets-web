@@ -2250,7 +2250,6 @@ function standardEslintConfig(checkedOptions: {
 
 			/**
 			 * Object literals that deviate from the naming conventions are sometimes inevitable when interoperating with third-party libraries and APIs, for example to set HTTP headers and URL query strings.
-			 * Unfortunately, this rule does not support the `types` option on functions, preventing us from enforcing naming conventions on boolean functions.
 			 * @see https://typescript-eslint.io/rules/naming-convention
 			 */
 			"typescript/naming-convention": [
@@ -2258,14 +2257,6 @@ function standardEslintConfig(checkedOptions: {
 				{
 					selector: "default",
 					format: ["strictCamelCase"],
-					leadingUnderscore: "forbid",
-					trailingUnderscore: "forbid",
-				},
-				{
-					selector: ["parameter", "property", "variable"],
-					types: ["boolean"],
-					prefix: ["has", "is"],
-					format: ["PascalCase"],
 					leadingUnderscore: "forbid",
 					trailingUnderscore: "forbid",
 				},

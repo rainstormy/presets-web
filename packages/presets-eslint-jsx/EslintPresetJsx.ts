@@ -246,13 +246,12 @@ export function eslintPresetJsx(options: unknown): EslintPreset {
 			"jsx-a11y/tabindex-no-positive": "error",
 
 			/**
-			 * Replicate the boolean naming conventions defined in `typescript/naming-convention`.
+			 * Usual boolean naming conventions encourage prefixes such as `is` and `has`.
+			 * However, prefixing just for the sake of prefixing is Hungarian notation, which is generally undesirable, as it may in fact lead to less readable names.
+			 * Native HTML elements have boolean attributes such as `autofocus`, `checked`, `default`, and `open`, making it difficult to define a consistent naming convention.
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md
 			 */
-			"react/boolean-prop-naming": [
-				"error",
-				{ rule: "^(has|is)[A-Z][A-Za-z0-9]*" },
-			],
+			"react/boolean-prop-naming": "off",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/button-has-type.md
