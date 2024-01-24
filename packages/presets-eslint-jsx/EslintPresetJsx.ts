@@ -560,6 +560,39 @@ export function eslintPresetJsx(options: unknown): EslintPreset {
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
 			 */
 			"react/self-closing-comp": "error",
+
+			/**
+			 * Inherited from `presets-eslint`.
+			 * By convention, components are named in PascalCase to distinguish them from native HTML elements. This naming convention covers local variables, too, as they may contain component instances or references.
+			 * @see https://typescript-eslint.io/rules/naming-convention
+			 */
+			"typescript/naming-convention": [
+				"error",
+				{
+					selector: "default",
+					format: ["strictCamelCase"],
+					leadingUnderscore: "forbid",
+					trailingUnderscore: "forbid",
+				},
+				{
+					selector: "objectLiteralProperty",
+					format: null,
+					leadingUnderscore: "allow",
+					trailingUnderscore: "allow",
+				},
+				{
+					selector: "typeLike",
+					format: ["PascalCase"],
+					leadingUnderscore: "forbid",
+					trailingUnderscore: "forbid",
+				},
+				{
+					selector: "variableLike",
+					format: ["strictCamelCase", "PascalCase"],
+					leadingUnderscore: "forbid",
+					trailingUnderscore: "forbid",
+				},
+			],
 		},
 	}
 }

@@ -111,6 +111,39 @@ export function eslintPresetStorybook(options: unknown): EslintPreset {
 			 * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md
 			 */
 			"storybook/use-storybook-testing-library": "error",
+
+			/**
+			 * Inherited from `presets-jsx`.
+			 * By convention, stories are named in PascalCase.
+			 * @see https://typescript-eslint.io/rules/naming-convention
+			 */
+			"typescript/naming-convention": [
+				"error",
+				{
+					selector: "default",
+					format: ["strictCamelCase"],
+					leadingUnderscore: "forbid",
+					trailingUnderscore: "forbid",
+				},
+				{
+					selector: "objectLiteralProperty",
+					format: null,
+					leadingUnderscore: "allow",
+					trailingUnderscore: "allow",
+				},
+				{
+					selector: "typeLike",
+					format: ["PascalCase"],
+					leadingUnderscore: "forbid",
+					trailingUnderscore: "forbid",
+				},
+				{
+					selector: "variableLike",
+					format: ["strictCamelCase", "PascalCase"],
+					leadingUnderscore: "forbid",
+					trailingUnderscore: "forbid",
+				},
+			],
 		},
 	}
 }
