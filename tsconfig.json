@@ -1,22 +1,26 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": [
-		"./packages/preset-typescript/check",
-		"./packages/preset-typescript/target-node-es2023"
+		"./packages/presets-typescript/check",
+		"./packages/presets-typescript/target-node-es2023",
 	],
+	"compilerOptions": {
+		"baseUrl": "./",
+	},
 	"references": [
-		{ "path": "./packages/preset-eslint-base" },
-		{ "path": "./packages/preset-eslint-jsx" },
-		{ "path": "./packages/preset-eslint-next" },
-		{ "path": "./packages/preset-eslint-preact" },
-		{ "path": "./packages/preset-eslint-react" },
-		{ "path": "./packages/preset-eslint-solid" },
-		{ "path": "./packages/preset-eslint-storybook" },
-		{ "path": "./packages/preset-eslint-tailwind" },
-		{ "path": "./packages/preset-eslint-testing-library" },
-		{ "path": "./packages/preset-eslint-vitest" },
-		{ "path": "./packages/preset-prettier-base" },
-		{ "path": "./packages/preset-prettier-css" },
-		{ "path": "./packages/preset-prettier-tailwind" }
-	]
+		{ "path": "./packages/presets-eslint" },
+		{ "path": "./packages/presets-eslint-jsx" },
+		{ "path": "./packages/presets-eslint-next" },
+		{ "path": "./packages/presets-eslint-preact" },
+		{ "path": "./packages/presets-eslint-react" },
+		{ "path": "./packages/presets-eslint-solid" },
+		{ "path": "./packages/presets-eslint-storybook" },
+		{ "path": "./packages/presets-eslint-tailwind" },
+		{ "path": "./packages/presets-eslint-testing-library" },
+		{ "path": "./packages/presets-eslint-vitest" },
+		{ "path": "./packages/presets-prettier" },
+		{ "path": "./packages/presets-prettier-css" },
+		{ "path": "./packages/presets-prettier-tailwind" },
+	],
+	"include": ["./packages/*/*.ts", "./*.config.js"],
 }

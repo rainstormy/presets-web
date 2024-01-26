@@ -29,13 +29,13 @@
 		"pre-commit": "yarn run build && yarn run concurrently 'yarn:validate.format' 'yarn:validate.lint' --group --names 'format','lint' --prefix-colors 'magenta.bold','cyan.bold'"
 	},
 	"devDependencies": {
-		"@rainstormy/preset-eslint-base": "workspace:*",
-		"@rainstormy/preset-prettier-base": "workspace:*",
+		"@rainstormy/presets-eslint": "workspace:*",
+		"@rainstormy/presets-prettier": "workspace:*",
 		"@rainstormy/updraft": "1.0.0",
 		"concurrently": "8.2.2",
 		"downdoc": "1.0.2-stable",
 		"eslint": "8.56.0",
-		"prettier": "3.1.1",
+		"prettier": "3.2.4",
 		"simple-git-hooks": "2.9.0",
 		"typescript": "5.3.3"
 	},
@@ -48,14 +48,14 @@
 			"validate.fix": "The formatter must run after the linter to resolve potential formatting issues introduced by the linter."
 		},
 		"devDependencies": {
-			"@rainstormy/preset-eslint-base": "This preset provides a predefined, opinionated ESLint configuration for TypeScript projects.",
-			"@rainstormy/preset-prettier-base": "This preset provides a predefined, opinionated Prettier configuration for TypeScript projects.",
+			"@rainstormy/presets-eslint": "This preset provides a predefined, opinionated ESLint configuration for TypeScript projects.",
+			"@rainstormy/presets-prettier": "This preset provides a predefined, opinionated Prettier configuration for TypeScript projects.",
 			"@rainstormy/updraft": "Updraft is a release automation tool.",
 			"concurrently": "This tool executes multiple package scripts in parallel.",
 			"downdoc": "Downdoc converts AsciiDoc documents to Markdown to improve compatibility with npm.",
 			"eslint": "ESLint uses static program analysis to uncover code issues.",
 			"prettier": "Prettier is an opinionated code formatter.",
-			"simple-git-hooks": "This tool lets the package.json file define Git hooks.",
+			"simple-git-hooks": "This tool lets the `package.json` file define Git hooks.",
 			"typescript": "TypeScript is a statically typed programming language on top of JavaScript."
 		}
 	}

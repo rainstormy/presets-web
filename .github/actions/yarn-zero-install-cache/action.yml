@@ -29,3 +29,7 @@ runs:
       if: steps.cache-yarn-unplugged.outputs.cache-hit != 'true'
       run: yarn install --immutable
       shell: bash
+    - name: Ensure that dependencies have been deduplicated
+      if: steps.cache-yarn-unplugged.outputs.cache-hit != 'true'
+      run: yarn dedupe --check
+      shell: bash
