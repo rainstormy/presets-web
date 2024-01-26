@@ -1,7 +1,7 @@
 {
 	"$schema": "https://json.schemastore.org/package.json",
 	"name": "@rainstormy/presets-eslint-vitest",
-	"version": "1.0.0-alpha.3",
+	"version": "1.0.0-rc.0",
 	"description": "A predefined, opinionated ESLint configuration suitable for any web project with Vitest suites.",
 	"keywords": [
 		"eslint",
