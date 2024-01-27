@@ -138,7 +138,7 @@ export function eslintPresetStorybook(options: unknown): EslintPreset {
 					trailingUnderscore: "forbid",
 				},
 				{
-					selector: "variableLike",
+					selector: ["import", "variableLike"],
 					format: ["strictCamelCase", "PascalCase"],
 					leadingUnderscore: "allow",
 					trailingUnderscore: "forbid",

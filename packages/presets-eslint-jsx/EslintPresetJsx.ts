@@ -563,7 +563,8 @@ export function eslintPresetJsx(options: unknown): EslintPreset {
 
 			/**
 			 * Inherited from `presets-eslint`.
-			 * By convention, components are named in PascalCase to distinguish them from native HTML elements. This naming convention covers local variables, too, as they may contain component instances or references.
+			 * By convention, components are named in PascalCase to distinguish them from native HTML elements.
+			 * This naming convention covers local variables and default import statements, too, as they may contain component instances or references.
 			 * @see https://typescript-eslint.io/rules/naming-convention
 			 */
 			"typescript/naming-convention": [
@@ -587,7 +588,7 @@ export function eslintPresetJsx(options: unknown): EslintPreset {
 					trailingUnderscore: "forbid",
 				},
 				{
-					selector: "variableLike",
+					selector: ["import", "variableLike"],
 					format: ["strictCamelCase", "PascalCase"],
 					leadingUnderscore: "forbid",
 					trailingUnderscore: "forbid",
