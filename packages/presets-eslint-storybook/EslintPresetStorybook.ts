@@ -114,7 +114,7 @@ export function eslintPresetStorybook(options: unknown): EslintPreset {
 
 			/**
 			 * Inherited from `presets-jsx`.
-			 * By convention, stories are named in PascalCase.
+			 * By convention, stories are named in PascalCase. A story name must be prefixed with an underscore in order to begin with a number.
 			 * @see https://typescript-eslint.io/rules/naming-convention
 			 */
 			"typescript/naming-convention": [
@@ -140,7 +140,7 @@ export function eslintPresetStorybook(options: unknown): EslintPreset {
 				{
 					selector: "variableLike",
 					format: ["strictCamelCase", "PascalCase"],
-					leadingUnderscore: "forbid",
+					leadingUnderscore: "allow",
 					trailingUnderscore: "forbid",
 				},
 			],
