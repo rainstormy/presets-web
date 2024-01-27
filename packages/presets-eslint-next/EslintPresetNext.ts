@@ -41,6 +41,7 @@ export function eslintPresetNext(options: unknown): EslintPreset {
 		...reactPreset,
 		[eslintPresetIdentifier]: eslintPresetName,
 		plugins: {
+			...reactPreset.plugins,
 			next: nextPlugin,
 		},
 		rules: {
