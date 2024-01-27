@@ -193,15 +193,11 @@ function standardEslintConfig(checkedOptions: {
 			camelcase: "off",
 
 			/**
-			 * Inline comments in lowercase may specify units of measurement, e.g. `60 /* seconds *\/`.
-			 * This rule is also likely to discover code that has been commented out.
+			 * Some lowercase comments may denote ids or web addresses.
+			 * The auto-fixer of this rule may botch this kind of information.
 			 * @see https://eslint.org/docs/latest/rules/capitalized-comments
 			 */
-			"capitalized-comments": [
-				"error",
-				"always",
-				{ ignoreInlineComments: true },
-			],
+			"capitalized-comments": "off",
 
 			/**
 			 * `functional/no-this-expressions` supersedes this rule.
