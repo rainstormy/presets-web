@@ -63,7 +63,10 @@ import {
 	eslintPresets,
 } from "@rainstormy/presets-eslint"
 import { eslintPresetSolid } from "@rainstormy/presets-eslint-solid"
-import { eslintPresetStorybook } from "@rainstormy/presets-eslint-storybook"
+import {
+	eslintPresetStorybook,
+	eslintPresetStorybookConfiguration,
+} from "@rainstormy/presets-eslint-storybook"
 import { eslintPresetTailwind } from "@rainstormy/presets-eslint-tailwind"
 import { eslintPresetTestingLibrary } from "@rainstormy/presets-eslint-testing-library"
 import { eslintPresetVitest } from "@rainstormy/presets-eslint-vitest"
@@ -73,6 +76,7 @@ export default eslintPresets({
 		eslintPresetAmbientTypeScriptModules(),
 		eslintPresetSolid(),
 		eslintPresetStorybook(),
+		eslintPresetStorybookConfiguration(),
 		eslintPresetTailwind(),
 		eslintPresetTestData(),
 		eslintPresetTestingLibrary(),
