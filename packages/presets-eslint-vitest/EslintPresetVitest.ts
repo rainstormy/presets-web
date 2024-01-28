@@ -85,7 +85,12 @@ export function eslintPresetVitest(options: unknown): EslintPreset {
 			 * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/expect-expect.md
 			 * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/expect-expect.md
 			 */
-			"vitest/expect-expect": "error",
+			"vitest/expect-expect": [
+				"error",
+				{
+					assertFunctionNames: ["expect", "expectTypeOf"],
+				},
+			],
 
 			/**
 			 * @see https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/max-expects.md
