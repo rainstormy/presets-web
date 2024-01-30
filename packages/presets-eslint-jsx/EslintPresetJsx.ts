@@ -1,10 +1,7 @@
 import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
 	eslintPresetIdentifier,
 	eslintPresetOrdinal,
 	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
 } from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y"
 import reactPlugin from "eslint-plugin-react"
@@ -33,16 +30,11 @@ import reactPlugin from "eslint-plugin-react"
  * @see https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules react/*
  */
 export function eslintPresetJsx(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetJsx(options: unknown): EslintPreset {
+	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
+): EslintPreset {
 	const eslintPresetName = "eslintPresetJsx"
-	const checkedOptions = options ?? {}
 
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const { targetFilePatterns = ["**/*.@(jsx|tsx)"] } = checkedOptions
+	const { targetFilePatterns = ["**/*.@(jsx|tsx)"] } = options
 
 	return {
 		[eslintPresetIdentifier]: eslintPresetName,

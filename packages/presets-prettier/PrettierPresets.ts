@@ -1,12 +1,10 @@
 import organizeImportsPlugin from "prettier-plugin-organize-imports"
 import packageJsonPlugin from "prettier-plugin-packagejson"
 import {
-	assertOptions,
-	assertOptionsAdditionalPresets,
 	prettierPresetIdentifier,
 	prettierPresetOrdinal,
 	type PrettierConfig,
-	type PrettierPresetOptionsAdditionalPresets,
+	type PrettierPreset,
 } from "./PrettierPresetUtilities.js"
 
 /**
@@ -25,16 +23,11 @@ import {
  * ```
  */
 export function prettierPresets(
-	options?: PrettierPresetOptionsAdditionalPresets,
-): PrettierConfig
-export function prettierPresets(options: unknown): PrettierConfig {
-	const prettierPresetName = "prettierPresets"
-	const checkedOptions = options ?? {}
-
-	assertOptions(checkedOptions, prettierPresetName)
-	assertOptionsAdditionalPresets(checkedOptions, prettierPresetName)
-
-	const { additionalPresets = [] } = checkedOptions
+	options: {
+		readonly additionalPresets?: ReadonlyArray<PrettierPreset>
+	} = {},
+): PrettierConfig {
+	const { additionalPresets = [] } = options
 
 	const additionalConfigs = additionalPresets
 		.toSorted(

@@ -8,17 +8,10 @@ import noBarrelFilesPlugin from "eslint-plugin-no-barrel-files"
 import redundantUndefinedPlugin from "eslint-plugin-redundant-undefined"
 import unicornPlugin from "eslint-plugin-unicorn"
 import {
-	assertOptions,
-	assertOptionsAdditionalPresets,
-	assertOptionsTargetFilePatterns,
-	assertOptionsTsConfigFiles,
 	eslintPresetIdentifier,
 	eslintPresetOrdinal,
 	type EslintConfig,
 	type EslintPreset,
-	type EslintPresetOptionsAdditionalPresets,
-	type EslintPresetOptionsTargetFilePatterns,
-	type EslintPresetOptionsTsConfigFiles,
 } from "./EslintPresetUtilities.js"
 
 /**
@@ -49,24 +42,15 @@ import {
  * @see https://github.com/sindresorhus/eslint-plugin-unicorn#rules unicorn/*
  */
 export function eslintPresets(
-	options?: EslintPresetOptionsAdditionalPresets &
-		EslintPresetOptionsTargetFilePatterns &
-		EslintPresetOptionsTsConfigFiles,
-): ReadonlyArray<EslintConfig>
-export function eslintPresets(options: unknown): ReadonlyArray<EslintConfig> {
-	const eslintPresetName = "eslintPresets"
-	const checkedOptions = options ?? {}
-
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-	assertOptionsTsConfigFiles(checkedOptions, eslintPresetName)
-	assertOptionsAdditionalPresets(checkedOptions, eslintPresetName)
-
-	const {
-		additionalPresets = [],
-		targetFilePatterns,
-		tsconfigFiles,
-	} = checkedOptions
+	options: {
+		readonly additionalPresets?: ReadonlyArray<EslintPreset>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+		readonly tsconfigFiles?:
+			| ReadonlyArray<string>
+			| "closest-to-each-source-file"
+	} = {},
+): ReadonlyArray<EslintConfig> {
+	const { additionalPresets = [], ...standardConfigOptions } = options
 
 	const additionalConfigs = additionalPresets
 		.toSorted(
@@ -84,20 +68,17 @@ export function eslintPresets(options: unknown): ReadonlyArray<EslintConfig> {
 			return config
 		})
 
-	return [
-		standardEslintConfig({ targetFilePatterns, tsconfigFiles }),
-		...additionalConfigs,
-	]
+	return [standardEslintConfig(standardConfigOptions), ...additionalConfigs]
 }
 
-function standardEslintConfig(checkedOptions: {
+function standardEslintConfig(options: {
 	readonly targetFilePatterns?: ReadonlyArray<string>
 	readonly tsconfigFiles?: ReadonlyArray<string> | "closest-to-each-source-file"
 }): EslintConfig {
 	const {
 		targetFilePatterns = ["**/*.@(js|jsx|ts|tsx)"],
 		tsconfigFiles = "closest-to-each-source-file",
-	} = checkedOptions
+	} = options
 
 	return {
 		files: targetFilePatterns,
@@ -3448,18 +3429,11 @@ function standardEslintConfig(checkedOptions: {
  * ```
  */
 export function eslintPresetAmbientTypeScriptModules(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetAmbientTypeScriptModules(
-	options: unknown,
+	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
 ): EslintPreset {
 	const eslintPresetName = "eslintPresetAmbientTypeScriptModules"
-	const checkedOptions = options ?? {}
 
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const { targetFilePatterns = ["**/*.d.ts"] } = checkedOptions
+	const { targetFilePatterns = ["**/*.d.ts"] } = options
 
 	return {
 		[eslintPresetIdentifier]: eslintPresetName,
@@ -3502,20 +3476,15 @@ export function eslintPresetAmbientTypeScriptModules(
  * ```
  */
 export function eslintPresetTestData(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetTestData(options: unknown): EslintPreset {
+	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
+): EslintPreset {
 	const eslintPresetName = "eslintPresetTestData"
-	const checkedOptions = options ?? {}
-
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
 
 	const {
 		targetFilePatterns = [
 			"**/*.@(spec|specs|stories|test|testdata|tests).@(js|jsx|ts|tsx)",
 		],
-	} = checkedOptions
+	} = options
 
 	return {
 		[eslintPresetIdentifier]: eslintPresetName,

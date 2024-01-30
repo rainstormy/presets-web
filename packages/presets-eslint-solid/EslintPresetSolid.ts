@@ -1,10 +1,7 @@
 import { eslintPresetJsx } from "@rainstormy/presets-eslint-jsx"
 import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
 	eslintPresetIdentifier,
 	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
 } from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
 import solidPlugin from "eslint-plugin-solid"
 
@@ -28,16 +25,11 @@ import solidPlugin from "eslint-plugin-solid"
  * @see https://github.com/solidjs-community/eslint-plugin-solid#rules solid/*
  */
 export function eslintPresetSolid(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetSolid(options: unknown): EslintPreset {
+	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
+): EslintPreset {
 	const eslintPresetName = "eslintPresetSolid"
-	const checkedOptions = options ?? {}
 
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const jsxPreset = eslintPresetJsx(checkedOptions)
+	const jsxPreset = eslintPresetJsx(options)
 
 	return {
 		...jsxPreset,

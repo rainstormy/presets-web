@@ -1,10 +1,7 @@
 import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
 	eslintPresetIdentifier,
 	eslintPresetOrdinal,
 	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
 } from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
 import storybookPlugin from "eslint-plugin-storybook"
 
@@ -26,17 +23,11 @@ import storybookPlugin from "eslint-plugin-storybook"
  * @see https://github.com/storybookjs/eslint-plugin-storybook storybook/*
  */
 export function eslintPresetStorybook(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetStorybook(options: unknown): EslintPreset {
+	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
+): EslintPreset {
 	const eslintPresetName = "eslintPresetStorybook"
-	const checkedOptions = options ?? {}
 
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const { targetFilePatterns = ["**/*.stories.@(js|jsx|ts|tsx)"] } =
-		checkedOptions
+	const { targetFilePatterns = ["**/*.stories.@(js|jsx|ts|tsx)"] } = options
 
 	return {
 		[eslintPresetIdentifier]: eslintPresetName,
@@ -166,19 +157,11 @@ export function eslintPresetStorybook(options: unknown): EslintPreset {
  * @see https://github.com/storybookjs/eslint-plugin-storybook storybook/*
  */
 export function eslintPresetStorybookConfiguration(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetStorybookConfiguration(
-	options: unknown,
+	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
 ): EslintPreset {
 	const eslintPresetName = "eslintPresetStorybookConfiguration"
-	const checkedOptions = options ?? {}
 
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const { targetFilePatterns = [".storybook/**/*.@(js|jsx|ts|tsx)"] } =
-		checkedOptions
+	const { targetFilePatterns = [".storybook/**/*.@(js|jsx|ts|tsx)"] } = options
 
 	return {
 		[eslintPresetIdentifier]: eslintPresetName,

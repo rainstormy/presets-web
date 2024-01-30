@@ -1,9 +1,6 @@
 import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
 	eslintPresetIdentifier,
 	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
 } from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
 import testingLibraryPlugin from "eslint-plugin-testing-library"
 
@@ -25,17 +22,12 @@ import testingLibraryPlugin from "eslint-plugin-testing-library"
  * @see https://github.com/testing-library/eslint-plugin-testing-library#supported-rules testing-library/*
  */
 export function eslintPresetTestingLibrary(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetTestingLibrary(options: unknown): EslintPreset {
+	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
+): EslintPreset {
 	const eslintPresetName = "eslintPresetTestingLibrary"
-	const checkedOptions = options ?? {}
-
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
 
 	const { targetFilePatterns = ["**/*.@(spec|specs|test|tests).@(jsx|tsx)"] } =
-		checkedOptions
+		options
 
 	return {
 		[eslintPresetIdentifier]: eslintPresetName,

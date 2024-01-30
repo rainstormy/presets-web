@@ -1,11 +1,8 @@
 import nextPlugin from "@next/eslint-plugin-next"
 import { eslintPresetReact } from "@rainstormy/presets-eslint-react"
 import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
 	eslintPresetIdentifier,
 	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
 } from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
 
 /**
@@ -26,16 +23,11 @@ import {
  * @see https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-plugin next/*
  */
 export function eslintPresetNext(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetNext(options: unknown): EslintPreset {
+	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
+): EslintPreset {
 	const eslintPresetName = "eslintPresetNext"
-	const checkedOptions = options ?? {}
 
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const reactPreset = eslintPresetReact(checkedOptions)
+	const reactPreset = eslintPresetReact(options)
 
 	return {
 		...reactPreset,

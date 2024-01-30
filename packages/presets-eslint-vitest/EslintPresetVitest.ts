@@ -1,9 +1,6 @@
 import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
 	eslintPresetIdentifier,
 	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
 } from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
 import vitestPlugin from "eslint-plugin-vitest"
 
@@ -25,18 +22,13 @@ import vitestPlugin from "eslint-plugin-vitest"
  * @see https://github.com/veritem/eslint-plugin-vitest#rules vitest/*
  */
 export function eslintPresetVitest(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetVitest(options: unknown): EslintPreset {
+	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
+): EslintPreset {
 	const eslintPresetName = "eslintPresetVitest"
-	const checkedOptions = options ?? {}
-
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
 
 	const {
 		targetFilePatterns = ["**/*.@(spec|specs|test|tests).@(js|jsx|ts|tsx)"],
-	} = checkedOptions
+	} = options
 
 	return {
 		[eslintPresetIdentifier]: eslintPresetName,

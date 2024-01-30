@@ -1,11 +1,8 @@
 import { eslintPresetJsx } from "@rainstormy/presets-eslint-jsx"
 import { eslintPresetReact } from "@rainstormy/presets-eslint-react"
 import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
 	eslintPresetIdentifier,
 	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
 } from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
 
 /**
@@ -28,17 +25,12 @@ import {
  * @see https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks#custom-configuration react-hooks/*
  */
 export function eslintPresetPreact(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetPreact(options: unknown): EslintPreset {
+	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
+): EslintPreset {
 	const eslintPresetName = "eslintPresetPreact"
-	const checkedOptions = options ?? {}
 
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const jsxPreset = eslintPresetJsx(checkedOptions)
-	const reactPreset = eslintPresetReact(checkedOptions)
+	const jsxPreset = eslintPresetJsx(options)
+	const reactPreset = eslintPresetReact(options)
 
 	return {
 		...reactPreset,

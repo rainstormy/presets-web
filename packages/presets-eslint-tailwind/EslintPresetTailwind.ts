@@ -1,9 +1,6 @@
 import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
 	eslintPresetIdentifier,
 	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
 } from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
 import tailwindPlugin from "eslint-plugin-tailwindcss"
 
@@ -25,16 +22,11 @@ import tailwindPlugin from "eslint-plugin-tailwindcss"
  * @see https://github.com/francoismassart/eslint-plugin-tailwindcss#supported-rules tailwind/*
  */
 export function eslintPresetTailwind(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetTailwind(options: unknown): EslintPreset {
+	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
+): EslintPreset {
 	const eslintPresetName = "eslintPresetTailwind"
-	const checkedOptions = options ?? {}
 
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const { targetFilePatterns = ["**/*.@(jsx|tsx)"] } = checkedOptions
+	const { targetFilePatterns = ["**/*.@(jsx|tsx)"] } = options
 
 	return {
 		[eslintPresetIdentifier]: eslintPresetName,
