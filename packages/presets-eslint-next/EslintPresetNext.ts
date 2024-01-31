@@ -36,6 +36,12 @@ export function eslintPresetNext(
 		},
 		rules: {
 			/**
+			 * Next.js does not provide a polyfill for the `globalThis` property.
+			 * @see https://eslint.org/docs/latest/rules/no-undef
+			 */
+			"no-undef": "off",
+
+			/**
 			 * @see https://nextjs.org/docs/messages/google-font-display
 			 */
 			"next/google-font-display": "error",
@@ -139,6 +145,12 @@ export function eslintPresetNext(
 			 * @see https://nextjs.org/docs/messages/no-unwanted-polyfillio
 			 */
 			"next/no-unwanted-polyfillio": "error",
+
+			/**
+			 * The Edge runtime does not support the `node:` protocol in import statements.
+			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md
+			 */
+			"unicorn/prefer-node-protocol": "off",
 		},
 	}
 }
