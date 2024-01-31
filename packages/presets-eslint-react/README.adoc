@@ -6,7 +6,7 @@ This package provides a predefined, opinionated https://eslint.org[ESLint] confi
 
 This preset configures a subset of rules from the following plugins, which are installed along with the preset package:
 
-* https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules[eslint-plugin-jsx-a11y] (with rule names prefixed by `jsx-a11y/`)
+* https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules[eslint-plugin-jsx-a11y] (with rule names prefixed by `accessibility/`)
 * https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules[eslint-plugin-react] (with rule names prefixed by `react/`)
 * https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks#custom-configuration[eslint-plugin-react-hooks] (with rule names prefixed by `react-hooks/`)
 

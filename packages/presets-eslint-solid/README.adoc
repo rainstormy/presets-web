@@ -6,7 +6,7 @@ This package provides a predefined, opinionated https://eslint.org[ESLint] confi
 
 This preset configures a subset of rules from the following plugins, which are installed along with the preset package:
 
-* https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules[eslint-plugin-jsx-a11y] (with rule names prefixed by `jsx-a11y/`)
+* https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules[eslint-plugin-jsx-a11y] (with rule names prefixed by `accessibility/`)
 * https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules[eslint-plugin-react] (only for generic JSX rules, with rule names prefixed by `react/`)
 * https://github.com/solidjs-community/eslint-plugin-solid#rules[eslint-plugin-solid] (with rule names prefixed by `solid/`)
 
