@@ -1,11 +1,11 @@
 import {
-	eslintPresetAmbientTypeScriptModules,
+	eslintPresetAmbientTypescriptModules,
 	eslintPresets,
 } from "@rainstormy/presets-eslint"
 
 export default [
 	...eslintPresets({
-		additionalPresets: [eslintPresetAmbientTypeScriptModules()],
+		additionalPresets: [eslintPresetAmbientTypescriptModules()],
 	}),
 	{
 		files: ["**/*.ts"],

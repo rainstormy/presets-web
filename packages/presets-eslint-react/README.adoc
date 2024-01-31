@@ -58,7 +58,7 @@ For example (with the default options applied):
 [source,javascript]
 ----
 import {
-	eslintPresetAmbientTypeScriptModules,
+	eslintPresetAmbientTypescriptModules,
 	eslintPresetTestData,
 	eslintPresets,
 } from "@rainstormy/presets-eslint"
@@ -73,7 +73,7 @@ import { eslintPresetVitest } from "@rainstormy/presets-eslint-vitest"
 
 export default eslintPresets({
 	additionalPresets: [
-		eslintPresetAmbientTypeScriptModules(),
+		eslintPresetAmbientTypescriptModules(),
 		eslintPresetReact(),
 		eslintPresetStorybook(),
 		eslintPresetStorybookConfiguration(),

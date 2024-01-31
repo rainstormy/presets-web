@@ -58,7 +58,7 @@ For example (with the default options applied):
 [source,javascript]
 ----
 import {
-	eslintPresetAmbientTypeScriptModules,
+	eslintPresetAmbientTypescriptModules,
 	eslintPresets,
 } from "@rainstormy/presets-eslint"
 import { eslintPresetSolid } from "@rainstormy/presets-eslint-solid"
@@ -66,7 +66,7 @@ import { eslintPresetTailwind } from "@rainstormy/presets-eslint-tailwind"
 
 export default eslintPresets({
 	additionalPresets: [
-		eslintPresetAmbientTypeScriptModules(),
+		eslintPresetAmbientTypescriptModules(),
 		eslintPresetSolid(),
 		eslintPresetTailwind(),
 	],
@@ -79,7 +79,7 @@ For example (with the default options applied):
 [source,javascript]
 ----
 import {
-	eslintPresetAmbientTypeScriptModules,
+	eslintPresetAmbientTypescriptModules,
 	eslintPresetTestData,
 	eslintPresets,
 } from "@rainstormy/presets-eslint"
@@ -93,7 +93,7 @@ import { eslintPresetVitest } from "@rainstormy/presets-eslint-vitest"
 
 export default eslintPresets({
 	additionalPresets: [
-		eslintPresetAmbientTypeScriptModules(),
+		eslintPresetAmbientTypescriptModules(),
 		eslintPresetSolid(),
 		eslintPresetStorybook(),
 		eslintPresetStorybookConfiguration(),

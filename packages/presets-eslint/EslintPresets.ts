@@ -3417,21 +3417,21 @@ function standardEslintConfig(options: {
  * A predefined, opinionated ESLint configuration for ambient TypeScript modules (i.e. type declaration files).
  *
  * ```javascript
- * eslintPresetAmbientTypeScriptModules()
+ * eslintPresetAmbientTypescriptModules()
  * ```
  *
  * is equivalent to
  *
  * ```javascript
- * eslintPresetAmbientTypeScriptModules({
+ * eslintPresetAmbientTypescriptModules({
  *     targetFilePatterns: ["**\/*.d.ts"],
  * })
  * ```
  */
-export function eslintPresetAmbientTypeScriptModules(
+export function eslintPresetAmbientTypescriptModules(
 	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
 ): EslintPreset {
-	const eslintPresetName = "eslintPresetAmbientTypeScriptModules"
+	const eslintPresetName = "eslintPresetAmbientTypescriptModules"
 
 	const { targetFilePatterns = ["**/*.d.ts"] } = options
 

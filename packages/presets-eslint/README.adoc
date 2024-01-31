@@ -41,7 +41,7 @@ For example (with the default options in comments):
 [source,javascript]
 ----
 import {
-	eslintPresetAmbientTypeScriptModules,
+	eslintPresetAmbientTypescriptModules,
 	eslintPresets,
 } from "@rainstormy/presets-eslint"
 
@@ -49,7 +49,7 @@ export default eslintPresets({
 	// targetFilePatterns: ["**/*.@(js|jsx|ts|tsx)"],
 	// tsconfigFiles: "closest-to-each-source-file",
 	additionalPresets: [
-		eslintPresetAmbientTypeScriptModules({
+		eslintPresetAmbientTypescriptModules({
 			// targetFilePatterns: ["**/*.d.ts"],
 		}),
 	],

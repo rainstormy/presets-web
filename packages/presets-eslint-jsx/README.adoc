@@ -62,7 +62,7 @@ For example:
 [source,javascript]
 ----
 import {
-	eslintPresetAmbientTypeScriptModules,
+	eslintPresetAmbientTypescriptModules,
 	eslintPresets,
 } from "@rainstormy/presets-eslint"
 import { eslintPresetJsx } from "@rainstormy/presets-eslint-jsx"
@@ -71,7 +71,7 @@ import qwikPlugin from "eslint-plugin-qwik"
 export default [
 	...eslintPresets({
 		additionalPresets: [
-			eslintPresetAmbientTypeScriptModules(),
+			eslintPresetAmbientTypescriptModules(),
 			eslintPresetJsx(),
 		],
 	}),
