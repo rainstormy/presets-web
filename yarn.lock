@@ -214,7 +214,6 @@ __metadata:
   dependencies:
     "@next/eslint-plugin-next": "npm:14.1.0"
     "@rainstormy/presets-eslint": "workspace:*"
-    "@rainstormy/presets-eslint-react": "workspace:*"
     typescript: "npm:5.3.3"
   peerDependencies:
     eslint: 8.x

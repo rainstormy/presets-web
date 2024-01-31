@@ -4,11 +4,6 @@
 
 This package provides a predefined, opinionated https://eslint.org[ESLint] configuration suitable for any https://www.typescriptlang.org[TypeScript]-based web project with https://react.dev[React] components.
 
-[CAUTION]
-====
-For a Next.js app, use https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-next[@rainstormy/presets-eslint-next] instead.
-====
-
 This preset configures a subset of rules from the following plugins, which are installed along with the preset package:
 
 * https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules[eslint-plugin-jsx-a11y] (with rule names prefixed by `jsx-a11y/`)

@@ -9,7 +9,6 @@ import reactPlugin from "eslint-plugin-react"
 /**
  * A predefined, opinionated ESLint configuration for JSX components in general.
  *
- * - For a Next.js app, use [`@rainstormy/presets-eslint-next`](https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-next) instead.
  * - For Preact components, use [`@rainstormy/presets-eslint-preact`](https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-preact) instead.
  * - For React components, use [`@rainstormy/presets-eslint-react`](https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-react) instead.
  * - For Solid components, use [`@rainstormy/presets-eslint-solid`](https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-solid) instead.

@@ -52,7 +52,28 @@ export default eslintPresets({
 })
 ----
 
-=== In Combination with Storybook, Tailwind CSS, and Testing Library
+=== In Combination with Tailwind CSS
+For example (with the default options applied):
+
+[source,javascript]
+----
+import {
+	eslintPresetAmbientTypeScriptModules,
+	eslintPresets,
+} from "@rainstormy/presets-eslint"
+import { eslintPresetSolid } from "@rainstormy/presets-eslint-solid"
+import { eslintPresetTailwind } from "@rainstormy/presets-eslint-tailwind"
+
+export default eslintPresets({
+	additionalPresets: [
+		eslintPresetAmbientTypeScriptModules(),
+		eslintPresetSolid(),
+		eslintPresetTailwind(),
+	],
+})
+----
+
+=== In Combination with Storybook, Testing Library, and Vitest
 For example (with the default options applied):
 
 [source,javascript]
@@ -67,7 +88,6 @@ import {
 	eslintPresetStorybook,
 	eslintPresetStorybookConfiguration,
 } from "@rainstormy/presets-eslint-storybook"
-import { eslintPresetTailwind } from "@rainstormy/presets-eslint-tailwind"
 import { eslintPresetTestingLibrary } from "@rainstormy/presets-eslint-testing-library"
 import { eslintPresetVitest } from "@rainstormy/presets-eslint-vitest"
 
@@ -77,7 +97,6 @@ export default eslintPresets({
 		eslintPresetSolid(),
 		eslintPresetStorybook(),
 		eslintPresetStorybookConfiguration(),
-		eslintPresetTailwind(),
 		eslintPresetTestData(),
 		eslintPresetTestingLibrary(),
 		eslintPresetVitest(),

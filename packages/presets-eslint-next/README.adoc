@@ -8,11 +8,6 @@ This preset configures a subset of rules from the following plugin, which is ins
 
 * https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-plugin[@next/eslint-plugin-next] (with rule names prefixed by `next/`)
 
-Additionally, it includes the following presets:
-
-* https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-jsx[@rainstormy/presets-eslint-jsx]
-* https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-react[@rainstormy/presets-eslint-react]
-
 == Installation
 Install the `@rainstormy/presets-eslint-next` package and its peer dependencies:
 
@@ -45,13 +40,36 @@ export default eslintPresets({
 	additionalPresets: [
 		// ...other presets...
 		eslintPresetNext({
-			// targetFilePatterns: ["**/*.@(jsx|tsx)"],
+			// targetFilePatterns: ["**/*.@(js|jsx|ts|tsx)"],
 		}),
 	],
 })
 ----
 
-=== In Combination with Storybook, Tailwind CSS, and Testing Library
+=== In Combination with React and Tailwind CSS
+For example (with the default options applied):
+
+[source,javascript]
+----
+import {
+	eslintPresetAmbientTypeScriptModules,
+	eslintPresets,
+} from "@rainstormy/presets-eslint"
+import { eslintPresetNext } from "@rainstormy/presets-eslint-next"
+import { eslintPresetReact } from "@rainstormy/presets-eslint-react"
+import { eslintPresetTailwind } from "@rainstormy/presets-eslint-tailwind"
+
+export default eslintPresets({
+	additionalPresets: [
+		eslintPresetAmbientTypeScriptModules(),
+		eslintPresetNext(),
+		eslintPresetReact(),
+		eslintPresetTailwind(),
+	],
+})
+----
+
+=== In Combination with React, Storybook, Testing Library, and Vitest
 For example (with the default options applied):
 
 [source,javascript]
@@ -62,11 +80,11 @@ import {
 	eslintPresets,
 } from "@rainstormy/presets-eslint"
 import { eslintPresetNext } from "@rainstormy/presets-eslint-next"
+import { eslintPresetReact } from "@rainstormy/presets-eslint-react"
 import {
 	eslintPresetStorybook,
 	eslintPresetStorybookConfiguration,
 } from "@rainstormy/presets-eslint-storybook"
-import { eslintPresetTailwind } from "@rainstormy/presets-eslint-tailwind"
 import { eslintPresetTestingLibrary } from "@rainstormy/presets-eslint-testing-library"
 import { eslintPresetVitest } from "@rainstormy/presets-eslint-vitest"
 
@@ -74,9 +92,9 @@ export default eslintPresets({
 	additionalPresets: [
 		eslintPresetAmbientTypeScriptModules(),
 		eslintPresetNext(),
+		eslintPresetReact(),
 		eslintPresetStorybook(),
 		eslintPresetStorybookConfiguration(),
-		eslintPresetTailwind(),
 		eslintPresetTestData(),
 		eslintPresetTestingLibrary(),
 		eslintPresetVitest(),

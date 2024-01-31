@@ -1,12 +1,11 @@
 import nextPlugin from "@next/eslint-plugin-next"
-import { eslintPresetReact } from "@rainstormy/presets-eslint-react"
 import {
 	eslintPresetIdentifier,
 	type EslintPreset,
 } from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
 
 /**
- * A predefined, opinionated ESLint configuration for React components in a Next.js app.
+ * A predefined, opinionated ESLint configuration for Next.js apps.
  *
  * ```javascript
  * eslintPresetNext()
@@ -16,7 +15,7 @@ import {
  *
  * ```javascript
  * eslintPresetNext({
- *     targetFilePatterns: ["**\/*.@(jsx|tsx)"],
+ *     targetFilePatterns: ["**\/*.@(js|jsx|ts|tsx)"],
  * })
  * ```
  *
@@ -27,18 +26,15 @@ export function eslintPresetNext(
 ): EslintPreset {
 	const eslintPresetName = "eslintPresetNext"
 
-	const reactPreset = eslintPresetReact(options)
+	const { targetFilePatterns = ["**/*.@(js|jsx|ts|tsx)"] } = options
 
 	return {
-		...reactPreset,
 		[eslintPresetIdentifier]: eslintPresetName,
+		files: targetFilePatterns,
 		plugins: {
-			...reactPreset.plugins,
 			next: nextPlugin,
 		},
 		rules: {
-			...reactPreset.rules,
-
 			/**
 			 * @see https://nextjs.org/docs/messages/google-font-display
 			 */

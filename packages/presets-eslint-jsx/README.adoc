@@ -6,7 +6,6 @@ This package provides a predefined, opinionated https://eslint.org[ESLint] confi
 
 [CAUTION]
 ====
-* For a Next.js app, use https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-next[@rainstormy/presets-eslint-next] instead.
 * For Preact components, use https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-preact[@rainstormy/presets-eslint-preact] instead.
 * For React components, use https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-react[@rainstormy/presets-eslint-react] instead.
 * For Solid components, use https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-solid[@rainstormy/presets-eslint-solid] instead.

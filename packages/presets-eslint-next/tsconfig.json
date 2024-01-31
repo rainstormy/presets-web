@@ -12,5 +12,4 @@
 		"tsBuildInfoFile": "../../.cache/typescript/presets-eslint-next.tsbuildinfo",
 	},
 	"include": ["*.ts"],
-	"references": [{ "path": "../presets-eslint-react" }],
 }

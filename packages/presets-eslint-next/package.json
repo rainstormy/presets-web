@@ -23,8 +23,7 @@
 	],
 	"dependencies": {
 		"@next/eslint-plugin-next": "14.1.0",
-		"@rainstormy/presets-eslint": "workspace:*",
-		"@rainstormy/presets-eslint-react": "workspace:*"
+		"@rainstormy/presets-eslint": "workspace:*"
 	},
 	"devDependencies": {
 		"typescript": "5.3.3"
@@ -35,8 +34,7 @@
 	"//": {
 		"dependencies": {
 			"@next/eslint-plugin-next": "This ESLint plugin covers Next.js features in React components.",
-			"@rainstormy/presets-eslint": "This ESLint preset ships with type definitions for ESLint presets and their configurable options.",
-			"@rainstormy/presets-eslint-react": "This ESLint preset configures linting rules for React components."
+			"@rainstormy/presets-eslint": "This ESLint preset ships with type definitions for ESLint presets and their configurable options."
 		},
 		"devDependencies": {
 			"typescript": "TypeScript is a statically typed programming language on top of JavaScript."

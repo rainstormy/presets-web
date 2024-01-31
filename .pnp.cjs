@@ -74,10 +74,10 @@ const RAW_RUNTIME_STATE =
   "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
   "fallbackExclusionList": [\
     ["@rainstormy/presets-eslint", ["virtual:072908afe89694942146358e204d7003276d72eafeb604bd6fc09817253a9c1afb08b0629a88ae8256bebe2b5595437cd8bb9742c8f1555471cc17db1d0de212#workspace:packages/presets-eslint", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#workspace:packages/presets-eslint", "workspace:packages/presets-eslint"]],\
-    ["@rainstormy/presets-eslint-jsx", ["virtual:3e3526acf94ed31c347997c12e50a10df75d107e29c3c808bd3aa517de78945b72ee9530f109ff1d965978a70fc61f398b609cf85b520ccede39ef9561d08400#workspace:packages/presets-eslint-jsx", "workspace:packages/presets-eslint-jsx"]],\
+    ["@rainstormy/presets-eslint-jsx", ["virtual:ead5f05398123a4c0183d2e5596c66fbaa5b1c85403a6d3948a3c2fc16fe7ef51f70910d24635f430bf5fec4abb9a89ed19ad4a3baf6ddfeeed3a1a888bfb4ff#workspace:packages/presets-eslint-jsx", "workspace:packages/presets-eslint-jsx"]],\
     ["@rainstormy/presets-eslint-next", ["workspace:packages/presets-eslint-next"]],\
     ["@rainstormy/presets-eslint-preact", ["workspace:packages/presets-eslint-preact"]],\
-    ["@rainstormy/presets-eslint-react", ["virtual:8188f7db681ce9fa7527773cfef7ff2f08dde065a56938889a836c3af42fd603ca076ebc42b0ba1634cde50acd9333a9b9af76dd79185891667c01be6d7d61e1#workspace:packages/presets-eslint-react", "workspace:packages/presets-eslint-react"]],\
+    ["@rainstormy/presets-eslint-react", ["virtual:ead5f05398123a4c0183d2e5596c66fbaa5b1c85403a6d3948a3c2fc16fe7ef51f70910d24635f430bf5fec4abb9a89ed19ad4a3baf6ddfeeed3a1a888bfb4ff#workspace:packages/presets-eslint-react", "workspace:packages/presets-eslint-react"]],\
     ["@rainstormy/presets-eslint-solid", ["workspace:packages/presets-eslint-solid"]],\
     ["@rainstormy/presets-eslint-storybook", ["workspace:packages/presets-eslint-storybook"]],\
     ["@rainstormy/presets-eslint-tailwind", ["workspace:packages/presets-eslint-tailwind"]],\
@@ -505,10 +505,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@rainstormy/presets-eslint-jsx", [\
-      ["virtual:3e3526acf94ed31c347997c12e50a10df75d107e29c3c808bd3aa517de78945b72ee9530f109ff1d965978a70fc61f398b609cf85b520ccede39ef9561d08400#workspace:packages/presets-eslint-jsx", {\
-        "packageLocation": "./.yarn/__virtual__/@rainstormy-presets-eslint-jsx-virtual-365a716986/1/packages/presets-eslint-jsx/",\
+      ["virtual:ead5f05398123a4c0183d2e5596c66fbaa5b1c85403a6d3948a3c2fc16fe7ef51f70910d24635f430bf5fec4abb9a89ed19ad4a3baf6ddfeeed3a1a888bfb4ff#workspace:packages/presets-eslint-jsx", {\
+        "packageLocation": "./.yarn/__virtual__/@rainstormy-presets-eslint-jsx-virtual-94e02a7e33/1/packages/presets-eslint-jsx/",\
         "packageDependencies": [\
-          ["@rainstormy/presets-eslint-jsx", "virtual:3e3526acf94ed31c347997c12e50a10df75d107e29c3c808bd3aa517de78945b72ee9530f109ff1d965978a70fc61f398b609cf85b520ccede39ef9561d08400#workspace:packages/presets-eslint-jsx"],\
+          ["@rainstormy/presets-eslint-jsx", "virtual:ead5f05398123a4c0183d2e5596c66fbaa5b1c85403a6d3948a3c2fc16fe7ef51f70910d24635f430bf5fec4abb9a89ed19ad4a3baf6ddfeeed3a1a888bfb4ff#workspace:packages/presets-eslint-jsx"],\
           ["@rainstormy/presets-eslint", "virtual:072908afe89694942146358e204d7003276d72eafeb604bd6fc09817253a9c1afb08b0629a88ae8256bebe2b5595437cd8bb9742c8f1555471cc17db1d0de212#workspace:packages/presets-eslint"],\
           ["@types/eslint", null],\
           ["eslint", null],\
@@ -541,7 +541,6 @@ const RAW_RUNTIME_STATE =
           ["@rainstormy/presets-eslint-next", "workspace:packages/presets-eslint-next"],\
           ["@next/eslint-plugin-next", "npm:14.1.0"],\
           ["@rainstormy/presets-eslint", "virtual:072908afe89694942146358e204d7003276d72eafeb604bd6fc09817253a9c1afb08b0629a88ae8256bebe2b5595437cd8bb9742c8f1555471cc17db1d0de212#workspace:packages/presets-eslint"],\
-          ["@rainstormy/presets-eslint-react", "virtual:8188f7db681ce9fa7527773cfef7ff2f08dde065a56938889a836c3af42fd603ca076ebc42b0ba1634cde50acd9333a9b9af76dd79185891667c01be6d7d61e1#workspace:packages/presets-eslint-react"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "linkType": "SOFT"\
@@ -553,23 +552,23 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@rainstormy/presets-eslint-preact", "workspace:packages/presets-eslint-preact"],\
           ["@rainstormy/presets-eslint", "virtual:072908afe89694942146358e204d7003276d72eafeb604bd6fc09817253a9c1afb08b0629a88ae8256bebe2b5595437cd8bb9742c8f1555471cc17db1d0de212#workspace:packages/presets-eslint"],\
-          ["@rainstormy/presets-eslint-jsx", "virtual:3e3526acf94ed31c347997c12e50a10df75d107e29c3c808bd3aa517de78945b72ee9530f109ff1d965978a70fc61f398b609cf85b520ccede39ef9561d08400#workspace:packages/presets-eslint-jsx"],\
-          ["@rainstormy/presets-eslint-react", "virtual:8188f7db681ce9fa7527773cfef7ff2f08dde065a56938889a836c3af42fd603ca076ebc42b0ba1634cde50acd9333a9b9af76dd79185891667c01be6d7d61e1#workspace:packages/presets-eslint-react"],\
+          ["@rainstormy/presets-eslint-jsx", "virtual:ead5f05398123a4c0183d2e5596c66fbaa5b1c85403a6d3948a3c2fc16fe7ef51f70910d24635f430bf5fec4abb9a89ed19ad4a3baf6ddfeeed3a1a888bfb4ff#workspace:packages/presets-eslint-jsx"],\
+          ["@rainstormy/presets-eslint-react", "virtual:ead5f05398123a4c0183d2e5596c66fbaa5b1c85403a6d3948a3c2fc16fe7ef51f70910d24635f430bf5fec4abb9a89ed19ad4a3baf6ddfeeed3a1a888bfb4ff#workspace:packages/presets-eslint-react"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "linkType": "SOFT"\
       }]\
     ]],\
     ["@rainstormy/presets-eslint-react", [\
-      ["virtual:8188f7db681ce9fa7527773cfef7ff2f08dde065a56938889a836c3af42fd603ca076ebc42b0ba1634cde50acd9333a9b9af76dd79185891667c01be6d7d61e1#workspace:packages/presets-eslint-react", {\
-        "packageLocation": "./.yarn/__virtual__/@rainstormy-presets-eslint-react-virtual-3e3526acf9/1/packages/presets-eslint-react/",\
+      ["virtual:ead5f05398123a4c0183d2e5596c66fbaa5b1c85403a6d3948a3c2fc16fe7ef51f70910d24635f430bf5fec4abb9a89ed19ad4a3baf6ddfeeed3a1a888bfb4ff#workspace:packages/presets-eslint-react", {\
+        "packageLocation": "./.yarn/__virtual__/@rainstormy-presets-eslint-react-virtual-c1ff90e8c0/1/packages/presets-eslint-react/",\
         "packageDependencies": [\
-          ["@rainstormy/presets-eslint-react", "virtual:8188f7db681ce9fa7527773cfef7ff2f08dde065a56938889a836c3af42fd603ca076ebc42b0ba1634cde50acd9333a9b9af76dd79185891667c01be6d7d61e1#workspace:packages/presets-eslint-react"],\
+          ["@rainstormy/presets-eslint-react", "virtual:ead5f05398123a4c0183d2e5596c66fbaa5b1c85403a6d3948a3c2fc16fe7ef51f70910d24635f430bf5fec4abb9a89ed19ad4a3baf6ddfeeed3a1a888bfb4ff#workspace:packages/presets-eslint-react"],\
           ["@rainstormy/presets-eslint", "virtual:072908afe89694942146358e204d7003276d72eafeb604bd6fc09817253a9c1afb08b0629a88ae8256bebe2b5595437cd8bb9742c8f1555471cc17db1d0de212#workspace:packages/presets-eslint"],\
-          ["@rainstormy/presets-eslint-jsx", "virtual:3e3526acf94ed31c347997c12e50a10df75d107e29c3c808bd3aa517de78945b72ee9530f109ff1d965978a70fc61f398b609cf85b520ccede39ef9561d08400#workspace:packages/presets-eslint-jsx"],\
+          ["@rainstormy/presets-eslint-jsx", "virtual:ead5f05398123a4c0183d2e5596c66fbaa5b1c85403a6d3948a3c2fc16fe7ef51f70910d24635f430bf5fec4abb9a89ed19ad4a3baf6ddfeeed3a1a888bfb4ff#workspace:packages/presets-eslint-jsx"],\
           ["@types/eslint", null],\
           ["eslint", null],\
-          ["eslint-plugin-react-hooks", "virtual:3e3526acf94ed31c347997c12e50a10df75d107e29c3c808bd3aa517de78945b72ee9530f109ff1d965978a70fc61f398b609cf85b520ccede39ef9561d08400#npm:4.6.0"],\
+          ["eslint-plugin-react-hooks", "virtual:c1ff90e8c02b22c504b01ae5ea85aa3ad1c998418a8429eb553aeada7617cb06268a08b3ed33c7368f73e4a6f2fc4f607669b774624acacc7d2afe2bba063584#npm:4.6.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "packagePeers": [\
@@ -583,8 +582,8 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@rainstormy/presets-eslint-react", "workspace:packages/presets-eslint-react"],\
           ["@rainstormy/presets-eslint", "virtual:072908afe89694942146358e204d7003276d72eafeb604bd6fc09817253a9c1afb08b0629a88ae8256bebe2b5595437cd8bb9742c8f1555471cc17db1d0de212#workspace:packages/presets-eslint"],\
-          ["@rainstormy/presets-eslint-jsx", "virtual:3e3526acf94ed31c347997c12e50a10df75d107e29c3c808bd3aa517de78945b72ee9530f109ff1d965978a70fc61f398b609cf85b520ccede39ef9561d08400#workspace:packages/presets-eslint-jsx"],\
-          ["eslint-plugin-react-hooks", "virtual:3e3526acf94ed31c347997c12e50a10df75d107e29c3c808bd3aa517de78945b72ee9530f109ff1d965978a70fc61f398b609cf85b520ccede39ef9561d08400#npm:4.6.0"],\
+          ["@rainstormy/presets-eslint-jsx", "virtual:ead5f05398123a4c0183d2e5596c66fbaa5b1c85403a6d3948a3c2fc16fe7ef51f70910d24635f430bf5fec4abb9a89ed19ad4a3baf6ddfeeed3a1a888bfb4ff#workspace:packages/presets-eslint-jsx"],\
+          ["eslint-plugin-react-hooks", "virtual:c1ff90e8c02b22c504b01ae5ea85aa3ad1c998418a8429eb553aeada7617cb06268a08b3ed33c7368f73e4a6f2fc4f607669b774624acacc7d2afe2bba063584#npm:4.6.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "linkType": "SOFT"\
@@ -596,7 +595,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@rainstormy/presets-eslint-solid", "workspace:packages/presets-eslint-solid"],\
           ["@rainstormy/presets-eslint", "virtual:072908afe89694942146358e204d7003276d72eafeb604bd6fc09817253a9c1afb08b0629a88ae8256bebe2b5595437cd8bb9742c8f1555471cc17db1d0de212#workspace:packages/presets-eslint"],\
-          ["@rainstormy/presets-eslint-jsx", "virtual:3e3526acf94ed31c347997c12e50a10df75d107e29c3c808bd3aa517de78945b72ee9530f109ff1d965978a70fc61f398b609cf85b520ccede39ef9561d08400#workspace:packages/presets-eslint-jsx"],\
+          ["@rainstormy/presets-eslint-jsx", "virtual:ead5f05398123a4c0183d2e5596c66fbaa5b1c85403a6d3948a3c2fc16fe7ef51f70910d24635f430bf5fec4abb9a89ed19ad4a3baf6ddfeeed3a1a888bfb4ff#workspace:packages/presets-eslint-jsx"],\
           ["eslint-plugin-solid", "virtual:c0f85f350ec7764d6cb72354d90d0661852a328c5c29833c7f1ce620551efa6f98dcb14cbf9b50ad8b1fa5e6e6606d8b97850e806934277ceed8ae98851e4de6#npm:0.13.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
@@ -2542,10 +2541,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3e3526acf94ed31c347997c12e50a10df75d107e29c3c808bd3aa517de78945b72ee9530f109ff1d965978a70fc61f398b609cf85b520ccede39ef9561d08400#npm:4.6.0", {\
-        "packageLocation": "./.yarn/__virtual__/eslint-plugin-react-hooks-virtual-ab47875c99/0/cache/eslint-plugin-react-hooks-npm-4.6.0-b429fac07f-58c7e10ea5.zip/node_modules/eslint-plugin-react-hooks/",\
+      ["virtual:c1ff90e8c02b22c504b01ae5ea85aa3ad1c998418a8429eb553aeada7617cb06268a08b3ed33c7368f73e4a6f2fc4f607669b774624acacc7d2afe2bba063584#npm:4.6.0", {\
+        "packageLocation": "./.yarn/__virtual__/eslint-plugin-react-hooks-virtual-ecf2c215fe/0/cache/eslint-plugin-react-hooks-npm-4.6.0-b429fac07f-58c7e10ea5.zip/node_modules/eslint-plugin-react-hooks/",\
         "packageDependencies": [\
-          ["eslint-plugin-react-hooks", "virtual:3e3526acf94ed31c347997c12e50a10df75d107e29c3c808bd3aa517de78945b72ee9530f109ff1d965978a70fc61f398b609cf85b520ccede39ef9561d08400#npm:4.6.0"],\
+          ["eslint-plugin-react-hooks", "virtual:c1ff90e8c02b22c504b01ae5ea85aa3ad1c998418a8429eb553aeada7617cb06268a08b3ed33c7368f73e4a6f2fc4f607669b774624acacc7d2afe2bba063584#npm:4.6.0"],\
           ["@types/eslint", null],\
           ["eslint", null]\
         ],\
