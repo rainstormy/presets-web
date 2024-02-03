@@ -1,8 +1,12 @@
 import nextPlugin from "@next/eslint-plugin-next"
-import {
-	eslintPresetIdentifier,
-	type EslintPreset,
-} from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
+import { type EslintPresetsStandardRuleset } from "@rainstormy/presets-eslint"
+import { type EslintPreset } from "@rainstormy/presets-eslint/dist/EslintConfig.js"
+import { type EslintPluginNextRuleset } from "./rulesets/EslintPluginNextRuleset.js"
+
+export type EslintPresetNext = EslintPreset<
+	EslintPresetsStandardRuleset,
+	EslintPluginNextRuleset
+>
 
 /**
  * A predefined, opinionated ESLint configuration for Next.js apps.
@@ -16,20 +20,22 @@ import {
  * ```javascript
  * eslintPresetNext({
  *     targetFilePatterns: ["**\/*.@(js|jsx|ts|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
  * @see https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-plugin next/*
  */
 export function eslintPresetNext(
-	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
-): EslintPreset {
-	const eslintPresetName = "eslintPresetNext"
-
-	const { targetFilePatterns = ["**/*.@(js|jsx|ts|tsx)"] } = options
+	options: {
+		readonly overrideRules?: Partial<EslintPresetNext["rules"]>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetNext {
+	const { overrideRules, targetFilePatterns = ["**/*.@(js|jsx|ts|tsx)"] } =
+		options
 
 	return {
-		[eslintPresetIdentifier]: eslintPresetName,
 		files: targetFilePatterns,
 		plugins: {
 			next: nextPlugin,
@@ -151,6 +157,8 @@ export function eslintPresetNext(
 			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md
 			 */
 			"unicorn/prefer-node-protocol": "off",
+
+			...overrideRules,
 		},
 	}
 }

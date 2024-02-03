@@ -11,7 +11,7 @@
 		"outDir": "./dist",
 		"tsBuildInfoFile": "../../.cache/typescript/presets-eslint-preact.tsbuildinfo",
 	},
-	"include": ["*.ts"],
+	"include": ["rulesets/*.ts", "*.ts"],
 	"references": [
 		{ "path": "../presets-eslint-jsx" },
 		{ "path": "../presets-eslint-react" },

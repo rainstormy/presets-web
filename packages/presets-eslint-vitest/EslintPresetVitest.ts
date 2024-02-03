@@ -1,8 +1,12 @@
-import {
-	eslintPresetIdentifier,
-	type EslintPreset,
-} from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
+import { type EslintPresetsStandardRuleset } from "@rainstormy/presets-eslint"
+import { type EslintPreset } from "@rainstormy/presets-eslint/dist/EslintConfig.js"
 import vitestPlugin from "eslint-plugin-vitest"
+import { type EslintPluginVitestRuleset } from "./rulesets/EslintPluginVitestRuleset.js"
+
+export type EslintPresetVitest = EslintPreset<
+	EslintPresetsStandardRuleset,
+	EslintPluginVitestRuleset
+>
 
 /**
  * A predefined, opinionated ESLint configuration for files with Vitest test suites.
@@ -16,22 +20,24 @@ import vitestPlugin from "eslint-plugin-vitest"
  * ```javascript
  * eslintPresetVitest({
  *     targetFilePatterns: ["**\/*.@(spec|specs|test|tests).@(js|jsx|ts|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
  * @see https://github.com/veritem/eslint-plugin-vitest#rules vitest/*
  */
 export function eslintPresetVitest(
-	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
-): EslintPreset {
-	const eslintPresetName = "eslintPresetVitest"
-
+	options: {
+		readonly overrideRules?: Partial<EslintPresetVitest["rules"]>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetVitest {
 	const {
+		overrideRules,
 		targetFilePatterns = ["**/*.@(spec|specs|test|tests).@(js|jsx|ts|tsx)"],
 	} = options
 
 	return {
-		[eslintPresetIdentifier]: eslintPresetName,
 		files: targetFilePatterns,
 		languageOptions: {
 			globals: {
@@ -389,6 +395,8 @@ export function eslintPresetVitest(
 			 * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/valid-title.md
 			 */
 			"vitest/valid-title": "error",
+
+			...overrideRules,
 		},
 	}
 }

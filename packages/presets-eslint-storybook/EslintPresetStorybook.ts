@@ -1,9 +1,13 @@
-import {
-	eslintPresetIdentifier,
-	eslintPresetOrdinal,
-	type EslintPreset,
-} from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
+import { type EslintPresetsStandardRuleset } from "@rainstormy/presets-eslint"
+import { type EslintPreset } from "@rainstormy/presets-eslint/dist/EslintConfig.js"
 import storybookPlugin from "eslint-plugin-storybook"
+import { type EslintPluginStorybookConfigurationRuleset } from "./rulesets/EslintPluginStorybookConfigurationRuleset.js"
+import { type EslintPluginStorybookRuleset } from "./rulesets/EslintPluginStorybookRuleset.js"
+
+export type EslintPresetStorybook = EslintPreset<
+	EslintPresetsStandardRuleset,
+	EslintPluginStorybookRuleset
+>
 
 /**
  * A predefined, opinionated ESLint configuration for files with Storybook stories in Component Story Format 3 (CSF3).
@@ -17,32 +21,39 @@ import storybookPlugin from "eslint-plugin-storybook"
  * ```javascript
  * eslintPresetStorybook({
  *     targetFilePatterns: ["**\/*.stories.@(js|jsx|ts|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
  * @see https://github.com/storybookjs/eslint-plugin-storybook storybook/*
  */
 export function eslintPresetStorybook(
-	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
-): EslintPreset {
-	const eslintPresetName = "eslintPresetStorybook"
+	options: {
+		readonly overrideRules?: Partial<EslintPresetStorybook["rules"]>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetStorybook {
+	const {
+		overrideRules,
+		targetFilePatterns = ["**/*.stories.@(js|jsx|ts|tsx)"],
+	} = options
 
-	const { targetFilePatterns = ["**/*.stories.@(js|jsx|ts|tsx)"] } = options
+	// Use a separate constant to disable `react/` rules without introducing a dependency on `@rainstormy/presets-eslint-jsx` to satisfy the `EslintPresetStorybook` type declaration.
+	const overrideReactRules = {
+		/**
+		 * The `render` function in stories uses prop spreading to provide args to components.
+		 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
+		 */
+		"react/jsx-props-no-spreading": "off",
+	} as const
 
 	return {
-		[eslintPresetIdentifier]: eslintPresetName,
-		[eslintPresetOrdinal]: 1, // This preset must be applied after `eslintPresetJsx` (or any of its extensions) to override rules correctly.
+		presetOrdinal: 1, // This preset must be applied after `eslintPresetJsx` (or any of its extensions) to override `react/` rules correctly.
 		files: targetFilePatterns,
 		plugins: {
 			storybook: storybookPlugin,
 		},
 		rules: {
-			/**
-			 * The `render` function in stories uses prop spreading to provide args to components.
-			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
-			 */
-			"react/jsx-props-no-spreading": "off",
-
 			/**
 			 * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/await-interactions.md
 			 */
@@ -135,9 +146,17 @@ export function eslintPresetStorybook(
 					trailingUnderscore: "forbid",
 				},
 			],
+
+			...overrideReactRules,
+			...overrideRules,
 		},
 	}
 }
+
+export type EslintPresetStorybookConfiguration = EslintPreset<
+	EslintPresetsStandardRuleset,
+	EslintPluginStorybookConfigurationRuleset
+>
 
 /**
  * A predefined, opinionated ESLint configuration for Storybook configuration files.
@@ -151,20 +170,26 @@ export function eslintPresetStorybook(
  * ```javascript
  * eslintPresetStorybookConfiguration({
  *     targetFilePatterns: [".storybook/**\/*.@(js|jsx|ts|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
  * @see https://github.com/storybookjs/eslint-plugin-storybook storybook/*
  */
 export function eslintPresetStorybookConfiguration(
-	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
-): EslintPreset {
-	const eslintPresetName = "eslintPresetStorybookConfiguration"
-
-	const { targetFilePatterns = [".storybook/**/*.@(js|jsx|ts|tsx)"] } = options
+	options: {
+		readonly overrideRules?: Partial<
+			EslintPresetStorybookConfiguration["rules"]
+		>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetStorybookConfiguration {
+	const {
+		overrideRules,
+		targetFilePatterns = [".storybook/**/*.@(js|jsx|ts|tsx)"],
+	} = options
 
 	return {
-		[eslintPresetIdentifier]: eslintPresetName,
 		files: targetFilePatterns,
 		plugins: {
 			storybook: storybookPlugin,
@@ -174,6 +199,8 @@ export function eslintPresetStorybookConfiguration(
 			 * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-uninstalled-addons.md
 			 */
 			"storybook/no-uninstalled-addons": "error",
+
+			...overrideRules,
 		},
 	}
 }

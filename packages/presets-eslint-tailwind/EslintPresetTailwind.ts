@@ -1,8 +1,12 @@
-import {
-	eslintPresetIdentifier,
-	type EslintPreset,
-} from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
+import { type EslintPresetsStandardRuleset } from "@rainstormy/presets-eslint"
+import { type EslintPreset } from "@rainstormy/presets-eslint/dist/EslintConfig.js"
 import tailwindPlugin from "eslint-plugin-tailwindcss"
+import { type EslintPluginTailwindRuleset } from "./rulesets/EslintPluginTailwindRuleset.js"
+
+export type EslintPresetTailwind = EslintPreset<
+	EslintPresetsStandardRuleset,
+	EslintPluginTailwindRuleset
+>
 
 /**
  * A predefined, opinionated ESLint configuration for JSX components with Tailwind CSS classes.
@@ -16,20 +20,21 @@ import tailwindPlugin from "eslint-plugin-tailwindcss"
  * ```javascript
  * eslintPresetTailwind({
  *     targetFilePatterns: ["**\/*.@(jsx|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
  * @see https://github.com/francoismassart/eslint-plugin-tailwindcss#supported-rules tailwind/*
  */
 export function eslintPresetTailwind(
-	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
-): EslintPreset {
-	const eslintPresetName = "eslintPresetTailwind"
-
-	const { targetFilePatterns = ["**/*.@(jsx|tsx)"] } = options
+	options: {
+		readonly overrideRules?: Partial<EslintPresetTailwind["rules"]>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetTailwind {
+	const { overrideRules, targetFilePatterns = ["**/*.@(jsx|tsx)"] } = options
 
 	return {
-		[eslintPresetIdentifier]: eslintPresetName,
 		files: targetFilePatterns,
 		plugins: {
 			tailwind: tailwindPlugin,
@@ -74,6 +79,8 @@ export function eslintPresetTailwind(
 			 * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/master/docs/rules/no-custom-classname.md
 			 */
 			"tailwind/no-custom-classname": "error",
+
+			...overrideRules,
 		},
 	}
 }

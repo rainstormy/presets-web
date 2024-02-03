@@ -11,5 +11,5 @@
 		"outDir": "./dist",
 		"tsBuildInfoFile": "../../.cache/typescript/presets-eslint-jsx.tsbuildinfo",
 	},
-	"include": ["*.ts"],
+	"include": ["rulesets/*.ts", "*.ts"],
 }

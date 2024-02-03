@@ -1,10 +1,14 @@
-import {
-	eslintPresetIdentifier,
-	eslintPresetOrdinal,
-	type EslintPreset,
-} from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
+import { type EslintPresetsStandardRuleset } from "@rainstormy/presets-eslint"
+import { type EslintPreset } from "@rainstormy/presets-eslint/dist/EslintConfig.js"
 import accessibilityPlugin from "eslint-plugin-jsx-a11y"
 import reactPlugin from "eslint-plugin-react"
+import { type EslintPluginAccessibilityRuleset } from "./rulesets/EslintPluginAccessibilityRuleset.js"
+import { type EslintPluginReactJsxRuleset } from "./rulesets/EslintPluginReactJsxRuleset.js"
+
+export type EslintPresetJsx = EslintPreset<
+	EslintPresetsStandardRuleset,
+	EslintPluginAccessibilityRuleset & EslintPluginReactJsxRuleset
+>
 
 /**
  * A predefined, opinionated ESLint configuration for JSX components in general.
@@ -22,6 +26,7 @@ import reactPlugin from "eslint-plugin-react"
  * ```javascript
  * eslintPresetJsx({
  *     targetFilePatterns: ["**\/*.@(jsx|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
@@ -29,15 +34,15 @@ import reactPlugin from "eslint-plugin-react"
  * @see https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules react/*
  */
 export function eslintPresetJsx(
-	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
-): EslintPreset {
-	const eslintPresetName = "eslintPresetJsx"
-
-	const { targetFilePatterns = ["**/*.@(jsx|tsx)"] } = options
+	options: {
+		readonly overrideRules?: Partial<EslintPresetJsx["rules"]>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetJsx {
+	const { overrideRules, targetFilePatterns = ["**/*.@(jsx|tsx)"] } = options
 
 	return {
-		[eslintPresetIdentifier]: eslintPresetName,
-		[eslintPresetOrdinal]: 0, // This preset must be applied before `eslintPresetStorybook` to let the latter override rules correctly.
+		presetOrdinal: 0, // This preset must be applied before `eslintPresetStorybook` to let the latter override rules correctly.
 		files: targetFilePatterns,
 		plugins: {
 			accessibility: accessibilityPlugin,
@@ -480,6 +485,14 @@ export function eslintPresetJsx(
 			"react/no-adjacent-inline-elements": "error",
 
 			/**
+			 * A strict limitation of one component per file may lead to a larger number of files, causing directories to be less readable.
+			 * Having to separate components into multiple files may also cause some undesirable lack of encapsulation.
+			 * `max-lines` supersedes this rule to keep the size of component files under control.
+			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md
+			 */
+			"react/no-multi-comp": "off",
+
+			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unknown-property.md
 			 */
 			"react/no-unknown-property": [
@@ -585,6 +598,8 @@ export function eslintPresetJsx(
 					trailingUnderscore: "forbid",
 				},
 			],
+
+			...overrideRules,
 		},
 	}
 }

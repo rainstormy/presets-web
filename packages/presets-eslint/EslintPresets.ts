@@ -8,11 +8,20 @@ import noBarrelFilesPlugin from "eslint-plugin-no-barrel-files"
 import redundantUndefinedPlugin from "eslint-plugin-redundant-undefined"
 import unicornPlugin from "eslint-plugin-unicorn"
 import {
-	eslintPresetIdentifier,
-	eslintPresetOrdinal,
-	type EslintConfig,
+	type EslintCompleteConfig,
+	type EslintPartialConfig,
 	type EslintPreset,
-} from "./EslintPresetUtilities.js"
+	type EslintRuleset,
+} from "./EslintConfig.js"
+import { type EslintCoreRuleset } from "./rulesets/EslintCoreRuleset.js"
+import { type EslintPluginEslintCommentsRuleset } from "./rulesets/EslintPluginEslintCommentsRuleset.js"
+import { type EslintPluginFunctionalRuleset } from "./rulesets/EslintPluginFunctionalRuleset.js"
+import { type EslintPluginImportAliasRuleset } from "./rulesets/EslintPluginImportAliasRuleset.js"
+import { type EslintPluginImportRuleset } from "./rulesets/EslintPluginImportRuleset.js"
+import { type EslintPluginNoBarrelFilesRuleset } from "./rulesets/EslintPluginNoBarrelFilesRuleset.js"
+import { type EslintPluginRedundantUndefinedRuleset } from "./rulesets/EslintPluginRedundantUndefinedRuleset.js"
+import { type EslintPluginTypescriptRuleset } from "./rulesets/EslintPluginTypescriptRuleset.js"
+import { type EslintPluginUnicornRuleset } from "./rulesets/EslintPluginUnicornRuleset.js"
 
 /**
  * Constructs a predefined, opinionated flat ESLint configuration from the given presets.
@@ -28,6 +37,7 @@ import {
  *     targetFilePatterns: ["**\/*.@(js|jsx|ts|tsx)"],
  *     tsconfigFiles: "closest-to-each-source-file",
  *     additionalPresets: [],
+ *     overrideRules: {},
  * })
  * ```
  *
@@ -43,39 +53,48 @@ import {
  */
 export function eslintPresets(
 	options: {
-		readonly additionalPresets?: ReadonlyArray<EslintPreset>
+		readonly additionalPresets?: ReadonlyArray<
+			EslintPreset<EslintRuleset<string>>
+		>
+		readonly overrideRules?: Partial<EslintPresetsStandardRuleset>
 		readonly targetFilePatterns?: ReadonlyArray<string>
 		readonly tsconfigFiles?:
 			| ReadonlyArray<string>
 			| "closest-to-each-source-file"
 	} = {},
-): ReadonlyArray<EslintConfig> {
+): ReadonlyArray<EslintPartialConfig<EslintRuleset<string>>> {
 	const { additionalPresets = [], ...standardConfigOptions } = options
 
 	const additionalConfigs = additionalPresets
 		.toSorted(
-			(
-				{ [eslintPresetOrdinal]: first = 0 },
-				{ [eslintPresetOrdinal]: second = 0 },
-			) => first - second,
+			({ presetOrdinal: first = 0 }, { presetOrdinal: second = 0 }) =>
+				first - second,
 		)
 		.map((preset) => {
-			const {
-				[eslintPresetIdentifier]: ignoredIdentifier,
-				[eslintPresetOrdinal]: ignoredOrdinal,
-				...config
-			} = preset
+			const { presetOrdinal: ignoredOrdinal, ...config } = preset
 			return config
 		})
 
-	return [standardEslintConfig(standardConfigOptions), ...additionalConfigs]
+	return [eslintStandardConfig(standardConfigOptions), ...additionalConfigs]
 }
 
-function standardEslintConfig(options: {
+export type EslintPresetsStandardRuleset = EslintCoreRuleset &
+	EslintPluginEslintCommentsRuleset &
+	EslintPluginFunctionalRuleset &
+	EslintPluginImportAliasRuleset &
+	EslintPluginImportRuleset &
+	EslintPluginNoBarrelFilesRuleset &
+	EslintPluginRedundantUndefinedRuleset &
+	EslintPluginTypescriptRuleset &
+	EslintPluginUnicornRuleset
+
+function eslintStandardConfig(options: {
+	readonly overrideRules?: Partial<EslintPresetsStandardRuleset>
 	readonly targetFilePatterns?: ReadonlyArray<string>
 	readonly tsconfigFiles?: ReadonlyArray<string> | "closest-to-each-source-file"
-}): EslintConfig {
+}): EslintCompleteConfig<EslintPresetsStandardRuleset> {
 	const {
+		overrideRules,
 		targetFilePatterns = ["**/*.@(js|jsx|ts|tsx)"],
 		tsconfigFiles = "closest-to-each-source-file",
 	} = options
@@ -3409,9 +3428,14 @@ function standardEslintConfig(options: {
 			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md
 			 */
 			"unicorn/throw-new-error": "error",
+
+			...overrideRules,
 		},
 	}
 }
+
+export type EslintPresetAmbientTypescriptModules =
+	EslintPreset<EslintPresetsStandardRuleset>
 
 /**
  * A predefined, opinionated ESLint configuration for ambient TypeScript modules (i.e. type declaration files).
@@ -3425,23 +3449,22 @@ function standardEslintConfig(options: {
  * ```javascript
  * eslintPresetAmbientTypescriptModules({
  *     targetFilePatterns: ["**\/*.d.ts"],
+ *     overrideRules: {},
  * })
  * ```
  */
 export function eslintPresetAmbientTypescriptModules(
-	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
-): EslintPreset {
-	const eslintPresetName = "eslintPresetAmbientTypescriptModules"
-
-	const { targetFilePatterns = ["**/*.d.ts"] } = options
+	options: {
+		readonly overrideRules?: Partial<
+			EslintPresetAmbientTypescriptModules["rules"]
+		>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetAmbientTypescriptModules {
+	const { overrideRules = {}, targetFilePatterns = ["**/*.d.ts"] } = options
 
 	return {
-		[eslintPresetIdentifier]: eslintPresetName,
 		files: targetFilePatterns,
-		plugins: {
-			import: importPlugin,
-			typescript: typescriptPlugin,
-		},
 		rules: {
 			/**
 			 * Ambient modules may consist solely of ambient type declarations without using any import statements or export declarations.
@@ -3454,9 +3477,13 @@ export function eslintPresetAmbientTypescriptModules(
 			 * @see https://typescript-eslint.io/rules/consistent-type-imports
 			 */
 			"typescript/consistent-type-imports": "off",
+
+			...overrideRules,
 		},
 	}
 }
+
+export type EslintPresetTestData = EslintPreset<EslintPresetsStandardRuleset>
 
 /**
  * A predefined, opinionated ESLint configuration for files that may contain some kind of hardcoded test data.
@@ -3472,27 +3499,26 @@ export function eslintPresetAmbientTypescriptModules(
  *     targetFilePatterns: [
  *         "**\/*.@(spec|specs|stories|test|testdata|tests).@(js|jsx|ts|tsx)",
  *     ],
+ *     overrideRules: {},
  * })
  * ```
  */
 export function eslintPresetTestData(
-	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
-): EslintPreset {
-	const eslintPresetName = "eslintPresetTestData"
-
+	options: {
+		readonly overrideRules?: Partial<EslintPresetTestData["rules"]>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetTestData {
 	const {
+		overrideRules,
 		targetFilePatterns = [
 			"**/*.@(spec|specs|stories|test|testdata|tests).@(js|jsx|ts|tsx)",
 		],
 	} = options
 
 	return {
-		[eslintPresetIdentifier]: eslintPresetName,
 		files: targetFilePatterns,
-		plugins: {
-			typescript: typescriptPlugin,
-			unicorn: unicornPlugin,
-		},
+		plugins: {},
 		rules: {
 			/**
 			 * Test data must be as simple as possible.
@@ -3523,6 +3549,8 @@ export function eslintPresetTestData(
 			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/numeric-separators-style.md
 			 */
 			"unicorn/numeric-separators-style": "off",
+
+			...overrideRules,
 		},
 	}
 }

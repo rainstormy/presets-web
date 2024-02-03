@@ -11,5 +11,5 @@
 		"outDir": "./dist",
 		"tsBuildInfoFile": "../../.cache/typescript/presets-eslint-testing-library.tsbuildinfo",
 	},
-	"include": ["*.ts"],
+	"include": ["rulesets/*.ts", "*.ts"],
 }

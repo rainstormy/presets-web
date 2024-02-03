@@ -1,9 +1,13 @@
 import { eslintPresetJsx } from "@rainstormy/presets-eslint-jsx"
-import {
-	eslintPresetIdentifier,
-	type EslintPreset,
-} from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
+import { type EslintPresetJsx } from "@rainstormy/presets-eslint-jsx/EslintPresetJsx.js"
+import { type EslintPreset } from "@rainstormy/presets-eslint/dist/EslintConfig.js"
 import solidPlugin from "eslint-plugin-solid"
+import { type EslintPluginSolidRuleset } from "./rulesets/EslintPluginSolidRuleset.js"
+
+export type EslintPresetSolid = EslintPreset<
+	EslintPresetJsx["rules"],
+	EslintPluginSolidRuleset
+>
 
 /**
  * A predefined, opinionated ESLint configuration for Solid components.
@@ -17,6 +21,7 @@ import solidPlugin from "eslint-plugin-solid"
  * ```javascript
  * eslintPresetSolid({
  *     targetFilePatterns: ["**\/*.@(jsx|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
@@ -25,15 +30,16 @@ import solidPlugin from "eslint-plugin-solid"
  * @see https://github.com/solidjs-community/eslint-plugin-solid#rules solid/*
  */
 export function eslintPresetSolid(
-	options: { readonly targetFilePatterns?: ReadonlyArray<string> } = {},
-): EslintPreset {
-	const eslintPresetName = "eslintPresetSolid"
-
+	options: {
+		readonly overrideRules?: Partial<EslintPresetSolid["rules"]>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetSolid {
 	const jsxPreset = eslintPresetJsx(options)
+	const { overrideRules } = options
 
 	return {
 		...jsxPreset,
-		[eslintPresetIdentifier]: eslintPresetName,
 		plugins: {
 			...jsxPreset.plugins,
 			solid: solidPlugin,
@@ -76,11 +82,6 @@ export function eslintPresetSolid(
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-uses-vars.md
 			 */
 			"react/jsx-uses-vars": "off",
-
-			/**
-			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md
-			 */
-			"react/no-multi-comp": "error",
 
 			/**
 			 * `solid/self-closing-comp` supersedes this rule.
@@ -184,6 +185,8 @@ export function eslintPresetSolid(
 			 * @see https://github.com/solidjs-community/eslint-plugin-solid/blob/main/docs/style-prop.md
 			 */
 			"solid/style-prop": "error",
+
+			...overrideRules,
 		},
 	}
 }
