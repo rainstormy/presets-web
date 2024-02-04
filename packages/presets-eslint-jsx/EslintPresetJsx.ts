@@ -42,7 +42,7 @@ export function eslintPresetJsx(
 	const { overrideRules, targetFilePatterns = ["**/*.@(jsx|tsx)"] } = options
 
 	return {
-		presetOrdinal: 0, // This preset must be applied before `eslintPresetStorybook` to let the latter override rules correctly.
+		presetOrdinal: 1, // This preset must be applied after `eslintPresetTailwind` to override Tailwind CSS settings correctly.
 		files: targetFilePatterns,
 		plugins: {
 			accessibility: accessibilityPlugin,
@@ -600,6 +600,11 @@ export function eslintPresetJsx(
 			],
 
 			...overrideRules,
+		},
+		settings: {
+			tailwindcss: {
+				classRegex: "[Cc]lass(?:Name)?$",
+			},
 		},
 	}
 }

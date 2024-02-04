@@ -1,9 +1,7 @@
-import {
-	type PrettierPreset,
-} from "@rainstormy/presets-prettier/dist/PrettierConfig.js"
+import { type PrettierPreset } from "@rainstormy/presets-prettier/dist/PrettierConfig.js"
 import cssOrderPlugin from "prettier-plugin-css-order"
 
-type PrettierPresetCss = PrettierPreset & {
+export type PrettierPresetCss = PrettierPreset & {
 	readonly cssDeclarationSorterOrder?:
 		| "alphabetical"
 		| "concentric-css"

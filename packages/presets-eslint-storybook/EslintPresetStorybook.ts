@@ -48,7 +48,7 @@ export function eslintPresetStorybook(
 	} as const
 
 	return {
-		presetOrdinal: 1, // This preset must be applied after `eslintPresetJsx` (or any of its extensions) to override `react/` rules correctly.
+		presetOrdinal: 2, // This preset must be applied after `eslintPresetJsx` (or any of its extensions) to override `react/` rules correctly.
 		files: targetFilePatterns,
 		plugins: {
 			storybook: storybookPlugin,

@@ -28,11 +28,20 @@ export type EslintPresetTailwind = EslintPreset<
  */
 export function eslintPresetTailwind(
 	options: {
+		readonly additionalClassNames?: ReadonlyArray<string>
+		readonly classNameFunctions?: ReadonlyArray<string>
 		readonly overrideRules?: Partial<EslintPresetTailwind["rules"]>
+		readonly tailwindConfigPath?: string
 		readonly targetFilePatterns?: ReadonlyArray<string>
 	} = {},
 ): EslintPresetTailwind {
-	const { overrideRules, targetFilePatterns = ["**/*.@(jsx|tsx)"] } = options
+	const {
+		additionalClassNames,
+		classNameFunctions,
+		overrideRules,
+		tailwindConfigPath,
+		targetFilePatterns = ["**/*.@(jsx|tsx)"],
+	} = options
 
 	return {
 		files: targetFilePatterns,
@@ -75,12 +84,26 @@ export function eslintPresetTailwind(
 
 			/**
 			 * Catches typos in class names.
-			 * Overriding the configuration of this rule is recommended to improve its performance.
 			 * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/master/docs/rules/no-custom-classname.md
 			 */
 			"tailwind/no-custom-classname": "error",
 
 			...overrideRules,
 		},
+		settings: {
+			tailwindcss: {
+				callees: classNameFunctions ?? [],
+				config: tailwindConfigPath,
+				tags: classNameFunctions ?? [],
+				cssFiles: [],
+				whitelist:
+					additionalClassNames?.map(convertClassNameToRegex).join("|") ?? [],
+			},
+		},
 	}
+}
+
+function convertClassNameToRegex(className: string): string {
+	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#escaping
+	return className.replaceAll(/[$()*+.?[\\\]^{|}]/gu, "\\$&")
 }

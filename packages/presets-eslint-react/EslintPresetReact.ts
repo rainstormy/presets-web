@@ -377,6 +377,9 @@ export function eslintPresetReact(
 			react: {
 				version: "detect",
 			},
+			tailwindcss: {
+				classRegex: "[Cc]lassName$",
+			},
 		},
 	}
 }

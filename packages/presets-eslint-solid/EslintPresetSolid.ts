@@ -188,5 +188,10 @@ export function eslintPresetSolid(
 
 			...overrideRules,
 		},
+		settings: {
+			tailwindcss: {
+				classRegex: "[Cc]lass$",
+			},
+		},
 	}
 }

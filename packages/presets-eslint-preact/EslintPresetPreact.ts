@@ -53,6 +53,9 @@ export function eslintPresetPreact(
 			react: {
 				version: "18", // Preact 10 provides an API similar to React 18.
 			},
+			tailwindcss: {
+				classRegex: "[Cc]lass$",
+			},
 		},
 	}
 }
