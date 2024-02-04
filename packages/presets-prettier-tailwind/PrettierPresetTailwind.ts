@@ -1,8 +1,6 @@
 import {
-	prettierPresetIdentifier,
-	prettierPresetOrdinal,
 	type PrettierPreset,
-} from "@rainstormy/presets-prettier/dist/PrettierPresetUtilities.js"
+} from "@rainstormy/presets-prettier/dist/PrettierConfig.js"
 import { options, parsers, printers } from "prettier-plugin-tailwindcss"
 
 const tailwindPlugin = { options, parsers, printers }
@@ -12,8 +10,7 @@ const tailwindPlugin = { options, parsers, printers }
  */
 export function prettierPresetTailwind(): PrettierPreset {
 	return {
-		[prettierPresetIdentifier]: "prettierPresetTailwind",
-		[prettierPresetOrdinal]: Number.MAX_SAFE_INTEGER, // This preset must always be applied last.
+		presetOrdinal: Number.MAX_SAFE_INTEGER, // As recommended by the Tailwind CSS plugin, this preset must always be applied last.
 		plugins: [
 			/**
 			 * @see https://github.com/tailwindlabs/prettier-plugin-tailwindcss

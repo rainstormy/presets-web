@@ -1,11 +1,6 @@
 import organizeImportsPlugin from "prettier-plugin-organize-imports"
 import packageJsonPlugin from "prettier-plugin-packagejson"
-import {
-	prettierPresetIdentifier,
-	prettierPresetOrdinal,
-	type PrettierConfig,
-	type PrettierPreset,
-} from "./PrettierPresetUtilities.js"
+import { type PrettierConfig, type PrettierPreset } from "./PrettierConfig.js"
 
 /**
  * Constructs a predefined, opinionated Prettier configuration from the given Prettier presets.
@@ -31,17 +26,11 @@ export function prettierPresets(
 
 	const additionalConfigs = additionalPresets
 		.toSorted(
-			(
-				{ [prettierPresetOrdinal]: first = 0 },
-				{ [prettierPresetOrdinal]: second = 0 },
-			) => first - second,
+			({ presetOrdinal: first = 0 }, { presetOrdinal: second = 0 }) =>
+				first - second,
 		)
 		.map((preset) => {
-			const {
-				[prettierPresetIdentifier]: ignoredIdentifier,
-				[prettierPresetOrdinal]: ignoredOrdinal,
-				...config
-			} = preset
+			const { presetOrdinal: ignoredOrdinal, ...config } = preset
 			return config
 		})
 

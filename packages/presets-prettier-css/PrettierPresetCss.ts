@@ -1,7 +1,6 @@
 import {
-	prettierPresetIdentifier,
 	type PrettierPreset,
-} from "@rainstormy/presets-prettier/dist/PrettierPresetUtilities.js"
+} from "@rainstormy/presets-prettier/dist/PrettierConfig.js"
 import cssOrderPlugin from "prettier-plugin-css-order"
 
 type PrettierPresetCss = PrettierPreset & {
@@ -17,7 +16,6 @@ type PrettierPresetCss = PrettierPreset & {
  */
 export function prettierPresetCss(): PrettierPresetCss {
 	return {
-		[prettierPresetIdentifier]: "prettierPresetCss",
 		plugins: [
 			/**
 			 * @see https://github.com/Siilwyn/prettier-plugin-css-order
