@@ -2638,6 +2638,11 @@ function eslintStandardConfig(options: {
 			"typescript/prefer-enum-initializers": "off",
 
 			/**
+			 * @see https://typescript-eslint.io/rules/prefer-find
+			 */
+			"typescript/prefer-find": "error",
+
+			/**
 			 * `unicorn/no-for-loop` supersedes this rule.
 			 * @see https://typescript-eslint.io/rules/prefer-for-of
 			 */

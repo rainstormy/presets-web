@@ -100,6 +100,7 @@ export type EslintPluginTypescriptRuleset = EslintPluginRuleset<
 	| "typescript/parameter-properties"
 	| "typescript/prefer-as-const"
 	| "typescript/prefer-enum-initializers"
+	| "typescript/prefer-find"
 	| "typescript/prefer-for-of"
 	| "typescript/prefer-function-type"
 	| "typescript/prefer-includes"
