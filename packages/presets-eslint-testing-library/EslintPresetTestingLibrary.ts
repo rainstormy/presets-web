@@ -1,11 +1,12 @@
-import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
-	eslintPresetIdentifier,
-	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
-} from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
+import { type EslintPresetsStandardRuleset } from "@rainstormy/presets-eslint"
+import { type EslintPreset } from "@rainstormy/presets-eslint/dist/EslintConfig.js"
 import testingLibraryPlugin from "eslint-plugin-testing-library"
+import { type EslintPluginTestingLibraryRuleset } from "./rulesets/EslintPluginTestingLibraryRuleset.js"
+
+export type EslintPresetTestingLibrary = EslintPreset<
+	EslintPresetsStandardRuleset,
+	EslintPluginTestingLibraryRuleset
+>
 
 /**
  * A predefined, opinionated ESLint configuration for files with Testing Library assertions and utilities.
@@ -19,26 +20,24 @@ import testingLibraryPlugin from "eslint-plugin-testing-library"
  * ```javascript
  * eslintPresetTestingLibrary({
  *     targetFilePatterns: ["**\/*.@(spec|specs|test|tests).@(jsx|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
  * @see https://github.com/testing-library/eslint-plugin-testing-library#supported-rules testing-library/*
  */
 export function eslintPresetTestingLibrary(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetTestingLibrary(options: unknown): EslintPreset {
-	const eslintPresetName = "eslintPresetTestingLibrary"
-	const checkedOptions = options ?? {}
-
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const { targetFilePatterns = ["**/*.@(spec|specs|test|tests).@(jsx|tsx)"] } =
-		checkedOptions
+	options: {
+		readonly overrideRules?: Partial<EslintPresetTestingLibrary["rules"]>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetTestingLibrary {
+	const {
+		overrideRules,
+		targetFilePatterns = ["**/*.@(spec|specs|test|tests).@(jsx|tsx)"],
+	} = options
 
 	return {
-		[eslintPresetIdentifier]: eslintPresetName,
 		files: targetFilePatterns,
 		plugins: {
 			"testing-library": testingLibraryPlugin,
@@ -179,6 +178,8 @@ export function eslintPresetTestingLibrary(options: unknown): EslintPreset {
 			 * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/render-result-naming-convention.md
 			 */
 			"testing-library/render-result-naming-convention": "error",
+
+			...overrideRules,
 		},
 	}
 }

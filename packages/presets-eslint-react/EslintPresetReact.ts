@@ -1,12 +1,14 @@
 import { eslintPresetJsx } from "@rainstormy/presets-eslint-jsx"
-import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
-	eslintPresetIdentifier,
-	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
-} from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
+import { type EslintPresetJsx } from "@rainstormy/presets-eslint-jsx/EslintPresetJsx.js"
+import { type EslintPreset } from "@rainstormy/presets-eslint/dist/EslintConfig.js"
 import reactHooksPlugin from "eslint-plugin-react-hooks"
+import { type EslintPluginReactHooksRuleset } from "./rulesets/EslintPluginReactHooksRuleset.js"
+import { type EslintPluginReactRuleset } from "./rulesets/EslintPluginReactRuleset.js"
+
+export type EslintPresetReact = EslintPreset<
+	EslintPresetJsx["rules"],
+	EslintPluginReactHooksRuleset & EslintPluginReactRuleset
+>
 
 /**
  * A predefined, opinionated ESLint configuration for React components.
@@ -20,28 +22,25 @@ import reactHooksPlugin from "eslint-plugin-react-hooks"
  * ```javascript
  * eslintPresetReact({
  *     targetFilePatterns: ["**\/*.@(jsx|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
- * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules jsx-a11y/*
+ * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules accessibility/*
  * @see https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules react/*
  * @see https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks#custom-configuration react-hooks/*
  */
 export function eslintPresetReact(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetReact(options: unknown): EslintPreset {
-	const eslintPresetName = "eslintPresetReact"
-	const checkedOptions = options ?? {}
-
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const jsxPreset = eslintPresetJsx(checkedOptions)
+	options: {
+		readonly overrideRules?: Partial<EslintPresetReact["rules"]>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetReact {
+	const jsxPreset = eslintPresetJsx(options)
+	const { overrideRules } = options
 
 	return {
 		...jsxPreset,
-		[eslintPresetIdentifier]: eslintPresetName,
 		plugins: {
 			...jsxPreset.plugins,
 			"react-hooks": reactHooksPlugin,
@@ -177,14 +176,6 @@ export function eslintPresetReact(options: unknown): EslintPreset {
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md
 			 */
 			"react/no-is-mounted": "off",
-
-			/**
-			 * A strict limitation of one component per file may lead to a larger number of files, causing directories to be less readable.
-			 * Having to separate components into multiple files may also cause some undesirable lack of encapsulation.
-			 * `max-lines` supersedes this rule to keep the size of component files under control.
-			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md
-			 */
-			"react/no-multi-comp": "off",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-namespace.md
@@ -379,10 +370,15 @@ export function eslintPresetReact(options: unknown): EslintPreset {
 			 * @see https://legacy.reactjs.org/docs/hooks-rules.html
 			 */
 			"react-hooks/rules-of-hooks": "error",
+
+			...overrideRules,
 		},
 		settings: {
 			react: {
 				version: "detect",
+			},
+			tailwindcss: {
+				classRegex: "[Cc]lassName$",
 			},
 		},
 	}

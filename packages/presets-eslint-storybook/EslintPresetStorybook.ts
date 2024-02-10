@@ -1,12 +1,13 @@
-import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
-	eslintPresetIdentifier,
-	eslintPresetOrdinal,
-	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
-} from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
+import { type EslintPresetsStandardRuleset } from "@rainstormy/presets-eslint"
+import { type EslintPreset } from "@rainstormy/presets-eslint/dist/EslintConfig.js"
 import storybookPlugin from "eslint-plugin-storybook"
+import { type EslintPluginStorybookConfigurationRuleset } from "./rulesets/EslintPluginStorybookConfigurationRuleset.js"
+import { type EslintPluginStorybookRuleset } from "./rulesets/EslintPluginStorybookRuleset.js"
+
+export type EslintPresetStorybook = EslintPreset<
+	EslintPresetsStandardRuleset,
+	EslintPluginStorybookRuleset
+>
 
 /**
  * A predefined, opinionated ESLint configuration for files with Storybook stories in Component Story Format 3 (CSF3).
@@ -20,38 +21,39 @@ import storybookPlugin from "eslint-plugin-storybook"
  * ```javascript
  * eslintPresetStorybook({
  *     targetFilePatterns: ["**\/*.stories.@(js|jsx|ts|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
  * @see https://github.com/storybookjs/eslint-plugin-storybook storybook/*
  */
 export function eslintPresetStorybook(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetStorybook(options: unknown): EslintPreset {
-	const eslintPresetName = "eslintPresetStorybook"
-	const checkedOptions = options ?? {}
+	options: {
+		readonly overrideRules?: Partial<EslintPresetStorybook["rules"]>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetStorybook {
+	const {
+		overrideRules,
+		targetFilePatterns = ["**/*.stories.@(js|jsx|ts|tsx)"],
+	} = options
 
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const { targetFilePatterns = ["**/*.stories.@(js|jsx|ts|tsx)"] } =
-		checkedOptions
+	// Use a separate constant to disable `react/` rules without introducing a dependency on `@rainstormy/presets-eslint-jsx` to satisfy the `EslintPresetStorybook` type declaration.
+	const overrideReactRules = {
+		/**
+		 * The `render` function in stories uses prop spreading to provide args to components.
+		 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
+		 */
+		"react/jsx-props-no-spreading": "off",
+	} as const
 
 	return {
-		[eslintPresetIdentifier]: eslintPresetName,
-		[eslintPresetOrdinal]: 1, // This preset must be applied after `eslintPresetJsx` (or any of its extensions) to override rules correctly.
+		presetOrdinal: 2, // This preset must be applied after `eslintPresetJsx` (or any of its extensions) to override `react/` rules correctly.
 		files: targetFilePatterns,
 		plugins: {
 			storybook: storybookPlugin,
 		},
 		rules: {
-			/**
-			 * The `render` function in stories uses prop spreading to provide args to components.
-			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
-			 */
-			"react/jsx-props-no-spreading": "off",
-
 			/**
 			 * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/await-interactions.md
 			 */
@@ -114,7 +116,7 @@ export function eslintPresetStorybook(options: unknown): EslintPreset {
 
 			/**
 			 * Inherited from `presets-jsx`.
-			 * By convention, stories are named in PascalCase.
+			 * By convention, stories are named in PascalCase. A story name must be prefixed with an underscore in order to begin with a number.
 			 * @see https://typescript-eslint.io/rules/naming-convention
 			 */
 			"typescript/naming-convention": [
@@ -138,15 +140,23 @@ export function eslintPresetStorybook(options: unknown): EslintPreset {
 					trailingUnderscore: "forbid",
 				},
 				{
-					selector: "variableLike",
+					selector: ["import", "variableLike"],
 					format: ["strictCamelCase", "PascalCase"],
-					leadingUnderscore: "forbid",
+					leadingUnderscore: "allow",
 					trailingUnderscore: "forbid",
 				},
 			],
+
+			...overrideReactRules,
+			...overrideRules,
 		},
 	}
 }
+
+export type EslintPresetStorybookConfiguration = EslintPreset<
+	EslintPresetsStandardRuleset,
+	EslintPluginStorybookConfigurationRuleset
+>
 
 /**
  * A predefined, opinionated ESLint configuration for Storybook configuration files.
@@ -160,28 +170,26 @@ export function eslintPresetStorybook(options: unknown): EslintPreset {
  * ```javascript
  * eslintPresetStorybookConfiguration({
  *     targetFilePatterns: [".storybook/**\/*.@(js|jsx|ts|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
  * @see https://github.com/storybookjs/eslint-plugin-storybook storybook/*
  */
 export function eslintPresetStorybookConfiguration(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetStorybookConfiguration(
-	options: unknown,
-): EslintPreset {
-	const eslintPresetName = "eslintPresetStorybookConfiguration"
-	const checkedOptions = options ?? {}
-
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const { targetFilePatterns = [".storybook/**/*.@(js|jsx|ts|tsx)"] } =
-		checkedOptions
+	options: {
+		readonly overrideRules?: Partial<
+			EslintPresetStorybookConfiguration["rules"]
+		>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetStorybookConfiguration {
+	const {
+		overrideRules,
+		targetFilePatterns = [".storybook/**/*.@(js|jsx|ts|tsx)"],
+	} = options
 
 	return {
-		[eslintPresetIdentifier]: eslintPresetName,
 		files: targetFilePatterns,
 		plugins: {
 			storybook: storybookPlugin,
@@ -191,6 +199,8 @@ export function eslintPresetStorybookConfiguration(
 			 * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-uninstalled-addons.md
 			 */
 			"storybook/no-uninstalled-addons": "error",
+
+			...overrideRules,
 		},
 	}
 }

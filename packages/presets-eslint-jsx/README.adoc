@@ -6,7 +6,6 @@ This package provides a predefined, opinionated https://eslint.org[ESLint] confi
 
 [CAUTION]
 ====
-* For a Next.js app, use https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-next[@rainstormy/presets-eslint-next] instead.
 * For Preact components, use https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-preact[@rainstormy/presets-eslint-preact] instead.
 * For React components, use https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-react[@rainstormy/presets-eslint-react] instead.
 * For Solid components, use https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-solid[@rainstormy/presets-eslint-solid] instead.
@@ -14,7 +13,7 @@ This package provides a predefined, opinionated https://eslint.org[ESLint] confi
 
 This preset configures a subset of rules from the following plugins, which are installed along with the preset package:
 
-* https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules[eslint-plugin-jsx-a11y] (with rule names prefixed by `jsx-a11y/`)
+* https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules[eslint-plugin-jsx-a11y] (with rule names prefixed by `accessibility/`)
 * https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules[eslint-plugin-react] (only for generic JSX rules, with rule names prefixed by `react/`)
 
 == Installation
@@ -63,7 +62,7 @@ For example:
 [source,javascript]
 ----
 import {
-	eslintPresetAmbientTypeScriptModules,
+	eslintPresetAmbientTypescriptModules,
 	eslintPresets,
 } from "@rainstormy/presets-eslint"
 import { eslintPresetJsx } from "@rainstormy/presets-eslint-jsx"
@@ -72,7 +71,7 @@ import qwikPlugin from "eslint-plugin-qwik"
 export default [
 	...eslintPresets({
 		additionalPresets: [
-			eslintPresetAmbientTypeScriptModules(),
+			eslintPresetAmbientTypescriptModules(),
 			eslintPresetJsx(),
 		],
 	}),

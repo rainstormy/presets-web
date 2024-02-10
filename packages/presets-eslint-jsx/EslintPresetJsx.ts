@@ -1,18 +1,18 @@
-import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
-	eslintPresetIdentifier,
-	eslintPresetOrdinal,
-	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
-} from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
-import jsxA11yPlugin from "eslint-plugin-jsx-a11y"
+import { type EslintPresetsStandardRuleset } from "@rainstormy/presets-eslint"
+import { type EslintPreset } from "@rainstormy/presets-eslint/dist/EslintConfig.js"
+import accessibilityPlugin from "eslint-plugin-jsx-a11y"
 import reactPlugin from "eslint-plugin-react"
+import { type EslintPluginAccessibilityRuleset } from "./rulesets/EslintPluginAccessibilityRuleset.js"
+import { type EslintPluginReactJsxRuleset } from "./rulesets/EslintPluginReactJsxRuleset.js"
+
+export type EslintPresetJsx = EslintPreset<
+	EslintPresetsStandardRuleset,
+	EslintPluginAccessibilityRuleset & EslintPluginReactJsxRuleset
+>
 
 /**
  * A predefined, opinionated ESLint configuration for JSX components in general.
  *
- * - For a Next.js app, use [`@rainstormy/presets-eslint-next`](https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-next) instead.
  * - For Preact components, use [`@rainstormy/presets-eslint-preact`](https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-preact) instead.
  * - For React components, use [`@rainstormy/presets-eslint-react`](https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-react) instead.
  * - For Solid components, use [`@rainstormy/presets-eslint-solid`](https://github.com/rainstormy/presets-web/tree/main/packages/presets-eslint-solid) instead.
@@ -26,30 +26,26 @@ import reactPlugin from "eslint-plugin-react"
  * ```javascript
  * eslintPresetJsx({
  *     targetFilePatterns: ["**\/*.@(jsx|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
- * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules jsx-a11y/*
+ * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules accessibility/*
  * @see https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules react/*
  */
 export function eslintPresetJsx(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetJsx(options: unknown): EslintPreset {
-	const eslintPresetName = "eslintPresetJsx"
-	const checkedOptions = options ?? {}
-
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const { targetFilePatterns = ["**/*.@(jsx|tsx)"] } = checkedOptions
+	options: {
+		readonly overrideRules?: Partial<EslintPresetJsx["rules"]>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetJsx {
+	const { overrideRules, targetFilePatterns = ["**/*.@(jsx|tsx)"] } = options
 
 	return {
-		[eslintPresetIdentifier]: eslintPresetName,
-		[eslintPresetOrdinal]: 0, // This preset must be applied before `eslintPresetStorybook` to let the latter override rules correctly.
+		presetOrdinal: 1, // This preset must be applied after `eslintPresetTailwind` to override Tailwind CSS settings correctly.
 		files: targetFilePatterns,
 		plugins: {
-			"jsx-a11y": jsxA11yPlugin,
+			accessibility: accessibilityPlugin,
 			react: reactPlugin,
 		},
 		rules: {
@@ -62,188 +58,188 @@ export function eslintPresetJsx(options: unknown): EslintPreset {
 			"max-lines-per-function": "off",
 
 			/**
-			 * Components may have render props and event handler props.
-			 * @see https://github.com/eslint-functional/eslint-plugin-functional/blob/main/docs/rules/no-mixed-types.md
-			 */
-			"functional/no-mixed-types": "off",
-
-			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/alt-text.md
 			 */
-			"jsx-a11y/alt-text": "error",
+			"accessibility/alt-text": "error",
 
 			/**
 			 * This rule has not been configured, as it supports only the English locale by default.
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/anchor-ambiguous-text.md
 			 */
-			"jsx-a11y/anchor-ambiguous-text": "off",
+			"accessibility/anchor-ambiguous-text": "off",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/anchor-has-content.md
 			 */
-			"jsx-a11y/anchor-has-content": "error",
+			"accessibility/anchor-has-content": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/anchor-is-valid.md
 			 */
-			"jsx-a11y/anchor-is-valid": "error",
+			"accessibility/anchor-is-valid": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/aria-activedescendant-has-tabindex.md
 			 */
-			"jsx-a11y/aria-activedescendant-has-tabindex": "error",
+			"accessibility/aria-activedescendant-has-tabindex": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/aria-props.md
 			 */
-			"jsx-a11y/aria-props": "error",
+			"accessibility/aria-props": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/aria-proptypes.md
 			 */
-			"jsx-a11y/aria-proptypes": "error",
+			"accessibility/aria-proptypes": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/aria-role.md
 			 */
-			"jsx-a11y/aria-role": "error",
+			"accessibility/aria-role": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/aria-unsupported-elements.md
 			 */
-			"jsx-a11y/aria-unsupported-elements": "error",
+			"accessibility/aria-unsupported-elements": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/autocomplete-valid.md
 			 */
-			"jsx-a11y/autocomplete-valid": "error",
+			"accessibility/autocomplete-valid": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/click-events-have-key-events.md
 			 */
-			"jsx-a11y/click-events-have-key-events": "error",
+			"accessibility/click-events-have-key-events": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/control-has-associated-label.md
 			 */
-			"jsx-a11y/control-has-associated-label": "error",
+			"accessibility/control-has-associated-label": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/heading-has-content.md
 			 */
-			"jsx-a11y/heading-has-content": "error",
+			"accessibility/heading-has-content": "error",
 
 			/**
-			 * `jsx-a11y/lang` supersedes this rule.
+			 * `accessibility/lang` supersedes this rule.
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/html-has-lang.md
 			 */
-			"jsx-a11y/html-has-lang": "off",
+			"accessibility/html-has-lang": "off",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/iframe-has-title.md
 			 */
-			"jsx-a11y/iframe-has-title": "error",
+			"accessibility/iframe-has-title": "error",
 
 			/**
 			 * This rule has not been configured, as it supports only the English locale by default.
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/img-redundant-alt.md
 			 */
-			"jsx-a11y/img-redundant-alt": "off",
+			"accessibility/img-redundant-alt": "off",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/interactive-supports-focus.md
 			 */
-			"jsx-a11y/interactive-supports-focus": "error",
+			"accessibility/interactive-supports-focus": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/label-has-associated-control.md
 			 */
-			"jsx-a11y/label-has-associated-control": "error",
+			"accessibility/label-has-associated-control": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/lang.md
 			 */
-			"jsx-a11y/lang": "error",
+			"accessibility/lang": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/media-has-caption.md
 			 */
-			"jsx-a11y/media-has-caption": "error",
+			"accessibility/media-has-caption": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/mouse-events-have-key-events.md
 			 */
-			"jsx-a11y/mouse-events-have-key-events": "error",
+			"accessibility/mouse-events-have-key-events": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/no-access-key.md
 			 */
-			"jsx-a11y/no-access-key": "error",
+			"accessibility/no-access-key": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/no-autofocus.md
 			 */
-			"jsx-a11y/no-autofocus": "error",
+			"accessibility/no-autofocus": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/no-distracting-elements.md
 			 */
-			"jsx-a11y/no-distracting-elements": "error",
+			"accessibility/no-distracting-elements": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/no-interactive-element-to-noninteractive-role.md
 			 */
-			"jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
+			"accessibility/no-interactive-element-to-noninteractive-role": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/no-noninteractive-element-interactions.md
 			 */
-			"jsx-a11y/no-noninteractive-element-interactions": "error",
+			"accessibility/no-noninteractive-element-interactions": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/no-noninteractive-element-to-interactive-role.md
 			 */
-			"jsx-a11y/no-noninteractive-element-to-interactive-role": "error",
+			"accessibility/no-noninteractive-element-to-interactive-role": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/no-noninteractive-tabindex.md
 			 */
-			"jsx-a11y/no-noninteractive-tabindex": "error",
+			"accessibility/no-noninteractive-tabindex": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/no-redundant-roles.md
 			 */
-			"jsx-a11y/no-redundant-roles": "error",
+			"accessibility/no-redundant-roles": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/no-static-element-interactions.md
 			 */
-			"jsx-a11y/no-static-element-interactions": "error",
+			"accessibility/no-static-element-interactions": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/prefer-tag-over-role.md
 			 */
-			"jsx-a11y/prefer-tag-over-role": "error",
+			"accessibility/prefer-tag-over-role": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/role-has-required-aria-props.md
 			 */
-			"jsx-a11y/role-has-required-aria-props": "error",
+			"accessibility/role-has-required-aria-props": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/role-supports-aria-props.md
 			 */
-			"jsx-a11y/role-supports-aria-props": "error",
+			"accessibility/role-supports-aria-props": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/scope.md
 			 */
-			"jsx-a11y/scope": "error",
+			"accessibility/scope": "error",
 
 			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/tabindex-no-positive.md
 			 */
-			"jsx-a11y/tabindex-no-positive": "error",
+			"accessibility/tabindex-no-positive": "error",
+
+			/**
+			 * Components may have render props and event handler props.
+			 * @see https://github.com/eslint-functional/eslint-plugin-functional/blob/main/docs/rules/no-mixed-types.md
+			 */
+			"functional/no-mixed-types": "off",
 
 			/**
 			 * Usual boolean naming conventions encourage prefixes such as `is` and `has`.
@@ -489,6 +485,14 @@ export function eslintPresetJsx(options: unknown): EslintPreset {
 			"react/no-adjacent-inline-elements": "error",
 
 			/**
+			 * A strict limitation of one component per file may lead to a larger number of files, causing directories to be less readable.
+			 * Having to separate components into multiple files may also cause some undesirable lack of encapsulation.
+			 * `max-lines` supersedes this rule to keep the size of component files under control.
+			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md
+			 */
+			"react/no-multi-comp": "off",
+
+			/**
 			 * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unknown-property.md
 			 */
 			"react/no-unknown-property": [
@@ -563,7 +567,8 @@ export function eslintPresetJsx(options: unknown): EslintPreset {
 
 			/**
 			 * Inherited from `presets-eslint`.
-			 * By convention, components are named in PascalCase to distinguish them from native HTML elements. This naming convention covers local variables, too, as they may contain component instances or references.
+			 * By convention, components are named in PascalCase to distinguish them from native HTML elements.
+			 * This naming convention covers local variables and default import statements, too, as they may contain component instances or references.
 			 * @see https://typescript-eslint.io/rules/naming-convention
 			 */
 			"typescript/naming-convention": [
@@ -587,12 +592,19 @@ export function eslintPresetJsx(options: unknown): EslintPreset {
 					trailingUnderscore: "forbid",
 				},
 				{
-					selector: "variableLike",
+					selector: ["import", "variableLike"],
 					format: ["strictCamelCase", "PascalCase"],
 					leadingUnderscore: "forbid",
 					trailingUnderscore: "forbid",
 				},
 			],
+
+			...overrideRules,
+		},
+		settings: {
+			tailwindcss: {
+				classRegex: "[Cc]lass(?:Name)?$",
+			},
 		},
 	}
 }

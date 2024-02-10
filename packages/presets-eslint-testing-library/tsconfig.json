@@ -3,13 +3,13 @@
 	"extends": [
 		"../presets-typescript/check",
 		"../presets-typescript/generate",
-		"../presets-typescript/target-node-es2023",
+		"../presets-typescript/target-node-es2023"
 	],
 	"compilerOptions": {
 		"composite": true,
 		"incremental": true,
 		"outDir": "./dist",
-		"tsBuildInfoFile": "../../.cache/typescript/presets-eslint-testing-library.tsbuildinfo",
+		"tsBuildInfoFile": "../../.cache/typescript/presets-eslint-testing-library.tsbuildinfo"
 	},
-	"include": ["*.ts"],
+	"include": ["rulesets/*.ts", "*.ts"]
 }

@@ -6,7 +6,7 @@ This package provides a predefined, opinionated https://eslint.org[ESLint] confi
 
 This preset configures a subset of rules from the following plugins, which are installed along with the preset package:
 
-* https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules[eslint-plugin-jsx-a11y] (with rule names prefixed by `jsx-a11y/`)
+* https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules[eslint-plugin-jsx-a11y] (with rule names prefixed by `accessibility/`)
 * https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules[eslint-plugin-react] (only for generic JSX rules, with rule names prefixed by `react/`)
 * https://github.com/solidjs-community/eslint-plugin-solid#rules[eslint-plugin-solid] (with rule names prefixed by `solid/`)
 
@@ -52,28 +52,51 @@ export default eslintPresets({
 })
 ----
 
-=== In Combination with Storybook, Tailwind CSS, and Testing Library
+=== In Combination with Tailwind CSS
 For example (with the default options applied):
 
 [source,javascript]
 ----
 import {
-	eslintPresetAmbientTypeScriptModules,
+	eslintPresetAmbientTypescriptModules,
+	eslintPresets,
+} from "@rainstormy/presets-eslint"
+import { eslintPresetSolid } from "@rainstormy/presets-eslint-solid"
+import { eslintPresetTailwind } from "@rainstormy/presets-eslint-tailwind"
+
+export default eslintPresets({
+	additionalPresets: [
+		eslintPresetAmbientTypescriptModules(),
+		eslintPresetSolid(),
+		eslintPresetTailwind(),
+	],
+})
+----
+
+=== In Combination with Storybook, Testing Library, and Vitest
+For example (with the default options applied):
+
+[source,javascript]
+----
+import {
+	eslintPresetAmbientTypescriptModules,
 	eslintPresetTestData,
 	eslintPresets,
 } from "@rainstormy/presets-eslint"
 import { eslintPresetSolid } from "@rainstormy/presets-eslint-solid"
-import { eslintPresetStorybook } from "@rainstormy/presets-eslint-storybook"
-import { eslintPresetTailwind } from "@rainstormy/presets-eslint-tailwind"
+import {
+	eslintPresetStorybook,
+	eslintPresetStorybookConfiguration,
+} from "@rainstormy/presets-eslint-storybook"
 import { eslintPresetTestingLibrary } from "@rainstormy/presets-eslint-testing-library"
 import { eslintPresetVitest } from "@rainstormy/presets-eslint-vitest"
 
 export default eslintPresets({
 	additionalPresets: [
-		eslintPresetAmbientTypeScriptModules(),
+		eslintPresetAmbientTypescriptModules(),
 		eslintPresetSolid(),
 		eslintPresetStorybook(),
-		eslintPresetTailwind(),
+		eslintPresetStorybookConfiguration(),
 		eslintPresetTestData(),
 		eslintPresetTestingLibrary(),
 		eslintPresetVitest(),

@@ -1,15 +1,15 @@
 import nextPlugin from "@next/eslint-plugin-next"
-import { eslintPresetReact } from "@rainstormy/presets-eslint-react"
-import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
-	eslintPresetIdentifier,
-	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
-} from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
+import { type EslintPresetsStandardRuleset } from "@rainstormy/presets-eslint"
+import { type EslintPreset } from "@rainstormy/presets-eslint/dist/EslintConfig.js"
+import { type EslintPluginNextRuleset } from "./rulesets/EslintPluginNextRuleset.js"
+
+export type EslintPresetNext = EslintPreset<
+	EslintPresetsStandardRuleset,
+	EslintPluginNextRuleset
+>
 
 /**
- * A predefined, opinionated ESLint configuration for React components in a Next.js app.
+ * A predefined, opinionated ESLint configuration for Next.js apps.
  *
  * ```javascript
  * eslintPresetNext()
@@ -19,32 +19,33 @@ import {
  *
  * ```javascript
  * eslintPresetNext({
- *     targetFilePatterns: ["**\/*.@(jsx|tsx)"],
+ *     targetFilePatterns: ["**\/*.@(js|jsx|ts|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
  * @see https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-plugin next/*
  */
 export function eslintPresetNext(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetNext(options: unknown): EslintPreset {
-	const eslintPresetName = "eslintPresetNext"
-	const checkedOptions = options ?? {}
-
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const reactPreset = eslintPresetReact(checkedOptions)
+	options: {
+		readonly overrideRules?: Partial<EslintPresetNext["rules"]>
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetNext {
+	const { overrideRules, targetFilePatterns = ["**/*.@(js|jsx|ts|tsx)"] } =
+		options
 
 	return {
-		...reactPreset,
-		[eslintPresetIdentifier]: eslintPresetName,
+		files: targetFilePatterns,
 		plugins: {
 			next: nextPlugin,
 		},
 		rules: {
-			...reactPreset.rules,
+			/**
+			 * Next.js does not provide a polyfill for the `globalThis` property.
+			 * @see https://eslint.org/docs/latest/rules/no-undef
+			 */
+			"no-undef": "off",
 
 			/**
 			 * @see https://nextjs.org/docs/messages/google-font-display
@@ -150,6 +151,14 @@ export function eslintPresetNext(options: unknown): EslintPreset {
 			 * @see https://nextjs.org/docs/messages/no-unwanted-polyfillio
 			 */
 			"next/no-unwanted-polyfillio": "error",
+
+			/**
+			 * The Edge runtime does not support the `node:` protocol in import statements.
+			 * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md
+			 */
+			"unicorn/prefer-node-protocol": "off",
+
+			...overrideRules,
 		},
 	}
 }

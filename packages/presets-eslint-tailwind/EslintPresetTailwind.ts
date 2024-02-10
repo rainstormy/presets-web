@@ -1,11 +1,12 @@
-import {
-	assertOptions,
-	assertOptionsTargetFilePatterns,
-	eslintPresetIdentifier,
-	type EslintPreset,
-	type EslintPresetOptionsTargetFilePatterns,
-} from "@rainstormy/presets-eslint/dist/EslintPresetUtilities.js"
+import { type EslintPresetsStandardRuleset } from "@rainstormy/presets-eslint"
+import { type EslintPreset } from "@rainstormy/presets-eslint/dist/EslintConfig.js"
 import tailwindPlugin from "eslint-plugin-tailwindcss"
+import { type EslintPluginTailwindRuleset } from "./rulesets/EslintPluginTailwindRuleset.js"
+
+export type EslintPresetTailwind = EslintPreset<
+	EslintPresetsStandardRuleset,
+	EslintPluginTailwindRuleset
+>
 
 /**
  * A predefined, opinionated ESLint configuration for JSX components with Tailwind CSS classes.
@@ -19,25 +20,30 @@ import tailwindPlugin from "eslint-plugin-tailwindcss"
  * ```javascript
  * eslintPresetTailwind({
  *     targetFilePatterns: ["**\/*.@(jsx|tsx)"],
+ *     overrideRules: {},
  * })
  * ```
  *
  * @see https://github.com/francoismassart/eslint-plugin-tailwindcss#supported-rules tailwind/*
  */
 export function eslintPresetTailwind(
-	options?: EslintPresetOptionsTargetFilePatterns,
-): EslintPreset
-export function eslintPresetTailwind(options: unknown): EslintPreset {
-	const eslintPresetName = "eslintPresetTailwind"
-	const checkedOptions = options ?? {}
-
-	assertOptions(checkedOptions, eslintPresetName)
-	assertOptionsTargetFilePatterns(checkedOptions, eslintPresetName)
-
-	const { targetFilePatterns = ["**/*.@(jsx|tsx)"] } = checkedOptions
+	options: {
+		readonly additionalClassNames?: ReadonlyArray<string>
+		readonly classNameFunctions?: ReadonlyArray<string>
+		readonly overrideRules?: Partial<EslintPresetTailwind["rules"]>
+		readonly tailwindConfigPath?: string
+		readonly targetFilePatterns?: ReadonlyArray<string>
+	} = {},
+): EslintPresetTailwind {
+	const {
+		additionalClassNames,
+		classNameFunctions,
+		overrideRules,
+		tailwindConfigPath,
+		targetFilePatterns = ["**/*.@(jsx|tsx)"],
+	} = options
 
 	return {
-		[eslintPresetIdentifier]: eslintPresetName,
 		files: targetFilePatterns,
 		plugins: {
 			tailwind: tailwindPlugin,
@@ -78,10 +84,26 @@ export function eslintPresetTailwind(options: unknown): EslintPreset {
 
 			/**
 			 * Catches typos in class names.
-			 * Overriding the configuration of this rule is recommended to improve its performance.
 			 * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/master/docs/rules/no-custom-classname.md
 			 */
 			"tailwind/no-custom-classname": "error",
+
+			...overrideRules,
+		},
+		settings: {
+			tailwindcss: {
+				callees: classNameFunctions ?? [],
+				config: tailwindConfigPath,
+				tags: classNameFunctions ?? [],
+				cssFiles: [],
+				whitelist:
+					additionalClassNames?.map(convertClassNameToRegex).join("|") ?? [],
+			},
 		},
 	}
+}
+
+function convertClassNameToRegex(className: string): string {
+	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#escaping
+	return className.replaceAll(/[$()*+.?[\\\]^{|}]/gu, "\\$&")
 }
