@@ -23,6 +23,18 @@
 			"script": "ready",
 			"problemMatcher": [],
 			"label": "ready"
+		},
+		{
+			"type": "npm",
+			"script": "test",
+			"problemMatcher": [],
+			"label": "test"
+		},
+		{
+			"type": "npm",
+			"script": "vi",
+			"problemMatcher": [],
+			"label": "vi"
 		}
 	]
 }
