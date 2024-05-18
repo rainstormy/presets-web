@@ -9,7 +9,7 @@
 #   gh run watch
 #
 # It can be triggered manually on any branch via the GitHub web interface:
-#   https://github.com/spdiswal/starter-web/actions/workflows/ci.yml
+#   https://github.com/rainstormy/presets-web/actions/workflows/ci.yml
 
 name: CI
 
@@ -29,48 +29,18 @@ concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-# Minimise the permission scope of the default GitHub access token in this workflow.
-# https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#permissions
-permissions:
-  contents: read # Allow all jobs to check out the repository.
-
 # All third-party actions are pinned to a specific commit SHA for security reasons.
-# https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
+# https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions
 jobs:
-  can-build-project:
-    name: Can build the project
-    runs-on: ubuntu-22.04
-    timeout-minutes: 1
-    steps:
-      - name: Check out the repository
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # https://github.com/actions/checkout/releases/tag/v4.1.1
-        #
-      - name: Skip if already built
-        id: skip-if-already-built
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # https://github.com/actions/cache/releases/tag/v4.0.2
-        with:
-          # If an exact cache hit occurs, another workflow run on this branch has already built the project in the current configuration, and we can skip the rest of the job.
-          # This is especially useful upon rebasing interactively.
-          #
-          # CAUTION: The cache key is repeated in `.github/actions/build-artifacts/action.yml` to restore the build artifacts.
-          key: can-build-project-${{ runner.os }}-sha256:${{ hashFiles('app/**/*', '!app/**/*.stories.*', '!app/**/*.testdata.*', '!app/**/*.tests.*', '*.ts', '.nvmrc', 'pnpm-lock.yaml', 'tsconfig.json') }}
-          path: dist/
-        #
-      - name: Install pnpm and third-party dependencies
-        if: steps.skip-if-already-built.outputs.cache-hit != 'true'
-        uses: ./.github/actions/pnpm
-        #
-      - name: Build the project
-        if: steps.skip-if-already-built.outputs.cache-hit != 'true'
-        run: pnpm build
-
   has-clean-code:
     name: Has clean code
     runs-on: ubuntu-22.04
     timeout-minutes: 1
+    permissions:
+      contents: read # Allow the job to check out the repository.
     steps:
       - name: Check out the repository
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # https://github.com/actions/checkout/releases/tag/v4.1.1
+        uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b # https://github.com/actions/checkout/releases/tag/v4.1.5
         #
       - name: Skip if already verified
         id: skip-if-already-verified
@@ -78,41 +48,20 @@ jobs:
         with:
           # If an exact cache hit occurs, another workflow run on this branch has already verified that the source code is clean in the current configuration, and we can skip the rest of the job.
           # This is especially useful upon rebasing interactively.
-          key: has-clean-code-${{ runner.os }}-sha256:${{ hashFiles('.github/**/*', '.storybook/**/*', '.vscode/*.json', 'app/**/*', 'docs/**/*.md', '*.json', '*.ts', '.nvmrc', 'pnpm-lock.yaml') }}
+          key: has-clean-code-${{ runner.os }}-sha256:${{ hashFiles('.github/**/*', '.vscode/*.json', 'packages/*/*.json', '*.json', '.nvmrc', 'pnpm-lock.yaml') }}
           path: node_modules/.cache/typescript/
         #
       - name: Install pnpm and third-party dependencies
         if: steps.skip-if-already-verified.outputs.cache-hit != 'true'
         uses: ./.github/actions/pnpm
         #
-      - name: Verify that the source code is type-safe and well-formatted
+      - name: Verify that the source code is type-safe
         if: steps.skip-if-already-verified.outputs.cache-hit != 'true'
-        run: pnpm check
-
-  satisfies-unit-tests:
-    name: Satisfies unit tests
-    runs-on: ubuntu-22.04
-    timeout-minutes: 1
-    steps:
-      - name: Check out the repository
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # https://github.com/actions/checkout/releases/tag/v4.1.1
+        run: pnpm check.types
         #
-      - name: Skip if already verified
-        id: skip-if-already-verified
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # https://github.com/actions/cache/releases/tag/v4.0.2
-        with:
-          # If an exact cache hit occurs, another workflow run on this branch has already verified that the source code satisfies the unit tests in the current configuration, and we can skip the rest of the job.
-          # This is especially useful upon rebasing interactively.
-          key: satisfies-unit-tests-${{ runner.os }}-sha256:${{ hashFiles('app/**/*', '!app/**/*.stories.*', '*.ts', '.nvmrc', 'pnpm-lock.yaml', 'tsconfig.json') }}
-          path: node_modules/.cache/vitest/
-        #
-      - name: Install pnpm and third-party dependencies
+      - name: Verify that the source code is well-formatted
         if: steps.skip-if-already-verified.outputs.cache-hit != 'true'
-        uses: ./.github/actions/pnpm
-        #
-      - name: Verify that the source code satisfies the unit tests
-        if: steps.skip-if-already-verified.outputs.cache-hit != 'true'
-        run: pnpm test
+        run: pnpm check.format
 
   has-standardised-commit-messages:
     name: Has standardised commit messages
@@ -144,7 +93,9 @@ jobs:
             no-trailing-punctuation-in-subject-lines,
             no-unexpected-whitespace,
             unique-subject-lines,
-          acknowledged-author-email-addresses--patterns: '\d+\+.+@users\.noreply\.github\.com' # A personal noreply email address on GitHub.
-          acknowledged-author-names--patterns: '\p{Lu}.*\s.+' # A name of at least two words where the first word starts with a capital letter.
-          acknowledged-committer-email-addresses--patterns: '\d+\+.+@users\.noreply\.github\.com' # A personal noreply email address on GitHub.
-          acknowledged-committer-names--patterns: '\p{Lu}.*\s.+' # A name of at least two words where the first word starts with a capital letter.
+          # The author and committer email address must be on the form `id+username@users.noreply.github.com` or `noreply@github.com` (only for reverting pull requests).
+          acknowledged-author-email-addresses--patterns: '\d+\+.+@users\.noreply\.github\.com'
+          acknowledged-committer-email-addresses--patterns: '\d+\+.+@users\.noreply\.github\.com noreply@github\.com'
+          # The author and committer name must consist of at least two words where the first word starts with a capital letter, or it should be 'GitHub' (only for reverting pull requests).
+          acknowledged-author-names--patterns: '\p{Lu}.*\s.+'
+          acknowledged-committer-names--patterns: '\p{Lu}.*\s.+ GitHub'

@@ -1,10 +1,10 @@
 {
 	"$schema": "https://json.schemastore.org/package.json",
 	"private": true,
-	"bugs": "https://github.com/spdiswal/starter-web/issues",
+	"bugs": "https://github.com/rainstormy/presets-web/issues",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/spdiswal/starter-web.git"
+		"url": "git+https://github.com/rainstormy/presets-web.git"
 	},
 	"license": "MIT",
 	"author": "Steffen Diswal <11992328+spdiswal@users.noreply.github.com> (https://www.disw.dk)",
@@ -14,37 +14,19 @@
 		"node": ">=20.11.1"
 	},
 	"scripts": {
-		"check": "biome ci . && tsc",
+		"check": "biome check --error-on-warnings .",
 		"fmt": "biome check --apply .",
 		"no-verify": "pnpm lefthook uninstall",
-		"ready": "pnpm install && pnpm lefthook install",
-		"test": "vitest run",
-		"vi": "vitest watch --coverage --ui"
-	},
-	"dependencies": {
-		"tslib": "2.6.2"
-	},
-	"// dependencies": {
-		"tslib": "This library optimises TypeScript applications when the `importHelpers` option is enabled in `tsconfig.json`."
+		"ready": "pnpm install && pnpm lefthook install"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.6.1",
 		"@rainstormy/updraft": "1.0.0",
-		"@types/node": "20.11.30",
-		"@vitest/coverage-v8": "1.4.0",
-		"@vitest/ui": "1.4.0",
-		"lefthook": "1.6.7",
-		"typescript": "5.4.3",
-		"vitest": "1.4.0"
+		"lefthook": "1.6.7"
 	},
 	"// devDependencies": {
 		"@biomejs/biome": "Biome is an opinionated linter and code formatter.",
 		"@rainstormy/updraft": "Updraft is a release automation tool.",
-		"@types/node": "These type definitions cover Node.js modules.",
-		"@vitest/coverage-v8": "This Vitest plugin reports code coverage.",
-		"@vitest/ui": "This Vitest plugin provides a test overview in the web browser.",
-		"lefthook": "Lefthook is a Git hooks manager.",
-		"typescript": "TypeScript is a statically typed programming language on top of JavaScript.",
-		"vitest": "Vitest is a unit testing framework."
+		"lefthook": "Lefthook is a Git hooks manager."
 	}
 }

@@ -165,12 +165,12 @@
 ### 🍏 Clone the repository
 1. Clone the repository into the directory in which you keep your workspaces, for example:
    ```shell
-   git clone git@github.com:spdiswal/starter-web.git ~/repositories/
+   git clone git@github.com:rainstormy/presets-web.git ~/repositories/
    ```
 
 2. Go to the project root directory, for example:
    ```shell
-   cd ~/repositories/starter-web/
+   cd ~/repositories/presets-web/
    ```
 
 3. Install third-party dependencies and Git hooks:

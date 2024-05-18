@@ -15,8 +15,6 @@ pre-push:
   commands:
     pnpm-check:
       run: pnpm check
-    pnpm-test:
-      run: pnpm test
 
 post-checkout:
   piped: true
