@@ -4,16 +4,25 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-devDependencies:
-  '@biomejs/biome':
-    specifier: 1.6.1
-    version: 1.6.1
-  '@rainstormy/updraft':
-    specifier: 1.0.0
-    version: 1.0.0
-  lefthook:
-    specifier: 1.6.7
-    version: 1.6.7
+importers:
+
+  .:
+    devDependencies:
+      '@biomejs/biome':
+        specifier: 1.6.1
+        version: 1.6.1
+      '@rainstormy/updraft':
+        specifier: 1.0.0
+        version: 1.0.0
+      lefthook:
+        specifier: 1.6.7
+        version: 1.6.7
+
+  packages/presets-typescript:
+    dependencies:
+      typescript:
+        specifier: '>=5.4.2 <5.5.0'
+        version: 5.4.5
 
 packages:
 
@@ -312,3 +321,9 @@ packages:
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
+
+  /typescript@5.4.5:
+    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: false
