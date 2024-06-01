@@ -14,13 +14,13 @@
 		"node": ">=20.11.1"
 	},
 	"scripts": {
-		"check": "biome check --error-on-warnings .",
-		"fmt": "biome check --apply .",
+		"check": "biome check --error-on-warnings",
+		"fmt": "biome check --write",
 		"no-verify": "pnpm lefthook uninstall",
 		"ready": "pnpm install && pnpm lefthook install"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.6.1",
+		"@biomejs/biome": "1.8.2",
 		"@rainstormy/updraft": "1.0.0",
 		"lefthook": "1.6.7"
 	},
