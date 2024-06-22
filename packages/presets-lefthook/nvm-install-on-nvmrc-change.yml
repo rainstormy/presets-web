@@ -1,0 +1,12 @@
+source_dir: packages/presets-lefthook/
+
+post-checkout:
+  scripts:
+    "nvm-install-on-nvmrc-change.sh":
+      runner: bash
+
+post-rewrite:
+  scripts:
+    "nvm-install-on-nvmrc-change.sh":
+      runner: bash
+      use_stdin: true

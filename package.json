@@ -22,7 +22,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.8.2",
 		"@rainstormy/updraft": "1.0.0",
-		"lefthook": "1.6.7"
+		"lefthook": "1.6.18"
 	},
 	"// devDependencies": {
 		"@biomejs/biome": "Biome is an opinionated linter and code formatter.",
