@@ -1,4 +1,6 @@
-# Tooling Presets for Web Projects
+**Deprecation notice:** This repository is deprecated, as the presets have been
+moved to separate repositories. Please visit the following repositories instead:
 
-This repository contains predefined, opinionated tooling configurations for
-projects that use modern web technologies.
+- [rainstormy/presets-biome](https://github.com/rainstormy/presets-biome)
+- [rainstormy/presets-lefthook](https://github.com/rainstormy/presets-lefthook)
+- [rainstormy/presets-typescript](https://github.com/rainstormy/presets-typescript)
