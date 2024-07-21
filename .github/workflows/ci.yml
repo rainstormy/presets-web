@@ -55,13 +55,9 @@ jobs:
         if: steps.skip-if-already-verified.outputs.cache-hit != 'true'
         uses: ./.github/actions/pnpm
         #
-      - name: Verify that the source code is type-safe
-        if: steps.skip-if-already-verified.outputs.cache-hit != 'true'
-        run: pnpm check.types
-        #
       - name: Verify that the source code is well-formatted
         if: steps.skip-if-already-verified.outputs.cache-hit != 'true'
-        run: pnpm check.format
+        run: pnpm check
 
   has-standardised-commit-messages:
     name: Has standardised commit messages
