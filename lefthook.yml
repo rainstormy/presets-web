@@ -1,0 +1,47 @@
+# Define Git hooks.
+# https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+
+source_dir: packages/presets-lefthook/
+
+pre-commit:
+  commands:
+    pnpm-fmt:
+      # language=sh
+      run: |
+        # Skip confirmation prompts when Corepack is about to upgrade pnpm.
+        CI=1 pnpm fmt
+      stage_fixed: true
+  skip:
+    - merge
+    - rebase
+
+pre-push:
+  commands:
+    pnpm-check:
+      # language=sh
+      run: |
+        # Skip confirmation prompts when Corepack is about to upgrade pnpm.
+        CI=1 pnpm check
+
+post-checkout:
+  scripts:
+    nvm-install-on-nvmrc-change.sh:
+      runner: bash
+    pnpm-install-on-lockfile-change.sh:
+      runner: bash
+  skip:
+    - merge
+    - rebase
+
+post-rewrite:
+  scripts:
+    nvm-install-on-nvmrc-change.sh:
+      runner: bash
+      use_stdin: true
+    pnpm-install-on-lockfile-change.sh:
+      runner: bash
+      use_stdin: true
+
+skip_output:
+  - meta
+  - summary

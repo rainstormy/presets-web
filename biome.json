@@ -1,0 +1,10 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+	"extends": [
+		"packages/presets-biome/base.json",
+		"packages/presets-biome/test.json"
+	],
+	"files": {
+		"ignore": ["dist/"]
+	}
+}

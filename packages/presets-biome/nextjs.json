@@ -1,0 +1,36 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+	"files": {
+		"ignore": [".next/"]
+	},
+	"overrides": [
+		{
+			"include": [
+				"**/default.tsx",
+				"**/error.tsx",
+				"**/layout.tsx",
+				"**/loading.tsx",
+				"**/not-found.tsx",
+				"**/page.tsx",
+				"**/route.ts",
+				"**/template.tsx",
+				"**/instrumentation*.ts",
+				"**/middleware.ts",
+				"**/next-env.d.ts"
+			],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "off",
+						"useFilenamingConvention": {
+							"level": "error",
+							"options": {
+								"filenameCases": ["kebab-case"]
+							}
+						}
+					}
+				}
+			}
+		}
+	]
+}

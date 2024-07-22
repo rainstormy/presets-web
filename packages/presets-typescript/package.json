@@ -2,11 +2,8 @@
 	"$schema": "https://json.schemastore.org/package.json",
 	"name": "@rainstormy/presets-typescript",
 	"version": "1.0.0-rc.0",
-	"description": "A predefined, opinionated TypeScript configuration suitable for any TypeScript project.",
-	"keywords": [
-		"tsconfig",
-		"typescript"
-	],
+	"description": "Predefined, opinionated TypeScript configurations suitable for any TypeScript project.",
+	"keywords": ["tsconfig", "typescript"],
 	"bugs": "https://github.com/rainstormy/presets-web/issues",
 	"repository": {
 		"type": "git",
@@ -17,11 +14,9 @@
 	"author": "Steffen Diswal",
 	"type": "module",
 	"peerDependencies": {
-		"typescript": "5.x"
+		"typescript": ">=5.5.2 <5.6.0"
 	},
-	"//": {
-		"peerDependencies": {
-			"typescript": "The preset is made for TypeScript. When declared as a peer dependency, the package manager will remind the user to install it."
-		}
+	"// peerDependencies": {
+		"typescript": "The preset is made for TypeScript. When declared as a peer dependency, the package manager will remind the user to install it."
 	}
 }

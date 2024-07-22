@@ -1,0 +1,55 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+	"files": {
+		"ignore": ["storybook-static/"]
+	},
+	"overrides": [
+		{
+			"include": ["**/*.stories.ts", "**/*.stories.tsx"],
+			"linter": {
+				"rules": {
+					"complexity": {
+						"noExcessiveCognitiveComplexity": {
+							"level": "error",
+							"options": {
+								"maxAllowedComplexity": 2
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"include": ["**/*.stories.ts", "**/*.stories.tsx"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "off"
+					}
+				}
+			}
+		},
+		{
+			"include": [".storybook/*.ts"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noNodejsModules": "off"
+					},
+					"style": {
+						"noDefaultExport": "off",
+						"useFilenamingConvention": {
+							"level": "error",
+							"options": {
+								"filenameCases": ["kebab-case"]
+							}
+						}
+					},
+					"nursery": {
+						"useImportRestrictions": "off"
+					}
+				}
+			}
+		}
+	]
+}

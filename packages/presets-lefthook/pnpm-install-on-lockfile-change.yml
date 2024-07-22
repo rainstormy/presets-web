@@ -1,0 +1,12 @@
+source_dir: packages/presets-lefthook/
+
+post-checkout:
+  scripts:
+    "pnpm-install-on-lockfile-change.sh":
+      runner: bash
+
+post-rewrite:
+  scripts:
+    "pnpm-install-on-lockfile-change.sh":
+      runner: bash
+      use_stdin: true
