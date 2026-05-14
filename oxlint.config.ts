@@ -1,6 +1,6 @@
 import { defineConfig } from "oxlint"
 import { oxlintPreset } from "#oxlint/OxlintPreset.ts"
-import { oxlintRestrictedImportPatterns } from "#oxlint/RestrictedImportPattern.ts"
+import { oxlintRestrictedImportPatterns } from "#oxlint/OxlintRestrictedImportPattern.ts"
 
 export default defineConfig({
 	extends: [oxlintPreset()],
