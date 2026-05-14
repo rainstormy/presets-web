@@ -2,6 +2,17 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "build",
+			"command": "mise run build",
+			"type": "shell",
+			"presentation": {
+				"clear": true,
+				"panel": "shared",
+				"reveal": "always"
+			},
+			"problemMatcher": []
+		},
+		{
 			"label": "install",
 			"command": "mise run install",
 			"type": "shell",
