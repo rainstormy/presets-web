@@ -16,7 +16,8 @@ pnpm = "10.32.1"
 # language=sh
 run = """
   vite build --ssr src/oxfmt/index.ts --outDir dist/oxfmt/ && \
-  vite build --ssr src/oxlint/index.ts --outDir dist/oxlint/
+  vite build --ssr src/oxlint/index.ts --outDir dist/oxlint/ && \
+  node build.script.ts
 """
 description = "Generates production-grade build artefacts of all entrypoints with Vite."
 alias = ["b"]
