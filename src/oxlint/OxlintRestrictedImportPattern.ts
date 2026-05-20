@@ -1,9 +1,9 @@
-type RestrictedImportPattern = {
+type OxlintRestrictedImportPattern = {
 	regex: string
 	message: string
 }
 
-type RestrictedImportPatterns = Array<RestrictedImportPattern>
+type RestrictedImportPatterns = Array<OxlintRestrictedImportPattern>
 
 /**
  * Normalised paths reduce variations in import statements to improve discoverability and reduce diff churn.
@@ -36,7 +36,7 @@ const normalisedPaths: RestrictedImportPatterns = [
 /**
  * Explicit file extensions improve file resolution performance, as tools do not have to guess the correct file extension.
  */
-const explicitFileExtensions: RestrictedImportPattern = {
+const explicitFileExtensions: OxlintRestrictedImportPattern = {
 	// language=regexp
 	regex: String.raw`^[#.].*/([^./]+)(\.(decorators|fixtures|mocks|stories|tests))?$`, // Enforce file extensions on local files only.
 	message: "Include the file extension.",
@@ -45,7 +45,7 @@ const explicitFileExtensions: RestrictedImportPattern = {
 /**
  * Path aliases decouple the code from the directory structure.
  */
-const noRelativePaths: RestrictedImportPattern = {
+const noRelativePaths: OxlintRestrictedImportPattern = {
 	// language=regexp
 	regex: String.raw`^[/.]`,
 	message: "Prefer path aliases over relative paths.",
@@ -54,49 +54,49 @@ const noRelativePaths: RestrictedImportPattern = {
 /**
  * Using standardised APIs decouples the code from Node.js.
  */
-const noNodeProtocol: RestrictedImportPattern = {
+const noNodeProtocol: OxlintRestrictedImportPattern = {
 	// language=regexp
 	regex: String.raw`^node:.+`,
 	message: "Prefer the standard JavaScript library over Node.js specific modules.",
 }
 
-const noConfigs: RestrictedImportPattern = {
+const noConfigs: OxlintRestrictedImportPattern = {
 	// language=regexp
 	regex: String.raw`\.config\.[jt]s$`,
 	message: "Do not import configuration files.",
 }
 
-const noDecorators: RestrictedImportPattern = {
+const noDecorators: OxlintRestrictedImportPattern = {
 	// language=regexp
 	regex: String.raw`\.decorators\.[jt]sr?x?$`,
 	message: "Do not import story decorators.",
 }
 
-const noFixtures: RestrictedImportPattern = {
+const noFixtures: OxlintRestrictedImportPattern = {
 	// language=regexp
 	regex: String.raw`\.fixtures\.[jt]sr?x?$`,
 	message: "Do not import test fixtures.",
 }
 
-const noMocks: RestrictedImportPattern = {
+const noMocks: OxlintRestrictedImportPattern = {
 	// language=regexp
 	regex: String.raw`\.mocks\.[jt]sr?x?$`,
 	message: "Do not import module mocks.",
 }
 
-const noScripts: RestrictedImportPattern = {
+const noScripts: OxlintRestrictedImportPattern = {
 	// language=regexp
 	regex: String.raw`\.script\.[jt]s$`,
 	message: "Do not import Node.js scripts.",
 }
 
-const noStories: RestrictedImportPattern = {
+const noStories: OxlintRestrictedImportPattern = {
 	// language=regexp
 	regex: String.raw`\.stories\.[jt]sr?x?$`,
 	message: "Do not import stories.",
 }
 
-const noTests: RestrictedImportPattern = {
+const noTests: OxlintRestrictedImportPattern = {
 	// language=regexp
 	regex: String.raw`\.tests\.[jt]sr?x?$`,
 	message: "Do not import unit tests.",

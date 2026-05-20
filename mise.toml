@@ -12,6 +12,16 @@ node = "24.14.0"
 # https://pnpm.io
 pnpm = "10.32.1"
 
+[tasks.build]
+# language=sh
+run = """
+  vite build --ssr src/oxfmt/index.ts --outDir dist/oxfmt/ && \
+  vite build --ssr src/oxlint/index.ts --outDir dist/oxlint/ && \
+  node build.script.ts
+"""
+description = "Generates production-grade build artefacts of all entrypoints with Vite."
+alias = ["b"]
+
 [tasks.install]
 # language=sh
 run = """

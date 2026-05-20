@@ -1,5 +1,5 @@
 import type { OxlintConfig } from "oxlint"
-import { oxlintRestrictedImportPatterns } from "#oxlint/RestrictedImportPattern.ts"
+import { oxlintRestrictedImportPatterns } from "#oxlint/OxlintRestrictedImportPattern.ts"
 
 /**
  * @see https://oxc.rs/docs/guide/usage/linter/config-file-reference.html
