@@ -11,6 +11,17 @@
 	"author": "Steffen Diswal",
 	"private": true,
 	"type": "module",
+	"exports": {
+		"./oxfmt": {
+			"import": "./dist/oxfmt/index.js",
+			"types": "./dist/oxfmt/index.d.ts"
+		},
+		"./oxlint": {
+			"import": "./dist/oxlint/index.js",
+			"types": "./dist/oxlint/index.d.ts"
+		},
+		"./typescript": "./dist/typescript/index.json"
+	},
 	"imports": {
 		"#oxfmt/*": "./src/oxfmt/*",
 		"#oxlint/*": "./src/oxlint/*"
