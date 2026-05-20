@@ -11,7 +11,7 @@ async function minifyJsoncFiles(inputDirectory: string, outputDirectory: string)
 
 	await mkdir(outputDirectory, { recursive: true })
 	await Promise.all(
-		filenames.map((filename) => {
+		filenames.map(async (filename) => {
 			const inputPath = `${inputDirectory}${filename}`
 			const outputPath = `${outputDirectory}${filename.slice(0, -1)}` // Convert `.jsonc` to `.json`.
 			return minifyJsoncFile(inputPath, outputPath)
