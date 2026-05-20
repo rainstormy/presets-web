@@ -31,6 +31,7 @@
 		"@typescript/native-preview": "7.0.0-dev.20260413.1",
 		"oxfmt": "0.48.0",
 		"oxlint": "1.63.0",
+		"oxlint-tsgolint": "0.22.1",
 		"typescript": "6.0.2",
 		"vite": "8.0.11"
 	},
@@ -39,6 +40,7 @@
 		"@typescript/native-preview": "tsgo is a preview of TypeScript 7.",
 		"oxfmt": "Oxfmt is an opinionated code formatter.",
 		"oxlint": "Oxlint is an opinionated JavaScript and TypeScript linter.",
+		"oxlint-tsgolint": "This Oxlint plugin provides type-aware linting rules.",
 		"typescript": "TypeScript is a statically typed programming language on top of JavaScript.",
 		"vite": "Vite is a development server and a bundler."
 	}
