@@ -4,6 +4,10 @@
 min_version = "2026.3.0"
 
 [tools]
+# actionlint is a linter for GitHub Actions workflows.
+# https://github.com/rhysd/actionlint
+actionlint = "1.7.12"
+
 # Node.js is a JavaScript server runtime.
 # https://nodejs.org
 node = "24.14.0"
@@ -29,6 +33,20 @@ run = """
 """
 description = "Verifies that the source code is clean, type-safe, and well-formatted with Oxlint, TypeScript, and Oxfmt."
 alias = ["c"]
+
+[tasks.check-actions]
+# language=sh
+run = """
+  actionlint
+"""
+description = "Verifies that the GitHub Actions workflows are valid with actionlint."
+
+[tasks.check-renovate]
+# language=sh
+run = """
+  pnpm dlx --package renovate renovate-config-validator
+"""
+description = "Verifies that the Renovate configuration file (`.github/renovate.json`) is valid."
 
 [tasks.format]
 # language=sh
