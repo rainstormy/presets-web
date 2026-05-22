@@ -116,14 +116,14 @@ export function oxlintRestrictedImportPatterns(
 	return [
 		...normalisedPaths,
 		explicitFileExtensions,
-		!options.allowRelativePaths && noRelativePaths,
-		!options.allowNodejs && noNodeProtocol,
+		options.allowRelativePaths !== true && noRelativePaths,
+		options.allowNodejs !== true && noNodeProtocol,
 		noConfigs,
-		!options.allowDecorators && noDecorators,
-		!options.allowFixtures && noFixtures,
-		!options.allowMocks && noMocks,
+		options.allowDecorators !== true && noDecorators,
+		options.allowFixtures !== true && noFixtures,
+		options.allowMocks !== true && noMocks,
 		noScripts,
-		!options.allowStories && noStories,
-		!options.allowTests && noTests,
+		options.allowStories !== true && noStories,
+		options.allowTests !== true && noTests,
 	].filter((pattern) => pattern !== false)
 }
