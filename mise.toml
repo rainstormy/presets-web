@@ -65,11 +65,22 @@ run = """
 description = "Installs all third-party dependencies with mise-en-place and pnpm."
 alias = ["i"]
 
+[tasks.yolo]
+# language=sh
+run = """
+  lefthook uninstall
+"""
+description = "Disables the Git hooks temporarily with Lefthook."
+
 [hooks]
 # language=sh
 postinstall = """
   if [ -z "$CI" ]; then
     pnpm install --frozen-lockfile --ignore-scripts
+
+    if [ -z "$LEFTHOOK" ] || [ "$LEFTHOOK" = '1' ] || [ "$LEFTHOOK" = 'true' ]; then
+      lefthook install
+    fi
   fi
 """
 

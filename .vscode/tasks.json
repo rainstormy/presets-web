@@ -66,6 +66,17 @@
 				"reveal": "always"
 			},
 			"problemMatcher": []
+		},
+		{
+			"label": "yolo",
+			"command": "mise run yolo",
+			"type": "shell",
+			"presentation": {
+				"clear": true,
+				"panel": "shared",
+				"reveal": "always"
+			},
+			"problemMatcher": []
 		}
 	]
 }
