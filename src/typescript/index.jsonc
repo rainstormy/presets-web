@@ -2,28 +2,20 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
 		"allowImportingTsExtensions": true,
-		"allowJs": false,
-		"checkJs": false,
 		"erasableSyntaxOnly": true,
-		"esModuleInterop": true,
 		"exactOptionalPropertyTypes": true,
 		"forceConsistentCasingInFileNames": true,
-		"importHelpers": true,
 		"isolatedModules": true,
-		"libReplacement": false,
+		"moduleResolution": "bundler", // Required by `allowImportingTsExtensions`.
 		"noEmit": true,
 		"noEmitOnError": true,
-		"noImplicitAny": true,
+		"noFallthroughCasesInSwitch": true,
 		"noImplicitOverride": true,
 		"noImplicitReturns": true,
-		"noImplicitThis": true,
 		"noUncheckedIndexedAccess": true,
-		"noUncheckedSideEffectImports": true,
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": false,
-		"strict": true,
-		"useDefineForClassFields": true,
 		"verbatimModuleSyntax": true
 	}
 }

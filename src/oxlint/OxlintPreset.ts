@@ -91,7 +91,7 @@ export function oxlintPreset(): OxlintConfig {
 			"eslint/no-extra-bind": "warn",
 			"eslint/no-extra-boolean-cast": "warn",
 			"eslint/no-extra-label": "warn", // Superseded by `eslint/no-labels`.
-			"eslint/no-fallthrough": "warn",
+			// "eslint/no-fallthrough": "off", // Superseded by `noFallthroughCasesInSwitch` in TypeScript.
 			"eslint/no-func-assign": "warn",
 			"eslint/no-global-assign": "warn",
 			"eslint/no-implicit-coercion": "warn",
