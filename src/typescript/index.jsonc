@@ -9,6 +9,7 @@
 		"moduleResolution": "bundler", // Required by `allowImportingTsExtensions`.
 		"noEmit": true,
 		"noEmitOnError": true,
+		"noFallthroughCasesInSwitch": true,
 		"noImplicitOverride": true,
 		"noImplicitReturns": true,
 		"noUncheckedIndexedAccess": true,
