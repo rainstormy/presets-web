@@ -46,6 +46,17 @@
 			"problemMatcher": []
 		},
 		{
+			"label": "check-rules",
+			"command": "mise run check-rules",
+			"type": "shell",
+			"presentation": {
+				"clear": true,
+				"panel": "shared",
+				"reveal": "always"
+			},
+			"problemMatcher": []
+		},
+		{
 			"label": "format",
 			"command": "mise run format",
 			"type": "shell",

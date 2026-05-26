@@ -107,6 +107,19 @@ jobs:
           # language=sh
           task: check
         #
+      - name: Verify the ruleset
+        uses: ./.github/actions/task
+        with:
+          # The cache key includes:
+          # - Oxlint presets (`src/oxlint/**/*`).
+          # - Tool versions and mise task definitions (`mise.toml`).
+          # - The package manifest which defines subpath import maps (`package.json`).
+          # - Third-party dependencies (`pnpm-lock.yaml`).
+          cache-key: check-rules:${{ hashFiles('src/oxlint/**/*', 'mise.toml', 'package.json', 'pnpm-lock.yaml') }}
+          cache-path: node_modules/.cache/oxlint-ruleset/
+          # language=sh
+          task: check-rules
+        #
       - name: Verify the Renovate configuration
         uses: ./.github/actions/task
         with:
