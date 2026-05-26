@@ -26,6 +26,7 @@ export function oxlintReactPreset(): OxlintConfig {
 			"jsx-a11y/aria-unsupported-elements": "warn",
 			"jsx-a11y/autocomplete-valid": "warn",
 			"jsx-a11y/click-events-have-key-events": "warn",
+			"jsx-a11y/control-has-associated-label": "warn",
 			"jsx-a11y/heading-has-content": "warn",
 			"jsx-a11y/html-has-lang": "warn",
 			"jsx-a11y/iframe-has-title": "warn",
@@ -39,6 +40,9 @@ export function oxlintReactPreset(): OxlintConfig {
 			"jsx-a11y/no-aria-hidden-on-focusable": "warn",
 			"jsx-a11y/no-autofocus": "warn",
 			"jsx-a11y/no-distracting-elements": "warn",
+			"jsx-a11y/no-interactive-element-to-noninteractive-role": "warn",
+			"jsx-a11y/no-noninteractive-element-interactions": "warn",
+			"jsx-a11y/no-noninteractive-element-to-interactive-role": "warn",
 			"jsx-a11y/no-noninteractive-tabindex": "warn",
 			"jsx-a11y/no-redundant-roles": "warn",
 			"jsx-a11y/no-static-element-interactions": "warn",
@@ -93,6 +97,7 @@ export function oxlintReactPreset(): OxlintConfig {
 			// "react/no-is-mounted": "off", // Not applicable to function components.
 			"react/no-multi-comp": "warn",
 			"react/no-namespace": "warn",
+			"react/no-object-type-as-default-prop": "warn",
 			"react/no-react-children": "warn",
 			// "react/no-redundant-should-component-update": "off", // Not applicable to function components.
 			// "react/no-render-return-value": "off", // Not applicable in React 19.
@@ -102,6 +107,7 @@ export function oxlintReactPreset(): OxlintConfig {
 			"react/no-unescaped-entities": "warn",
 			"react/no-unknown-property": "warn",
 			// "react/no-unsafe": "off", // Not applicable to function components.
+			"react/no-unstable-nested-components": "warn",
 			// "react/no-will-update-set-state": "off", // Not applicable to function components.
 			"react/only-export-components": "warn",
 			// "react/prefer-es6-class": "off", // Not applicable to function components.
