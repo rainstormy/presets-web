@@ -43,6 +43,7 @@ export function oxlintPreset(): OxlintConfig {
 			"eslint/grouped-accessor-pairs": ["warn", "getBeforeSet"],
 			"eslint/guard-for-in": "warn",
 			// "eslint/id-length": "off",
+			// "eslint/id-match": "off",
 			// "eslint/init-declarations": "off",
 			"eslint/logical-assignment-operators": ["warn", "always", { enforceForIfStatements: true }],
 			"eslint/max-classes-per-file": ["warn", 0], // Disallow classes to encourage the functional paradigm over the object-oriented paradigm.
@@ -95,6 +96,8 @@ export function oxlintPreset(): OxlintConfig {
 			"eslint/no-func-assign": "warn",
 			"eslint/no-global-assign": "warn",
 			"eslint/no-implicit-coercion": "warn",
+			"eslint/no-implicit-globals": "warn",
+			"eslint/no-implied-eval": "warn",
 			"eslint/no-import-assign": "warn",
 			// "eslint/no-inline-comments": "off",
 			"eslint/no-inner-declarations": "warn",
@@ -199,6 +202,7 @@ export function oxlintPreset(): OxlintConfig {
 			"eslint/no-with": "warn",
 			"eslint/object-shorthand": ["warn", "always"],
 			"eslint/operator-assignment": "warn",
+			"eslint/prefer-arrow-callback": "warn",
 			"eslint/prefer-const": "warn",
 			// "eslint/prefer-destructuring": "off",
 			"eslint/prefer-exponentiation-operator": "warn",
@@ -206,6 +210,7 @@ export function oxlintPreset(): OxlintConfig {
 			"eslint/prefer-object-has-own": "warn",
 			"eslint/prefer-object-spread": "warn",
 			"eslint/prefer-promise-reject-errors": "warn",
+			"eslint/prefer-regex-literals": "warn",
 			"eslint/prefer-rest-params": "warn",
 			"eslint/prefer-spread": "warn",
 			"eslint/prefer-template": "warn",
@@ -523,6 +528,7 @@ export function oxlintPreset(): OxlintConfig {
 			// "vitest/no-test-prefixes": "off", // Vitest does not support prefixed functions like `fdescribe` and `xit`.
 			// "vitest/no-test-return-statement": "off",
 			// "vitest/no-unneeded-async-expect-function": "off",
+			"vitest/padding-around-after-all-blocks": "warn",
 			"vitest/prefer-called-exactly-once-with": "warn",
 			"vitest/prefer-called-once": "warn",
 			// "vitest/prefer-called-times": "off", // Superseded by `vitest/prefer-called-once`.

@@ -48,6 +48,13 @@ run = """
 """
 description = "Verifies that the Renovate configuration file (`.github/renovate.json`) is valid."
 
+[tasks.check-rules]
+# language=sh
+run = """
+  node src/oxlint/utilities/verify-oxlint-ruleset.script.ts
+"""
+description = "Verifies that the Oxlint presets have taken all available rules into consideration."
+
 [tasks.format]
 # language=sh
 run = """
