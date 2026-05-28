@@ -7,32 +7,6 @@ import type { OxlintConfig } from "oxlint"
 export function oxlintNextjsPreset(): OxlintConfig {
 	return {
 		ignorePatterns: [".next/**/*", "next-env.d.ts"],
-		plugins: ["nextjs"],
-		rules: {
-			// "nextjs/google-font-display": "off", // Unconfigured.
-			// "nextjs/google-font-preconnect": "off", // Unconfigured.
-			"nextjs/inline-script-id": "warn",
-			// "nextjs/next-script-for-ga": "off", // Unconfigured.
-			"nextjs/no-assign-module-variable": "warn",
-			"nextjs/no-async-client-component": "warn",
-			// "nextjs/no-before-interactive-script-outside-document": "off", // Not applicable in the app router.
-			"nextjs/no-css-tags": "warn",
-			// "nextjs/no-document-import-in-page": "off", // Not applicable in the app router.
-			// "nextjs/no-duplicate-head": "off", // Not applicable in the app router.
-			"nextjs/no-head-element": "warn",
-			// "nextjs/no-head-import-in-document": "off", // Not applicable in the app router.
-			"nextjs/no-html-link-for-pages": "warn",
-			"nextjs/no-img-element": "warn",
-			// "nextjs/no-page-custom-font": "off", // Not applicable in the app router.
-			"nextjs/no-script-component-in-head": "warn",
-			// "nextjs/no-styled-jsx-in-document": "off", // Not applicable in the app router.
-			"nextjs/no-sync-scripts": "warn",
-			"nextjs/no-title-in-document-head": "warn",
-			// "nextjs/no-typos": "off", // Not applicable in the app router.
-			"nextjs/no-unwanted-polyfillio": "warn",
-			"unicorn/no-typeof-undefined": "off", // Next.js does not support `globalThis`.
-			"unicorn/prefer-global-this": "off", // Next.js does not support `globalThis`.
-		},
 		overrides: [
 			{
 				files: ["src/app/**/*"],
@@ -122,5 +96,31 @@ export function oxlintNextjsPreset(): OxlintConfig {
 				},
 			},
 		],
+		plugins: ["nextjs"],
+		rules: {
+			// "nextjs/google-font-display": "off", // Unconfigured.
+			// "nextjs/google-font-preconnect": "off", // Unconfigured.
+			"nextjs/inline-script-id": "warn",
+			// "nextjs/next-script-for-ga": "off", // Unconfigured.
+			"nextjs/no-assign-module-variable": "warn",
+			"nextjs/no-async-client-component": "warn",
+			// "nextjs/no-before-interactive-script-outside-document": "off", // Not applicable in the app router.
+			"nextjs/no-css-tags": "warn",
+			// "nextjs/no-document-import-in-page": "off", // Not applicable in the app router.
+			// "nextjs/no-duplicate-head": "off", // Not applicable in the app router.
+			"nextjs/no-head-element": "warn",
+			// "nextjs/no-head-import-in-document": "off", // Not applicable in the app router.
+			"nextjs/no-html-link-for-pages": "warn",
+			"nextjs/no-img-element": "warn",
+			// "nextjs/no-page-custom-font": "off", // Not applicable in the app router.
+			"nextjs/no-script-component-in-head": "warn",
+			// "nextjs/no-styled-jsx-in-document": "off", // Not applicable in the app router.
+			"nextjs/no-sync-scripts": "warn",
+			"nextjs/no-title-in-document-head": "warn",
+			// "nextjs/no-typos": "off", // Not applicable in the app router.
+			"nextjs/no-unwanted-polyfillio": "warn",
+			"unicorn/no-typeof-undefined": "off", // Next.js does not support `globalThis`.
+			"unicorn/prefer-global-this": "off", // Next.js does not support `globalThis`.
+		},
 	}
 }
