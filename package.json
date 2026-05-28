@@ -51,8 +51,8 @@
 		"vite": "Vite is a development server and a bundler."
 	},
 	"peerDependencies": {
-		"oxfmt": ">=0.48.0 <1.0.0",
-		"oxlint": ">=1.66.0 <2.0.0",
-		"typescript": ">=6.0.2 <8.0.0"
+		"oxfmt": "^0.48.0",
+		"oxlint": "^1.66.0",
+		"typescript": "^6.0.2"
 	}
 }
