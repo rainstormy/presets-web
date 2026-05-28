@@ -2,5 +2,11 @@
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": ["github>rainstormy/presets-renovate"],
 	"schedule": ["* 0-6,17-23 * * mon-fri", "* * * * sat,sun"],
-	"timezone": "Europe/Copenhagen"
+	"timezone": "Europe/Copenhagen",
+	"packageRules": [
+		{
+			"matchDepTypes": ["peerDependencies"],
+			"rangeStrategy": "bump"
+		}
+	]
 }
