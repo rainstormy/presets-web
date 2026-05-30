@@ -1,4 +1,4 @@
-import type { OxlintConfig } from "oxlint"
+import type { OxlintConfig, OxlintOverride } from "oxlint"
 import { oxlintRestrictedImportPatterns } from "#oxlint/OxlintRestrictedImportPattern.ts"
 
 /**
@@ -7,7 +7,6 @@ import { oxlintRestrictedImportPatterns } from "#oxlint/OxlintRestrictedImportPa
  */
 export function oxlintPreset(): OxlintConfig {
 	return {
-		ignorePatterns: [".idea/**/*", "node_modules/**/*"],
 		/**
 		 * Disable all rules by default, then opt in to specific rules one by one.
 		 */
@@ -20,6 +19,17 @@ export function oxlintPreset(): OxlintConfig {
 			style: "off",
 			suspicious: "off",
 		},
+		ignorePatterns: [".idea/**/*", "node_modules/**/*"],
+		overrides: [
+			overrideFixtures(),
+			overrideMocks(),
+			overrideTests(),
+			overrideAmbientTypescriptModules(),
+			overrideConfigs(),
+			overrideScripts(),
+			overrideCustomErrorSubclasses(),
+			overrideProgramEntrypoints(),
+		],
 		plugins: ["typescript", "unicorn", "vitest"],
 		rules: {
 			"eslint/accessor-pairs": "warn",
@@ -572,130 +582,147 @@ export function oxlintPreset(): OxlintConfig {
 			// "vitest/valid-title": "off",
 			// "vitest/warn-todo": "off", // Allow unit tests to be disabled.
 		},
-		overrides: [
-			{
-				// Test fixtures.
-				files: ["src/**/*.fixtures.{ts,tsx}"],
-				rules: {
-					"eslint/complexity": ["warn", { max: 12, variant: "modified" }],
-					"eslint/no-restricted-imports": [
-						"warn",
-						{
-							patterns: oxlintRestrictedImportPatterns({
-								allowFixtures: true,
-							}),
-						},
-					],
+	}
+}
+
+function overrideFixtures(): OxlintOverride {
+	return {
+		files: ["src/**/*.fixtures.{ts,tsx}"],
+		rules: {
+			"eslint/complexity": ["warn", { max: 12, variant: "modified" }],
+			"eslint/no-restricted-imports": [
+				"warn",
+				{
+					patterns: oxlintRestrictedImportPatterns({
+						allowFixtures: true,
+					}),
 				},
-			},
-			{
-				// Module mocks.
-				files: ["src/**/*.mocks.{ts,tsx}"],
-				rules: {
-					"eslint/complexity": ["warn", { max: 12, variant: "modified" }],
-					"eslint/no-restricted-imports": [
-						"warn",
-						{
-							patterns: oxlintRestrictedImportPatterns({
-								allowFixtures: true,
-								allowMocks: true,
-							}),
-						},
-					],
+			],
+		},
+	}
+}
+
+function overrideMocks(): OxlintOverride {
+	return {
+		files: ["src/**/*.mocks.{ts,tsx}"],
+		rules: {
+			"eslint/complexity": ["warn", { max: 12, variant: "modified" }],
+			"eslint/no-restricted-imports": [
+				"warn",
+				{
+					patterns: oxlintRestrictedImportPatterns({
+						allowFixtures: true,
+						allowMocks: true,
+					}),
 				},
-			},
-			{
-				// Unit tests.
-				files: ["src/**/*.tests.{ts,tsx}"],
-				rules: {
-					"eslint/complexity": ["warn", { max: 4, variant: "modified" }],
-					"eslint/no-restricted-imports": [
-						"warn",
-						{
-							patterns: oxlintRestrictedImportPatterns({
-								allowMocks: true,
-								allowFixtures: true,
-							}),
-						},
-					],
-					"vitest/consistent-test-it": ["warn", { fn: "it", withinDescribe: "it" }],
-					"vitest/expect-expect": "warn",
-					"vitest/no-commented-out-tests": "warn",
-					"vitest/no-conditional-expect": "warn",
-					"vitest/no-conditional-in-test": "warn",
-					"vitest/no-conditional-tests": "warn",
-					"vitest/no-duplicate-hooks": "warn",
-					"vitest/no-standalone-expect": "warn",
-					"vitest/no-test-return-statement": "warn",
-					"vitest/no-unneeded-async-expect-function": "warn",
-					"vitest/prefer-describe-function-title": "warn",
-					"vitest/prefer-each": "warn",
-					"vitest/prefer-hooks-in-order": "warn",
-					"vitest/prefer-hooks-on-top": "warn",
-					"vitest/prefer-lowercase-title": "warn",
-					"vitest/require-hook": "warn",
-					"vitest/valid-describe-callback": "warn",
-					"vitest/valid-expect": "warn",
-					"vitest/valid-title": "warn",
+			],
+		},
+	}
+}
+
+function overrideTests(): OxlintOverride {
+	return {
+		files: ["src/**/*.tests.{ts,tsx}"],
+		rules: {
+			"eslint/complexity": ["warn", { max: 4, variant: "modified" }],
+			"eslint/no-restricted-imports": [
+				"warn",
+				{
+					patterns: oxlintRestrictedImportPatterns({
+						allowMocks: true,
+						allowFixtures: true,
+					}),
 				},
-			},
-			{
-				// Ambient TypeScript modules (i.e. type declaration files).
-				files: ["src/**/*.d.ts"],
-				rules: {
-					"typescript/consistent-type-definitions": "off", // Allow interfaces for type declaration merging.
+			],
+			"vitest/consistent-test-it": ["warn", { fn: "it", withinDescribe: "it" }],
+			"vitest/expect-expect": "warn",
+			"vitest/no-commented-out-tests": "warn",
+			"vitest/no-conditional-expect": "warn",
+			"vitest/no-conditional-in-test": "warn",
+			"vitest/no-conditional-tests": "warn",
+			"vitest/no-duplicate-hooks": "warn",
+			"vitest/no-standalone-expect": "warn",
+			"vitest/no-test-return-statement": "warn",
+			"vitest/no-unneeded-async-expect-function": "warn",
+			"vitest/prefer-describe-function-title": "warn",
+			"vitest/prefer-each": "warn",
+			"vitest/prefer-hooks-in-order": "warn",
+			"vitest/prefer-hooks-on-top": "warn",
+			"vitest/prefer-lowercase-title": "warn",
+			"vitest/require-hook": "warn",
+			"vitest/valid-describe-callback": "warn",
+			"vitest/valid-expect": "warn",
+			"vitest/valid-title": "warn",
+		},
+	}
+}
+
+/**
+ * Also known as 'type declaration files'.
+ */
+function overrideAmbientTypescriptModules(): OxlintOverride {
+	return {
+		files: ["src/**/*.d.ts"],
+		rules: {
+			"typescript/consistent-type-definitions": "off", // Allow interfaces for type declaration merging.
+		},
+	}
+}
+
+function overrideConfigs(): OxlintOverride {
+	return {
+		files: ["./*.config.{js,ts}"],
+		rules: {
+			"eslint/no-restricted-exports": "off", // Allow default exports.
+			"eslint/no-restricted-imports": [
+				"warn",
+				{
+					patterns: oxlintRestrictedImportPatterns({
+						allowRelativePaths: true,
+						allowNodejs: true,
+					}),
 				},
-			},
-			{
-				// Configuration files.
-				files: ["./*.config.{js,ts}"],
-				rules: {
-					"eslint/no-restricted-exports": "off", // Allow default exports.
-					"eslint/no-restricted-imports": [
-						"warn",
-						{
-							patterns: oxlintRestrictedImportPatterns({
-								allowRelativePaths: true,
-								allowNodejs: true,
-							}),
-						},
-					],
-					"unicorn/filename-case": ["warn", { case: "kebabCase" }],
+			],
+			"unicorn/filename-case": ["warn", { case: "kebabCase" }],
+		},
+	}
+}
+
+function overrideScripts(): OxlintOverride {
+	return {
+		files: ["**/*.script.{js,ts}"],
+		rules: {
+			"eslint/no-console": "off",
+			"eslint/no-restricted-imports": [
+				"warn",
+				{
+					patterns: oxlintRestrictedImportPatterns({
+						allowRelativePaths: true,
+						allowNodejs: true,
+					}),
 				},
-			},
-			{
-				// Scripts.
-				files: ["**/*.script.{js,ts}"],
-				rules: {
-					"eslint/no-console": "off",
-					"eslint/no-restricted-imports": [
-						"warn",
-						{
-							patterns: oxlintRestrictedImportPatterns({
-								allowRelativePaths: true,
-								allowNodejs: true,
-							}),
-						},
-					],
-					"unicorn/filename-case": ["warn", { case: "kebabCase" }],
-					"unicorn/no-process-exit": "off",
-				},
-			},
-			{
-				// Custom `Error` subclasses.
-				files: ["src/**/*Error.ts"],
-				rules: {
-					"eslint/max-classes-per-file": "warn",
-				},
-			},
-			{
-				// Program entrypoints.
-				files: ["src/main-*.ts"],
-				rules: {
-					"unicorn/filename-case": ["warn", { case: "kebabCase" }],
-					"unicorn/no-process-exit": "off",
-				},
-			},
-		],
+			],
+			"unicorn/filename-case": ["warn", { case: "kebabCase" }],
+			"unicorn/no-process-exit": "off",
+		},
+	}
+}
+
+function overrideCustomErrorSubclasses(): OxlintOverride {
+	return {
+		files: ["src/**/*Error.ts"],
+		rules: {
+			"eslint/max-classes-per-file": "warn",
+		},
+	}
+}
+
+function overrideProgramEntrypoints(): OxlintOverride {
+	return {
+		files: ["src/main-*.ts"],
+		rules: {
+			"unicorn/filename-case": ["warn", { case: "kebabCase" }],
+			"unicorn/no-process-exit": "off",
+		},
 	}
 }
