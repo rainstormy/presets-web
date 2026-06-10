@@ -38,6 +38,7 @@ ban-types\ttypescript\tpedantic\t\t\tv0.0.14
 block-scoped-var\teslint\tsuspicious\t\t\tv0.16.9
 branches-sharing-code\toxc\tpedantic\t\t💡\tv1.22.0
 button-has-type\treact\trestriction\t\t\tv0.1.1
+callback-return\tnode\tstyle\t\t\tv1.67.0
 capitalized-comments\teslint\tstyle\t\t🛠️\tv1.34.0
 catch-error-name\tunicorn\tstyle\t\t🛠️\tv0.0.14
 catch-or-return\tpromise\trestriction\t\t\tv0.9.2
@@ -49,6 +50,7 @@ class-literal-property-style\ttypescript\tstyle\t\t🚧\tv1.47.0
 class-methods-use-this\teslint\trestriction\t\t\tv1.16.0
 click-events-have-key-events\tjsx-a11y\tcorrectness\t\t\tv0.2.1
 complexity\teslint\trestriction\t\t\tv1.37.0
+component-definition-name-casing\tvue\tstyle\t\t🛠️\tv1.68.0
 consistent-assert\tunicorn\tpedantic\t\t🛠️\tv0.16.9
 consistent-date-clone\tunicorn\tstyle\t\t🛠️\tv0.15.13
 consistent-each-for\tvitest\tcorrectness\t\t\tv1.39.0
@@ -82,7 +84,7 @@ define-props-declaration\tvue\tstyle\t\t\tv1.15.0
 define-props-destructuring\tvue\tstyle\t\t\tv1.20.0
 display-name\treact\tpedantic\t\t\tv1.42.0
 dot-notation💭\ttypescript\tstyle\t\t\tv1.49.0
-double-comparisons\toxc\tcorrectness\t✅\t🛠️\tv0.0.22
+double-comparisons\toxc\tcorrectness\t✅\t💡\tv0.0.22
 empty-brace-spaces\tunicorn\tstyle\t\t🛠️\tv0.0.18
 empty-tags\tjsdoc\trestriction\t\t🚧\tv0.2.16
 eqeqeq\teslint\tpedantic\t\t⚠️ 🛠️\tv0.0.3
@@ -122,11 +124,12 @@ hoisted-apis-on-top\tvitest\tcorrectness\t\t💡\tv1.39.0
 hook-use-state\treact\tstyle\t\t🚧\tv1.59.0
 html-has-lang\tjsx-a11y\tcorrectness\t\t\tv0.0.18
 id-length\teslint\tstyle\t\t\tv1.4.0
-id-match\teslint\tstyle\t\t\tvnext
+id-match\teslint\tstyle\t\t\tv1.66.0
 iframe-has-title\tjsx-a11y\tcorrectness\t\t\tv0.0.19
 iframe-missing-sandbox\treact\tsuspicious\t\t🚧\tv0.10.0
 img-redundant-alt\tjsx-a11y\tcorrectness\t\t\tv0.0.19
 implements-on-classes\tjsdoc\tcorrectness\t\t\tv0.3.2
+import-style\tunicorn\trestriction\t\t\tv1.67.0
 init-declarations\teslint\tstyle\t\t\tv0.15.11
 inline-script-id\tnextjs\tcorrectness\t\t\tv0.2.0
 interactive-supports-focus\tjsx-a11y\tcorrectness\t\t💡\tv1.63.0
@@ -168,6 +171,7 @@ max-params\teslint\tstyle\t\t\tv0.2.14
 max-props\tvue\trestriction\t\t\tv1.19.0
 max-statements\teslint\tstyle\t\t\tv1.35.0
 media-has-caption\tjsx-a11y\tcorrectness\t\t\tv0.1.1
+method-signature-style\ttypescript\tstyle\t\t🚧\tv1.68.0
 misrefactored-assign-op\toxc\tsuspicious\t\t💡\tv0.1.1
 missing-throw\toxc\tcorrectness\t✅\t💡\tv0.0.3
 mouse-events-have-key-events\tjsx-a11y\tcorrectness\t\t\tv0.1.1
@@ -175,8 +179,9 @@ named\timport\tnursery\t\t\tv0.0.13
 namespace\timport\tcorrectness\t\t\tv0.2.11
 new-cap\teslint\tstyle\t\t🚧\tv0.15.5
 new-for-builtins\tunicorn\tpedantic\t\t🚧\tv0.0.16
-newline-after-import\timport\tstyle\t\t🛠️\tvnext
+newline-after-import\timport\tstyle\t\t🛠️\tv1.66.0
 next-script-for-ga\tnextjs\tcorrectness\t\t\tv0.2.0
+next-tick-style\tvue\tstyle\t\t🛠️\tvnext
 no-absolute-path\timport\tsuspicious\t\t🚧\tv0.15.13
 no-abusive-eslint-disable\tunicorn\trestriction\t\t\tv0.0.18
 no-access-key\tjsx-a11y\tcorrectness\t\t💡\tv0.0.21
@@ -222,6 +227,7 @@ no-commented-out-tests\tjest\tsuspicious\t\t\tv0.0.8
 no-commented-out-tests\tvitest\tsuspicious\t\t\tv0.0.8
 no-commonjs\timport\trestriction\t\t\tv0.11.0
 no-compare-neg-zero\teslint\tcorrectness\t✅\t🛠️ 💡\tv0.0.3
+no-computed-properties-in-data\tvue\tcorrectness\t\t\tv1.67.0
 no-cond-assign\teslint\tcorrectness\t✅\t\tv0.0.5
 no-conditional-expect\tjest\tcorrectness\t\t\tv0.0.12
 no-conditional-expect\tvitest\tcorrectness\t\t\tv0.0.12
@@ -255,6 +261,7 @@ no-deprecated-destroyed-lifecycle\tvue\tcorrectness\t\t🛠️\tv1.35.0
 no-deprecated-events-api\tvue\tcorrectness\t\t\tv1.62.0
 no-deprecated-functions\tjest\tstyle\t\t🛠️\tv0.0.18
 no-deprecated-model-definition\tvue\tcorrectness\t\t🚧\tv1.63.0
+no-deprecated-props-default-this\tvue\tcorrectness\t\t🚧\tv1.67.0
 no-deprecated-vue-config-keycodes\tvue\tcorrectness\t\t\tv1.62.0
 no-did-mount-set-state\treact\tcorrectness\t\t\tv1.36.0
 no-did-update-set-state\treact\tcorrectness\t\t\tv1.62.0
@@ -296,6 +303,7 @@ no-explicit-any\ttypescript\trestriction\t\t🛠️\tv0.0.13
 no-export\tjest\tcorrectness\t\t\tv0.0.13
 no-export-in-script-setup\tvue\tcorrectness\t\t\tv1.20.0
 no-exports-assign\tnode\tstyle\t\t🛠️\tv0.9.3
+no-expose-after-await\tvue\tcorrectness\t\t\tv1.67.0
 no-extend-native\teslint\tsuspicious\t\t\tv0.9.7
 no-extra-bind\teslint\tsuspicious\t\t🚧\tv1.1.0
 no-extra-boolean-cast\teslint\tcorrectness\t✅\t🛠️ 💡\tv0.0.8
@@ -305,8 +313,8 @@ no-extraneous-class\ttypescript\tsuspicious\t\t⚠️ 💡\tv0.7.0
 no-fallthrough\teslint\tpedantic\t\t🚧\tv0.0.14
 no-find-dom-node\treact\tcorrectness\t\t\tv0.0.15
 no-floating-promises💭\ttypescript\tcorrectness\t✅\t💡\tv1.11.0
-no-focused-tests\tjest\tcorrectness\t\t🛠️\tv0.0.8
-no-focused-tests\tvitest\tcorrectness\t\t🛠️\tv0.0.8
+no-focused-tests\tjest\tcorrectness\t\t💡\tv0.0.8
+no-focused-tests\tvitest\tcorrectness\t\t💡\tv0.0.8
 no-for-in-array💭\ttypescript\tcorrectness\t✅\t\tv1.12.0
 no-func-assign\teslint\tcorrectness\t✅\t\tv0.0.3
 no-global-assign\teslint\tcorrectness\t✅\t\tv0.0.7
@@ -322,7 +330,7 @@ no-img-element\tnextjs\tcorrectness\t\t🚧\tv0.2.0
 no-immediate-mutation\tunicorn\tpedantic\t\t🚧\tv1.35.0
 no-implicit-coercion\teslint\tstyle\t\t🛠️\tv1.33.0
 no-implicit-globals\teslint\trestriction\t\t\tv1.65.0
-no-implied-eval\teslint\tsuspicious\t✅\t\tvnext
+no-implied-eval\teslint\tsuspicious\t✅\t\tv1.66.0
 no-implied-eval💭\ttypescript\tcorrectness\t✅\t\tv1.12.0
 no-import-assign\teslint\tcorrectness\t✅\t\tv0.0.5
 no-import-compiler-macros\tvue\trestriction\t\t⚠️ 🛠️\tv1.21.0
@@ -358,9 +366,9 @@ no-loop-func\teslint\tpedantic\t\t\tv1.33.0
 no-loss-of-precision\teslint\tcorrectness\t✅\t\tv0.0.7
 no-magic-array-flat-depth\tunicorn\trestriction\t\t\tv0.4.2
 no-magic-numbers\teslint\tstyle\t\t🚧\tv0.9.3
-no-map-spread\toxc\tperf\t\t🛠️ 💡\tv0.11.0
+no-map-spread\toxc\tperf\t\t💡\tv0.11.0
 no-meaningless-void-operator💭\ttypescript\tcorrectness\t✅\t🛠️ 💡\tv1.12.0
-no-misleading-character-class\teslint\tcorrectness\t✅\t🚧\tv1.17.0
+no-misleading-character-class\teslint\tcorrectness\t✅\t💡\tv1.17.0
 no-misused-new\ttypescript\tcorrectness\t✅\t\tv0.0.7
 no-misused-promises💭\ttypescript\tpedantic\t\t\tv1.11.0
 no-misused-spread💭\ttypescript\tcorrectness\t✅\t💡\tv1.12.0
@@ -387,7 +395,7 @@ no-nested-ternary\teslint\tstyle\t\t\tv0.15.4
 no-nested-ternary\tunicorn\tstyle\t\t🛠️\tv0.0.18
 no-nesting\tpromise\tstyle\t\t🚧\tv0.15.13
 no-new\teslint\tsuspicious\t\t\tv0.4.0
-no-new-array\tunicorn\tcorrectness\t✅\t🚧\tv0.0.16
+no-new-array\tunicorn\tcorrectness\t✅\t⚠️ 💡\tv0.0.16
 no-new-buffer\tunicorn\tpedantic\t\t💡\tv0.0.16
 no-new-func\teslint\tstyle\t\t\tv0.9.2
 no-new-native-nonconstructor\teslint\tcorrectness\t✅\t\tv0.3.3
@@ -406,7 +414,7 @@ no-null\tunicorn\tstyle\t\t⚠️ 🛠️\tv0.0.21
 no-obj-calls\teslint\tcorrectness\t✅\t\tv0.0.7
 no-object-as-default-parameter\tunicorn\tpedantic\t\t\tv0.0.16
 no-object-constructor\teslint\tpedantic\t\t🚧\tv0.13.2
-no-object-type-as-default-prop\treact\tperf\t\t\tvnext
+no-object-type-as-default-prop\treact\tperf\t\t\tv1.66.0
 no-optional-chaining\toxc\trestriction\t\t\tv0.5.0
 no-page-custom-font\tnextjs\tcorrectness\t\t\tv0.3.3
 no-param-reassign\teslint\trestriction\t\t\tv1.20.0
@@ -428,6 +436,9 @@ no-relative-parent-imports\timport\trestriction\t\t\tv1.43.0
 no-render-return-value\treact\tcorrectness\t\t\tv0.0.15
 no-require-imports\ttypescript\trestriction\t\t🚧\tv0.13.0
 no-required-prop-with-default\tvue\tsuspicious\t\t💡\tv1.17.0
+no-reserved-component-names\tvue\tcorrectness\t\t\tv1.68.0
+no-reserved-keys\tvue\tcorrectness\t\t\tvnext
+no-reserved-props\tvue\tcorrectness\t\t\tvnext
 no-rest-spread-properties\toxc\trestriction\t\t\tv0.4.2
 no-restricted-exports\teslint\tnursery\t\t\tv1.59.0
 no-restricted-globals\teslint\trestriction\t\t\tv0.4.0
@@ -451,6 +462,7 @@ no-set-state\treact\tstyle\t\t\tv0.5.2
 no-setter-return\teslint\tcorrectness\t✅\t\tv0.0.3
 no-shadow\teslint\tsuspicious\t\t\tv1.48.0
 no-shadow-restricted-names\teslint\tcorrectness\t✅\t\tv0.0.3
+no-shared-component-data\tvue\tcorrectness\t\t🚧\tv1.67.0
 no-single-promise-in-promise-methods\tunicorn\tcorrectness\t✅\t🛠️\tv0.2.18
 no-sparse-arrays\teslint\tcorrectness\t✅\t\tv0.0.4
 no-standalone-expect\tjest\tcorrectness\t\t\tv0.0.13
@@ -520,7 +532,7 @@ no-unsafe-optional-chaining\teslint\tcorrectness\t✅\t\tv0.0.5
 no-unsafe-return💭\ttypescript\tpedantic\t\t\tv1.12.0
 no-unsafe-type-assertion💭\ttypescript\tsuspicious\t\t\tv1.12.0
 no-unsafe-unary-minus💭\ttypescript\tcorrectness\t✅\t\tv1.12.0
-no-unstable-nested-components\treact\tsuspicious\t\t\tvnext
+no-unstable-nested-components\treact\tsuspicious\t\t\tv1.66.0
 no-untyped-mock-factory\tjest\tstyle\t\t🛠️\tv0.2.15
 no-unused-expressions\teslint\tcorrectness\t✅\t\tv0.14.0
 no-unused-labels\teslint\tcorrectness\t✅\t🛠️\tv0.0.3
@@ -553,6 +565,7 @@ no-var\teslint\trestriction\t\t🛠️\tv0.1.1
 no-var-requires\ttypescript\trestriction\t\t\tv0.0.7
 no-void\teslint\trestriction\t\t💡\tv0.2.5
 no-warning-comments\teslint\tpedantic\t\t\tv1.24.0
+no-watch-after-await\tvue\tcorrectness\t\t\tv1.67.0
 no-webpack-loader-syntax\timport\trestriction\t\t\tv0.7.0
 no-will-update-set-state\treact\tcorrectness\t\t\tv1.37.0
 no-with\teslint\tcorrectness\t✅\t\tv0.2.14
@@ -568,7 +581,7 @@ only-throw-error💭\ttypescript\tpedantic\t\t\tv1.12.0
 only-used-in-recursion\toxc\tcorrectness\t✅\t⚠️ 🛠️\tv0.1.1
 operator-assignment\teslint\tstyle\t\t⚠️ 🛠️\tv0.15.13
 padding-around-after-all-blocks\tjest\tstyle\t\t🛠️\tv1.59.0
-padding-around-after-all-blocks\tvitest\tstyle\t\t🛠️\tvnext
+padding-around-after-all-blocks\tvitest\tstyle\t\t🛠️\tv1.66.0
 padding-around-test-blocks\tjest\tstyle\t\t🛠️\tv1.13.0
 param-names\tpromise\tstyle\t\t\tv0.6.1
 parameter-properties\ttypescript\tstyle\t\t\tv1.48.0
@@ -651,6 +664,7 @@ prefer-mock-return-shorthand\tvitest\tstyle\t\t🛠️\tv1.49.0
 prefer-modern-dom-apis\tunicorn\tstyle\t\t💡\tv0.0.20
 prefer-modern-math-apis\tunicorn\trestriction\t\t🚧\tv0.1.1
 prefer-module\tunicorn\trestriction\t\t🚧\tv1.50.0
+prefer-named-capture-group\teslint\tstyle\t\t\tv1.68.0
 prefer-namespace-keyword\ttypescript\tcorrectness\t✅\t🛠️\tv0.7.0
 prefer-native-coercion-functions\tunicorn\tpedantic\t\t🚧\tv0.0.19
 prefer-negative-index\tunicorn\tstyle\t\t🛠️\tv0.13.2
@@ -717,6 +731,7 @@ prefer-ts-expect-error\ttypescript\tpedantic\t\t🛠️\tv0.2.11
 prefer-type-error\tunicorn\tpedantic\t\t🛠️\tv0.0.16
 preserve-caught-error\teslint\tsuspicious\t\t🛠️\tv1.16.0
 promise-function-async💭\ttypescript\trestriction\t\t🛠️\tv1.12.0
+prop-name-casing\tvue\tstyle\t\t\tvnext
 radix\teslint\tpedantic\t\t⚠️ 🛠️\tv0.3.3
 react-in-jsx-scope\treact\tsuspicious\t\t\tv0.0.20
 related-getter-setter-pairs💭\ttypescript\tpedantic\t\t\tv1.12.0
@@ -727,6 +742,7 @@ require-await\teslint\tpedantic\t\t⚠️ 🛠️\tv0.4.2
 require-await💭\ttypescript\tpedantic\t\t💡\tv1.12.0
 require-awaited-expect-poll\tvitest\tcorrectness\t\t\tv1.58.0
 require-default-export\tvue\tsuspicious\t\t\tv1.21.0
+require-direct-export\tvue\tstyle\t\t\tvnext
 require-hook\tjest\tstyle\t\t\tv0.3.2
 require-hook\tvitest\tstyle\t\t\tv0.3.2
 require-local-test-context-for-concurrent-snapshots\tvitest\tcorrectness\t\t\tv0.8.0
@@ -739,14 +755,18 @@ require-param-description\tjsdoc\tpedantic\t\t🚧\tv0.4.4
 require-param-name\tjsdoc\tpedantic\t\t\tv0.4.3
 require-param-type\tjsdoc\tpedantic\t\t🚧\tv0.4.4
 require-post-message-target-origin\tunicorn\tsuspicious\t\t💡\tv0.15.15
+require-prop-type-constructor\tvue\tcorrectness\t\t🛠️\tv1.68.0
+require-prop-types\tvue\tstyle\t\t\tvnext
 require-property\tjsdoc\tcorrectness\t\t🚧\tv0.2.18
 require-property-description\tjsdoc\tcorrectness\t\t\tv0.2.18
 require-property-name\tjsdoc\tcorrectness\t\t\tv0.2.18
 require-property-type\tjsdoc\tcorrectness\t\t\tv0.2.18
 require-render-return\treact\tnursery\t\t\tv0.2.0
+require-render-return\tvue\tcorrectness\t\t\tv1.67.0
 require-returns\tjsdoc\tpedantic\t\t🚧\tv0.4.0
 require-returns-description\tjsdoc\tpedantic\t\t\tv0.4.0
 require-returns-type\tjsdoc\tpedantic\t\t\tv0.4.3
+require-slots-as-functions\tvue\tcorrectness\t\t\tv1.67.0
 require-test-timeout\tvitest\trestriction\t\t\tv1.58.0
 require-throws-description\tjsdoc\tstyle\t\t\tv1.65.0
 require-throws-type\tjsdoc\tpedantic\t\t\tv1.65.0
@@ -758,11 +778,13 @@ require-typed-ref\tvue\tstyle\t\t\tv1.17.0
 require-unicode-regexp\teslint\tpedantic\t\t🚧\tv1.63.0
 require-yield\teslint\tcorrectness\t✅\t\tv0.0.4
 require-yields\tjsdoc\tcorrectness\t\t\tv0.3.2
+require-yields-description\tjsdoc\tstyle\t\t\tv1.68.0
 require-yields-type\tjsdoc\tpedantic\t\t\tv1.65.0
 restrict-plus-operands💭\ttypescript\tpedantic\t\t\tv1.12.0
 restrict-template-expressions💭\ttypescript\tcorrectness\t✅\t\tv1.12.0
 return-await💭\ttypescript\tpedantic\t\t🛠️ 💡\tv1.12.0
 return-in-computed-property\tvue\tcorrectness\t\t\tv1.63.0
+return-in-emits-validator\tvue\tcorrectness\t\t\tv1.67.0
 role-has-required-aria-props\tjsx-a11y\tcorrectness\t\t\tv0.2.0
 role-supports-aria-props\tjsx-a11y\tcorrectness\t\t\tv0.2.0
 rules-of-hooks\treact\tpedantic\t\t\tv0.3.3
@@ -792,6 +814,7 @@ uninvoked-array-callback\toxc\tcorrectness\t✅\t\tv0.0.3
 use-isnan\teslint\tcorrectness\t✅\t🛠️\tv0.0.3
 use-unknown-in-catch-callback-variable💭\ttypescript\trestriction\t\t💡\tv1.12.0
 valid-define-emits\tvue\tcorrectness\t\t🚧\tv1.14.0
+valid-define-options\tvue\tcorrectness\t\t\tv1.67.0
 valid-define-props\tvue\tcorrectness\t\t🚧\tv1.15.0
 valid-describe-callback\tjest\tcorrectness\t\t\tv0.0.8
 valid-describe-callback\tvitest\tcorrectness\t\t\tv0.0.8
@@ -799,6 +822,7 @@ valid-expect\tjest\tcorrectness\t\t💡\tv0.0.14
 valid-expect\tvitest\tcorrectness\t\t💡\tv0.0.14
 valid-expect-in-promise\tjest\tcorrectness\t\t\tv1.60.0
 valid-expect-in-promise\tvitest\tcorrectness\t\t\tv1.60.0
+valid-next-tick\tvue\tcorrectness\t\t🛠️\tv1.67.0
 valid-params\tpromise\tcorrectness\t\t\tv0.7.1
 valid-title\tjest\tcorrectness\t\t🛠️\tv0.0.14
 valid-title\tvitest\tcorrectness\t\t🛠️\tv0.0.14
