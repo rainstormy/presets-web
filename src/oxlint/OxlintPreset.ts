@@ -216,6 +216,7 @@ export function oxlintPreset(): OxlintConfig {
 			"eslint/prefer-const": "warn",
 			// "eslint/prefer-destructuring": "off",
 			"eslint/prefer-exponentiation-operator": "warn",
+			"eslint/prefer-named-capture-group": "warn",
 			"eslint/prefer-numeric-literals": "warn",
 			"eslint/prefer-object-has-own": "warn",
 			"eslint/prefer-object-spread": "warn",
@@ -288,6 +289,7 @@ export function oxlintPreset(): OxlintConfig {
 			"typescript/explicit-function-return-type": "warn",
 			"typescript/explicit-member-accessibility": ["warn", { accessibility: "no-public" }],
 			// "typescript/explicit-module-boundary-types": "off", // Superseded by `typescript/explicit-function-return-type`.
+			"typescript/method-signature-style": ["warn", "property"],
 			"typescript/no-array-delete": "warn",
 			"typescript/no-base-to-string": "warn",
 			// "typescript/no-confusing-non-null-assertion": "off", // Superseded by `typescript/no-non-null-assertion`.
@@ -392,6 +394,7 @@ export function oxlintPreset(): OxlintConfig {
 			"unicorn/escape-case": "warn",
 			"unicorn/explicit-length-check": "warn",
 			"unicorn/filename-case": ["warn", { case: "pascalCase" }],
+			// "unicorn/import-style": "off", // Unconfigured.
 			"unicorn/new-for-builtins": "warn",
 			"unicorn/no-abusive-eslint-disable": "warn",
 			"unicorn/no-accessor-recursion": "warn",
