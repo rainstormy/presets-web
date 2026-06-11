@@ -1,0 +1,77 @@
+# This workflow implements the first stage of the release pipeline.
+# It creates a release branch and a corresponding pull request towards the `main` branch.
+# Upon approving the pull request, the release pipeline automatically proceeds to publish the release.
+#
+# It can be triggered manually on the `main` branch via the GitHub CLI:
+#
+#   gh workflow run release.yml --field version=<major.minor.patch[-prerelease][+buildinfo]>
+#   gh run watch
+#
+# It can also be triggered manually via the GitHub web interface:
+# https://github.com/rainstormy/presets-web/actions/workflows/release.yml
+
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: The semantic version number of the new release.
+        type: string
+        required: true
+
+run-name: ${{ inputs.version }}
+
+# Cancel all previous runs of this workflow that are still in progress on the same branch.
+# https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency
+concurrency:
+  group: release-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# All third-party actions are pinned to a specific commit SHA for security reasons.
+# https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions
+jobs:
+  integrity:
+    name: Integrity
+    permissions:
+      # To call reusable workflows in the same repository.
+      # https://docs.github.com/en/rest/repos/contents?apiVersion=2022-11-28#get-repository-content
+      # https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#example-caller-workflow
+      contents: read
+    uses: ./.github/workflows/integrity.yml
+
+  release-branch:
+    name: Release branch
+    # A release must always be created from the `main` branch.
+    if: github.ref_name == github.event.repository.default_branch
+    needs: integrity
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 1
+    permissions: {}
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          # Use a separate access token with permission to commit and push.
+          token: ${{ secrets.BOT_NIMBUS_GH_AUTH_TOKEN }}
+        #
+      - name: Update the release artefacts
+        uses: rainstormy/updraft@23bb449c54a4e967c87a6943a1ef9a237eafdb99 # v1.2.0
+        with:
+          check-sequential-release: true
+          files: package.json
+          release-files: CHANGELOG.md
+          release-version: ${{ inputs.version }}
+        #
+      - name: Use Nimbus (Bot) in Git
+        uses: rainstormy/rainstorm-release/bot-nimbus@5aa67a14e95403e7db0a7a43f8e18c1cdd51ba5f # v1.0.0
+        with:
+          bot-nimbus-ssh-public-key: ${{ secrets.BOT_NIMBUS_SSH_PUBLIC_KEY }}
+          __bot-nimbus-ssh-private-key__: ${{ secrets.BOT_NIMBUS_SSH___THE___PRIVATE___KEY }}
+          ssh-key-fingerprints-github: ${{ secrets.SSH_KEY_FINGERPRINTS_GITHUB }}
+        #
+      - name: Create a release-triggering pull request in GitHub
+        uses: rainstormy/release/pr@eb87dc4ba5e9e89451adce4a3c62538e5ecef809 # v1.1.1
+        with:
+          gh-auth-token: ${{ secrets.BOT_NIMBUS_GH_AUTH_TOKEN }}
+          version: ${{ inputs.version }}
