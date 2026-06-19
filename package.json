@@ -39,7 +39,7 @@
 		"oxfmt": "0.53.0",
 		"oxlint": "1.68.0",
 		"typescript": "6.0.3",
-		"vite": "8.0.11"
+		"vite": "8.0.16"
 	},
 	"// devDependencies": {
 		"@types/node": "Type definitions for the Node.js standard library.",
