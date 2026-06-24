@@ -6,21 +6,34 @@ import type { OxfmtConfig } from "oxfmt"
 export function oxfmtPreset(): OxfmtConfig {
 	return {
 		ignorePatterns: [".idea/**/*", "node_modules/**/*", "package-lock.json", "pnpm-lock.yaml"],
+
 		/**
 		 * Omit semicolons to reduce noise and improve readability.
+		 *
 		 * @see https://slides.com/evanyou/semicolons
 		 */
 		semi: false,
+
 		sortImports: {
 			groups: ["side_effect", "builtin", "external", "subpath", "unknown"],
 			newlinesBetween: false,
 			sortSideEffects: true,
 		},
+
 		/**
 		 * Currently, Oxfmt will separate `dependencies` from `// dependencies` in `package.json`.
 		 * It does not yet support custom field ordering.
 		 */
 		sortPackageJson: false,
+
+		/**
+		 * Indent by tabs to gain accessibility (by making the indentation width customisable per developer),
+		 * to reduce the number of required keystrokes, and to reduce the file sizes.
+		 *
+		 * @see https://blog.jetbrains.com/dotnet/2022/08/11/virtual-formatter-in-resharper-2022-2/#what-was-it-about-again
+		 */
+		useTabs: true,
+
 		overrides: [
 			{
 				files: ["**/*.{json,jsonc}"],
@@ -29,9 +42,22 @@ export function oxfmtPreset(): OxfmtConfig {
 				},
 			},
 			{
+				files: ["**/*.md"],
+				options: {
+					useTabs: false, // Use space indentation in Markdown files to support nested lists and YAML code blocks.
+				},
+			},
+			{
+				files: ["**/*.toml"],
+				options: {
+					useTabs: false, // mise-en-place prefers space indentation in TOML files.
+				},
+			},
+			{
 				files: ["**/*.{yml,yaml}"],
 				options: {
 					singleQuote: true, // Use single quotes in YAML to match the GitHub Actions syntax for `hashFiles()`.
+					useTabs: false, // YAML does not support tab indentation.
 				},
 			},
 		],
