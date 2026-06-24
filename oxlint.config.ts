@@ -1,9 +1,7 @@
-import { defineConfig } from "oxlint"
-import { oxlintPreset } from "#oxlint/OxlintPreset.ts"
+import { defineOxlintConfig } from "#oxlint/DefineOxlintConfig.ts"
 import { oxlintRestrictedImportPatterns } from "#oxlint/OxlintRestrictedImportPattern.ts"
 
-export default defineConfig({
-	extends: [oxlintPreset()],
+export default defineOxlintConfig({
 	rules: {
 		"eslint/no-restricted-imports": [
 			"warn",

@@ -1,3 +1,4 @@
+export { defineOxlintConfig } from "#oxlint/DefineOxlintConfig.ts"
 export { oxlintNextjsPreset } from "#oxlint/OxlintNextjsPreset.ts"
 export { oxlintPreset } from "#oxlint/OxlintPreset.ts"
 export { oxlintReactPreset } from "#oxlint/OxlintReactPreset.ts"

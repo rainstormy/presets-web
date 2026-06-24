@@ -1,5 +1,7 @@
 import type { OxlintConfig } from "oxlint"
 
+export declare function defineOxlintConfig(overrides?: Partial<OxlintConfig>): OxlintConfig
+
 export declare function oxlintPreset(): OxlintConfig
 
 export declare function oxlintNextjsPreset(): OxlintConfig
