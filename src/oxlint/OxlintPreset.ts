@@ -283,7 +283,7 @@ export function oxlintPreset(): OxlintConfig {
 			],
 			"typescript/consistent-type-imports": [
 				"warn",
-				{ prefer: "type-imports", fixStyle: "separate-type-imports" },
+				{ prefer: "type-imports", fixStyle: "inline-type-imports" },
 			],
 			"typescript/dot-notation": "warn",
 			"typescript/explicit-function-return-type": "warn",
