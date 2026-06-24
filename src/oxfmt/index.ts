@@ -1,3 +1,1 @@
-import { oxfmtPreset } from "#oxfmt/OxfmtPreset.ts"
-
-export { oxfmtPreset }
+export { oxfmtPreset } from "#oxfmt/OxfmtPreset.ts"
