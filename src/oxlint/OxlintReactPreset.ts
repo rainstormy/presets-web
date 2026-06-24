@@ -78,6 +78,7 @@ export function oxlintReactPreset(): OxlintConfig {
 			"react/jsx-no-comment-textnodes": "warn",
 			"react/jsx-no-constructed-context-values": "warn",
 			"react/jsx-no-duplicate-props": "warn",
+			// "react/jsx-no-literals": "off", // Allow JSX literals in general to improve readability in most cases.
 			"react/jsx-no-script-url": "warn",
 			"react/jsx-no-target-blank": "warn",
 			// "react/jsx-no-undef": "off", // Superseded by TypeScript.
@@ -112,6 +113,7 @@ export function oxlintReactPreset(): OxlintConfig {
 			"react/only-export-components": "warn",
 			// "react/prefer-es6-class": "off", // Not applicable to function components.
 			"react/prefer-function-component": "warn",
+			// "react/react-compiler": "off", // Unconfigured.
 			// "react/react-in-jsx-scope": "off", // Not applicable in React 19.
 			// "react/require-render-return": "off", // Not applicable to function components.
 			"react/rules-of-hooks": "warn",

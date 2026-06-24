@@ -1,15 +1,6 @@
-import { oxlintNextjsPreset } from "#oxlint/OxlintNextjsPreset.ts"
-import { oxlintPreset } from "#oxlint/OxlintPreset.ts"
-import { oxlintReactPreset } from "#oxlint/OxlintReactPreset.ts"
-import { oxlintReactRouterPreset } from "#oxlint/OxlintReactRouterPreset.ts"
-import { oxlintRestrictedImportPatterns } from "#oxlint/OxlintRestrictedImportPattern.ts"
-import { oxlintStorybookPreset } from "#oxlint/OxlintStorybookPreset.ts"
-
-export {
-	oxlintNextjsPreset,
-	oxlintPreset,
-	oxlintReactPreset,
-	oxlintReactRouterPreset,
-	oxlintRestrictedImportPatterns,
-	oxlintStorybookPreset,
-}
+export { oxlintNextjsPreset } from "#oxlint/OxlintNextjsPreset.ts"
+export { oxlintPreset } from "#oxlint/OxlintPreset.ts"
+export { oxlintReactPreset } from "#oxlint/OxlintReactPreset.ts"
+export { oxlintReactRouterPreset } from "#oxlint/OxlintReactRouterPreset.ts"
+export { oxlintRestrictedImportPatterns } from "#oxlint/OxlintRestrictedImportPattern.ts"
+export { oxlintStorybookPreset } from "#oxlint/OxlintStorybookPreset.ts"

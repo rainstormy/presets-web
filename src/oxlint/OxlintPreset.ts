@@ -120,7 +120,7 @@ export function oxlintPreset(): OxlintConfig {
 			"eslint/no-lonely-if": "warn",
 			"eslint/no-loop-func": "warn",
 			"eslint/no-loss-of-precision": "warn",
-			// "eslint/no-magic-numbers": "off",
+			// "eslint/no-magic-numbers": "off", // Allow magic numbers. Having to declare and name constants for magic numbers results in larger cognitive overhead and may sometimes also hurt readability (even though the opposite was intended) when the names are too vague or too descriptive.
 			"eslint/no-misleading-character-class": "warn",
 			"eslint/no-multi-assign": "warn",
 			"eslint/no-multi-str": "warn",
@@ -395,11 +395,13 @@ export function oxlintPreset(): OxlintConfig {
 			"unicorn/explicit-length-check": "warn",
 			"unicorn/filename-case": ["warn", { case: "pascalCase" }],
 			// "unicorn/import-style": "off", // Unconfigured.
+			// "unicorn/max-nested-calls": "off", // Allow any nesting level of function calls. In functional composition, e.g. for Valibot and Zod Mini schemas, having to declare and name constants for intermediate results in larger cognitive overhead and may sometimes also hurt readability (even though the opposite was intended) when the names are too vague or too descriptive.
 			"unicorn/new-for-builtins": "warn",
 			"unicorn/no-abusive-eslint-disable": "warn",
 			"unicorn/no-accessor-recursion": "warn",
 			"unicorn/no-anonymous-default-export": "warn",
 			// "unicorn/no-array-callback-reference": "off", // Prefer readability in most scenarios over type safety in very rare scenarios.
+			"unicorn/no-array-fill-with-reference-type": "warn",
 			"unicorn/no-array-for-each": "warn",
 			"unicorn/no-array-method-this-argument": "warn",
 			"unicorn/no-array-reduce": ["warn", { allowSimpleOperations: true }],
@@ -469,6 +471,7 @@ export function oxlintPreset(): OxlintConfig {
 			"unicorn/prefer-dom-node-remove": "warn",
 			"unicorn/prefer-dom-node-text-content": "warn",
 			"unicorn/prefer-event-target": "warn",
+			"unicorn/prefer-export-from": "warn",
 			"unicorn/prefer-global-this": "warn",
 			"unicorn/prefer-import-meta-properties": "warn",
 			"unicorn/prefer-includes": "warn",
@@ -482,6 +485,7 @@ export function oxlintPreset(): OxlintConfig {
 			// "unicorn/prefer-native-coercion-functions": "off", // Custom functions may have more readable names.
 			"unicorn/prefer-negative-index": "warn",
 			"unicorn/prefer-node-protocol": "warn",
+			// "unicorn/prefer-number-coercion": "warn", // TODO: Enable in the next Oxlint version.
 			"unicorn/prefer-number-properties": "warn",
 			"unicorn/prefer-object-from-entries": "warn",
 			"unicorn/prefer-optional-catch-binding": "warn",
@@ -492,6 +496,7 @@ export function oxlintPreset(): OxlintConfig {
 			"unicorn/prefer-response-static-json": "warn",
 			"unicorn/prefer-set-has": "warn",
 			"unicorn/prefer-set-size": "warn",
+			"unicorn/prefer-single-call": "warn",
 			"unicorn/prefer-spread": "warn",
 			"unicorn/prefer-string-raw": "warn",
 			"unicorn/prefer-string-replace-all": "warn",
