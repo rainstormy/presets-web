@@ -71,5 +71,8 @@ jobs:
           access-level: public
           npm-auth-token: ignored # TODO: Use staged publishing.
           packagejson-excluded-fields: |
-            // devDependencies
-            // peerDependencies
+            ["$schema"]
+            ["imports"]
+            ["// dependencies"]
+            ["// devDependencies"]
+            ["// peerDependencies"]
