@@ -19,7 +19,6 @@
 	},
 	"license": "MIT",
 	"author": "Steffen Diswal",
-	"private": true,
 	"type": "module",
 	"files": [
 		"dist/"
