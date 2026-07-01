@@ -16,7 +16,7 @@ export function oxlintReactRouterPreset(): OxlintConfig {
  */
 function overrideRoutes(): OxlintOverride {
 	return {
-		files: ["src/routes/**.tsx", "src/root.tsx"],
+		files: ["**/src/routes/**.tsx", "**/src/root.tsx"],
 		rules: {
 			"eslint/no-restricted-exports": "off", // Allow default exports of routes.
 			"react/only-export-components": [
@@ -49,7 +49,7 @@ function overrideRoutes(): OxlintOverride {
  */
 function overrideRouteConfig(): OxlintOverride {
 	return {
-		files: ["src/routes.ts"],
+		files: ["**/src/routes.ts"],
 		rules: {
 			"eslint/no-restricted-exports": "off", // Allow default exports of the route configuration.
 			"unicorn/filename-case": "off",

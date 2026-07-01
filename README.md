@@ -83,7 +83,7 @@ export default defineOxlintConfig({
   },
   overrides: [
     {
-      files: ["src/cli/**/*.ts"],
+      files: ["**/src/cli/**/*.ts"],
       rules: {
         "eslint/max-params": "off",
         "unicorn/filename-case": ["warn", { case: "kebabCase" }],
