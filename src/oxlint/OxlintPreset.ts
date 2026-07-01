@@ -688,6 +688,7 @@ function overrideConfigs(): OxlintOverride {
 					patterns: oxlintRestrictedImportPatterns({
 						allowRelativePaths: true,
 						allowNodejs: true,
+						allowConfigs: true,
 					}),
 				},
 			],
@@ -707,6 +708,7 @@ function overrideScripts(): OxlintOverride {
 					patterns: oxlintRestrictedImportPatterns({
 						allowRelativePaths: true,
 						allowNodejs: true,
+						allowScripts: true,
 					}),
 				},
 			],

@@ -2,9 +2,11 @@ export function oxlintRestrictedImportPatterns(
 	options: {
 		allowRelativePaths?: boolean
 		allowNodejs?: boolean
+		allowConfigs?: boolean
 		allowDecorators?: boolean
 		allowFixtures?: boolean
 		allowMocks?: boolean
+		allowScripts?: boolean
 		allowStories?: boolean
 		allowTests?: boolean
 	} = {},
@@ -14,11 +16,11 @@ export function oxlintRestrictedImportPatterns(
 		explicitFileExtensions(),
 		options.allowRelativePaths !== true && noRelativePaths(),
 		options.allowNodejs !== true && noNodeProtocol(),
-		noConfigs(),
+		options.allowConfigs !== true && noConfigs(),
 		options.allowDecorators !== true && noDecorators(),
 		options.allowFixtures !== true && noFixtures(),
 		options.allowMocks !== true && noMocks(),
-		noScripts(),
+		options.allowScripts !== true && noScripts(),
 		options.allowStories !== true && noStories(),
 		options.allowTests !== true && noTests(),
 	].filter((pattern) => pattern !== false)
