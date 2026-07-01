@@ -36,7 +36,7 @@ export function oxfmtPreset(): OxfmtConfig {
 
 		overrides: [
 			{
-				files: ["**/*.{json,jsonc}"],
+				files: ["**/*.{code-workspace,json,jsonc}"],
 				options: {
 					trailingComma: "none", // JSON does not allow trailing commas.
 				},
