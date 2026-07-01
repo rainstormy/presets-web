@@ -13,7 +13,7 @@ export function oxlintStorybookPreset(): OxlintConfig {
 
 function overrideDecorators(): OxlintOverride {
 	return {
-		files: ["src/**/*.decorators.{ts,tsx}"],
+		files: ["**/src/**/*.decorators.{ts,tsx}"],
 		rules: {
 			"eslint/complexity": ["warn", { max: 12, variant: "modified" }],
 			"eslint/no-restricted-imports": [
@@ -34,7 +34,7 @@ function overrideDecorators(): OxlintOverride {
  */
 function overrideStories(): OxlintOverride {
 	return {
-		files: ["src/**/*.stories.{ts,tsx}"],
+		files: ["**/src/**/*.stories.{ts,tsx}"],
 		rules: {
 			"eslint/complexity": ["warn", { max: 12, variant: "modified" }],
 			"eslint/no-restricted-exports": "off", // Allow default exports of static metadata.
@@ -61,9 +61,9 @@ function overrideStories(): OxlintOverride {
 function overrideStorybookConfig(): OxlintOverride {
 	return {
 		files: [
-			".storybook/main.{ts,tsx}",
-			".storybook/manager.{ts,tsx}",
-			".storybook/preview.{ts,tsx}",
+			"**/.storybook/main.{ts,tsx}",
+			"**/.storybook/manager.{ts,tsx}",
+			"**/.storybook/preview.{ts,tsx}",
 		],
 		rules: {
 			"eslint/no-console": "off",

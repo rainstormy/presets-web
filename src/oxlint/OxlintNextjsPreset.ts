@@ -39,7 +39,7 @@ export function oxlintNextjsPreset(): OxlintConfig {
 
 function overrideNonRoutes(): OxlintOverride {
 	return {
-		files: ["src/app/**/*"],
+		files: ["**/src/app/**/*"],
 		rules: {
 			"eslint/max-lines": ["warn", { max: 0 }], // Disallow non-route files in the `app` directory.
 		},
@@ -53,29 +53,29 @@ function overrideNonRoutes(): OxlintOverride {
 function overrideRoutes(): OxlintOverride {
 	return {
 		files: [
-			"src/app/**/apple-icon.{ts,tsx}",
-			"src/app/**/default.{ts,tsx}",
-			"src/app/**/error.{ts,tsx}",
-			"src/app/**/forbidden.{ts,tsx}",
-			"src/app/**/global-error.{ts,tsx}",
-			"src/app/**/icon.{ts,tsx}",
-			"src/app/**/layout.{ts,tsx}",
-			"src/app/**/loading.{ts,tsx}",
-			"src/app/**/not-found.{ts,tsx}",
-			"src/app/**/opengraph-image.{ts,tsx}",
-			"src/app/**/page.{ts,tsx}",
-			"src/app/**/route.ts",
-			"src/app/**/sitemap.ts",
-			"src/app/**/template.{ts,tsx}",
-			"src/app/**/twitter-image.{ts,tsx}",
-			"src/app/**/unauthorized.{ts,tsx}",
-			"src/app/manifest.ts",
-			"src/app/robots.ts",
-			"src/instrumentation-*.ts",
-			"src/instrumentation.ts",
-			"src/mdx-components.{ts,tsx}",
-			"src/middleware.ts", // Next.js 15.
-			"src/proxy.ts", // Next.js 16 and newer.
+			"**/src/app/**/apple-icon.{ts,tsx}",
+			"**/src/app/**/default.{ts,tsx}",
+			"**/src/app/**/error.{ts,tsx}",
+			"**/src/app/**/forbidden.{ts,tsx}",
+			"**/src/app/**/global-error.{ts,tsx}",
+			"**/src/app/**/icon.{ts,tsx}",
+			"**/src/app/**/layout.{ts,tsx}",
+			"**/src/app/**/loading.{ts,tsx}",
+			"**/src/app/**/not-found.{ts,tsx}",
+			"**/src/app/**/opengraph-image.{ts,tsx}",
+			"**/src/app/**/page.{ts,tsx}",
+			"**/src/app/**/route.ts",
+			"**/src/app/**/sitemap.ts",
+			"**/src/app/**/template.{ts,tsx}",
+			"**/src/app/**/twitter-image.{ts,tsx}",
+			"**/src/app/**/unauthorized.{ts,tsx}",
+			"**/src/app/manifest.ts",
+			"**/src/app/robots.ts",
+			"**/src/instrumentation-*.ts",
+			"**/src/instrumentation.ts",
+			"**/src/mdx-components.{ts,tsx}",
+			"**/src/middleware.ts", // Next.js 15.
+			"**/src/proxy.ts", // Next.js 16 and newer.
 		],
 		rules: {
 			"eslint/max-lines": "off", // Allow route files in the `app` directory.
@@ -103,7 +103,7 @@ function overrideRoutes(): OxlintOverride {
 function overrideLayouts(): OxlintOverride {
 	return {
 		// Layouts.
-		files: ["src/app/**/layout.tsx"],
+		files: ["**/src/app/**/layout.tsx"],
 		rules: {
 			"eslint/no-restricted-imports": [
 				"warn",

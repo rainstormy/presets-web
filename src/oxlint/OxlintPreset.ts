@@ -595,7 +595,7 @@ export function oxlintPreset(): OxlintConfig {
 
 function overrideFixtures(): OxlintOverride {
 	return {
-		files: ["src/**/*.fixtures.{ts,tsx}"],
+		files: ["**/src/**/*.fixtures.{ts,tsx}"],
 		rules: {
 			"eslint/complexity": ["warn", { max: 12, variant: "modified" }],
 			"eslint/no-restricted-imports": [
@@ -612,7 +612,7 @@ function overrideFixtures(): OxlintOverride {
 
 function overrideMocks(): OxlintOverride {
 	return {
-		files: ["src/**/*.mocks.{ts,tsx}"],
+		files: ["**/src/**/*.mocks.{ts,tsx}"],
 		rules: {
 			"eslint/complexity": ["warn", { max: 12, variant: "modified" }],
 			"eslint/no-restricted-imports": [
@@ -630,7 +630,7 @@ function overrideMocks(): OxlintOverride {
 
 function overrideTests(): OxlintOverride {
 	return {
-		files: ["src/**/*.tests.{ts,tsx}"],
+		files: ["**/src/**/*.tests.{ts,tsx}"],
 		rules: {
 			"eslint/complexity": ["warn", { max: 4, variant: "modified" }],
 			"eslint/no-restricted-imports": [
@@ -670,7 +670,7 @@ function overrideTests(): OxlintOverride {
  */
 function overrideAmbientTypescriptModules(): OxlintOverride {
 	return {
-		files: ["src/**/*.d.ts"],
+		files: ["**/src/**/*.d.ts"],
 		rules: {
 			"typescript/consistent-type-definitions": "off", // Allow interfaces for type declaration merging.
 		},
@@ -679,7 +679,7 @@ function overrideAmbientTypescriptModules(): OxlintOverride {
 
 function overrideConfigs(): OxlintOverride {
 	return {
-		files: ["./*.config.{js,ts}"],
+		files: ["**/*.config.{js,ts}"],
 		rules: {
 			"eslint/no-restricted-exports": "off", // Allow default exports.
 			"eslint/no-restricted-imports": [
@@ -720,7 +720,7 @@ function overrideScripts(): OxlintOverride {
 
 function overrideCustomErrorSubclasses(): OxlintOverride {
 	return {
-		files: ["src/**/*Error.ts"],
+		files: ["**/src/**/*Error.ts"],
 		rules: {
 			"eslint/max-classes-per-file": "warn",
 		},
@@ -729,7 +729,7 @@ function overrideCustomErrorSubclasses(): OxlintOverride {
 
 function overrideProgramEntrypoints(): OxlintOverride {
 	return {
-		files: ["src/main-*.ts"],
+		files: ["**/src/main-*.ts"],
 		rules: {
 			"unicorn/filename-case": ["warn", { case: "kebabCase" }],
 			"unicorn/no-process-exit": "off",
