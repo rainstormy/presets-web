@@ -4,34 +4,61 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@types/node':
+      specifier: 24.13.2
+      version: 24.13.2
+    '@typescript/native-preview':
+      specifier: 7.0.0-dev.20260701.1
+      version: 7.0.0-dev.20260701.1
+    lefthook:
+      specifier: 2.1.8
+      version: 2.1.8
+    oxfmt:
+      specifier: 0.57.0
+      version: 0.57.0
+    oxlint:
+      specifier: 1.72.0
+      version: 1.72.0
+    oxlint-tsgolint:
+      specifier: 0.24.0
+      version: 0.24.0
+    typescript:
+      specifier: 6.0.3
+      version: 6.0.3
+    vite:
+      specifier: 8.0.16
+      version: 8.0.16
+
 importers:
 
   .:
     dependencies:
       oxlint-tsgolint:
-        specifier: 0.24.0
+        specifier: 'catalog:'
         version: 0.24.0
     devDependencies:
       '@types/node':
-        specifier: 24.13.2
+        specifier: 'catalog:'
         version: 24.13.2
       '@typescript/native-preview':
-        specifier: 7.0.0-dev.20260701.1
+        specifier: 'catalog:'
         version: 7.0.0-dev.20260701.1
       lefthook:
-        specifier: 2.1.8
+        specifier: 'catalog:'
         version: 2.1.8
       oxfmt:
-        specifier: 0.57.0
+        specifier: 'catalog:'
         version: 0.57.0
       oxlint:
-        specifier: 1.72.0
+        specifier: 'catalog:'
         version: 1.72.0(oxlint-tsgolint@0.24.0)
       typescript:
-        specifier: 6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
       vite:
-        specifier: 8.0.16
+        specifier: 'catalog:'
         version: 8.0.16(@types/node@24.13.2)
 
 packages:

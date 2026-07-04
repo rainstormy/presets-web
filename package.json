@@ -40,28 +40,16 @@
 		"#utilities/*": "./src/utilities/*"
 	},
 	"dependencies": {
-		"oxlint-tsgolint": "0.24.0"
-	},
-	"// dependencies": {
-		"oxlint-tsgolint": "This Oxlint plugin provides type-aware linting rules."
+		"oxlint-tsgolint": "catalog:"
 	},
 	"devDependencies": {
-		"@types/node": "24.13.2",
-		"@typescript/native-preview": "7.0.0-dev.20260701.1",
-		"lefthook": "2.1.8",
-		"oxfmt": "0.57.0",
-		"oxlint": "1.72.0",
-		"typescript": "6.0.3",
-		"vite": "8.0.16"
-	},
-	"// devDependencies": {
-		"@types/node": "Type definitions for the Node.js standard library.",
-		"@typescript/native-preview": "tsgo is a preview of TypeScript 7.",
-		"lefthook": "Lefthook is a Git hooks manager.",
-		"oxfmt": "Oxfmt is an opinionated code formatter.",
-		"oxlint": "Oxlint is an opinionated JavaScript and TypeScript linter.",
-		"typescript": "TypeScript is a statically typed programming language on top of JavaScript.",
-		"vite": "Vite is a development server and a bundler."
+		"@types/node": "catalog:",
+		"@typescript/native-preview": "catalog:",
+		"lefthook": "catalog:",
+		"oxfmt": "catalog:",
+		"oxlint": "catalog:",
+		"typescript": "catalog:",
+		"vite": "catalog:"
 	},
 	"peerDependencies": {
 		"oxfmt": "^0.57.0",
