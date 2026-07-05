@@ -39,6 +39,11 @@ catalog:
   # https://vitejs.dev
   vite: 8.0.16
 
+  # Vite+ is a unified toolchain and task runner for Oxfmt, Oxlint, Vite, and Vitest.
+  # It is also a version manager of Node.js and pnpm.
+  # https://viteplus.dev
+  vite-plus: 0.2.4
+
 # Be very strict about third-party dependencies to reduce the risk of supply chain attacks.
 # https://pnpm.io/blog/2025/12/05/newsroom-npm-supply-chain-security
 catalogMode: strict
@@ -49,4 +54,24 @@ trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 4200 # minutes
 
 # Let some packages bypass the minimum release age requirement to allow urgent security upgrades to be installed despite being less than 3 days old.
-minimumReleaseAgeExclude: []
+minimumReleaseAgeExclude:
+  - '@vitest/browser-preview@4.1.10'
+  - '@vitest/browser@4.1.10'
+  - '@vitest/expect@4.1.10'
+  - '@vitest/mocker@4.1.10'
+  - '@vitest/pretty-format@4.1.10'
+  - '@vitest/runner@4.1.10'
+  - '@vitest/snapshot@4.1.10'
+  - '@vitest/spy@4.1.10'
+  - '@vitest/utils@4.1.10'
+  - '@voidzero-dev/vite-plus-core@0.2.4'
+  - '@voidzero-dev/vite-plus-darwin-arm64@0.2.4'
+  - '@voidzero-dev/vite-plus-darwin-x64@0.2.4'
+  - '@voidzero-dev/vite-plus-linux-arm64-gnu@0.2.4'
+  - '@voidzero-dev/vite-plus-linux-arm64-musl@0.2.4'
+  - '@voidzero-dev/vite-plus-linux-x64-gnu@0.2.4'
+  - '@voidzero-dev/vite-plus-linux-x64-musl@0.2.4'
+  - '@voidzero-dev/vite-plus-win32-arm64-msvc@0.2.4'
+  - '@voidzero-dev/vite-plus-win32-x64-msvc@0.2.4'
+  - vite-plus@0.2.4
+  - vitest@4.1.10
