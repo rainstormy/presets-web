@@ -41,4 +41,4 @@ pre-push:
     check:
       # Verify the software quality before allowing commits to be pushed.
       # language=sh
-      run: vp run check
+      run: vp run check && vp run test

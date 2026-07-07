@@ -38,11 +38,24 @@ export default defineConfig({
 				],
 				cache: false,
 			},
+			test: {
+				// language=sh
+				command: "vp test",
+				input: [{ auto: true }, "!node_modules/.vite-temp/vite.config.ts.timestamp-*"],
+			},
 			yolo: {
 				// language=sh
 				command: "lefthook uninstall",
 				cache: false,
 			},
 		},
+	},
+	test: {
+		include: ["src/**/*.tests.ts"],
+		pool: "vmThreads",
+		setupFiles: [],
+		mockReset: true,
+		unstubEnvs: true,
+		unstubGlobals: true,
 	},
 })
