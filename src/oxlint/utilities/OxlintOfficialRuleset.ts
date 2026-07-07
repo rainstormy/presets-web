@@ -166,7 +166,7 @@ max-expects\tvitest\tstyle\t\t\tv0.0.18
 max-lines\teslint\tpedantic\t\t\tv0.2.14
 max-lines-per-function\teslint\tpedantic\t\t\tv0.15.12
 max-nested-callbacks\teslint\tpedantic\t\t\tv0.15.12
-max-nested-calls\tunicorn\tstyle\t\t\tvnext
+max-nested-calls\tunicorn\tstyle\t\t\tv1.71.0
 max-nested-describe\tjest\tstyle\t\t\tv0.4.4
 max-nested-describe\tvitest\tstyle\t\t\tv0.4.4
 max-params\teslint\tstyle\t\t\tv0.2.14
@@ -211,7 +211,7 @@ no-assign-module-variable\tnextjs\tcorrectness\t\t\tv0.2.0
 no-async-await\toxc\trestriction\t\t\tv0.4.2
 no-async-client-component\tnextjs\tcorrectness\t\t\tv0.2.0
 no-async-endpoint-handlers\toxc\tsuspicious\t\t\tv0.9.2
-no-async-in-computed-properties\tvue\tcorrectness\t\t\tvnext
+no-async-in-computed-properties\tvue\tcorrectness\t\t\tv1.71.0
 no-async-promise-executor\teslint\tcorrectness\t✅\t\tv0.0.3
 no-autofocus\tjsx-a11y\tcorrectness\t\t💡\tv0.0.19
 no-await-expression-member\tunicorn\tstyle\t\t⚠️ 🛠️\tv0.0.19
@@ -378,7 +378,7 @@ no-misused-new\ttypescript\tcorrectness\t✅\t\tv0.0.7
 no-misused-promises💭\ttypescript\tpedantic\t\t\tv1.11.0
 no-misused-spread💭\ttypescript\tcorrectness\t✅\t💡\tv1.12.0
 no-mixed-enums💭\ttypescript\tpedantic\t\t\tv1.12.0
-no-mixed-requires\tnode\tstyle\t\t\tvnext
+no-mixed-requires\tnode\tstyle\t\t\tv1.71.0
 no-mocks-import\tjest\tstyle\t\t\tv0.0.13
 no-mocks-import\tvitest\tstyle\t\t\tv0.0.13
 no-multi-assign\teslint\tstyle\t\t\tv0.15.4
@@ -394,8 +394,8 @@ no-named-export\timport\tstyle\t\t\tv1.19.0
 no-namespace\timport\tstyle\t\t🚧\tv0.12.0
 no-namespace\treact\tsuspicious\t\t\tv0.15.13
 no-namespace\ttypescript\trestriction\t\t\tv0.0.8
-no-negated-condition\teslint\tpedantic\t\t🚧\tv0.0.18
-no-negated-condition\tunicorn\tpedantic\t\t🚧\tv0.0.18
+no-negated-condition\teslint\tpedantic\t\t🛠️\tv0.0.18
+no-negated-condition\tunicorn\tpedantic\t\t🛠️\tv0.0.18
 no-negation-in-equality-check\tunicorn\tpedantic\t\t💡\tv0.5.3
 no-nested-ternary\teslint\tstyle\t\t\tv0.15.4
 no-nested-ternary\tunicorn\tstyle\t\t🛠️\tv0.0.18
@@ -478,7 +478,7 @@ no-static-element-interactions\tjsx-a11y\tcorrectness\t\t\tv1.37.0
 no-static-only-class\tunicorn\tpedantic\t\t⚠️ 🛠️\tv0.0.16
 no-string-refs\treact\tcorrectness\t\t\tv0.0.15
 no-styled-jsx-in-document\tnextjs\tcorrectness\t\t\tv0.3.3
-no-sync\tnode\tstyle\t\t\tvnext
+no-sync\tnode\tstyle\t\t\tv1.71.0
 no-sync-scripts\tnextjs\tcorrectness\t\t\tv0.2.0
 no-template-curly-in-string\teslint\tstyle\t\t\tv0.2.14
 no-ternary\teslint\tstyle\t\t\tv0.2.14
@@ -504,7 +504,7 @@ no-undefined\teslint\trestriction\t\t\tv0.5.3
 no-underscore-dangle\teslint\tsuspicious\t\t\tv1.62.0
 no-unescaped-entities\treact\tpedantic\t\t🚧\tv0.0.15
 no-unexpected-multiline\teslint\tsuspicious\t\t⚠️ 🛠️\tv0.9.7
-no-unknown-property\treact\trestriction\t\t🚧\tv0.2.0
+no-unknown-property\treact\trestriction\t\t💡\tv0.2.0
 no-unmodified-loop-condition\teslint\tsuspicious\t\t\tv1.48.0
 no-unnecessary-array-flat-depth\tunicorn\tpedantic\t\t💡\tv0.16.12
 no-unnecessary-array-splice-count\tunicorn\tpedantic\t\t🛠️\tv1.20.0
@@ -679,7 +679,7 @@ prefer-native-coercion-functions\tunicorn\tpedantic\t\t🚧\tv0.0.19
 prefer-negative-index\tunicorn\tstyle\t\t🛠️\tv0.13.2
 prefer-node-protocol\tunicorn\trestriction\t\t🛠️\tv0.0.19
 prefer-nullish-coalescing💭\ttypescript\tpedantic\t\t🛠️\tv1.33.0
-prefer-number-coercion\tunicorn\tpedantic\t\t💡\tvnext
+prefer-number-coercion\tunicorn\tpedantic\t\t💡\tv1.71.0
 prefer-number-properties\tunicorn\trestriction\t\t⚠️ 🛠️\tv0.0.19
 prefer-numeric-literals\teslint\tstyle\t\t🛠️\tv0.7.0
 prefer-object-from-entries\tunicorn\tstyle\t\t🚧\tv0.16.12
