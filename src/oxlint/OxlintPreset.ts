@@ -191,7 +191,7 @@ export function oxlintPreset(): OxlintConfig {
 					caughtErrorsIgnorePattern: "^_[A-Za-z0-9]",
 					destructuredArrayIgnorePattern: "^_[A-Za-z0-9]",
 					varsIgnorePattern: "^_[A-Za-z0-9]",
-					fix: { imports: "fix", variables: "suggestion" },
+					fix: { imports: "safe-fix", variables: "suggestion" },
 					reportUsedIgnorePattern: true,
 					reportVarsOnlyUsedAsTypes: true,
 				},
