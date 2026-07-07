@@ -15,9 +15,11 @@ export declare function oxlintStorybookPreset(): OxlintConfig
 export declare function oxlintRestrictedImportPatterns(options?: {
 	allowRelativePaths?: boolean
 	allowNodejs?: boolean
+	allowConfigs?: boolean
 	allowDecorators?: boolean
 	allowFixtures?: boolean
 	allowMocks?: boolean
+	allowScripts?: boolean
 	allowStories?: boolean
 	allowTests?: boolean
 }): Array<{ regex?: string; message?: string }>

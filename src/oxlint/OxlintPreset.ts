@@ -175,6 +175,7 @@ export function oxlintPreset(): OxlintConfig {
 			"eslint/no-unmodified-loop-condition": "warn",
 			"eslint/no-unneeded-ternary": "warn",
 			"eslint/no-unreachable": "warn",
+			//  "eslint/no-unreachable-loop": "warn", // TODO: Enable in Oxlint 1.73.0.
 			"eslint/no-unsafe-finally": "warn",
 			"eslint/no-unsafe-negation": "warn",
 			"eslint/no-unsafe-optional-chaining": "warn",
@@ -190,7 +191,7 @@ export function oxlintPreset(): OxlintConfig {
 					caughtErrorsIgnorePattern: "^_[A-Za-z0-9]",
 					destructuredArrayIgnorePattern: "^_[A-Za-z0-9]",
 					varsIgnorePattern: "^_[A-Za-z0-9]",
-					fix: { imports: "fix", variables: "suggestion" },
+					fix: { imports: "safe-fix", variables: "suggestion" },
 					reportUsedIgnorePattern: true,
 					reportVarsOnlyUsedAsTypes: true,
 				},
@@ -393,6 +394,7 @@ export function oxlintPreset(): OxlintConfig {
 			"unicorn/error-message": "warn",
 			"unicorn/escape-case": "warn",
 			"unicorn/explicit-length-check": "warn",
+			//  "unicorn/explicit-timer-delay": "warn", // TODO: Enable in Oxlint 1.73.0.
 			"unicorn/filename-case": ["warn", { case: "pascalCase" }],
 			// "unicorn/import-style": "off", // Unconfigured.
 			// "unicorn/max-nested-calls": "off", // Allow any nesting level of function calls. In functional composition, e.g. for Valibot and Zod Mini schemas, having to declare and name constants for intermediate results in larger cognitive overhead and may sometimes also hurt readability (even though the opposite was intended) when the names are too vague or too descriptive.
@@ -409,6 +411,7 @@ export function oxlintPreset(): OxlintConfig {
 			"unicorn/no-array-sort": "warn",
 			"unicorn/no-await-expression-member": "warn",
 			"unicorn/no-await-in-promise-methods": "warn",
+			//  "unicorn/no-confusing-array-with": "warn", // TODO: Enable in Oxlint 1.73.0. // Unlike `slice()` and `splice()`, `with()` throws an exception when the index is out of bounds.
 			"unicorn/no-console-spaces": "warn",
 			"unicorn/no-document-cookie": "warn",
 			"unicorn/no-empty-file": "warn",
