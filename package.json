@@ -47,7 +47,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "24.13.2",
-		"@typescript/native-preview": "7.0.0-dev.20260601.1",
+		"@typescript/native-preview": "7.0.0-dev.20260701.1",
 		"lefthook": "2.1.8",
 		"oxfmt": "0.57.0",
 		"oxlint": "1.72.0",
