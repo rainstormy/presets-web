@@ -57,6 +57,10 @@ strictDepBuilds: true
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 4200 # minutes
 
+# Disallow all script execution during package installation.
+allowBuilds:
+  lefthook: false
+
 # Let some packages bypass the minimum release age requirement to allow urgent security upgrades to be installed despite being less than 3 days old.
 minimumReleaseAgeExclude:
   - '@vitest/browser-preview@4.1.10'
