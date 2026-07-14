@@ -1,3 +1,4 @@
+// oxlint-disable-next-line no-restricted-imports -- Allow this file to read the Oxlint preset files.
 import { readFile } from "node:fs/promises"
 import { isAcceptedOxlintRule, normaliseOxlintRule } from "#oxlint/utilities/OxlintRule.ts"
 

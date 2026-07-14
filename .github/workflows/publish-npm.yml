@@ -59,20 +59,22 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         #
-      - name: Restore the build artefacts to be distributed in the npm package
-        uses: ./.github/actions/build-artefacts
-        #
       - name: Install dependencies
-        uses: ./.github/actions/dependencies
+        uses: voidzero-dev/setup-vp@250f29ce396baf5e8f24498e17c0dfdebabc26eb # v1.15.0
+        with:
+          node-version-file: package.json
+          version-file: pnpm-workspace.yaml
+          cache: true
+        #
+      - name: Build the project
+        # language=sh
+        run: vp run build
+        shell: bash
         #
       - name: Publish the package to npm
-        uses: rainstormy/release/npm@eb87dc4ba5e9e89451adce4a3c62538e5ecef809 # v1.1.1
-        with:
-          access-level: public
-          npm-auth-token: ignored # TODO: Use staged publishing.
-          packagejson-excluded-fields: |
-            ["$schema"]
-            ["imports"]
-            ["// dependencies"]
-            ["// devDependencies"]
-            ["// peerDependencies"]
+        # language=sh
+        run: |
+          VERSION="$(jq -r '.version' ./package.json)"
+          TAG="$([[ "$VERSION" == *[-+]* ]] && echo 'next' || echo 'latest')"
+          pnpm stage publish --provenance --access 'public' --tag "$TAG" --no-git-checks
+        shell: bash
