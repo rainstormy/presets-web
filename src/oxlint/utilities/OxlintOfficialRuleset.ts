@@ -98,6 +98,7 @@ explicit-function-return-type\ttypescript\trestriction\t\t\tv0.4.4
 explicit-length-check\tunicorn\tpedantic\t\t🛠️\tv0.0.19
 explicit-member-accessibility\ttypescript\trestriction\t\t🛠️ 💡\tv1.61.0
 explicit-module-boundary-types\ttypescript\trestriction\t\t\tv1.9.0
+explicit-timer-delay\tunicorn\tstyle\t\t🛠️\tv1.73.0
 export\timport\tnursery\t\t\tv0.0.21
 exports-last\timport\tstyle\t\t\tv0.15.14
 extensions\timport\trestriction\t\t\tv1.2.0
@@ -238,6 +239,7 @@ no-conditional-expect\tvitest\tcorrectness\t\t\tv0.0.12
 no-conditional-in-test\tjest\tpedantic\t\t\tv0.8.0
 no-conditional-in-test\tvitest\tpedantic\t\t\tv0.8.0
 no-conditional-tests\tvitest\tcorrectness\t\t\tv0.8.0
+no-confusing-array-with\tunicorn\tsuspicious\t\t\tv1.73.0
 no-confusing-non-null-assertion\ttypescript\tsuspicious\t\t🚧\tv0.6.1
 no-confusing-set-timeout\tjest\tstyle\t\t\tv0.0.14
 no-confusing-void-expression💭\ttypescript\tpedantic\t\t🛠️ 💡\tv1.12.0
@@ -288,7 +290,7 @@ no-duplicate-hooks\tjest\tstyle\t\t\tv0.4.0
 no-duplicate-hooks\tvitest\tstyle\t\t\tv0.4.0
 no-duplicate-imports\teslint\tstyle\t\t🚧\tv0.13.2
 no-duplicate-type-constituents💭\ttypescript\tcorrectness\t✅\t🛠️\tv1.12.0
-no-duplicates\timport\tstyle\t\t\tv0.2.11
+no-duplicates\timport\tstyle\t\t🛠️\tv0.2.11
 no-dynamic-delete\ttypescript\trestriction\t\t\tv0.5.2
 no-dynamic-require\timport\trestriction\t\t\tv0.9.3
 no-else-return\teslint\tpedantic\t\t🛠️\tv0.9.10
@@ -524,6 +526,7 @@ no-unneeded-async-expect-function\tjest\tstyle\t\t🛠️\tv1.39.0
 no-unneeded-async-expect-function\tvitest\tstyle\t\t🛠️\tv1.39.0
 no-unneeded-ternary\teslint\tsuspicious\t\t⚠️ 🛠️\tv0.15.12
 no-unreachable\teslint\tcorrectness\t✅\t\tv0.4.4
+no-unreachable-loop\teslint\tnursery\t\t\tvnext
 no-unreadable-array-destructuring\tunicorn\tstyle\t\t🚧\tv0.0.19
 no-unreadable-iife\tunicorn\tpedantic\t\t\tv0.0.19
 no-unsafe\treact\tcorrectness\t\t\tv1.35.0
