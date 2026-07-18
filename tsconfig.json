@@ -8,5 +8,7 @@
 		"target": "ESNext",
 		"tsBuildInfoFile": "node_modules/.cache/typescript/.tsbuildinfo",
 		"types": ["node"]
-	}
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["dist/", "node_modules/"]
 }

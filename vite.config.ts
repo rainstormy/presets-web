@@ -1,25 +1,35 @@
-import { defineConfig } from "vite-plus"
+import { type UserConfig, defineConfig } from "vite-plus"
 import { defineOxfmtConfig } from "#oxfmt/DefineOxfmtConfig.ts"
 import { defineOxlintConfig } from "#oxlint/DefineOxlintConfig.ts"
 
+type ViteOxlintConfig = NonNullable<UserConfig["lint"]>
+
 export default defineConfig({
-	build: {
-		emptyOutDir: true,
-		minify: "oxc",
-		reportCompressedSize: false,
-		target: "es2022",
-	},
 	fmt: defineOxfmtConfig({ ignorePatterns: ["dist/**/*", "**/*.md"] }),
-	lint: defineOxlintConfig({ ignorePatterns: ["dist/**/*"] }),
+	lint: defineOxlintConfig({ ignorePatterns: ["dist/**/*"] }) as ViteOxlintConfig, // Suppress type errors from stricter rule schemas in newer versions of Oxlint.
+	pack: [
+		{
+			entry: "src/oxfmt/index.ts",
+			outDir: "dist/oxfmt/",
+			format: "esm",
+			platform: "neutral",
+			dts: true,
+			minify: { compress: true },
+		},
+		{
+			entry: "src/oxlint/index.ts",
+			outDir: "dist/oxlint/",
+			format: "esm",
+			platform: "neutral",
+			dts: true,
+			minify: { compress: true },
+		},
+	],
 	run: {
 		tasks: {
 			build: {
 				// language=sh
-				command: [
-					"vite build --ssr src/oxfmt/index.ts --outDir dist/oxfmt/",
-					"vite build --ssr src/oxlint/index.ts --outDir dist/oxlint/",
-					"node build.script.ts",
-				],
+				command: ["vp pack", "node build.script.ts"],
 				input: [{ auto: true }, "!dist/**/*"],
 			},
 			check: {
