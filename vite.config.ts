@@ -1,6 +1,8 @@
-import { defineConfig } from "vite-plus"
+import { type UserConfig, defineConfig } from "vite-plus"
 import { defineOxfmtConfig } from "#oxfmt/DefineOxfmtConfig.ts"
 import { defineOxlintConfig } from "#oxlint/DefineOxlintConfig.ts"
+
+type ViteOxlintConfig = NonNullable<UserConfig["lint"]>
 
 export default defineConfig({
 	build: {
@@ -10,7 +12,7 @@ export default defineConfig({
 		target: "es2022",
 	},
 	fmt: defineOxfmtConfig({ ignorePatterns: ["dist/**/*", "**/*.md"] }),
-	lint: defineOxlintConfig({ ignorePatterns: ["dist/**/*"] }),
+	lint: defineOxlintConfig({ ignorePatterns: ["dist/**/*"] }) as ViteOxlintConfig, // Suppress type errors from stricter rule schemas in newer versions of Oxlint.
 	run: {
 		tasks: {
 			build: {
