@@ -1,10 +1,6 @@
-import { copyFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises"
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises"
 
-await Promise.all([
-	copyFile("src/oxfmt/index.d.ts", "dist/oxfmt/index.d.ts"),
-	copyFile("src/oxlint/index.d.ts", "dist/oxlint/index.d.ts"),
-	minifyJsoncFiles("src/typescript/", "dist/typescript/"),
-])
+await minifyJsoncFiles("src/typescript/", "dist/typescript/")
 
 async function minifyJsoncFiles(inputDirectory: string, outputDirectory: string): Promise<void> {
 	const filenames = await readdir(inputDirectory)
