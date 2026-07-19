@@ -76,5 +76,5 @@ jobs:
         run: |
           VERSION="$(jq -r '.version' ./package.json)"
           TAG="$([[ "$VERSION" == *[-+]* ]] && echo 'next' || echo 'latest')"
-          pnpm stage publish --provenance --access 'public' --tag "$TAG" --no-git-checks
+          vp pm stage publish --provenance --access 'public' --tag "$TAG" --no-git-checks
         shell: bash
