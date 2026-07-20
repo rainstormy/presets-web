@@ -79,7 +79,7 @@ export function oxlintPreset(): OxlintConfig {
 			"eslint/no-constant-binary-expression": "warn",
 			"eslint/no-constant-condition": "warn",
 			"eslint/no-constructor-return": "warn",
-			"eslint/no-continue": "warn",
+			// "eslint/no-continue": "off", // Allow continue statements to skip early and avoid large nested if-blocks (similar to early returns).
 			"eslint/no-control-regex": "warn",
 			"eslint/no-debugger": "warn",
 			"eslint/no-delete-var": "warn",
