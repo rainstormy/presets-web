@@ -25,7 +25,7 @@ catalog:
 
   # This Oxlint plugin provides type-aware linting rules.
   # https://github.com/oxc-project/tsgolint
-  oxlint-tsgolint: 0.24.0
+  oxlint-tsgolint: 7.0.2001
 
   # The official 'tsc' CLI for TypeScript, including the language service (LSP) and Go-powered compiler (tsgo).
   # https://www.typescriptlang.org
@@ -97,5 +97,12 @@ minimumReleaseAgeExclude:
   - '@oxlint/binding-win32-arm64-msvc@1.75.0'
   - '@oxlint/binding-win32-ia32-msvc@1.75.0'
   - '@oxlint/binding-win32-x64-msvc@1.75.0'
+  - '@oxlint-tsgolint/darwin-arm64@7.0.2001'
+  - '@oxlint-tsgolint/darwin-x64@7.0.2001'
+  - '@oxlint-tsgolint/linux-arm64@7.0.2001'
+  - '@oxlint-tsgolint/linux-x64@7.0.2001'
+  - '@oxlint-tsgolint/win32-arm64@7.0.2001'
+  - '@oxlint-tsgolint/win32-x64@7.0.2001'
   - oxfmt@0.60.0
   - oxlint@1.75.0
+  - oxlint-tsgolint@7.0.2001
