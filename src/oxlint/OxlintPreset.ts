@@ -550,6 +550,7 @@ export function oxlintPreset(): OxlintConfig {
 			// "vitest/no-test-return-statement": "off",
 			// "vitest/no-unneeded-async-expect-function": "off",
 			"vitest/padding-around-after-all-blocks": "warn",
+			"vitest/padding-around-test-blocks": "warn",
 			"vitest/prefer-called-exactly-once-with": "warn",
 			"vitest/prefer-called-once": "warn",
 			// "vitest/prefer-called-times": "off", // Superseded by `vitest/prefer-called-once`.

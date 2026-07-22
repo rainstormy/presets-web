@@ -112,6 +112,7 @@ forward-ref-uses-ref\treact\tcorrectness\t\t💡\tv0.16.9
 func-name-matching\teslint\tstyle\t\t\tv1.62.0
 func-names\teslint\tstyle\t\t🛠️ 💡\tv0.7.0
 func-style\teslint\tstyle\t\t🚧\tv0.15.11
+function-component-definition\treact\tstyle\t\t💡\tvnext
 getter-return\teslint\tcorrectness\t✅\t\tv0.0.3
 global-require\tnode\tstyle\t\t\tv1.36.0
 google-font-display\tnextjs\tcorrectness\t\t\tv0.2.0
@@ -497,6 +498,7 @@ no-this-in-exported-function\toxc\tsuspicious\t\t\tv1.33.0
 no-this-in-sfc\treact\tcorrectness\t\t\tv1.37.0
 no-throw-literal\teslint\tpedantic\t\t💡\tv0.9.10
 no-title-in-document-head\tnextjs\tcorrectness\t\t\tv0.2.0
+no-top-level-await\tnode\trestriction\t\t\tvnext
 no-typeof-undefined\tunicorn\tpedantic\t\t🛠️ 💡\tv0.0.18
 no-typos\tnextjs\tcorrectness\t\t🚧\tv0.2.1
 no-unassigned-import\timport\tsuspicious\t\t\tv0.16.11
@@ -594,6 +596,7 @@ operator-assignment\teslint\tstyle\t\t⚠️ 🛠️\tv0.15.13
 padding-around-after-all-blocks\tjest\tstyle\t\t🛠️\tv1.59.0
 padding-around-after-all-blocks\tvitest\tstyle\t\t🛠️\tv1.66.0
 padding-around-test-blocks\tjest\tstyle\t\t🛠️\tv1.13.0
+padding-around-test-blocks\tvitest\tstyle\t\t🛠️\tvnext
 param-names\tpromise\tstyle\t\t\tv0.6.1
 parameter-properties\ttypescript\tstyle\t\t\tv1.48.0
 prefer-add-event-listener\tunicorn\tsuspicious\t\t🚧\tv0.0.16
