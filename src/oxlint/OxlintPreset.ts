@@ -79,7 +79,7 @@ export function oxlintPreset(): OxlintConfig {
 			"eslint/no-constant-binary-expression": "warn",
 			"eslint/no-constant-condition": "warn",
 			"eslint/no-constructor-return": "warn",
-			"eslint/no-continue": "warn",
+			// "eslint/no-continue": "off", // Allow continue statements to skip early and avoid large nested if-blocks (similar to early returns).
 			"eslint/no-control-regex": "warn",
 			"eslint/no-debugger": "warn",
 			"eslint/no-delete-var": "warn",
@@ -550,6 +550,7 @@ export function oxlintPreset(): OxlintConfig {
 			// "vitest/no-test-return-statement": "off",
 			// "vitest/no-unneeded-async-expect-function": "off",
 			"vitest/padding-around-after-all-blocks": "warn",
+			"vitest/padding-around-test-blocks": "warn",
 			"vitest/prefer-called-exactly-once-with": "warn",
 			"vitest/prefer-called-once": "warn",
 			// "vitest/prefer-called-times": "off", // Superseded by `vitest/prefer-called-once`.

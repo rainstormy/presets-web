@@ -59,6 +59,10 @@ export function oxlintReactPreset(): OxlintConfig {
 			// "react/forbid-dom-props": "off", // Unconfigured.
 			// "react/forbid-elements": "off", // Unconfigured.
 			"react/forward-ref-uses-ref": "warn",
+			"react/function-component-definition": [
+				"warn",
+				{ namedComponents: "function-declaration", unnamedComponents: "arrow-function" },
+			],
 			"react/hook-use-state": "warn",
 			"react/iframe-missing-sandbox": "warn",
 			"react/jsx-boolean-value": ["warn", "never"],
