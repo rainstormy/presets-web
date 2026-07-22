@@ -55,7 +55,7 @@
 	},
 	"peerDependencies": {
 		"oxfmt": "^0.60.0",
-		"oxlint": "^1.74.0",
+		"oxlint": "^1.75.0",
 		"typescript": "^6.0.3 || ^7.0.0"
 	},
 	"devEngines": {
