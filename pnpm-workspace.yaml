@@ -37,7 +37,7 @@ catalog:
 
   # Vite is a local development server and a bundler.
   # https://vitejs.dev
-  vite: 8.0.16
+  vite: 8.1.5
 
   # Vite+ is a unified toolchain and task runner for Oxfmt, Oxlint, Vite, and Vitest.
   # It is also a version manager of Node.js and pnpm.
