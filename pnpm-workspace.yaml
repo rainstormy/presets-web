@@ -106,3 +106,9 @@ minimumReleaseAgeExclude:
   - oxfmt@0.60.0
   - oxlint@1.75.0
   - oxlint-tsgolint@7.0.2001
+
+# Consolidate transitive dependency versions with the ones specified in the catalog.
+overrides:
+  oxfmt: 'catalog:'
+  oxlint: 'catalog:'
+  oxlint-tsgolint: 'catalog:'
