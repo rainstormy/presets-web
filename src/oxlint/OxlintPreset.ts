@@ -21,8 +21,7 @@ export function oxlintPreset(): OxlintConfig {
 		},
 		ignorePatterns: [".idea/**/*", "node_modules/**/*"],
 		overrides: [
-			overrideFixtures(),
-			overrideMocks(),
+			overrideFakes(),
 			overrideTests(),
 			overrideAmbientTypescriptModules(),
 			overrideConfigs(),
@@ -597,38 +596,16 @@ export function oxlintPreset(): OxlintConfig {
 	}
 }
 
-function overrideFixtures(): OxlintOverride {
+function overrideFakes(): OxlintOverride {
 	return {
-		files: ["**/src/**/*.fixtures.{ts,tsx}"],
+		files: ["**/src/**/*.fakes.{ts,tsx}"],
 		rules: {
 			"eslint/complexity": ["warn", { max: 12, variant: "modified" }],
 			"eslint/no-restricted-imports": [
 				"warn",
-				{
-					patterns: oxlintRestrictedImportPatterns({
-						allowFixtures: true,
-					}),
-				},
+				{ patterns: oxlintRestrictedImportPatterns({ allowFakes: true }) },
 			],
 			"oxc/no-this-in-exported-function": "off", // Allow access to the `this` context in custom Vitest matchers.
-		},
-	}
-}
-
-function overrideMocks(): OxlintOverride {
-	return {
-		files: ["**/src/**/*.mocks.{ts,tsx}"],
-		rules: {
-			"eslint/complexity": ["warn", { max: 12, variant: "modified" }],
-			"eslint/no-restricted-imports": [
-				"warn",
-				{
-					patterns: oxlintRestrictedImportPatterns({
-						allowFixtures: true,
-						allowMocks: true,
-					}),
-				},
-			],
 		},
 	}
 }
@@ -640,12 +617,7 @@ function overrideTests(): OxlintOverride {
 			"eslint/complexity": ["warn", { max: 4, variant: "modified" }],
 			"eslint/no-restricted-imports": [
 				"warn",
-				{
-					patterns: oxlintRestrictedImportPatterns({
-						allowMocks: true,
-						allowFixtures: true,
-					}),
-				},
+				{ patterns: oxlintRestrictedImportPatterns({ allowFakes: true }) },
 			],
 			"vitest/consistent-test-it": ["warn", { fn: "it", withinDescribe: "it" }],
 			"vitest/expect-expect": "warn",
