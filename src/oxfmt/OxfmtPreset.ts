@@ -15,9 +15,8 @@ export function oxfmtPreset(): OxfmtConfig {
 		semi: false,
 
 		sortImports: {
-			groups: ["side_effect", "builtin", "external", "subpath", "unknown"],
+			groups: ["side_effect", "side_effect_style", "builtin", "external", "subpath", "unknown"],
 			newlinesBetween: false,
-			sortSideEffects: true,
 		},
 
 		/**
