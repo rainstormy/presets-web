@@ -31,11 +31,7 @@ catalog:
   # https://www.typescriptlang.org
   typescript: 7.0.2
 
-  # Vite is a local development server and a bundler.
-  # https://vitejs.dev
-  vite: 8.1.5
-
-  # Vite+ is a unified toolchain and task runner for Oxfmt, Oxlint, Vite, and Vitest.
+  # Vite+ is a unified toolchain and task runner for Oxfmt, Oxlint, tsdown, Vite, and Vitest.
   # It is also a version manager of Node.js and pnpm.
   # https://viteplus.dev
   vite-plus: 0.2.5
