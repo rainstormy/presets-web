@@ -9,11 +9,11 @@ catalog:
   # Type definitions for the Node.js standard library.
   # https://nodejs.org/docs/latest/api
   # https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node
-  '@types/node': 24.13.2
+  '@types/node': 24.13.3
 
   # Lefthook is a Git hooks manager.
   # https://lefthook.dev
-  lefthook: 2.1.8
+  lefthook: 2.1.10
 
   # Oxfmt is an opinionated code formatter.
   # https://oxc.rs/docs/guide/usage/formatter.html
@@ -31,11 +31,7 @@ catalog:
   # https://www.typescriptlang.org
   typescript: 7.0.2
 
-  # Vite is a local development server and a bundler.
-  # https://vitejs.dev
-  vite: 8.1.5
-
-  # Vite+ is a unified toolchain and task runner for Oxfmt, Oxlint, Vite, and Vitest.
+  # Vite+ is a unified toolchain and task runner for Oxfmt, Oxlint, tsdown, Vite, and Vitest.
   # It is also a version manager of Node.js and pnpm.
   # https://viteplus.dev
   vite-plus: 0.2.5
