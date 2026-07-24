@@ -21,7 +21,7 @@ function overrideDecorators(): OxlintOverride {
 				{
 					patterns: oxlintRestrictedImportPatterns({
 						allowDecorators: true,
-						allowFixtures: true,
+						allowFakes: true,
 					}),
 				},
 			],
@@ -42,10 +42,9 @@ function overrideStories(): OxlintOverride {
 				"warn",
 				{
 					patterns: oxlintRestrictedImportPatterns({
-						allowMocks: true,
 						allowDecorators: true,
+						allowFakes: true,
 						allowStories: true,
-						allowFixtures: true,
 					}),
 				},
 			],
@@ -73,11 +72,10 @@ function overrideStorybookConfig(): OxlintOverride {
 				"warn",
 				{
 					patterns: oxlintRestrictedImportPatterns({
-						allowRelativePaths: true,
-						allowNodejs: true,
-						allowFixtures: true,
 						allowDecorators: true,
-						allowMocks: true,
+						allowFakes: true,
+						allowNodejs: true,
+						allowRelativePaths: true,
 					}),
 				},
 			],

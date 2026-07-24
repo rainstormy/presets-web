@@ -4,8 +4,7 @@ export function oxlintRestrictedImportPatterns(
 		allowNodejs?: boolean
 		allowConfigs?: boolean
 		allowDecorators?: boolean
-		allowFixtures?: boolean
-		allowMocks?: boolean
+		allowFakes?: boolean
 		allowScripts?: boolean
 		allowStories?: boolean
 		allowTests?: boolean
@@ -18,8 +17,7 @@ export function oxlintRestrictedImportPatterns(
 		options.allowNodejs !== true && noNodeProtocol(),
 		options.allowConfigs !== true && noConfigs(),
 		options.allowDecorators !== true && noDecorators(),
-		options.allowFixtures !== true && noFixtures(),
-		options.allowMocks !== true && noMocks(),
+		options.allowFakes !== true && noFakes(),
 		options.allowScripts !== true && noScripts(),
 		options.allowStories !== true && noStories(),
 		options.allowTests !== true && noTests(),
@@ -67,7 +65,7 @@ function normalisedPaths(): Array<OxlintRestrictedImportPattern> {
 function explicitFileExtensions(): OxlintRestrictedImportPattern {
 	return {
 		// language=regexp
-		regex: String.raw`^[#.].*/([^./]+)(\.(decorators|fixtures|mocks|stories|tests))?$`, // Enforce file extensions on local files only.
+		regex: String.raw`^[#.].*/([^./]+)(\.(decorators|fakes|stories|tests))?$`, // Enforce file extensions on local files only.
 		message: "Include the file extension.",
 	}
 }
@@ -110,19 +108,11 @@ function noDecorators(): OxlintRestrictedImportPattern {
 	}
 }
 
-function noFixtures(): OxlintRestrictedImportPattern {
+function noFakes(): OxlintRestrictedImportPattern {
 	return {
 		// language=regexp
-		regex: String.raw`\.fixtures\.[jt]sr?x?$`,
-		message: "Do not import test fixtures.",
-	}
-}
-
-function noMocks(): OxlintRestrictedImportPattern {
-	return {
-		// language=regexp
-		regex: String.raw`\.mocks\.[jt]sr?x?$`,
-		message: "Do not import module mocks.",
+		regex: String.raw`\.fakes\.[jt]sr?x?$`,
+		message: "Do not import fakes.",
 	}
 }
 

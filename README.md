@@ -115,8 +115,7 @@ export default defineOxlintConfig({
           allowRelativePaths: true,
           allowNodejs: true,
           allowDecorators: true,
-          allowFixtures: true,
-          allowMocks: true,
+          allowFakes: true,
           allowStories: true,
           allowTests: true,
         }),
@@ -196,7 +195,6 @@ Stories must remain simple in terms of cognitive complexity, limiting the use of
 The base preset automatically supports the following kinds of files in Vitest (naming convention in parentheses):
 
 - Unit test suites (`*.tests.{ts,tsx}`)
-- Test fixtures such as test data, stubs, and utilities (`*.fixtures.{ts,tsx}`)
-- [Module mocks](https://vitest.dev/guide/mocking#modules) (`*.mocks.{ts,tsx}`)
+- Fakes such as [mocks](https://vitest.dev/guide/mocking#modules), stubs, and test utilities (`*.fakes.{ts,tsx}`)
 
 To reduce the likelihood of buggy tests, test files must remain simple in terms of cognitive complexity, limiting the use of conditional logic.
