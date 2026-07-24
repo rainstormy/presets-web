@@ -170,7 +170,7 @@ export function oxlintPreset(): OxlintConfig {
 			"eslint/no-unassigned-vars": "warn",
 			// "eslint/no-undef": "off", // Superseded by TypeScript.
 			// "eslint/no-undefined": "off", // Superseded by `eslint/no-global-assign` and `eslint/no-shadow-restricted-names`.
-			"eslint/no-underscore-dangle": "warn",
+			// "eslint/no-underscore-dangle": "off", // Allow leading underscores, as encouraged by `eslint/no-unused-vars`.
 			"eslint/no-unexpected-multiline": "warn",
 			"eslint/no-unmodified-loop-condition": "warn",
 			"eslint/no-unneeded-ternary": "warn",
@@ -552,8 +552,8 @@ export function oxlintPreset(): OxlintConfig {
 			"vitest/padding-around-after-all-blocks": "warn",
 			"vitest/padding-around-test-blocks": "warn",
 			"vitest/prefer-called-exactly-once-with": "warn",
-			"vitest/prefer-called-once": "warn",
-			// "vitest/prefer-called-times": "off", // Superseded by `vitest/prefer-called-once`.
+			"vitest/prefer-called-once": "warn", // Preferring `.toHaveBeenCalledOnce()` over `.toHaveBeenCalledTimes(1)` also lets Oxlint detect candidates for `.toHaveBeenCalledExactlyOnceWith()`.
+			// "vitest/prefer-called-times": "off", // Superseded by `vitest/prefer-called-once` and `vitest/prefer-called-exactly-once-with`.
 			"vitest/prefer-called-with": "warn",
 			"vitest/prefer-comparison-matcher": "warn",
 			// "vitest/prefer-describe-function-title": "off",
@@ -610,6 +610,7 @@ function overrideFixtures(): OxlintOverride {
 					}),
 				},
 			],
+			"oxc/no-this-in-exported-function": "off", // Allow access to the `this` context in custom Vitest matchers.
 		},
 	}
 }
