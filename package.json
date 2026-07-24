@@ -13,16 +13,21 @@
 		"typescript"
 	],
 	"bugs": "https://github.com/rainstormy/presets-web/issues",
+	"license": "MIT",
+	"author": "Steffen Diswal",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/rainstormy/presets-web.git"
 	},
-	"license": "MIT",
-	"author": "Steffen Diswal",
-	"type": "module",
 	"files": [
 		"dist/"
 	],
+	"type": "module",
+	"imports": {
+		"#oxfmt/*": "./src/oxfmt/*",
+		"#oxlint/*": "./src/oxlint/*",
+		"#utilities/*": "./src/utilities/*"
+	},
 	"exports": {
 		"./oxfmt": {
 			"import": "./dist/oxfmt/index.js",
@@ -33,11 +38,6 @@
 			"types": "./dist/oxlint/index.d.ts"
 		},
 		"./typescript": "./dist/typescript/index.json"
-	},
-	"imports": {
-		"#oxfmt/*": "./src/oxfmt/*",
-		"#oxlint/*": "./src/oxlint/*",
-		"#utilities/*": "./src/utilities/*"
 	},
 	"dependencies": {
 		"oxlint-tsgolint": "catalog:"

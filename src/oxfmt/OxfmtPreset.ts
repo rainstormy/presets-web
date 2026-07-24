@@ -20,12 +20,6 @@ export function oxfmtPreset(): OxfmtConfig {
 		},
 
 		/**
-		 * Currently, Oxfmt will separate `dependencies` from `// dependencies` in `package.json`.
-		 * It does not yet support custom field ordering.
-		 */
-		sortPackageJson: false,
-
-		/**
 		 * Indent by tabs to gain accessibility (by making the indentation width customisable per developer),
 		 * to reduce the number of required keystrokes, and to reduce the file sizes.
 		 *
