@@ -34,6 +34,8 @@ export function oxlintPreset(): OxlintConfig {
 			denyWarnings: true,
 			typeAware: true,
 			typeCheck: true,
+			reportUnusedDisableDirectives: "warn",
+			respectEslintDisableDirectives: false,
 		},
 		rules: {
 			"eslint/accessor-pairs": "warn",
