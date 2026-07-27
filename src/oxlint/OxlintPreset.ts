@@ -30,6 +30,10 @@ export function oxlintPreset(): OxlintConfig {
 			overrideProgramEntrypoints(),
 		],
 		plugins: ["typescript", "unicorn", "vitest"],
+		options: {
+			typeAware: true,
+			typeCheck: true,
+		},
 		rules: {
 			"eslint/accessor-pairs": "warn",
 			"eslint/array-callback-return": "warn",
