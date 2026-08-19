@@ -5,13 +5,13 @@ import { oxlintRestrictedImportPatterns } from "#oxlint/OxlintRestrictedImportPa
  * @see https://oxc.rs/docs/guide/usage/linter/config-file-reference.html
  * @see https://oxc.rs/docs/guide/usage/linter/rules.html
  */
-export function oxlintStorybookPreset(): OxlintConfig {
+export function oxlintStorybookPreset() {
 	return {
 		overrides: [overrideDecorators(), overrideStories(), overrideStorybookConfig()],
-	}
+	} as const satisfies OxlintConfig
 }
 
-function overrideDecorators(): OxlintOverride {
+function overrideDecorators() {
 	return {
 		files: ["**/src/**/*.decorators.{ts,tsx}"],
 		rules: {
@@ -26,13 +26,13 @@ function overrideDecorators(): OxlintOverride {
 				},
 			],
 		},
-	}
+	} as const satisfies OxlintOverride
 }
 
 /**
  * @see https://storybook.js.org/docs/api/csf
  */
-function overrideStories(): OxlintOverride {
+function overrideStories() {
 	return {
 		files: ["**/src/**/*.stories.{ts,tsx}"],
 		rules: {
@@ -51,13 +51,13 @@ function overrideStories(): OxlintOverride {
 			"eslint/no-unused-vars": ["warn", { reportUsedIgnorePattern: false }],
 			"react/rules-of-hooks": "off", // Allow hooks in `render` components.
 		},
-	}
+	} as const satisfies OxlintOverride
 }
 
 /**
  * @see https://storybook.js.org/docs/configure
  */
-function overrideStorybookConfig(): OxlintOverride {
+function overrideStorybookConfig() {
 	return {
 		files: [
 			"**/.storybook/main.{ts,tsx}",
@@ -82,5 +82,5 @@ function overrideStorybookConfig(): OxlintOverride {
 			"unicorn/filename-case": ["warn", { case: "kebabCase" }],
 			"unicorn/no-process-exit": "off",
 		},
-	}
+	} as const satisfies OxlintOverride
 }

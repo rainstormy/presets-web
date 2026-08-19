@@ -4,7 +4,7 @@ import type { OxlintConfig } from "oxlint"
  * @see https://oxc.rs/docs/guide/usage/linter/config-file-reference.html
  * @see https://oxc.rs/docs/guide/usage/linter/rules.html
  */
-export function oxlintReactPreset(): OxlintConfig {
+export function oxlintReactPreset() {
 	return {
 		plugins: ["jsx-a11y", "react"],
 		rules: {
@@ -137,5 +137,5 @@ export function oxlintReactPreset(): OxlintConfig {
 			// 	},
 			// ],
 		},
-	}
+	} as const satisfies OxlintConfig
 }

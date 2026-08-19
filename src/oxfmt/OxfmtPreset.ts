@@ -3,7 +3,7 @@ import type { OxfmtConfig } from "oxfmt"
 /**
  * @see https://oxc.rs/docs/guide/usage/formatter/config-file-reference.html
  */
-export function oxfmtPreset(): OxfmtConfig {
+export function oxfmtPreset() {
 	return {
 		ignorePatterns: [".idea/**/*", "node_modules/**/*", "package-lock.json", "pnpm-lock.yaml"],
 
@@ -54,5 +54,5 @@ export function oxfmtPreset(): OxfmtConfig {
 				},
 			},
 		],
-	}
+	} as const satisfies OxfmtConfig
 }
