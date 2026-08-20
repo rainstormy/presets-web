@@ -5,7 +5,7 @@ import { oxlintRestrictedImportPatterns } from "#oxlint/OxlintRestrictedImportPa
  * @see https://oxc.rs/docs/guide/usage/linter/config-file-reference.html
  * @see https://oxc.rs/docs/guide/usage/linter/rules.html
  */
-export function oxlintPreset(): OxlintConfig {
+export function oxlintPreset() {
 	return {
 		/**
 		 * Disable all rules by default, then opt in to specific rules one by one.
@@ -600,10 +600,10 @@ export function oxlintPreset(): OxlintConfig {
 			// "vitest/valid-title": "off",
 			// "vitest/warn-todo": "off", // Allow unit tests to be disabled.
 		},
-	}
+	} as const satisfies OxlintConfig
 }
 
-function overrideFakes(): OxlintOverride {
+function overrideFakes() {
 	return {
 		files: ["**/src/**/*.fakes.{ts,tsx}"],
 		rules: {
@@ -614,10 +614,10 @@ function overrideFakes(): OxlintOverride {
 			],
 			"oxc/no-this-in-exported-function": "off", // Allow access to the `this` context in custom Vitest matchers.
 		},
-	}
+	} as const satisfies OxlintOverride
 }
 
-function overrideTests(): OxlintOverride {
+function overrideTests() {
 	return {
 		files: ["**/src/**/*.tests.{ts,tsx}"],
 		rules: {
@@ -646,22 +646,22 @@ function overrideTests(): OxlintOverride {
 			"vitest/valid-expect": "warn",
 			"vitest/valid-title": "warn",
 		},
-	}
+	} as const satisfies OxlintOverride
 }
 
 /**
  * Also known as 'type declaration files'.
  */
-function overrideAmbientTypescriptModules(): OxlintOverride {
+function overrideAmbientTypescriptModules() {
 	return {
 		files: ["**/src/**/*.d.ts"],
 		rules: {
 			"typescript/consistent-type-definitions": "off", // Allow interfaces for type declaration merging.
 		},
-	}
+	} as const satisfies OxlintOverride
 }
 
-function overrideConfigs(): OxlintOverride {
+function overrideConfigs() {
 	return {
 		files: ["**/*.config.{js,ts}"],
 		rules: {
@@ -678,10 +678,10 @@ function overrideConfigs(): OxlintOverride {
 			],
 			"unicorn/filename-case": ["warn", { case: "kebabCase" }],
 		},
-	}
+	} as const satisfies OxlintOverride
 }
 
-function overrideScripts(): OxlintOverride {
+function overrideScripts() {
 	return {
 		files: ["**/*.script.{js,ts}"],
 		rules: {
@@ -699,24 +699,24 @@ function overrideScripts(): OxlintOverride {
 			"unicorn/filename-case": ["warn", { case: "kebabCase" }],
 			"unicorn/no-process-exit": "off",
 		},
-	}
+	} as const satisfies OxlintOverride
 }
 
-function overrideCustomErrorSubclasses(): OxlintOverride {
+function overrideCustomErrorSubclasses() {
 	return {
 		files: ["**/src/**/*Error.ts"],
 		rules: {
 			"eslint/max-classes-per-file": "warn",
 		},
-	}
+	} as const satisfies OxlintOverride
 }
 
-function overrideProgramEntrypoints(): OxlintOverride {
+function overrideProgramEntrypoints() {
 	return {
 		files: ["**/src/main-*.ts"],
 		rules: {
 			"unicorn/filename-case": ["warn", { case: "kebabCase" }],
 			"unicorn/no-process-exit": "off",
 		},
-	}
+	} as const satisfies OxlintOverride
 }

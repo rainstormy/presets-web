@@ -4,17 +4,17 @@ import type { OxlintConfig, OxlintOverride } from "oxlint"
  * @see https://oxc.rs/docs/guide/usage/linter/config-file-reference.html
  * @see https://oxc.rs/docs/guide/usage/linter/rules.html
  */
-export function oxlintReactRouterPreset(): OxlintConfig {
+export function oxlintReactRouterPreset() {
 	return {
 		overrides: [overrideRoutes(), overrideRouteConfig()],
-	}
+	} as const satisfies OxlintConfig
 }
 
 /**
  * @see https://reactrouter.com/how-to/file-route-conventions
  * @see https://reactrouter.com/start/framework/route-module
  */
-function overrideRoutes(): OxlintOverride {
+function overrideRoutes() {
 	return {
 		files: ["**/src/routes/**.tsx", "**/src/root.tsx"],
 		rules: {
@@ -41,18 +41,18 @@ function overrideRoutes(): OxlintOverride {
 			],
 			"unicorn/filename-case": "off", // Allow all route names.
 		},
-	}
+	} as const satisfies OxlintOverride
 }
 
 /**
  * @see https://reactrouter.com/how-to/file-route-conventions
  */
-function overrideRouteConfig(): OxlintOverride {
+function overrideRouteConfig() {
 	return {
 		files: ["**/src/routes.ts"],
 		rules: {
 			"eslint/no-restricted-exports": "off", // Allow default exports of the route configuration.
 			"unicorn/filename-case": "off",
 		},
-	}
+	} as const satisfies OxlintOverride
 }

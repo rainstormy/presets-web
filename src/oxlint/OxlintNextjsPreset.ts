@@ -4,7 +4,7 @@ import type { OxlintConfig, OxlintOverride } from "oxlint"
  * @see https://oxc.rs/docs/guide/usage/linter/config-file-reference.html
  * @see https://oxc.rs/docs/guide/usage/linter/rules.html
  */
-export function oxlintNextjsPreset(): OxlintConfig {
+export function oxlintNextjsPreset() {
 	return {
 		ignorePatterns: [".next/**/*", "next-env.d.ts"],
 		overrides: [overrideNonRoutes(), overrideRoutes(), overrideLayouts()],
@@ -34,23 +34,23 @@ export function oxlintNextjsPreset(): OxlintConfig {
 			"unicorn/no-typeof-undefined": "off", // Next.js does not support `globalThis`.
 			"unicorn/prefer-global-this": "off", // Next.js does not support `globalThis`.
 		},
-	}
+	} as const satisfies OxlintConfig
 }
 
-function overrideNonRoutes(): OxlintOverride {
+function overrideNonRoutes() {
 	return {
 		files: ["**/src/app/**/*"],
 		rules: {
 			"eslint/max-lines": ["warn", { max: 0 }], // Disallow non-route files in the `app` directory.
 		},
-	}
+	} as const satisfies OxlintOverride
 }
 
 /**
  * @see https://nextjs.org/docs/app/api-reference/file-conventions
  * @see https://nextjs.org/docs/app/api-reference/functions
  */
-function overrideRoutes(): OxlintOverride {
+function overrideRoutes() {
 	return {
 		files: [
 			"**/src/app/**/apple-icon.{ts,tsx}",
@@ -97,10 +97,10 @@ function overrideRoutes(): OxlintOverride {
 			],
 			"unicorn/filename-case": "off", // Allow all route names.
 		},
-	}
+	} as const satisfies OxlintOverride
 }
 
-function overrideLayouts(): OxlintOverride {
+function overrideLayouts() {
 	return {
 		// Layouts.
 		files: ["**/src/app/**/layout.tsx"],
@@ -131,5 +131,5 @@ function overrideLayouts(): OxlintOverride {
 			// 	},
 			// ],
 		},
-	}
+	} as const satisfies OxlintOverride
 }
