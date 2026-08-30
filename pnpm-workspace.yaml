@@ -21,7 +21,7 @@ catalog:
 
   # Oxlint is a TypeScript linter.
   # https://oxc.rs/docs/guide/usage/linter.html
-  oxlint: 1.75.0
+  oxlint: 1.80.0
 
   # This Oxlint plugin provides type-aware linting rules.
   # https://github.com/oxc-project/tsgolint
