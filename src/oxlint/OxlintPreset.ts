@@ -50,6 +50,7 @@ export function oxlintPreset() {
 			// "eslint/default-case": "off", // Superseded by TypeScript.
 			"eslint/default-case-last": "warn",
 			"eslint/default-param-last": "warn",
+			// "eslint/id-denylist": "off",
 			"eslint/eqeqeq": "warn",
 			"eslint/for-direction": "warn",
 			"eslint/func-name-matching": "warn",
@@ -218,6 +219,7 @@ export function oxlintPreset() {
 			// "eslint/no-warning-comments": "off",
 			"eslint/no-with": "warn",
 			"eslint/object-shorthand": ["warn", "always"],
+			"eslint/one-var": ["warn", "never"],
 			"eslint/operator-assignment": "warn",
 			"eslint/prefer-arrow-callback": "warn",
 			"eslint/prefer-const": "warn",
@@ -251,6 +253,7 @@ export function oxlintPreset() {
 			"oxc/bad-bitwise-operator": "warn",
 			"oxc/bad-char-at-comparison": "warn",
 			"oxc/bad-comparison-sequence": "warn",
+			"oxc/bad-match-all-arg": "warn",
 			"oxc/bad-min-max-func": "warn",
 			"oxc/bad-object-literal-comparison": "warn",
 			"oxc/bad-replace-all-arg": "warn",

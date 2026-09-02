@@ -52,9 +52,12 @@ export function oxlintReactPreset() {
 			"jsx-a11y/scope": "warn",
 			"jsx-a11y/tabindex-no-positive": "warn",
 			// "react/button-has-type": "off",
+			"react/capitalized-calls": "warn",
 			"react/checked-requires-onchange-or-readonly": "warn",
 			// "react/display-name": "off",
+			"react/error-boundaries": "warn",
 			// "react/exhaustive-deps": "off", // This rule raises false positives for non-destructured props and suggests incorrect fixes. See https://github.com/facebook/react/issues/16265.
+			"react/exhaustive-effect-dependencies": "warn",
 			// "react/forbid-component-props": "off", // Unconfigured.
 			// "react/forbid-dom-props": "off", // Unconfigured.
 			// "react/forbid-elements": "off", // Unconfigured.
@@ -63,8 +66,13 @@ export function oxlintReactPreset() {
 				"warn",
 				{ namedComponents: "function-declaration", unnamedComponents: "arrow-function" },
 			],
+			"react/globals": "warn",
 			"react/hook-use-state": "warn",
+			"react/hooks": "warn",
 			"react/iframe-missing-sandbox": "warn",
+			"react/immutability": "warn",
+			"react/incompatible-library": "warn",
+			"react/invariant": "warn",
 			"react/jsx-boolean-value": ["warn", "never"],
 			"react/jsx-curly-brace-presence": ["warn", "never"],
 			"react/jsx-filename-extension": [
@@ -90,11 +98,13 @@ export function oxlintReactPreset() {
 			"react/jsx-pascal-case": "warn",
 			"react/jsx-props-no-spread-multi": "warn",
 			"react/jsx-props-no-spreading": "warn",
+			"react/memo-dependencies": "warn",
 			"react/no-array-index-key": "warn",
 			"react/no-children-prop": "warn",
 			"react/no-clone-element": "warn",
 			"react/no-danger": "warn",
 			"react/no-danger-with-children": "warn",
+			"react/no-deriving-state-in-effects": "warn",
 			// "react/no-did-mount-set-state": "off", // Not applicable to function components.
 			// "react/no-did-update-set-state": "off", // Not applicable to function components.
 			// "react/no-direct-mutation-state": "off", // Not applicable to function components.
@@ -117,14 +127,25 @@ export function oxlintReactPreset() {
 			"react/only-export-components": "warn",
 			// "react/prefer-es6-class": "off", // Not applicable to function components.
 			"react/prefer-function-component": "warn",
-			// "react/react-compiler": "off", // Unconfigured.
+			"react/preserve-manual-memoization": "warn",
+			"react/purity": "warn",
 			// "react/react-in-jsx-scope": "off", // Not applicable in React 19.
+			"react/refs": "warn",
 			// "react/require-render-return": "off", // Not applicable to function components.
-			"react/rules-of-hooks": "warn",
+			"react/rule-suppression": "warn",
+			// "react/rules-of-hooks": "off,
 			"react/self-closing-comp": "warn",
+			"react/set-state-in-effect": "warn",
+			"react/set-state-in-render": "warn",
 			// "react/state-in-constructor": "off", // Not applicable to function components.
+			"react/static-components": "warn",
 			"react/style-prop-object": "warn",
+			"react/syntax": "warn",
+			"react/todo": "warn",
+			"react/unsupported-syntax": "warn",
+			"react/use-memo": "warn",
 			"react/void-dom-elements-no-children": "warn",
+			"react/void-use-memo": "warn",
 			// "typescript/no-restricted-types": [
 			// 	"warn",
 			// 	{
