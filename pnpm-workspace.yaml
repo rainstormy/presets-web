@@ -17,11 +17,11 @@ catalog:
 
   # Oxfmt is an opinionated code formatter.
   # https://oxc.rs/docs/guide/usage/formatter.html
-  oxfmt: 0.60.0
+  oxfmt: 0.65.0
 
   # Oxlint is a TypeScript linter.
   # https://oxc.rs/docs/guide/usage/linter.html
-  oxlint: 1.75.0
+  oxlint: 1.80.0
 
   # This Oxlint plugin provides type-aware linting rules.
   # https://github.com/oxc-project/tsgolint
@@ -54,54 +54,7 @@ allowBuilds:
   lefthook: false
 
 # Let some packages bypass the minimum release age requirement to allow urgent security upgrades to be installed despite being less than 3 days old.
-minimumReleaseAgeExclude:
-  - '@oxfmt/binding-android-arm-eabi@0.60.0'
-  - '@oxfmt/binding-android-arm64@0.60.0'
-  - '@oxfmt/binding-darwin-arm64@0.60.0'
-  - '@oxfmt/binding-darwin-x64@0.60.0'
-  - '@oxfmt/binding-freebsd-x64@0.60.0'
-  - '@oxfmt/binding-linux-arm-gnueabihf@0.60.0'
-  - '@oxfmt/binding-linux-arm-musleabihf@0.60.0'
-  - '@oxfmt/binding-linux-arm64-gnu@0.60.0'
-  - '@oxfmt/binding-linux-arm64-musl@0.60.0'
-  - '@oxfmt/binding-linux-ppc64-gnu@0.60.0'
-  - '@oxfmt/binding-linux-riscv64-gnu@0.60.0'
-  - '@oxfmt/binding-linux-riscv64-musl@0.60.0'
-  - '@oxfmt/binding-linux-s390x-gnu@0.60.0'
-  - '@oxfmt/binding-linux-x64-gnu@0.60.0'
-  - '@oxfmt/binding-linux-x64-musl@0.60.0'
-  - '@oxfmt/binding-openharmony-arm64@0.60.0'
-  - '@oxfmt/binding-win32-arm64-msvc@0.60.0'
-  - '@oxfmt/binding-win32-ia32-msvc@0.60.0'
-  - '@oxfmt/binding-win32-x64-msvc@0.60.0'
-  - '@oxlint/binding-android-arm-eabi@1.75.0'
-  - '@oxlint/binding-android-arm64@1.75.0'
-  - '@oxlint/binding-darwin-arm64@1.75.0'
-  - '@oxlint/binding-darwin-x64@1.75.0'
-  - '@oxlint/binding-freebsd-x64@1.75.0'
-  - '@oxlint/binding-linux-arm-gnueabihf@1.75.0'
-  - '@oxlint/binding-linux-arm-musleabihf@1.75.0'
-  - '@oxlint/binding-linux-arm64-gnu@1.75.0'
-  - '@oxlint/binding-linux-arm64-musl@1.75.0'
-  - '@oxlint/binding-linux-ppc64-gnu@1.75.0'
-  - '@oxlint/binding-linux-riscv64-gnu@1.75.0'
-  - '@oxlint/binding-linux-riscv64-musl@1.75.0'
-  - '@oxlint/binding-linux-s390x-gnu@1.75.0'
-  - '@oxlint/binding-linux-x64-gnu@1.75.0'
-  - '@oxlint/binding-linux-x64-musl@1.75.0'
-  - '@oxlint/binding-openharmony-arm64@1.75.0'
-  - '@oxlint/binding-win32-arm64-msvc@1.75.0'
-  - '@oxlint/binding-win32-ia32-msvc@1.75.0'
-  - '@oxlint/binding-win32-x64-msvc@1.75.0'
-  - '@oxlint-tsgolint/darwin-arm64@7.0.2001'
-  - '@oxlint-tsgolint/darwin-x64@7.0.2001'
-  - '@oxlint-tsgolint/linux-arm64@7.0.2001'
-  - '@oxlint-tsgolint/linux-x64@7.0.2001'
-  - '@oxlint-tsgolint/win32-arm64@7.0.2001'
-  - '@oxlint-tsgolint/win32-x64@7.0.2001'
-  - oxfmt@0.60.0
-  - oxlint@1.75.0
-  - oxlint-tsgolint@7.0.2001
+minimumReleaseAgeExclude: []
 
 # Consolidate transitive dependency versions with the ones specified in the catalog.
 overrides:
