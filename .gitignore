@@ -2,21 +2,36 @@
 # https://git-scm.com/docs/gitignore
 # https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
-# Build artefacts
-dist/
-
-# Caches and third-party dependencies
-node_modules/
-
-# Development tools and IDEs
+## Tooling configuration (e.g. agent harnesses and IDE settings)
+#  These files often contain personalised settings and sometimes also sensitive information.
+#  Keep them on your computer and add generic, shareable files to the `tools` directory instead.
+#  For agent-specific instructions, create a symlink to `AGENTS.md` and the `.agents` directory.
+.beads/
+.claude/
+.codex/
+.cursor/
+.gemini/
 .idea/
+.junie/
+.opencode/
 .run/
+.vite-hooks/
 .vscode/
+.zed/
+*.code-workspace
+*.iml
+!tools/idea/presets-web.iml
 *.local
 *.local.*
 *-local.*
+.ws-context
+CLAUDE.md
+GEMINI.md
 
-# Operating system artefacts
+## Temporary artefacts
+#  These files are automatically generated.
+dist/
+node_modules/
 *~
 .DS_Store
 Thumbs.db
