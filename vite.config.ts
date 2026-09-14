@@ -70,6 +70,10 @@ export default defineConfig({
 			},
 		},
 	},
+	// language=sh
+	staged: {
+		"*.{json,jsonc,md,ts,yaml,yml}": "vpr fmt",
+	},
 	test: {
 		include: ["src/**/*.tests.ts"],
 		pool: "vmThreads",
