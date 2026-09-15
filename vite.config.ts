@@ -36,38 +36,13 @@ export default defineConfig({
 		},
 	],
 	run: {
+		// language=sh
 		tasks: {
-			build: {
-				// language=sh
-				command: ["vp pack", "node build.script.ts"],
-				input: [{ auto: true }, "!dist/**/*"],
-			},
-			check: {
-				// language=sh
-				command: "vp check",
-			},
-			fmt: {
-				// language=sh
-				command: "vp check --fix",
-			},
-			install: {
-				// language=sh
-				command: [
-					"vp install --frozen-lockfile --ignore-scripts",
-					'if [ "$LEFTHOOK" != "0" ]; then lefthook install; fi',
-				],
-				cache: false,
-			},
-			test: {
-				// language=sh
-				command: "vp test",
-				input: [{ auto: true }, "!node_modules/.vite-temp/vite.config.ts.timestamp-*"],
-			},
-			yolo: {
-				// language=sh
-				command: "lefthook uninstall",
-				cache: false,
-			},
+			build: { command: "vp pack && node build.script.ts" },
+			check: { command: "vp check" },
+			fmt: { command: "vp check --fix" },
+			install: { command: "vp install --frozen-lockfile --ignore-scripts", cache: false },
+			test: { command: "vp test" },
 		},
 	},
 	// language=sh
