@@ -6,6 +6,7 @@ export default defineConfig({
 	fmt: defineOxfmtConfig({ ignorePatterns: ["dist/**/*", "**/*.md"] }),
 	lint: defineOxlintConfig({
 		ignorePatterns: ["dist/**/*"],
+		options: { typeCheck: false },
 		overrides: [
 			{
 				files: ["src/{oxfmt,oxlint}/DefineOx*Config.ts", "src/{oxfmt,oxlint}/Ox*Preset.ts"],
@@ -36,39 +37,19 @@ export default defineConfig({
 		},
 	],
 	run: {
+		// language=sh
 		tasks: {
-			build: {
-				// language=sh
-				command: ["vp pack", "node build.script.ts"],
-				input: [{ auto: true }, "!dist/**/*"],
-			},
-			check: {
-				// language=sh
-				command: "vp check",
-			},
-			fmt: {
-				// language=sh
-				command: "vp check --fix",
-			},
-			install: {
-				// language=sh
-				command: [
-					"vp install --frozen-lockfile --ignore-scripts",
-					'if [ "$LEFTHOOK" != "0" ]; then lefthook install; fi',
-				],
-				cache: false,
-			},
-			test: {
-				// language=sh
-				command: "vp test",
-				input: [{ auto: true }, "!node_modules/.vite-temp/vite.config.ts.timestamp-*"],
-			},
-			yolo: {
-				// language=sh
-				command: "lefthook uninstall",
-				cache: false,
-			},
+			build: { command: "vp pack && node build.script.ts" },
+			check: { command: "vp lint --type-check" },
+			fmt: { command: "vp check --fix" },
+			install: { command: "vp install --frozen-lockfile --ignore-scripts", cache: false },
+			setup: { command: "node tools/setup.script.ts", cache: false },
+			test: { command: "vp test" },
 		},
+	},
+	// language=sh
+	staged: {
+		"*.{json,jsonc,md,ts,yaml,yml}": "vpr fmt",
 	},
 	test: {
 		include: ["src/**/*.tests.ts"],
