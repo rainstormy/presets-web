@@ -39,8 +39,8 @@ export default defineConfig({
 	run: {
 		// language=sh
 		tasks: {
-			build: { command: "vp pack && node build.script.ts" },
-			check: { command: "vp lint --type-check" },
+			build: { command: "vp pack && node tools/build.script.ts" },
+			check: { command: "vp lint --type-check && node tools/check.script.ts" },
 			fmt: { command: "vp check --fix" },
 			install: { command: "vp install --frozen-lockfile --ignore-scripts", cache: false },
 			setup: { command: "node tools/setup.script.ts", cache: false },
