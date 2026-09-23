@@ -36,20 +36,20 @@ catalog:
   # https://vitest.dev
   vitest: 4.1.10
 
-# Be very strict about third-party dependencies to reduce the risk of supply chain attacks.
-# https://pnpm.io/blog/2025/12/05/newsroom-npm-supply-chain-security
-catalogMode: strict
-minimumReleaseAge: 4200 # minutes = 70 hours (3 days minus 2 hours to account for scheduling offsets in Renovate)
-savePrefix: ''
-strictDepBuilds: true
-trustPolicy: no-downgrade
-trustPolicyIgnoreAfter: 4200 # minutes
+# Let some packages bypass the minimum release age requirement to allow urgent security upgrades to be installed despite being less than 3 days old.
+minimumReleaseAgeExclude: []
 
 # Disallow all script execution during package installation.
 allowBuilds: {}
 
-# Let some packages bypass the minimum release age requirement to allow urgent security upgrades to be installed despite being less than 3 days old.
-minimumReleaseAgeExclude: []
+# Be very strict about third-party dependencies to reduce the risk of supply chain attacks.
+# https://pnpm.io/blog/2025/12/05/newsroom-npm-supply-chain-security
+catalogMode: strict
+minimumReleaseAge: 1440 # minutes = 24 hours
+savePrefix: ''
+strictDepBuilds: true
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 1440 # minutes
 
 # Consolidate transitive dependency versions with the ones specified in the catalog.
 overrides:
