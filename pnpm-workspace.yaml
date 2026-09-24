@@ -34,7 +34,7 @@ catalog:
 
   # Vitest is a unit testing framework.
   # https://vitest.dev
-  vitest: 4.1.10
+  vitest: 5.0.1
 
 # Let some packages bypass the minimum release age requirement to allow urgent security upgrades to be installed despite being less than 3 days old.
 minimumReleaseAgeExclude: []
