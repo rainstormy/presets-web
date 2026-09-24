@@ -32,10 +32,6 @@ catalog:
   # https://viteplus.dev
   vite-plus: 1.0.0-rc.0
 
-  # Vitest is a unit testing framework.
-  # https://vitest.dev
-  vitest: 5.0.1
-
 # Let some packages bypass the minimum release age requirement to allow urgent security upgrades to be installed despite being less than 3 days old.
 minimumReleaseAgeExclude: []
 

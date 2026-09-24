@@ -2,8 +2,26 @@ import { defineConfig } from "vite-plus"
 import { defineOxfmtConfig } from "#oxfmt/DefineOxfmtConfig.ts"
 import { defineOxlintConfig } from "#oxlint/DefineOxlintConfig.ts"
 
+/**
+ * Configure Vite+.
+ *
+ * @see https://viteplus.dev/config
+ */
 export default defineConfig({
+	/**
+	 * Configure Oxfmt.
+	 *
+	 * @see https://viteplus.dev/config/fmt
+	 * @see https://oxc.rs/docs/guide/usage/formatter/config.html
+	 */
 	fmt: defineOxfmtConfig({ ignorePatterns: ["dist/**/*", "**/*.md"] }),
+
+	/**
+	 * Configure Oxlint.
+	 *
+	 * @see https://viteplus.dev/config/lint
+	 * @see https://oxc.rs/docs/guide/usage/linter/config.html
+	 */
 	lint: defineOxlintConfig({
 		ignorePatterns: ["dist/**/*"],
 		options: { typeCheck: false },
@@ -18,6 +36,13 @@ export default defineConfig({
 			},
 		],
 	}),
+
+	/**
+	 * Configure tsdown.
+	 *
+	 * @see https://viteplus.dev/config/pack
+	 * @see https://tsdown.dev/options/config-file
+	 */
 	pack: [
 		{
 			entry: "src/oxfmt/index.ts",
@@ -36,6 +61,12 @@ export default defineConfig({
 			minify: { compress: true },
 		},
 	],
+
+	/**
+	 * Define tasks.
+	 *
+	 * @see https://viteplus.dev/config/run
+	 */
 	run: {
 		// language=sh
 		tasks: {
@@ -47,10 +78,24 @@ export default defineConfig({
 			test: { command: "vp test" },
 		},
 	},
+
+	/**
+	 * Configure lint-staged for the pre-commit hook.
+	 *
+	 * @see https://viteplus.dev/config/staged
+	 * @see https://github.com/lint-staged/lint-staged
+	 */
 	// language=sh
 	staged: {
 		"*.{json,jsonc,md,ts,yaml,yml}": "vpr fmt",
 	},
+
+	/**
+	 * Configure Vitest.
+	 *
+	 * @see https://viteplus.dev/config/test
+	 * @see https://vitest.dev/config
+	 */
 	test: {
 		include: ["src/**/*.tests.ts"],
 		pool: "vmThreads",
