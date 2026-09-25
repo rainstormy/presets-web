@@ -297,7 +297,7 @@ no-done-callback\tjest\tstyle\t\t🚧\tv0.0.13
 no-dupe-class-members\teslint\tcorrectness\t✅\t\tv0.0.3
 no-dupe-else-if\teslint\tcorrectness\t✅\t\tv0.0.5
 no-dupe-keys\teslint\tcorrectness\t✅\t\tv0.0.3
-no-dupe-keys\tvue\tcorrectness\t✅\t\tv1.70.0
+no-dupe-keys\tvue\tcorrectness\t\t\tv1.70.0
 no-duplicate-case\teslint\tcorrectness\t✅\t\tv0.0.3
 no-duplicate-enum-values\ttypescript\tcorrectness\t✅\t\tv0.0.8
 no-duplicate-head\tnextjs\tcorrectness\t\t\tv0.3.3
@@ -314,7 +314,7 @@ no-empty-character-class\teslint\tcorrectness\t✅\t\tv0.0.7
 no-empty-file\tunicorn\tcorrectness\t✅\t\tv0.0.15
 no-empty-function\teslint\trestriction\t\t💡\tv0.3.3
 no-empty-interface\ttypescript\tstyle\t\t🚧\tv0.0.6
-no-empty-named-blocks\timport\tsuspicious\t\t🛠️\tv0.16.1
+no-empty-named-blocks\timport\tsuspicious\t\t🛠️ 💡\tv0.16.1
 no-empty-object-type\ttypescript\trestriction\t\t💡\tv0.12.0
 no-empty-pattern\teslint\tcorrectness\t✅\t\tv0.0.3
 no-empty-static-block\teslint\tcorrectness\t✅\t💡\tv0.0.19
@@ -352,7 +352,7 @@ no-img-element\tnextjs\tcorrectness\t\t🚧\tv0.2.0
 no-immediate-mutation\tunicorn\tpedantic\t\t🚧\tv1.35.0
 no-implicit-coercion\teslint\tstyle\t\t🛠️\tv1.33.0
 no-implicit-globals\teslint\trestriction\t\t\tv1.65.0
-no-implied-eval\teslint\tsuspicious\t✅\t\tv1.66.0
+no-implied-eval\teslint\tsuspicious\t\t\tv1.66.0
 no-implied-eval💭\ttypescript\tcorrectness\t✅\t\tv1.12.0
 no-import-assign\teslint\tcorrectness\t✅\t\tv0.0.5
 no-import-compiler-macros\tvue\trestriction\t\t⚠️ 🛠️\tv1.21.0
@@ -514,7 +514,7 @@ no-throw-literal\teslint\tpedantic\t\t💡\tv0.9.10
 no-title-in-document-head\tnextjs\tcorrectness\t\t\tv0.2.0
 no-top-level-await\tnode\trestriction\t\t\tv1.75.0
 no-typeof-undefined\tunicorn\tpedantic\t\t🛠️ 💡\tv0.0.18
-no-typos\tnextjs\tcorrectness\t\t🚧\tv0.2.1
+no-typos\tnextjs\tcorrectness\t\t💡\tv0.2.1
 no-unassigned-import\timport\tsuspicious\t\t\tv0.16.11
 no-unassigned-vars\teslint\tcorrectness\t✅\t\tv1.10.0
 no-undef\teslint\tnursery\t\t\tv0.0.8
@@ -537,14 +537,14 @@ no-unnecessary-type-arguments💭\ttypescript\tsuspicious\t\t🛠️\tv1.12.0
 no-unnecessary-type-assertion💭\ttypescript\tsuspicious\t\t🛠️\tv1.12.0
 no-unnecessary-type-constraint\ttypescript\tsuspicious\t\t💡\tv0.0.6
 no-unnecessary-type-conversion💭\ttypescript\tsuspicious\t\t💡\tv1.49.0
-no-unnecessary-type-parameters💭\ttypescript\tsuspicious\t\t🚧\tv1.49.0
+no-unnecessary-type-parameters💭\ttypescript\tsuspicious\t\t💡\tv1.49.0
 no-unneeded-async-expect-function\tjest\tstyle\t\t🛠️\tv1.39.0
 no-unneeded-async-expect-function\tvitest\tstyle\t\t🛠️\tv1.39.0
 no-unneeded-ternary\teslint\tsuspicious\t\t⚠️ 🛠️\tv0.15.12
 no-unreachable\teslint\tcorrectness\t✅\t\tv0.4.4
 no-unreachable-loop\teslint\tnursery\t\t\tv1.79.0
 no-unreadable-array-destructuring\tunicorn\tstyle\t\t🚧\tv0.0.19
-no-unreadable-iife\tunicorn\tpedantic\t\t🚧\tv0.0.19
+no-unreadable-iife\tunicorn\tpedantic\t\t💡\tv0.0.19
 no-unsafe\treact\tcorrectness\t\t\tv1.35.0
 no-unsafe-argument💭\ttypescript\tpedantic\t\t\tv1.12.0
 no-unsafe-assignment💭\ttypescript\tpedantic\t\t\tv1.12.0
@@ -617,12 +617,12 @@ parameter-properties\ttypescript\tstyle\t\t\tv1.48.0
 prefer-add-event-listener\tunicorn\tsuspicious\t\t🚧\tv0.0.16
 prefer-array-find\tunicorn\tperf\t\t🚧\tv0.16.12
 prefer-array-flat\tunicorn\tpedantic\t\t⚠️ 🛠️\tv0.0.20
-prefer-array-flat-map\tunicorn\tperf\t\t🛠️\tv0.0.14
+prefer-array-flat-map\tunicorn\tperf\t\t🛠️ 💡\tv0.0.14
 prefer-array-index-of\tunicorn\tstyle\t\t🚧\tv0.16.12
 prefer-array-some\tunicorn\tpedantic\t\t💡\tv0.0.18
 prefer-arrow-callback\teslint\tstyle\t\t🛠️\tv1.65.0
 prefer-as-const\ttypescript\tcorrectness\t✅\t🛠️\tv0.0.8
-prefer-at\tunicorn\tpedantic\t\t⚠️ 🛠️\tv1.20.0
+prefer-at\tunicorn\tpedantic\t\t⚠️ 🛠 💡\tv1.20.0
 prefer-await-to-callbacks\tpromise\tstyle\t\t\tv0.9.10
 prefer-await-to-then\tpromise\tstyle\t\t\tv0.7.1
 prefer-bigint-literals\tunicorn\tstyle\t\t🛠️\tv1.30.0
@@ -663,7 +663,7 @@ prefer-expect-resolves\tvitest\tstyle\t\t🛠️\tv0.2.14
 prefer-expect-type-of\tvitest\tstyle\t\t🛠️\tv1.44.0
 prefer-exponentiation-operator\teslint\tstyle\t\t🛠️\tv0.4.0
 prefer-export-from\tunicorn\tstyle\t\t💡\tv1.70.0
-prefer-find💭\ttypescript\tstyle\t\t🚧\tv1.49.0
+prefer-find💭\ttypescript\tstyle\t\t💡\tv1.49.0
 prefer-for-of\ttypescript\tstyle\t\t🚧\tv0.2.16
 prefer-function-component\treact\trestriction\t\t\tv1.59.0
 prefer-function-type\ttypescript\tstyle\t\t🛠️\tv0.2.11
@@ -685,7 +685,7 @@ prefer-literal-enum-member\ttypescript\trestriction\t\t\tv0.3.2
 prefer-logical-operator-over-ternary\tunicorn\tstyle\t\t💡\tv0.0.15
 prefer-lowercase-title\tjest\tstyle\t\t🛠️\tv0.15.9
 prefer-lowercase-title\tvitest\tstyle\t\t🛠️\tv0.15.9
-prefer-math-min-max\tunicorn\tpedantic\t\t🛠️\tv0.10.1
+prefer-math-min-max\tunicorn\tpedantic\t\t💡\tv0.10.1
 prefer-math-trunc\tunicorn\tpedantic\t\t💡\tv0.0.18
 prefer-mock-promise-shorthand\tjest\tstyle\t\t🛠️\tv0.2.16
 prefer-mock-promise-shorthand\tvitest\tstyle\t\t🛠️\tv0.2.16
@@ -732,12 +732,12 @@ prefer-spread\tunicorn\tstyle\t\t🛠️\tv0.0.17
 prefer-spy-on\tjest\tstyle\t\t💡\tv0.2.14
 prefer-spy-on\tvitest\tstyle\t\t💡\tv0.2.14
 prefer-strict-boolean-matchers\tvitest\tstyle\t\t🛠️\tv1.57.0
-prefer-strict-equal\tjest\tstyle\t\t🛠️\tv0.2.13
-prefer-strict-equal\tvitest\tstyle\t\t🛠️\tv0.2.13
+prefer-strict-equal\tjest\tstyle\t\t💡\tv0.2.13
+prefer-strict-equal\tvitest\tstyle\t\t💡\tv0.2.13
 prefer-string-raw\tunicorn\tstyle\t\t🛠️\tv0.12.0
 prefer-string-replace-all\tunicorn\tpedantic\t\t🛠️\tv0.0.18
 prefer-string-slice\tunicorn\tpedantic\t\t🛠️\tv0.0.18
-prefer-string-starts-ends-with💭\ttypescript\tstyle\t✅\t\tv0.0.8
+prefer-string-starts-ends-with💭\ttypescript\tstyle\t\t\tv0.0.8
 prefer-string-starts-ends-with\tunicorn\tcorrectness\t✅\t🛠️\tv0.0.18
 prefer-string-trim-start-end\tunicorn\tstyle\t\t🛠️\tv0.0.16
 prefer-structured-clone\tunicorn\tstyle\t\t💡\tv0.9.0
@@ -746,9 +746,9 @@ prefer-template\teslint\tstyle\t\t🛠️\tv1.12.0
 prefer-ternary\tunicorn\tstyle\t\t🚧\tv1.50.0
 prefer-to-be\tjest\tstyle\t\t🛠️\tv0.2.14
 prefer-to-be\tvitest\tstyle\t\t🛠️\tv0.2.14
-prefer-to-be-falsy\tvitest\tstyle\t\t🛠️\tv0.7.1
+prefer-to-be-falsy\tvitest\tstyle\t\t💡\tv0.7.1
 prefer-to-be-object\tvitest\tstyle\t\t🛠️\tv0.9.2
-prefer-to-be-truthy\tvitest\tstyle\t\t🛠️\tv0.7.1
+prefer-to-be-truthy\tvitest\tstyle\t\t💡\tv0.7.1
 prefer-to-contain\tjest\tstyle\t\t🛠️\tv0.2.14
 prefer-to-contain\tvitest\tstyle\t\t🛠️\tv0.2.14
 prefer-to-have-been-called\tjest\tstyle\t\t🛠️\tv1.34.0

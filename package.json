@@ -47,23 +47,22 @@
 		"oxfmt": "catalog:",
 		"oxlint": "catalog:",
 		"typescript": "catalog:",
-		"vite-plus": "catalog:",
-		"vitest": "catalog:"
+		"vite-plus": "catalog:"
 	},
 	"peerDependencies": {
-		"oxfmt": ">=0.65.0 <1.0.0",
-		"oxlint": ">=1.80.0 <2.0.0",
+		"oxfmt": ">=0.70.0 <1.0.0",
+		"oxlint": ">=1.85.0 <2.0.0",
 		"typescript": ">=7.0.2 <8.0.0"
 	},
 	"devEngines": {
 		"packageManager": {
 			"name": "pnpm",
-			"version": "11.23.0",
+			"version": "12.7.0",
 			"onFail": "download"
 		},
 		"runtime": {
 			"name": "node",
-			"version": "24.19.0",
+			"version": "24.21.0",
 			"onFail": "download"
 		}
 	}

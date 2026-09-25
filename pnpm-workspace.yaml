@@ -9,19 +9,19 @@ catalog:
   # Type definitions for the Node.js standard library.
   # https://nodejs.org/docs/latest/api
   # https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node
-  '@types/node': 24.13.3
+  '@types/node': 24.13.6
 
   # Oxfmt is an opinionated code formatter.
   # https://oxc.rs/docs/guide/usage/formatter.html
-  oxfmt: 0.65.0
+  oxfmt: 0.70.0
 
   # Oxlint is a TypeScript linter.
   # https://oxc.rs/docs/guide/usage/linter.html
-  oxlint: 1.80.0
+  oxlint: 1.85.0
 
   # This Oxlint plugin provides type-aware linting rules.
   # https://github.com/oxc-project/tsgolint
-  oxlint-tsgolint: 7.0.2001
+  oxlint-tsgolint: 7.0.2003
 
   # The official 'tsc' CLI for TypeScript, including the language service (LSP) and Go-powered compiler (tsgo).
   # https://www.typescriptlang.org
@@ -30,26 +30,22 @@ catalog:
   # Vite+ is a unified toolchain and task runner for Oxfmt, Oxlint, tsdown, Vite, and Vitest.
   # It is also a version manager of Node.js and pnpm.
   # https://viteplus.dev
-  vite-plus: 0.2.9
+  vite-plus: 1.0.0-rc.0
 
-  # Vitest is a unit testing framework.
-  # https://vitest.dev
-  vitest: 4.1.10
-
-# Be very strict about third-party dependencies to reduce the risk of supply chain attacks.
-# https://pnpm.io/blog/2025/12/05/newsroom-npm-supply-chain-security
-catalogMode: strict
-minimumReleaseAge: 4200 # minutes = 70 hours (3 days minus 2 hours to account for scheduling offsets in Renovate)
-savePrefix: ''
-strictDepBuilds: true
-trustPolicy: no-downgrade
-trustPolicyIgnoreAfter: 4200 # minutes
+# Let some packages bypass the minimum release age requirement to allow urgent security upgrades to be installed despite being less than 3 days old.
+minimumReleaseAgeExclude: []
 
 # Disallow all script execution during package installation.
 allowBuilds: {}
 
-# Let some packages bypass the minimum release age requirement to allow urgent security upgrades to be installed despite being less than 3 days old.
-minimumReleaseAgeExclude: []
+# Be very strict about third-party dependencies to reduce the risk of supply chain attacks.
+# https://pnpm.io/blog/2025/12/05/newsroom-npm-supply-chain-security
+catalogMode: strict
+minimumReleaseAge: 1440 # minutes = 24 hours
+savePrefix: ''
+strictDepBuilds: true
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 1440 # minutes
 
 # Consolidate transitive dependency versions with the ones specified in the catalog.
 overrides:
