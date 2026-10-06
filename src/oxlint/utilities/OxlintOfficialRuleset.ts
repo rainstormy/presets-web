@@ -162,7 +162,7 @@ jsx-no-new-array-as-prop\treact-perf\tperf\t\t\tv0.2.3
 jsx-no-new-function-as-prop\treact-perf\tperf\t\t\tv0.2.3
 jsx-no-new-object-as-prop\treact-perf\tperf\t\t\tv0.2.3
 jsx-no-script-url\treact\tsuspicious\t\t🚧\tv0.13.2
-jsx-no-target-blank\treact\tpedantic\t\t🚧\tv0.2.5
+jsx-no-target-blank\treact\tpedantic\t\t💡\tv0.2.5
 jsx-no-undef\treact\tcorrectness\t\t\tv0.1.1
 jsx-no-useless-fragment\treact\tpedantic\t\t💡\tv0.0.14
 jsx-pascal-case\treact\tstyle\t\t\tv1.19.0
@@ -324,7 +324,7 @@ no-ex-assign\teslint\tcorrectness\t✅\t\tv0.0.4
 no-explicit-any\ttypescript\trestriction\t\t🛠️\tv0.0.13
 no-export\tjest\tcorrectness\t\t\tv0.0.13
 no-export-in-script-setup\tvue\tcorrectness\t\t\tv1.20.0
-no-exports-assign\tnode\tstyle\t\t🛠️\tv0.9.3
+no-exports-assign\tnode\tsuspicious\t\t🛠️\tv0.9.3
 no-expose-after-await\tvue\tcorrectness\t\t\tv1.67.0
 no-extend-native\teslint\tsuspicious\t\t\tv0.9.7
 no-extra-bind\teslint\tsuspicious\t\t🚧\tv1.1.0
@@ -339,6 +339,7 @@ no-focused-tests\tjest\tcorrectness\t\t💡\tv0.0.8
 no-focused-tests\tvitest\tcorrectness\t\t💡\tv0.0.8
 no-for-in-array💭\ttypescript\tcorrectness\t✅\t\tv1.12.0
 no-func-assign\teslint\tcorrectness\t✅\t\tv0.0.3
+no-generated-empty-object-type💭\ttypescript\tsuspicious\t\t\tvnext
 no-global-assign\teslint\tcorrectness\t✅\t\tv0.0.7
 no-head-element\tnextjs\tcorrectness\t\t\tv0.2.1
 no-head-import-in-document\tnextjs\tcorrectness\t\t\tv0.2.0
@@ -520,7 +521,7 @@ no-unassigned-vars\teslint\tcorrectness\t✅\t\tv1.10.0
 no-undef\teslint\tnursery\t\t\tv0.0.8
 no-undefined\teslint\trestriction\t\t\tv0.5.3
 no-underscore-dangle\teslint\tsuspicious\t\t\tv1.62.0
-no-unescaped-entities\treact\tpedantic\t\t🚧\tv0.0.15
+no-unescaped-entities\treact\tpedantic\t\t💡\tv0.0.15
 no-unexpected-multiline\teslint\tsuspicious\t\t⚠️ 🛠️\tv0.9.7
 no-unknown-property\treact\trestriction\t\t💡\tv0.2.0
 no-unmodified-loop-condition\teslint\tsuspicious\t\t\tv1.48.0
@@ -586,7 +587,7 @@ no-useless-promise-resolve-reject\tunicorn\tpedantic\t\t🛠️\tv0.0.18
 no-useless-rename\teslint\tcorrectness\t✅\t🛠️\tv0.2.14
 no-useless-return\teslint\tpedantic\t\t🚧\tv1.32.0
 no-useless-spread\tunicorn\tcorrectness\t✅\t⚠️ 🛠️\tv0.0.19
-no-useless-switch-case\tunicorn\tpedantic\t\t🚧\tv0.0.18
+no-useless-switch-case\tunicorn\tpedantic\t\t💡\tv0.0.18
 no-useless-undefined\tunicorn\tpedantic\t\t🛠️\tv0.6.1
 no-var\teslint\trestriction\t\t🛠️\tv0.1.1
 no-var-requires\ttypescript\trestriction\t\t\tv0.0.7

@@ -315,6 +315,7 @@ export function oxlintPreset() {
 			"typescript/no-extraneous-class": "warn",
 			"typescript/no-floating-promises": "warn",
 			"typescript/no-for-in-array": "warn",
+			"typescript/no-generated-empty-object-type": "warn",
 			"typescript/no-implied-eval": "warn",
 			"typescript/no-import-type-side-effects": "warn",
 			"typescript/no-inferrable-types": "warn",
