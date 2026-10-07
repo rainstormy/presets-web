@@ -207,10 +207,6 @@ overrides:
 importers:
 
   .:
-    dependencies:
-      oxlint-tsgolint:
-        specifier: 7.0.2003
-        version: 7.0.2003
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
@@ -224,6 +220,9 @@ importers:
       oxlint:
         specifier: 1.87.0
         version: 1.87.0(oxlint-tsgolint@7.0.2003)(vite-plus@1.0.0-rc.0(@types/node@24.13.6)(@vitest/ui@5.0.1)(typescript@7.0.2))
+      oxlint-tsgolint:
+        specifier: 7.0.2003
+        version: 7.0.2003
       typescript:
         specifier: 'catalog:'
         version: 7.0.2
