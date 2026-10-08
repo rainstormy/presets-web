@@ -32,6 +32,11 @@ catalog:
   # https://viteplus.dev
   vite-plus: 1.1.0
 
+  # Vitest is a unit testing framework.
+  # It is also provided by Vite+, but IDE tooling (such as the test runner in IntelliJ IDEA) currently expects the Vitest CLI to exist on the PATH.
+  # https://vitest.dev
+  vitest: 5.0.3
+
 # Let some packages bypass the minimum release age requirement to allow urgent security upgrades to be installed despite being less than 3 days old.
 minimumReleaseAgeExclude: []
 
@@ -52,3 +57,4 @@ overrides:
   oxfmt: 'catalog:'
   oxlint: 'catalog:'
   oxlint-tsgolint: 'catalog:'
+  vitest: 'catalog:'

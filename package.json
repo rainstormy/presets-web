@@ -45,7 +45,8 @@
 		"oxlint": "catalog:",
 		"oxlint-tsgolint": "catalog:",
 		"typescript": "catalog:",
-		"vite-plus": "catalog:"
+		"vite-plus": "catalog:",
+		"vitest": "catalog:"
 	},
 	"peerDependencies": {
 		"oxfmt": ">=0.72.0 <1.0.0",
