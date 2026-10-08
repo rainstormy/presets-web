@@ -30,7 +30,7 @@ catalog:
   # Vite+ is a unified toolchain and task runner for Oxfmt, Oxlint, tsdown, Vite, and Vitest.
   # It is also a version manager of Node.js and pnpm.
   # https://viteplus.dev
-  vite-plus: 1.0.0-rc.0
+  vite-plus: 1.1.0
 
 # Let some packages bypass the minimum release age requirement to allow urgent security upgrades to be installed despite being less than 3 days old.
 minimumReleaseAgeExclude: []
