@@ -97,6 +97,7 @@ export default defineConfig({
 	 * @see https://vitest.dev/config
 	 */
 	test: {
+		fsModuleCache: true,
 		include: ["src/**/*.tests.ts"],
 		pool: "vmThreads",
 		setupFiles: [],

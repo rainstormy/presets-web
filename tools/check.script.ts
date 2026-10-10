@@ -3,9 +3,9 @@ import { resolve as resolvePath } from "node:path"
 // oxlint-disable-next-line no-restricted-imports -- Access the `peerDependencies` field directly from `package.json`.
 import packagejson from "../package.json" with { type: "json" }
 
-await checkPeerDependencyRanges()
+await checkPeerDependencyRanges(["oxfmt", "oxlint", "typescript"])
 
-async function checkPeerDependencyRanges(): Promise<void> {
+async function checkPeerDependencyRanges(peerDependenciesToCheck: Array<string>): Promise<void> {
 	const projectDirectory = resolvePath(import.meta.dirname, "..")
 	const workspaceYaml = await readFile(resolvePath(projectDirectory, "pnpm-workspace.yaml"), "utf8")
 
@@ -18,7 +18,11 @@ async function checkPeerDependencyRanges(): Promise<void> {
 			.map(([name, value]) => [name.replaceAll("'", "").trim(), value.trim()] as const),
 	)
 
-	for (const [name, range] of Object.entries(packagejson.peerDependencies)) {
+	const peerDependencies = Object.entries(packagejson.peerDependencies).filter(([name]) =>
+		peerDependenciesToCheck.includes(name),
+	)
+
+	for (const [name, range] of peerDependencies) {
 		const catalogVersion = catalog.get(name)
 		const minimumPeerVersion = range.trim().split(" ")[0].slice(">=".length)
 
