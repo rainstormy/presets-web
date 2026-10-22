@@ -5,3 +5,6 @@ vpr check
 
 # Unit tests must pass.
 vpr test
+
+# Commit messages must be well-formed.
+vpr comet

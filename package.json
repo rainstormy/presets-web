@@ -40,6 +40,7 @@
 		"./typescript": "./dist/typescript/index.json"
 	},
 	"devDependencies": {
+		"@rainstormy/comet": "catalog:",
 		"@types/node": "catalog:",
 		"oxfmt": "catalog:",
 		"oxlint": "catalog:",
