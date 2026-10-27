@@ -1,11 +1,9 @@
 # Tooling Presets for Web Development
 
-This package provides predefined, opinionated configurations for
-[Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html),
-[Oxlint](https://oxc.rs/docs/guide/usage/linter.html), and
-[TypeScript](https://www.typescriptlang.org), carefully crafted to strike a balance between correctness, maintainability, and tooling performance.
+This package provides predefined, opinionated configurations for [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html), [Oxlint](https://oxc.rs/docs/guide/usage/linter.html), and [TypeScript](https://www.typescriptlang.org), carefully crafted to strike a balance between correctness, maintainability, and tooling performance.
 
 ## Code style
+
 - **Indent with tabs** to improve developers' accessibility through customisable indentation widths, to reduce the number of required keystrokes, and to reduce the file sizes. Inspiration: [Fixing Tabs versus Spaces](https://blog.jetbrains.com/dotnet/2022/08/11/virtual-formatter-in-resharper-2022-2/#what-was-it-about-again) by Matthias Koch at JetBrains.
   - Exceptions: Indent with spaces in Markdown files (`*.md`), TOML files (`*.toml`), and YAML files (`*.{yaml,yml}`).
 - **Omit semicolons** and rely fully on [automatic semicolon insertion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#automatic_semicolon_insertion) to reduce cognitive complexity and visual noise in the code. Using semicolons does not disable the behaviour of automatic semicolon insertion anyway. Inspiration: [Hacking Semicolons](https://slides.com/evanyou/semicolons) by Evan You.
@@ -18,39 +16,43 @@ This package provides predefined, opinionated configurations for
 - **Access JSX component props directly on the `props` object** (including React components) instead of destructuring it to avoid duplicating the prop names in type declarations.
 - **Use a top-down declaration order** to improve readability and reduce cognitive complexity by sticking to a predictable declaration order. Inspiration: [Stepdown Rule](https://dzone.com/articles/the-stepdown-rule), originally described in Clean Code by Robert C. Martin (a.k.a. Uncle Bob).
 - **Use `function` declarations** instead of `const` with arrow functions to improve type safety and to enable top-down declaration orders, as function declarations are hoisted.
-- **Disallow importing `devDependencies` and test files in production code** to prevent accidental bundling of development dependencies and test data in production artefacts.
 
 ## Installation
-Install [`@rainstormy/presets-web`](https://www.npmjs.com/package/@rainstormy/presets-web), along with its peer dependencies, with the package manager of your choice:
+
+Install [`@rainstormy/presets-web`](https://npmx.dev/package/@rainstormy/presets-web) and its peer dependencies with a package manager of your choice, for example:
 
 ```shell
-npm install --save-dev @rainstormy/presets-web oxfmt oxlint typescript
+pnpm add --save-dev @rainstormy/presets-web oxfmt oxlint oxlint-tsgolint typescript
 ```
+
+For [Vite+](https://viteplus.dev/guide/package-management):
+
 ```shell
-pnpm add --save-dev @rainstormy/presets-web oxfmt oxlint typescript
-```
-```shell
-yarn add --dev @rainstormy/presets-web oxfmt oxlint typescript
+vp add --save-dev @rainstormy/presets-web typescript vite-plus
 ```
 
 ## Usage
-Lint, type-check, and check formatting:
 
 ```shell
-oxlint --type-aware --type-check --deny-warnings && oxfmt --check
+oxlint --type-check    # Lint and type-check.
+oxlint --fix && oxfmt  # Autofix and reformat files.
 ```
 
-Apply linting suggestions and reformat files in one command:
+For [Vite+](https://viteplus.dev/guide/check):
 
 ```shell
-oxlint --fix-dangerously && oxfmt
+vp lint --type-check  # Lint and type-check.
+vp check --fix        # Autofix and reformat files.
 ```
 
 ## Configuration
+
 Create `oxfmt.config.ts`, `oxlint.config.ts`, and `tsconfig.json` next to `package.json` in the project root directory.
 
 ### Oxfmt (`oxfmt.config.ts`)
+
 Use `defineOxfmtConfig()` instead of the regular [`defineConfig()`](https://oxc.rs/docs/guide/usage/formatter/config.html#create-a-config-file) function and override options as needed.
+
 For example:
 
 ```ts
@@ -69,8 +71,23 @@ import { defineOxfmtConfig } from "@rainstormy/presets-web/oxfmt"
 export default defineOxfmtConfig()
 ```
 
+For [Vite+](https://viteplus.dev/config/fmt), configure the `fmt` field in `vite.config.ts` instead of `oxfmt.config.ts`, for example:
+
+```ts
+import { defineConfig } from "vite-plus"
+import { defineOxfmtConfig } from "@rainstormy/presets-web/oxfmt"
+
+export default defineConfig({
+  fmt: defineOxfmtConfig({
+    ignorePatterns: ["**/*.md"],
+  }),
+})
+```
+
 ### Oxlint (`oxlint.config.ts`)
+
 Use `defineOxlintConfig()` instead of the regular [`defineConfig()`](https://oxc.rs/docs/guide/usage/linter/config.html#typescript-config-file-oxlint-config-ts) function and override options as needed.
+
 For example:
 
 ```ts
@@ -125,8 +142,26 @@ export default defineOxlintConfig({
 })
 ```
 
+For [Vite+](https://viteplus.dev/config/lint), configure the `lint` field in `vite.config.ts` instead of `oxlint.config.ts`, for example:
+
+```ts
+import { defineConfig } from "vite-plus"
+import { defineOxlintConfig } from "@rainstormy/presets-web/oxlint"
+
+export default defineConfig({
+  lint: defineOxlintConfig({
+    rules: {
+      "eslint/complexity": "off",
+      "eslint/no-magic-numbers": "warn",
+    },
+  }),
+})
+```
+
 ### TypeScript (`tsconfig.json`)
+
 Extend from `@rainstormy/presets-web/typescript` and override options as needed.
+
 For example:
 
 ```json
@@ -147,8 +182,10 @@ For example:
 ```
 
 ## Add-ons
+
 ### [Next.js](https://nextjs.org)
-Add `oxlintReactPreset()` and `oxlintNextjsPreset()` to the `extends` array in `oxlint.config.ts` to support the app router and React components in Next.js apps:
+
+Add `oxlintReactPreset()` and `oxlintNextjsPreset()` to the `extends` array to support the app router and React components in Next.js apps:
 
 ```ts
 import { defineOxlintConfig, oxlintNextjsPreset, oxlintReactPreset } from "@rainstormy/presets-web/oxlint"
@@ -162,7 +199,8 @@ The `app` directory and the `instrumentation.ts` and `middleware.ts`/`proxy.ts` 
 React components and other files in general must _not_ reside in the `app` directory, decoupling them from the Next.js app router to improve the overall maintainability and scalability of the project.
 
 ### [React Router](https://reactrouter.com)
-Add `oxlintReactPreset()` and `oxlintReactRouterPreset()` to the `extends` array in `oxlint.config.ts` to support file routes and React components in React Router apps:
+
+Add `oxlintReactPreset()` and `oxlintReactRouterPreset()` to the `extends` array to support file routes and React components in React Router apps:
 
 ```ts
 import { defineOxlintConfig, oxlintReactPreset, oxlintReactRouterPreset } from "@rainstormy/presets-web/oxlint"
@@ -175,7 +213,8 @@ export default defineOxlintConfig({
 The `routes` directory and the `root.tsx` and `routes.ts` files must reside in the `src` directory.
 
 ### [Storybook](https://storybook.js.org)
-Add `oxlintStorybookPreset()` to the `extends` array in `oxlint.config.ts` to support the following kinds of files in Storybook (naming convention in parentheses):
+
+Add `oxlintStorybookPreset()` to the `extends` array to support the following kinds of files in Storybook (naming convention in parentheses):
 
 - Stories in the [Component Story Format](https://storybook.js.org/docs/api/csf) (CSF) (`*.stories.{ts,tsx}`)
 - [Decorators](https://storybook.js.org/docs/writing-stories/decorators) (`*.decorators.{ts,tsx}`)
@@ -192,6 +231,7 @@ export default defineOxlintConfig({
 Stories must remain simple in terms of cognitive complexity, limiting the use of conditional logic.
 
 ### [Vitest](https://vitest.dev)
+
 The base preset automatically supports the following kinds of files in Vitest (naming convention in parentheses):
 
 - Unit test suites (`*.tests.{ts,tsx}`)
