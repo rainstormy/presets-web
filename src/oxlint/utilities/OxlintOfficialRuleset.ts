@@ -68,7 +68,7 @@ consistent-test-it\tjest\tstyle\t\t🛠️\tv0.5.3
 consistent-test-it\tvitest\tstyle\t\t🛠️\tv0.5.3
 consistent-type-assertions\ttypescript\tstyle\t\t🛠️ 💡\tv1.44.0
 consistent-type-definitions\ttypescript\tstyle\t\t⚠️ 🛠️\tv0.2.17
-consistent-type-exports💭\ttypescript\tstyle\t\t\tv0.0.8
+consistent-type-exports💭\ttypescript\tstyle\t\t🛠️\tv0.0.8
 consistent-type-imports\ttypescript\tstyle\t\t🛠️\tv0.5.2
 consistent-type-specifier-style\timport\tstyle\t\t🛠️\tv0.16.11
 consistent-vitest-vi\tvitest\tstyle\t\t🛠️\tv1.37.0
@@ -85,7 +85,7 @@ define-emits-declaration\tvue\tstyle\t\t🚧\tv1.15.0
 define-props-declaration\tvue\tstyle\t\t\tv1.15.0
 define-props-destructuring\tvue\tstyle\t\t\tv1.20.0
 display-name\treact\tpedantic\t\t\tv1.42.0
-dot-notation💭\ttypescript\tstyle\t\t\tv1.49.0
+dot-notation💭\ttypescript\tstyle\t\t🛠️\tv1.49.0
 double-comparisons\toxc\tcorrectness\t✅\t💡\tv0.0.22
 empty-brace-spaces\tunicorn\tstyle\t\t🛠️\tv0.0.18
 empty-tags\tjsdoc\trestriction\t\t🚧\tv0.2.16
@@ -528,8 +528,8 @@ no-unmodified-loop-condition\teslint\tsuspicious\t\t\tv1.48.0
 no-unnecessary-array-flat-depth\tunicorn\tpedantic\t\t💡\tv0.16.12
 no-unnecessary-array-splice-count\tunicorn\tpedantic\t\t🛠️\tv1.20.0
 no-unnecessary-await\tunicorn\tcorrectness\t✅\t🛠️\tv0.0.12
-no-unnecessary-boolean-literal-compare💭\ttypescript\tsuspicious\t\t🚧\tv1.12.0
-no-unnecessary-condition💭\ttypescript\tnursery\t\t🚧\tv1.48.0
+no-unnecessary-boolean-literal-compare💭\ttypescript\tsuspicious\t\t🛠️\tv1.12.0
+no-unnecessary-condition💭\ttypescript\tnursery\t\t💡\tv1.48.0
 no-unnecessary-parameter-property-assignment\ttypescript\tcorrectness\t✅\t💡\tv0.15.13
 no-unnecessary-qualifier💭\ttypescript\tstyle\t\t\tv1.49.0
 no-unnecessary-slice-end\tunicorn\tpedantic\t\t🛠️\tv0.16.10
@@ -551,6 +551,7 @@ no-unsafe-argument💭\ttypescript\tpedantic\t\t\tv1.12.0
 no-unsafe-assignment💭\ttypescript\tpedantic\t\t\tv1.12.0
 no-unsafe-call💭\ttypescript\tpedantic\t\t\tv1.12.0
 no-unsafe-declaration-merging\ttypescript\tcorrectness\t✅\t\tv0.0.11
+no-unsafe-enum-assignment💭\ttypescript\tsuspicious\t\t\tvnext
 no-unsafe-enum-comparison💭\ttypescript\tsuspicious\t\t💡\tv1.12.0
 no-unsafe-finally\teslint\tcorrectness\t✅\t\tv0.0.5
 no-unsafe-function-type\ttypescript\tpedantic\t\t\tv0.11.1
@@ -713,7 +714,7 @@ prefer-promise-reject-errors\teslint\tpedantic\t\t\tv0.15.7
 prefer-promise-reject-errors💭\ttypescript\tpedantic\t\t\tv1.12.0
 prefer-prototype-methods\tunicorn\tpedantic\t\t🛠️\tv0.0.21
 prefer-query-selector\tunicorn\tpedantic\t\t🛠️\tv0.0.15
-prefer-readonly💭\ttypescript\tstyle\t\t\tv0.0.8
+prefer-readonly💭\ttypescript\tstyle\t\t🛠️\tv0.0.8
 prefer-readonly-parameter-types💭\ttypescript\tpedantic\t\t\tv1.49.0
 prefer-reduce-type-parameter💭\ttypescript\tstyle\t\t🛠️\tv1.12.0
 prefer-reflect-apply\tunicorn\tstyle\t\t💡\tv0.0.19
@@ -738,7 +739,7 @@ prefer-strict-equal\tvitest\tstyle\t\t💡\tv0.2.13
 prefer-string-raw\tunicorn\tstyle\t\t🛠️\tv0.12.0
 prefer-string-replace-all\tunicorn\tpedantic\t\t🛠️\tv0.0.18
 prefer-string-slice\tunicorn\tpedantic\t\t🛠️\tv0.0.18
-prefer-string-starts-ends-with💭\ttypescript\tstyle\t\t\tv0.0.8
+prefer-string-starts-ends-with💭\ttypescript\tstyle\t\t🛠️\tv0.0.8
 prefer-string-starts-ends-with\tunicorn\tcorrectness\t✅\t🛠️\tv0.0.18
 prefer-string-trim-start-end\tunicorn\tstyle\t\t🛠️\tv0.0.16
 prefer-structured-clone\tunicorn\tstyle\t\t💡\tv0.9.0
