@@ -52,7 +52,7 @@
 	"peerDependencies": {
 		"oxfmt": ">=0.75.0 <1.0.0",
 		"oxlint": ">=1.90.0 <2.0.0",
-		"oxlint-tsgolint": ">=7.0.2000",
+		"oxlint-tsgolint": ">=7.0.2005",
 		"typescript": ">=7.0.2 <8.0.0"
 	},
 	"devEngines": {
