@@ -33,7 +33,7 @@ export function oxlintPreset() {
 		options: {
 			denyWarnings: true,
 			typeAware: true,
-			typeCheck: true,
+			typeCheck: false, // Allow `oxlint --fix` to complete successfully when there are type errors.
 			reportUnusedDisableDirectives: "warn",
 			respectEslintDisableDirectives: false,
 		},
