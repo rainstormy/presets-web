@@ -50,20 +50,20 @@
 		"vitest": "catalog:"
 	},
 	"peerDependencies": {
-		"oxfmt": ">=0.72.0 <1.0.0",
-		"oxlint": ">=1.87.0 <2.0.0",
-		"oxlint-tsgolint": ">=7.0.2000",
+		"oxfmt": ">=0.75.0 <1.0.0",
+		"oxlint": ">=1.90.0 <2.0.0",
+		"oxlint-tsgolint": ">=7.0.2005",
 		"typescript": ">=7.0.2 <8.0.0"
 	},
 	"devEngines": {
 		"packageManager": {
 			"name": "pnpm",
-			"version": "12.7.0",
+			"version": "12.16.1",
 			"onFail": "download"
 		},
 		"runtime": {
 			"name": "node",
-			"version": "24.21.0",
+			"version": "24.22.2",
 			"onFail": "download"
 		}
 	}

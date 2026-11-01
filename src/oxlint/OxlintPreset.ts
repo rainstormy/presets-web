@@ -347,6 +347,7 @@ export function oxlintPreset() {
 			// "typescript/no-unsafe-assignment": "off", // Superseded by `typescript/no-explicit-any`.
 			// "typescript/no-unsafe-call": "off", // Superseded by `typescript/no-explicit-any`.
 			"typescript/no-unsafe-declaration-merging": "warn",
+			"typescript/no-unsafe-enum-assignment": "warn",
 			"typescript/no-unsafe-enum-comparison": "warn",
 			"typescript/no-unsafe-function-type": "warn",
 			// "typescript/no-unsafe-member-access": "off", // Superseded by `typescript/no-explicit-any`.
