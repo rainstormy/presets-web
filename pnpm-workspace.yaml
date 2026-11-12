@@ -27,6 +27,10 @@ catalog:
   # https://github.com/oxc-project/tsgolint
   oxlint-tsgolint: 7.0.2005
 
+  # publint is a linter of npm package manifests.
+  # https://publint.dev/docs
+  publint: 0.3.25
+
   # The official 'tsc' CLI for TypeScript, including the language service (LSP) and Go-powered compiler (tsgo).
   # https://www.typescriptlang.org
   typescript: 7.0.2
