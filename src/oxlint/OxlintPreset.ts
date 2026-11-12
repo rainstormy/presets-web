@@ -305,7 +305,7 @@ export function oxlintPreset() {
 			// "typescript/no-confusing-non-null-assertion": "off", // Superseded by `typescript/no-non-null-assertion`.
 			"typescript/no-confusing-void-expression": "warn",
 			// "typescript/no-deprecated": "off",
-			"typescript/no-duplicate-enum-values": "warn",
+			// "typescript/no-duplicate-enum-values": "off", // Not applicable with `erasableSyntaxOnly` in TypeScript.
 			"typescript/no-duplicate-type-constituents": "warn",
 			"typescript/no-dynamic-delete": "warn",
 			"typescript/no-empty-interface": "warn",
@@ -324,7 +324,7 @@ export function oxlintPreset() {
 			"typescript/no-misused-new": "warn",
 			"typescript/no-misused-promises": "warn",
 			"typescript/no-misused-spread": "warn",
-			"typescript/no-mixed-enums": "warn",
+			// "typescript/no-mixed-enums": "off", // Not applicable with `erasableSyntaxOnly` in TypeScript.
 			"typescript/no-namespace": "warn",
 			"typescript/no-non-null-asserted-nullish-coalescing": "warn",
 			"typescript/no-non-null-asserted-optional-chain": "warn",
@@ -347,8 +347,8 @@ export function oxlintPreset() {
 			// "typescript/no-unsafe-assignment": "off", // Superseded by `typescript/no-explicit-any`.
 			// "typescript/no-unsafe-call": "off", // Superseded by `typescript/no-explicit-any`.
 			"typescript/no-unsafe-declaration-merging": "warn",
-			"typescript/no-unsafe-enum-assignment": "warn",
-			"typescript/no-unsafe-enum-comparison": "warn",
+			// "typescript/no-unsafe-enum-assignment": "off", // Not applicable with `erasableSyntaxOnly` in TypeScript.
+			// "typescript/no-unsafe-enum-comparison": "off", // Not applicable with `erasableSyntaxOnly` in TypeScript.
 			"typescript/no-unsafe-function-type": "warn",
 			// "typescript/no-unsafe-member-access": "off", // Superseded by `typescript/no-explicit-any`.
 			// "typescript/no-unsafe-return": "off", // Superseded by `typescript/no-explicit-any`.
@@ -362,12 +362,12 @@ export function oxlintPreset() {
 			"typescript/only-throw-error": "warn",
 			"typescript/parameter-properties": ["warn", { prefer: "class-property" }],
 			"typescript/prefer-as-const": "warn",
-			"typescript/prefer-enum-initializers": "warn",
+			// "typescript/prefer-enum-initializers": "off", // Not applicable with `erasableSyntaxOnly` in TypeScript.
 			"typescript/prefer-find": "warn",
 			"typescript/prefer-for-of": "warn",
 			"typescript/prefer-function-type": "warn",
 			"typescript/prefer-includes": "warn",
-			"typescript/prefer-literal-enum-member": "warn",
+			// "typescript/prefer-literal-enum-member": "off", // Not applicable with `erasableSyntaxOnly` in TypeScript.
 			// "typescript/prefer-namespace-keyword": "off", // Deprecated, not applicable in TypeScript 6.
 			"typescript/prefer-nullish-coalescing": "warn",
 			"typescript/prefer-optional-chain": "warn",
