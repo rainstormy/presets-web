@@ -1,0 +1,15 @@
+name: Build
+description: Generates build artefacts and verifies the package manifest.
+
+runs:
+  using: composite
+  steps:
+    - name: Generate build artefacts (tsdown)
+      # language=sh
+      run: vpr build
+      shell: bash
+      #
+    - name: Verify the package manifest (publint)
+      # language=sh
+      run: vpr publint
+      shell: bash

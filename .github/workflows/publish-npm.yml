@@ -66,10 +66,8 @@ jobs:
           version-file: pnpm-workspace.yaml
           cache: true
         #
-      - name: Build the project
-        # language=sh
-        run: vp run build
-        shell: bash
+      - name: Generate build artefacts
+        uses: ./.github/actions/build
         #
       - name: Publish the package to npm
         # language=sh
