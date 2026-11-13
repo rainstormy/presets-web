@@ -89,7 +89,7 @@ export default defineConfig({
 	 */
 	// language=sh
 	staged: {
-		"*.{json,jsonc,md,ts,yaml,yml}": "vpr fmt",
+		"*.{json,jsonc,md,ts,yaml}": "vpr fmt",
 	},
 
 	/**
